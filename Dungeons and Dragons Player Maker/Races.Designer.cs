@@ -330,7 +330,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 0_0_0_0_0_0_30_Medium_Common_None_+1 to 2 stats, Choose a Feat.
         /// </summary>
         internal static string Human_Variant {
             get {

@@ -20,10 +20,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
             MessageBox.Show("Click anywhere to print.");
         }
 
-
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e) {
-            e.Graphics.DrawImage(bitMap, 0, 0,(int)(ClientSize.Width * 1.055m),(int) (ClientSize.Height *1.055m));
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e) {
+            e.Graphics.DrawImage(bitMap, 0, 0,(int)(ClientSize.Width * 1.045m),(int) (ClientSize.Height *1.045m));
         }
 
         private void CaptureScreen() {

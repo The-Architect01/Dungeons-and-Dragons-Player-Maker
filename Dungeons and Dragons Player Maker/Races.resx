@@ -206,7 +206,7 @@
     <value>+1_+1_+1_+1_+1_+1_30_Medium_Common_None_None</value>
   </data>
   <data name="Human-Variant" xml:space="preserve">
-    <value />
+    <value>0_0_0_0_0_0_30_Medium_Common_None_+1 to 2 stats, Choose a Feat</value>
   </data>
   <data name="Sample" xml:space="preserve">
     <value>STR_DEX_CON_WIS_INT_CHA_SPEED_SIZE_LANGUAGE_PROFICINCY_BONUS</value>

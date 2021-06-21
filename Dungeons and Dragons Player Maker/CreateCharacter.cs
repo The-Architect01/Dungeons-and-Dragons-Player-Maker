@@ -29,6 +29,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
         "Deep Speech","Draconic","Infernal","Primordial","Sylvan","Undercommon"};
         static readonly string[] SKILLS = { "Athletics","Acrobatics","Sleight of Hand","Stealth","Arcana","History","Investigation","Nature","Religion",
         "Animal Handling","Insight","Medicine","Perception", "Survival","Deception","Intimidation","Performance","Persuasion"};
+        static readonly Dictionary<string, int> RacesBonus = new Dictionary<string, int>() { {"Human-Variant",2 }, { "Half-Elf-Natural", 2 } };
+
 
         public CreateCharacter() {
             InitializeComponent();
@@ -48,7 +50,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             //     if (Background == "") { MessageBox.Show("You haven't selected a valid background!");e.Cancel = true; }
         }
 
-        private void SubRaces_SelectedValueChanged(object sender, EventArgs e) { }
         #region Races -- Page 1
         static readonly List<string> Races_SubRace  = new List<string>() { "Dwarf", "Elf","Halfling", "Human","Dragonborn","Gnome","Half-Elf" };
         static readonly string[] DWARF_SUBRACE      = { "Hill", "Mountain", "Deep" };
@@ -65,6 +66,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         int pos = 0;
 
+        private void SubRaces_SelectedValueChanged(object sender, EventArgs e) { Languages = ""; Prof = ""; Prof2 = ""; updateInfo(Race); }
+
         private void Race_Hover(object sender, EventArgs e) {
             if (Race != "") {
                 RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(Race);
@@ -77,6 +80,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void Race_Click(object sender, EventArgs e) {
+            if (!Race.SequenceEqual(((Label)sender).Text)) { Languages = ""; Prof = ""; Prof2 = ""; updateInfo(((Label)sender).Text); }
             Race = ((Label)sender).Text;
             RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(Race);
             updateInfo(Race);
@@ -134,9 +138,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             final = final + "Speed: " + info[6] + "\n";
             final = final + "Size: " + info[7] + "\n";
             final = Languages != "" ? final + Languages + "\n" : final + "Languages: " + info[8] + "\n";
-            final = Prof != "" ? final + Prof + "\n" :
-                    Prof2 != "" ? final + Prof2 + "\n" :final + "Proficiencies: " + info[9] + "\n";
-            final = final + "Additional Notes: " + info[10];
+            final = Prof2 != "" ? final + Prof2 + "\n" :
+                    Prof != "" ? final + Prof + "\n" :final + "Proficiencies: " + info[9] + "\n";
+            final = final + "Notes: " + info[10];
             Info.Text = final;
         }
 
@@ -201,7 +205,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         #region Confirmation -- Page 4
         #endregion
         
-
         
     }
 }
