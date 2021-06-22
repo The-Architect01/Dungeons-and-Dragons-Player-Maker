@@ -42,12 +42,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.R1 = new System.Windows.Forms.Label();
             this.RacePreview = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,6 +53,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
@@ -74,12 +69,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RacePreview)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,10 +183,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // Info
             // 
-            this.Info.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Info.Location = new System.Drawing.Point(6, 338);
+            this.Info.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Info.Location = new System.Drawing.Point(6, 325);
             this.Info.Name = "Info";
-            this.Info.Size = new System.Drawing.Size(492, 158);
+            this.Info.Size = new System.Drawing.Size(492, 171);
             this.Info.TabIndex = 8;
             this.Info.Text = "STR: +1 DEX: +1 CON: +1 WIS: +1 INT: +1 CHA: +1\r\nSpeed: 30\r\nSize: Medium\r\nLanguag" +
     "es: Common\r\nProficiencies: None \r\nNotes: None";
@@ -276,17 +272,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.RacePreview.Image = global::Dungeons_and_Dragons_Player_Maker.Races.Half_Elf;
             this.RacePreview.Location = new System.Drawing.Point(223, 6);
             this.RacePreview.Name = "RacePreview";
-            this.RacePreview.Size = new System.Drawing.Size(275, 329);
+            this.RacePreview.Size = new System.Drawing.Size(275, 316);
             this.RacePreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RacePreview.TabIndex = 0;
             this.RacePreview.TabStop = false;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.comboBox2);
-            this.tabPage2.Controls.Add(this.comboBox3);
             this.tabPage2.Controls.Add(this.comboBox4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label4);
@@ -306,80 +298,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage2.Text = "Classes";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.comboBox5);
-            this.tabPage3.Controls.Add(this.comboBox6);
-            this.tabPage3.Controls.Add(this.comboBox7);
-            this.tabPage3.Controls.Add(this.comboBox8);
-            this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Controls.Add(this.pictureBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(504, 552);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Background";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(504, 552);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Confirm";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(6, 496);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(492, 19);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Additional Options:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(346, 518);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 28;
-            this.comboBox1.Text = "Select One";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Enabled = false;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(176, 518);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 27;
-            this.comboBox2.Text = "Select One";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Enabled = false;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(6, 518);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(151, 28);
-            this.comboBox3.TabIndex = 26;
-            this.comboBox3.Text = "Select One";
-            // 
             // comboBox4
             // 
             this.comboBox4.Enabled = false;
@@ -388,7 +306,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(208, 28);
             this.comboBox4.TabIndex = 25;
-            this.comboBox4.Text = "Natural";
+            this.comboBox4.Text = "Select One";
             // 
             // label3
             // 
@@ -396,15 +314,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 25);
             this.label3.TabIndex = 24;
-            this.label3.Text = "Gnome";
+            this.label3.Text = "Monk";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 338);
+            this.label4.Location = new System.Drawing.Point(6, 325);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(492, 158);
+            this.label4.Size = new System.Drawing.Size(211, 224);
             this.label4.TabIndex = 23;
             this.label4.Text = "STR: +1 DEX: +1 CON: +1 WIS: +1 INT: +1 CHA: +1\r\nSpeed: 30\r\nSize: Medium\r\nLanguag" +
     "es: Common\r\nProficiencies: None \r\nNotes: None";
@@ -434,7 +352,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(211, 25);
             this.label5.TabIndex = 20;
-            this.label5.Text = "Dragonborn";
+            this.label5.Text = "Fighter";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
@@ -443,7 +361,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(211, 25);
             this.label6.TabIndex = 19;
-            this.label6.Text = "Human";
+            this.label6.Text = "Druid";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
@@ -452,7 +370,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(211, 25);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Halfling";
+            this.label7.Text = "Cleric";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
@@ -461,7 +379,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(211, 25);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Elf";
+            this.label8.Text = "Bard";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
@@ -470,18 +388,43 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(211, 25);
             this.label9.TabIndex = 16;
-            this.label9.Text = "Dwarf";
+            this.label9.Text = "Barbarian";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Dungeons_and_Dragons_Player_Maker.Races.Half_Elf;
+            this.pictureBox1.Image = global::Dungeons_and_Dragons_Player_Maker.Classes.Bard;
             this.pictureBox1.Location = new System.Drawing.Point(223, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(275, 329);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.comboBox5);
+            this.tabPage3.Controls.Add(this.comboBox6);
+            this.tabPage3.Controls.Add(this.comboBox7);
+            this.tabPage3.Controls.Add(this.comboBox8);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Controls.Add(this.pictureBox2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(504, 552);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Background";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -625,6 +568,16 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(504, 552);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Confirm";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // CreateCharacter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -638,8 +591,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RacePreview)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -667,10 +620,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.ComboBox RaceSkill1;
         private System.Windows.Forms.ComboBox RaceLang;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

@@ -116,7 +116,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             } else {
                 SubRaces.Enabled = false;
                 SubRaces.Items.Clear();
-                SubRaces.Text = "Normal";
+                SubRaces.Text = "Natural";
             }
             if (AdditionalRaceLang.Contains(Race))   { RaceLang.Text = "Select One"; RaceLang.Enabled = true; } else { RaceLang.Text = ""; RaceLang.Enabled = false; }
             if (AdditionalRaceSkill1.Contains(Race) && (Race == "Half-Elf" && !SubRaces.Text.SequenceEqual("Variant")))
@@ -126,22 +126,26 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void updateInfo(string race) {
-            string[] info = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(race + "-" + SubRaces.Text).Split("_");
-            string final = "";
-            if(info[0] != "0") { final = final + "STR: " + info[0] + " "; }
-            if(info[1] != "0") { final = final + "DEX: " + info[1] + " "; }
-            if(info[2] != "0") { final = final + "CON: " + info[2] + " "; }
-            if(info[3] != "0") { final = final + "WIS: " + info[3] + " "; }
-            if(info[4] != "0") { final = final + "INT: " + info[4] + " "; }
-            if(info[5] != "0") { final = final + "CHA: " + info[5] + " "; }
-            if(final != "") { final = final + "\n"; }
-            final = final + "Speed: " + info[6] + "\n";
-            final = final + "Size: " + info[7] + "\n";
-            final = Languages != "" ? final + Languages + "\n" : final + "Languages: " + info[8] + "\n";
-            final = Prof2 != "" ? final + Prof2 + "\n" :
-                    Prof != "" ? final + Prof + "\n" :final + "Proficiencies: " + info[9] + "\n";
-            final = final + "Notes: " + info[10];
-            Info.Text = final;
+            try {
+                string[] info = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(race + "-" + SubRaces.Text).Split("_");
+                string final = "";
+                if (info[0] != "0") { final = final + "STR: " + info[0] + " "; }
+                if (info[1] != "0") { final = final + "DEX: " + info[1] + " "; }
+                if (info[2] != "0") { final = final + "CON: " + info[2] + " "; }
+                if (info[3] != "0") { final = final + "WIS: " + info[3] + " "; }
+                if (info[4] != "0") { final = final + "INT: " + info[4] + " "; }
+                if (info[5] != "0") { final = final + "CHA: " + info[5] + " "; }
+                if (final != "") { final = final + "\n"; }
+                final = final + "Speed: " + info[6] + "\n";
+                final = final + "Size: " + info[7] + "\n";
+                final = Languages != "" ? final + Languages + "\n" : final + "Languages: " + info[8] + "\n";
+                final = Prof2 != "" ? final + Prof2 + "\n" :
+                        Prof != "" ? final + Prof + "\n" : final + "Proficiencies: " + info[9] + "\n";
+                final = final + "Notes: " + info[10];
+                Info.Text = final;
+            } catch (Exception) {
+                Info.Text = "No data found.";
+            }
         }
 
         private void updateVisRaces() {
@@ -198,13 +202,29 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Prof2 = data[4];
         }
         #endregion
+
         #region Classes -- Page 2
+        static readonly string[] AvailClasses = { };
+        static readonly string[] BARD_Subclasses = { };
+        static readonly string[] BARBARIAN_Subclasses = { };
+        static readonly string[] CLERIC_Subclasses = { };
+        static readonly string[] DRUID_Subclasses = { };
+        static readonly string[] FIGHTER_Subclasses = { };
+        static readonly string[] MONK_Subclasses = { };
+        static readonly string[] PALADIN_Subclasses = { };
+        static readonly string[] RANGER_Subclasses = { };
+        static readonly string[] ROGUE_Subclasses = { };
+        static readonly string[] SORCERER_Subclasses = { };
+        static readonly string[] WARLOCK_Subclasses = { };
+        static readonly string[] WIZARD_Subclasses = { };
+        static readonly string[] ARTIFICER_Subclasses = { };
         #endregion
+
         #region Background -- Page 3
         #endregion
+
         #region Confirmation -- Page 4
         #endregion
-        
-        
+
     }
 }

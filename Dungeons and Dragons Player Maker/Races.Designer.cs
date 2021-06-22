@@ -71,7 +71,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Acid, Damage Resistance - Acid.
         /// </summary>
         internal static string Dragonborn_Black {
             get {
@@ -80,7 +80,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Lightning, Damage Resistance - Lightning.
         /// </summary>
         internal static string Dragonborn_Blue {
             get {
@@ -89,7 +89,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Fire, Damage Resistance - Fire.
         /// </summary>
         internal static string Dragonborn_Brass {
             get {
@@ -98,7 +98,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Lightning, Damage Resistance - Lightning.
         /// </summary>
         internal static string Dragonborn_Bronze {
             get {
@@ -107,7 +107,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Acid, Damage Resistance - Acid.
         /// </summary>
         internal static string Dragonborn_Copper {
             get {
@@ -116,7 +116,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Fire, Damage Resistance - Fire.
         /// </summary>
         internal static string Dragonborn_Gold {
             get {
@@ -125,7 +125,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Poison, Damage Resistance - Poison.
         /// </summary>
         internal static string Dragonborn_Green {
             get {
@@ -134,7 +134,16 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon, Damage Resistance.
+        /// </summary>
+        internal static string Dragonborn_Natural {
+            get {
+                return ResourceManager.GetString("Dragonborn-Natural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Fire, Damage Resistance - Fire.
         /// </summary>
         internal static string Dragonborn_Red {
             get {
@@ -143,7 +152,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Cold, Damage Resistance - Cold.
         /// </summary>
         internal static string Dragonborn_Silver {
             get {
@@ -152,7 +161,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Cold, Damage Resistance - Cold.
         /// </summary>
         internal static string Dragonborn_White {
             get {
@@ -171,7 +180,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 0_0_+2_+1_0_0_25_Medium_Common, Dwarvish_Battleaxe, handaxe, light hammer, warhammer_Darkvision - 60ft, Dwarven Resilience, Stonecunning, Dwarven Toughness.
         /// </summary>
         internal static string Dwarf_Hill {
             get {
@@ -180,11 +189,20 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_+2_0_0_0_25_Medium_Common, Dwarvish_Battleaxe, handaxe, light hammer, warhammer, light armor, medium armor_Darkvision - 60ft, Dwarven Resilience, Stonecunning.
         /// </summary>
         internal static string Dwarf_Mountain {
             get {
                 return ResourceManager.GetString("Dwarf-Mountain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0_0_+2_0_0_0_25_Medium_Common, Dwarvish_Battleaxe, handaxe, light hammer, warhammer_Darkvision - 60ft, Dwarven Resilience, Stonecunning.
+        /// </summary>
+        internal static string Dwarf_Natural {
+            get {
+                return ResourceManager.GetString("Dwarf-Natural", resourceCulture);
             }
         }
         
@@ -199,7 +217,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 0_+2_0_0_0_+1_30_Medium_Common, Elvish_Perception, rapiers, shortswords, hand crossbows_Darkvision - 120ft, Fey Ancestry, Trance, Sunlight Sensitivity, Drow Magic.
         /// </summary>
         internal static string Elf_Drow {
             get {
@@ -208,7 +226,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 0_+2_0_0_+1_0_30_Medium_Common, Elvish_Perception, longsword, shortsword, shortbow, longbow_Darkvision - 60ft, Fey Ancestry, Trance, Cantrip.
         /// </summary>
         internal static string Elf_High {
             get {
@@ -217,7 +235,16 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 0_+2_0_0_0_0_30_Medium_Common, Elvish_Perception_Darkvision - 60ft, Fey Ancestry, Trance.
+        /// </summary>
+        internal static string Elf_Natural {
+            get {
+                return ResourceManager.GetString("Elf-Natural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0_+2_0_+1_0_0_35_Medium_Common, Elvish_Perception, longsword, shortsword, shortbow, longbow_Darkvision - 60ft, Fey Ancestry, Trance, Mask of the Wild.
         /// </summary>
         internal static string Elf_Wood {
             get {
@@ -236,7 +263,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 0_+1_0_0_+2_0_25_Small_Common, Gnomish_None_Darkvision - 60ft, Gnome Cunning, Natural Illusionist, Speak with Small Beasts.
         /// </summary>
         internal static string Gnome_Forest {
             get {
@@ -245,7 +272,16 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 0_0_0_0_+2_0_25_Small_Common, Gnomish_None_Darkvision - 60ft, Gnome Cunning.
+        /// </summary>
+        internal static string Gnome_Natural {
+            get {
+                return ResourceManager.GetString("Gnome-Natural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0_0_+1_0_+2_0_25_Small_Common, Gnomish_None_Darkvision - 60ft, Gnome Cunning, Artificer&apos;s Lore, Tinker.
         /// </summary>
         internal static string Gnome_Rock {
             get {
@@ -292,7 +328,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to +2_0_+1_0_0_0_30_Medium_Common, Orc_Intimidation_Darkvision - 60ft, Relentless Endurance, Savage Attacks.
         /// </summary>
         internal static string Half_Orc_Natural {
             get {
@@ -307,6 +343,33 @@ namespace Dungeons_and_Dragons_Player_Maker {
             get {
                 object obj = ResourceManager.GetObject("Halfling", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0_+2_0_0_0_+1_25_Small_Common, Halfling_None_Lucky, Brave, Halfling Nimbleness, Naturally Stealthy.
+        /// </summary>
+        internal static string Halfling_Lightfoot {
+            get {
+                return ResourceManager.GetString("Halfling-Lightfoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0_+2_0_0_0_0_25_Small_Common, Halfling_None_Lucky, Brave, Halfling Nimbleness.
+        /// </summary>
+        internal static string Halfling_Natural {
+            get {
+                return ResourceManager.GetString("Halfling-Natural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0_+2_+1_0_0_0_25_Small_Common, Halfling_None_Lucky, Brave, Halfling Nimbleness, Stout Resilience.
+        /// </summary>
+        internal static string Halfling_Stout {
+            get {
+                return ResourceManager.GetString("Halfling-Stout", resourceCulture);
             }
         }
         
@@ -358,7 +421,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 0_0_0_0_+1_+2_30_Medium_Common, Infernal_None_Darkvision - 60ft, Hellish Resistance, Infernal Legacy.
         /// </summary>
         internal static string Tiefling_Natural {
             get {
