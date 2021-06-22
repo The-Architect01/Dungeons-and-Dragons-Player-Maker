@@ -138,6 +138,24 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sample.
+        /// </summary>
+        internal static string Druid_Base {
+            get {
+                return ResourceManager.GetString("Druid-Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to test.
+        /// </summary>
+        internal static string Druid_Circle_of_Land___Artic {
+            get {
+                return ResourceManager.GetString("Druid-Circle of Land - Artic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Fighter {
