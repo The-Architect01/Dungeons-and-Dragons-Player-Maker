@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,9 +21,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
         string Background = "";
 
         readonly Label[] RaceName;
+        readonly Label[] ClassName;
+        readonly Label[] BackgroundName;
 
         static readonly string[] Races       = { "Dwarf","Elf","Halfling","Human","Dragonborn","Gnome","Half-Elf","Half-Orc","Tiefling" };
-        static readonly string[] Classes     = { };
+        static readonly string[] Classes     = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
         static readonly string[] Backgrounds = { };
 
         static readonly string[] LANGUAGES = { "Common","Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc","Abyssal","Celestial",
@@ -38,16 +41,20 @@ namespace Dungeons_and_Dragons_Player_Maker {
             RaceSkill1.Items.AddRange(SKILLS);
             RaceSkill2.Items.AddRange(SKILLS);
             RaceLang.Items.AddRange(LANGUAGES);
+            ClassName = new Label[] { C1, C2, C3, C4, C5, C6 };
         }
 
         private void CreateCharacter_Load(object sender, EventArgs e) {
             RacePreview.Image = Dungeons_and_Dragons_Player_Maker.Races.Human;
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Remove(tabPage4);
         }
 
-        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e) {
-            if (Race == "" || (Races_SubRace.Contains(Race) && !SubRaces.Items.Contains(SubRaces.Text))) { MessageBox.Show("You haven't selected a valid race!"); e.Cancel = true; }
-            //    if (Class == "" || SubClasses.Text == "Select One") { MessageBox.Show("You haven't selected a valid class!"); e.Cancel = true; }
-            //     if (Background == "") { MessageBox.Show("You haven't selected a valid background!");e.Cancel = true; }
+        private void tabControl1_ControlAdded(object sender, ControlEventArgs e) {
+            switch (e.Control) {
+                //
+            }
         }
 
         #region Races -- Page 1
@@ -123,6 +130,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 { RaceSkill1.Text = "Select One"; RaceSkill1.Enabled = true; } else { RaceSkill1.Text = ""; RaceSkill1.Enabled = false; }
             if (AdditionalRaceSkill2.Contains(Race) && (Race == "Half-Elf" && !SubRaces.Text.SequenceEqual("Variant"))) 
                 { RaceSkill2.Text = "Select One"; RaceSkill2.Enabled = true; } else { RaceSkill2.Text = ""; RaceSkill2.Enabled = false; }
+            if (!tabControl1.TabPages.Contains(tabPage2)) { tabControl1.TabPages.Add(tabPage2); }
         }
 
         private void updateInfo(string race) {
@@ -204,20 +212,87 @@ namespace Dungeons_and_Dragons_Player_Maker {
         #endregion
 
         #region Classes -- Page 2
-        static readonly string[] AvailClasses = { };
-        static readonly string[] BARD_Subclasses = { };
-        static readonly string[] BARBARIAN_Subclasses = { };
-        static readonly string[] CLERIC_Subclasses = { };
-        static readonly string[] DRUID_Subclasses = { };
-        static readonly string[] FIGHTER_Subclasses = { };
-        static readonly string[] MONK_Subclasses = { };
-        static readonly string[] PALADIN_Subclasses = { };
-        static readonly string[] RANGER_Subclasses = { };
-        static readonly string[] ROGUE_Subclasses = { };
-        static readonly string[] SORCERER_Subclasses = { };
-        static readonly string[] WARLOCK_Subclasses = { };
-        static readonly string[] WIZARD_Subclasses = { };
-        static readonly string[] ARTIFICER_Subclasses = { };
+        int posC = 0;
+        string[] BARD_Subclasses = { "Lore","Valor" };
+        string[] BARBARIAN_Subclasses = { "Berserker","Totem Warrior" };
+        string[] CLERIC_Subclasses = { "Knowledge","Life","Light","Nature","Tempest","Trickery","War" };
+        string[] DRUID_Subclasses = { "Circle of Land - Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
+        "Circle of Land - Grassland", "Circle of Land - Mountain","Circle of Land - Swamp","Circle of Land - Underdark","Circle of the Moon"};
+        string[] FIGHTER_Subclasses = { "Champion","Battle Master","Eldritch Knight"};
+        string[] MONK_Subclasses = { "Way of the Open Hand","Way of the Shadow","Way of the Four Elements"};
+        string[] PALADIN_Subclasses = { "Oath of Devotion","Oath of the Ancients","Oath of Vengeance"};
+        string[] RANGER_Subclasses = { "Hunter","Beast Master"};
+        string[] ROGUE_Subclasses = { "Thief","Assassin","Arcane Trickster"};
+        string[] SORCERER_Subclasses = { "Draconic Bloodline","Wild Magic"};
+        string[] WARLOCK_Subclasses = { "The Archfey", "The Fiend","The Great Old One"};
+        string[] WIZARD_Subclasses = { "Abjuration","Conjuration","Divination","Enchantment","Evocation","Illusion","Necromancy","Transmuation"};
+        string[] ARTIFICER_Subclasses = { };
+
+        private void updateClass() {
+            int j = posC;
+            foreach (Label c in ClassName) {
+                c.Text = Classes[j];
+                if (j > Classes.Length - 2) { j = 0; } else { j++; }
+            }
+        }
+        
+        private void button4_Click(object sender, EventArgs e) { //UP
+            posC--;
+            if (posC < 0) { posC = Classes.Length - 1; }
+            updateClass();
+        }
+
+        private void button3_Click(object sender, EventArgs e) { // Down
+            posC++;
+            if (posC > Classes.Length - 1) { posC = 0; }
+            updateClass();
+        }
+
+        private void classClick(object sender, EventArgs e) {
+            Class = ((Label)sender).Text;
+            ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(Class);
+            SubClasses.Items.Clear();
+            SubClasses.Items.AddRange((string[])this.GetType().GetField((Class.ToUpper() + "_Subclasses").ToString(),
+                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public).GetValue(this));
+            SubClasses.SelectedIndex = 0;
+            classUpdate(Class,SubClasses.Text);
+            if (!tabControl1.TabPages.Contains(tabPage3)) { tabControl1.TabPages.Add(tabPage3); }
+        }
+
+        private void classHover(object sender, EventArgs e) {
+            if (Class != "") {
+                ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(Class);
+                classUpdate(Class,SubClass.Text);
+                return;
+            } else {
+                ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
+                classUpdate(((Label)sender).Text,"Select One");
+            }
+        }
+
+        private void classUpdate(string classBase,string subclass) {
+            string cLass = Class == "" ? classBase : Class;
+            try {
+                string[] baseClassStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(cLass + "-Base").Split("_");
+                BaseClass.Text = "";
+                foreach (string item in baseClassStats) {
+                    BaseClass.Text = BaseClass.Text + item + "\n";
+                }
+                if (subclass.SequenceEqual("Select One")) { SubClass.Text = "No Data Found"; } else {
+                    string[] subStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(cLass + "-" + subclass).Split("_");
+                    SubClass.Text = "";
+                    foreach (string item in subStats) {
+                        SubClass.Text = SubClass.Text + item + "\n";
+                    }
+                }
+            } catch (Exception) {
+                BaseClass.Text = "No Data Found";
+                SubClass.Text = "No Data Found";
+            }
+        }
+        private void SubClasses_SelectedIndexChanged(object sender, EventArgs e) {
+            classUpdate(Class,SubClasses.Text);
+        }
         #endregion
 
         #region Background -- Page 3
@@ -225,6 +300,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         #region Confirmation -- Page 4
         #endregion
+
 
     }
 }

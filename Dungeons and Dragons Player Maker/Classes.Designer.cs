@@ -91,6 +91,33 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bardic Insperation - 1, 20_Jack of All Trades - 2_Expertise - 3_Font of Inspiration - 5_Countercharm - 6_Magical Secrets - 10.
+        /// </summary>
+        internal static string Bard_Base {
+            get {
+                return ResourceManager.GetString("Bard-Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonus Proficiencies - 3_Cutting Words - 3_Additional Magical Secrets - 6_Peerless Skill - 14.
+        /// </summary>
+        internal static string Bard_Lore {
+            get {
+                return ResourceManager.GetString("Bard-Lore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonus Proficiencies - 3_Combat Inspiration - 3_Extra Attack - 6_Battle Magic - 14.
+        /// </summary>
+        internal static string Bard_Valor {
+            get {
+                return ResourceManager.GetString("Bard-Valor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Cleric {
@@ -157,6 +184,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
             get {
                 object obj = ResourceManager.GetObject("Rogue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item 1 - 1_Item 2 - 3, 5_etc..
+        /// </summary>
+        internal static string Sample {
+            get {
+                return ResourceManager.GetString("Sample", resourceCulture);
             }
         }
         

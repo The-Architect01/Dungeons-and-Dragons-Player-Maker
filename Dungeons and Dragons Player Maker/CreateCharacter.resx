@@ -57,4 +57,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Skill Proficiencies: Deception, Sleight of Hand
+Tool Proficiencies: Disguise kit, forgery kit
+Equipment: A set of fine clothes, a disguise kit, tools to pull off your favorite con, 15 gp
+Feature: False Identity</value>
+  </data>
 </root>

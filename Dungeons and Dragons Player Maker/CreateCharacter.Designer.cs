@@ -24,6 +24,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateCharacter));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,23 +43,31 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.R1 = new System.Windows.Forms.Label();
             this.RacePreview = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.SubClass = new System.Windows.Forms.Label();
+            this.SubClasses = new System.Windows.Forms.ComboBox();
+            this.C6 = new System.Windows.Forms.Label();
+            this.BaseClass = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.C5 = new System.Windows.Forms.Label();
+            this.C4 = new System.Windows.Forms.Label();
+            this.C3 = new System.Windows.Forms.Label();
+            this.C2 = new System.Windows.Forms.Label();
+            this.C1 = new System.Windows.Forms.Label();
+            this.ClassPreview = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Personality = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -68,15 +77,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RacePreview)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClassPreview)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -90,7 +97,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(512, 585);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
+            this.tabControl1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.tabControl1_ControlAdded);
             // 
             // tabPage1
             // 
@@ -279,17 +286,18 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.comboBox4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.SubClass);
+            this.tabPage2.Controls.Add(this.SubClasses);
+            this.tabPage2.Controls.Add(this.C6);
+            this.tabPage2.Controls.Add(this.BaseClass);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.C5);
+            this.tabPage2.Controls.Add(this.C4);
+            this.tabPage2.Controls.Add(this.C3);
+            this.tabPage2.Controls.Add(this.C2);
+            this.tabPage2.Controls.Add(this.C1);
+            this.tabPage2.Controls.Add(this.ClassPreview);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -298,35 +306,49 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage2.Text = "Classes";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // SubClass
             // 
-            this.comboBox4.Enabled = false;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(6, 294);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(208, 28);
-            this.comboBox4.TabIndex = 25;
-            this.comboBox4.Text = "Select One";
+            this.SubClass.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SubClass.Location = new System.Drawing.Point(234, 325);
+            this.SubClass.Name = "SubClass";
+            this.SubClass.Size = new System.Drawing.Size(264, 224);
+            this.SubClass.TabIndex = 26;
+            this.SubClass.Text = "Subclass Bonus:\r\nBonus Proficiencies - 3\r\nCutting Words - 3\r\nAdditional Magical S" +
+    "ecrets - 6\r\nPeerless Skill - 14\r\n";
+            this.SubClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // SubClasses
             // 
-            this.label3.Location = new System.Drawing.Point(6, 231);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 25);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Monk";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SubClasses.FormattingEnabled = true;
+            this.SubClasses.Location = new System.Drawing.Point(6, 294);
+            this.SubClasses.Name = "SubClasses";
+            this.SubClasses.Size = new System.Drawing.Size(208, 28);
+            this.SubClasses.TabIndex = 25;
+            this.SubClasses.Text = "Select One";
+            this.SubClasses.SelectedIndexChanged += new System.EventHandler(this.SubClasses_SelectedIndexChanged);
             // 
-            // label4
+            // C6
             // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 325);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 224);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "STR: +1 DEX: +1 CON: +1 WIS: +1 INT: +1 CHA: +1\r\nSpeed: 30\r\nSize: Medium\r\nLanguag" +
-    "es: Common\r\nProficiencies: None \r\nNotes: None";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C6.Location = new System.Drawing.Point(6, 231);
+            this.C6.Name = "C6";
+            this.C6.Size = new System.Drawing.Size(211, 25);
+            this.C6.TabIndex = 24;
+            this.C6.Text = "Monk";
+            this.C6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C6.Click += new System.EventHandler(this.classClick);
+            this.C6.MouseEnter += new System.EventHandler(this.classHover);
+            // 
+            // BaseClass
+            // 
+            this.BaseClass.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BaseClass.Location = new System.Drawing.Point(6, 325);
+            this.BaseClass.Name = "BaseClass";
+            this.BaseClass.Size = new System.Drawing.Size(222, 224);
+            this.BaseClass.TabIndex = 23;
+            this.BaseClass.Text = "Class Bonus:\r\nBardic Inspiration - 1, 20\r\nJack of All Trades - 2\r\nSong of Rest - " +
+    "2\r\nExpertise - 3\r\nFont of Inspiration - 5\r\nCountercharm - 6\r\nMagical Secrets - 1" +
+    "0\r\n";
+            this.BaseClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button3
             // 
@@ -336,6 +358,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.button3.TabIndex = 22;
             this.button3.Text = "DOWN";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -345,69 +368,87 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.button4.TabIndex = 21;
             this.button4.Text = "UP";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label5
+            // C5
             // 
-            this.label5.Location = new System.Drawing.Point(6, 194);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 25);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Fighter";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C5.Location = new System.Drawing.Point(6, 194);
+            this.C5.Name = "C5";
+            this.C5.Size = new System.Drawing.Size(211, 25);
+            this.C5.TabIndex = 20;
+            this.C5.Text = "Fighter";
+            this.C5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C5.Click += new System.EventHandler(this.classClick);
+            this.C5.MouseEnter += new System.EventHandler(this.classHover);
             // 
-            // label6
+            // C4
             // 
-            this.label6.Location = new System.Drawing.Point(6, 157);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(211, 25);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Druid";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C4.Location = new System.Drawing.Point(6, 157);
+            this.C4.Name = "C4";
+            this.C4.Size = new System.Drawing.Size(211, 25);
+            this.C4.TabIndex = 19;
+            this.C4.Text = "Druid";
+            this.C4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C4.Click += new System.EventHandler(this.classClick);
+            this.C4.MouseEnter += new System.EventHandler(this.classHover);
             // 
-            // label7
+            // C3
             // 
-            this.label7.Location = new System.Drawing.Point(6, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(211, 25);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Cleric";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C3.Location = new System.Drawing.Point(6, 120);
+            this.C3.Name = "C3";
+            this.C3.Size = new System.Drawing.Size(211, 25);
+            this.C3.TabIndex = 18;
+            this.C3.Text = "Cleric";
+            this.C3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C3.Click += new System.EventHandler(this.classClick);
+            this.C3.MouseEnter += new System.EventHandler(this.classHover);
             // 
-            // label8
+            // C2
             // 
-            this.label8.Location = new System.Drawing.Point(6, 83);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(211, 25);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Bard";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C2.Location = new System.Drawing.Point(6, 83);
+            this.C2.Name = "C2";
+            this.C2.Size = new System.Drawing.Size(211, 25);
+            this.C2.TabIndex = 17;
+            this.C2.Text = "Bard";
+            this.C2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C2.Click += new System.EventHandler(this.classClick);
+            this.C2.MouseEnter += new System.EventHandler(this.classHover);
             // 
-            // label9
+            // C1
             // 
-            this.label9.Location = new System.Drawing.Point(6, 46);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(211, 25);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Barbarian";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C1.Location = new System.Drawing.Point(6, 46);
+            this.C1.Name = "C1";
+            this.C1.Size = new System.Drawing.Size(211, 25);
+            this.C1.TabIndex = 16;
+            this.C1.Text = "Barbarian";
+            this.C1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.C1.Click += new System.EventHandler(this.classClick);
+            this.C1.MouseEnter += new System.EventHandler(this.classHover);
             // 
-            // pictureBox1
+            // ClassPreview
             // 
-            this.pictureBox1.Image = global::Dungeons_and_Dragons_Player_Maker.Classes.Bard;
-            this.pictureBox1.Location = new System.Drawing.Point(223, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(275, 329);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.ClassPreview.Image = global::Dungeons_and_Dragons_Player_Maker.Classes.Bard;
+            this.ClassPreview.Location = new System.Drawing.Point(223, 6);
+            this.ClassPreview.Name = "ClassPreview";
+            this.ClassPreview.Size = new System.Drawing.Size(275, 316);
+            this.ClassPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ClassPreview.TabIndex = 15;
+            this.ClassPreview.TabStop = false;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.comboBox11);
+            this.tabPage3.Controls.Add(this.comboBox12);
+            this.tabPage3.Controls.Add(this.comboBox9);
+            this.tabPage3.Controls.Add(this.comboBox3);
+            this.tabPage3.Controls.Add(this.comboBox8);
+            this.tabPage3.Controls.Add(this.comboBox2);
+            this.tabPage3.Controls.Add(this.Personality);
+            this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.comboBox5);
             this.tabPage3.Controls.Add(this.comboBox6);
             this.tabPage3.Controls.Add(this.comboBox7);
-            this.tabPage3.Controls.Add(this.comboBox8);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.button5);
@@ -417,7 +458,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Controls.Add(this.pictureBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -426,9 +466,83 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage3.Text = "Background";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comboBox11
+            // 
+            this.comboBox11.Enabled = false;
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Location = new System.Drawing.Point(260, 345);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(151, 28);
+            this.comboBox11.TabIndex = 37;
+            this.comboBox11.Text = "Skill 2";
+            // 
+            // comboBox12
+            // 
+            this.comboBox12.Enabled = false;
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Location = new System.Drawing.Point(91, 345);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(151, 28);
+            this.comboBox12.TabIndex = 36;
+            this.comboBox12.Text = "Lang 1";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(6, 379);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(491, 28);
+            this.comboBox9.TabIndex = 35;
+            this.comboBox9.Text = "Equipment";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(255, 499);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(242, 28);
+            this.comboBox3.TabIndex = 34;
+            this.comboBox3.Text = "Flaw";
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(255, 465);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(242, 28);
+            this.comboBox8.TabIndex = 33;
+            this.comboBox8.Text = "Ideal";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 499);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(242, 28);
+            this.comboBox2.TabIndex = 32;
+            this.comboBox2.Text = "Bond";
+            // 
+            // Personality
+            // 
+            this.Personality.FormattingEnabled = true;
+            this.Personality.Location = new System.Drawing.Point(6, 465);
+            this.Personality.Name = "Personality";
+            this.Personality.Size = new System.Drawing.Size(242, 28);
+            this.Personality.TabIndex = 31;
+            this.Personality.Text = "Personality";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(6, 443);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(492, 19);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Personality";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(6, 496);
+            this.label10.Location = new System.Drawing.Point(6, 290);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(492, 19);
             this.label10.TabIndex = 29;
@@ -439,41 +553,31 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             this.comboBox5.Enabled = false;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(346, 518);
+            this.comboBox5.Location = new System.Drawing.Point(346, 312);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(151, 28);
             this.comboBox5.TabIndex = 28;
-            this.comboBox5.Text = "Select One";
+            this.comboBox5.Text = "Tools 1";
             // 
             // comboBox6
             // 
             this.comboBox6.Enabled = false;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(176, 518);
+            this.comboBox6.Location = new System.Drawing.Point(176, 312);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(151, 28);
             this.comboBox6.TabIndex = 27;
-            this.comboBox6.Text = "Select One";
+            this.comboBox6.Text = "Skill 1";
             // 
             // comboBox7
             // 
             this.comboBox7.Enabled = false;
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(6, 518);
+            this.comboBox7.Location = new System.Drawing.Point(6, 312);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(151, 28);
             this.comboBox7.TabIndex = 26;
-            this.comboBox7.Text = "Select One";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.Enabled = false;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(6, 294);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(208, 28);
-            this.comboBox8.TabIndex = 25;
-            this.comboBox8.Text = "Natural";
+            this.comboBox7.Text = "Lang 1";
             // 
             // label11
             // 
@@ -487,12 +591,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(6, 338);
+            this.label12.Location = new System.Drawing.Point(220, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(492, 158);
+            this.label12.Size = new System.Drawing.Size(277, 281);
             this.label12.TabIndex = 23;
-            this.label12.Text = "STR: +1 DEX: +1 CON: +1 WIS: +1 INT: +1 CHA: +1\r\nSpeed: 30\r\nSize: Medium\r\nLanguag" +
-    "es: Common\r\nProficiencies: None \r\nNotes: None";
+            this.label12.Text = resources.GetString("label12.Text");
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button5
@@ -558,16 +661,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label17.Text = "Dwarf";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Dungeons_and_Dragons_Player_Maker.Races.Half_Elf;
-            this.pictureBox2.Location = new System.Drawing.Point(223, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(275, 329);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
@@ -591,9 +684,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RacePreview)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClassPreview)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,22 +712,21 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.ComboBox RaceSkill1;
         private System.Windows.Forms.ComboBox RaceLang;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox SubClasses;
+        private System.Windows.Forms.Label C6;
+        private System.Windows.Forms.Label BaseClass;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label C5;
+        private System.Windows.Forms.Label C4;
+        private System.Windows.Forms.Label C3;
+        private System.Windows.Forms.Label C2;
+        private System.Windows.Forms.Label C1;
+        private System.Windows.Forms.PictureBox ClassPreview;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button5;
@@ -645,6 +736,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox Personality;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.Label SubClass;
     }
 }
