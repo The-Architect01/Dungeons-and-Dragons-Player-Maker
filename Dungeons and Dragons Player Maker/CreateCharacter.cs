@@ -52,9 +52,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void tabControl1_ControlAdded(object sender, ControlEventArgs e) {
-            switch (e.Control) {
+           // switch (e.Control) {
                 //
-            }
+            //}
         }
 
         #region Races -- Page 1
@@ -211,20 +211,20 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         #region Classes -- Page 2
         int posC = 0;
-        string[] BARD_Subclasses = { "Lore", "Valor" };
-        string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
-        string[] CLERIC_Subclasses = { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
-        string[] DRUID_Subclasses = { "Circle of Land - Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
+        static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
+        static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
+        static readonly string[] CLERIC_Subclasses = { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
+        static readonly string[] DRUID_Subclasses = { "Circle of Land - Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
         "Circle of Land - Grassland", "Circle of Land - Mountain","Circle of Land - Swamp","Circle of Land - Underdark","Circle of the Moon"};
-        string[] FIGHTER_Subclasses = { "Champion", "Battle Master", "Eldritch Knight" };
-        string[] MONK_Subclasses = { "Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements" };
-        string[] PALADIN_Subclasses = { "Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance" };
-        string[] RANGER_Subclasses = { "Hunter", "Beast Master" };
-        string[] ROGUE_Subclasses = { "Thief", "Assassin", "Arcane Trickster" };
-        string[] SORCERER_Subclasses = { "Draconic Bloodline", "Wild Magic" };
-        string[] WARLOCK_Subclasses = { "The Archfey", "The Fiend", "The Great Old One" };
-        string[] WIZARD_Subclasses = { "Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmuation" };
-        string[] ARTIFICER_Subclasses = { };
+        static readonly string[] FIGHTER_Subclasses = { "Champion", "Battle Master", "Eldritch Knight" };
+        static readonly string[] MONK_Subclasses = { "Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements" };
+        static readonly string[] PALADIN_Subclasses = { "Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance" };
+        static readonly string[] RANGER_Subclasses = { "Hunter", "Beast Master" };
+        static readonly string[] ROGUE_Subclasses = { "Thief", "Assassin", "Arcane Trickster" };
+        static readonly string[] SORCERER_Subclasses = { "Draconic Bloodline", "Wild Magic" };
+        static readonly string[] WARLOCK_Subclasses = { "The Archfey", "The Fiend", "The Great Old One" };
+        static readonly string[] WIZARD_Subclasses = { "Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmuation" };
+        static readonly string[] ARTIFICER_Subclasses = { };
 
         private void updateClass() {
             int j = posC;
@@ -251,7 +251,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(Class);
             SubClasses.Items.Clear();
             SubClasses.Items.AddRange((string[])this.GetType().GetField((Class.ToUpper() + "_Subclasses").ToString(),
-                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public).GetValue(this));
+                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));
             SubClasses.SelectedIndex = 0;
             classUpdate(Class, SubClasses.Text);
             if (!tabControl1.TabPages.Contains(tabPage3)) { tabControl1.TabPages.Add(tabPage3); }
@@ -288,15 +288,145 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         private void SubClasses_SelectedIndexChanged(object sender, EventArgs e) {
             classUpdate(Class, SubClasses.Text);
-            tabControl1.TabPages.Add(tabPage5);
         }
 
         #endregion
 
         #region Background -- Page 3
-        private void checkIfFinished() {
-            if(Background.Text != "" && Personality.Text != "" && Ideal.Text !="" &&
-               Bond.Text != "" && Flaw.Text != "") {
+        private void Chosen_Background_TextChanged(object sender, EventArgs e) {
+            if (!Chosen_Background.Text.SequenceEqual("????")) {
+                Orphan.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                for (int i = 0; i < 2; i++) {
+                    Wealthy.Enabled = false; Wealthy.Visible = false;
+                    Wealthy.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Raised.Enabled = false; Raised.Visible = false;
+                    Raised.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Great_Deed.Enabled = false; Great_Deed.Visible = false;
+                    Great_Deed.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Sea.Enabled = false; Sea.Visible = false;
+                    Sea.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Military.Enabled = false; Military.Visible = false;
+                    Military.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Falsifying_Documents.Enabled = false;
+                    Falsifying_Documents.Visible = false;
+                    Falsifying_Documents.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Trade.Enabled = false; Trade.Visible = false;
+                    Trade.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Craft_Performance.Enabled = false; Craft_Performance.Visible = false;
+                    Craft_Performance.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Crime.Enabled = false; Crime.Visible = false;
+                    Crime.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                    Faith.Enabled = false; Faith.Visible = false;
+                    Faith.Controls.OfType<RadioButton>().ToList().ForEach(p => p.Checked = false);
+                }
+                Personality.Text = "Select One"; Ideal.Text = "Select One"; Bond.Text = "Select One"; Flaw.Text = "Select One";
+                string[] p = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(Chosen_Background.Text + "-Personality").Split("_");
+                string[] I = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(Chosen_Background.Text + "-Ideal").Split("_");
+                string[] b = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(Chosen_Background.Text + "-Bond").Split("_");
+                string[] f = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(Chosen_Background.Text + "-Flaw").Split("_");
+                Personality.Items.Clear(); Ideal.Items.Clear(); Bond.Items.Clear(); Flaw.Items.Clear();
+                Personality.Items.AddRange(p); Ideal.Items.AddRange(I); Bond.Items.AddRange(b); Flaw.Items.AddRange(f);
+                Feature.Text = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(Chosen_Background.Text);
+            }
+        }
+        private void YesO_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Urchin";
+        }
+        private void NoO_CheckedChanged(object sender, EventArgs e) {
+            Wealthy.Visible = true;
+            Wealthy.Enabled = true;
+        }
+        private void YesW_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Noble";
+        }
+        private void NoW_CheckedChanged(object sender, EventArgs e) {
+            Great_Deed.Visible = true;
+            Great_Deed.Enabled = true;
+        }
+        private void YesGD_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Folk Hero";
+        }
+        private void NoGD_CheckedChanged(object sender, EventArgs e) {
+            Raised.Enabled = true;
+            Raised.Visible = true;
+             
+        }
+        private void Coast_CheckedChanged(object sender, EventArgs e) {
+            Sea.Visible = true;
+            Sea.Enabled = true;
+             
+        }
+        private void Wilderness_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Outlander";
+            
+        }
+        private void City_CheckedChanged(object sender, EventArgs e) {
+            Crime.Enabled = true;
+            Crime.Visible = true;
+             
+        }
+        private void Church_CheckedChanged(object sender, EventArgs e) {
+            Faith.Visible = true;
+            Faith.Enabled = true;
+             
+        }
+        private void YesS_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Sailor";
+        }
+        private void NoS_CheckedChanged(object sender, EventArgs e) {
+            Crime.Visible = true;
+            Crime.Enabled = true;
+             
+        }
+        private void YesF_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Hermit";
+        }
+        private void NoF_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Acolyte";
+        }
+        private void YesC_CheckedChanged(object sender, EventArgs e) {
+            Falsifying_Documents.Visible = true;
+            Falsifying_Documents.Enabled = true;
+             
+        }
+        private void NoC_CheckedChanged(object sender, EventArgs e) {
+            Military.Visible = true;
+            Military.Enabled = true;
+             
+        }
+        private void YesFD_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Charlatan";
+        }
+        private void NoFD_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Criminal";
+        }
+        private void YesM_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Soldier";
+        }
+        private void NoM_CheckedChanged(object sender, EventArgs e) {
+            Trade.Enabled = true;
+            Trade.Visible = true;
+             
+        }
+        private void YesT_CheckedChanged(object sender, EventArgs e) {
+            Craft_Performance.Enabled = true;
+            Craft_Performance.Visible = true;
+             
+        }
+        private void NoT_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Sage";
+        }
+        private void Craft_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Guild Artisan";
+            
+        }
+        private void Performance_CheckedChanged(object sender, EventArgs e) {
+            Chosen_Background.Text = "Entertainer";
+            
+        }
+        private void Personality_TextChanged(object sender, EventArgs e) {
+            if (!Personality.Text.SequenceEqual("Select One") && !Ideal.Text.SequenceEqual("Select One") &&
+               !Bond.Text.SequenceEqual("Select One") && !Flaw.Text.SequenceEqual("Select One") && !tabControl1.TabPages.Contains(tabPage5)) {
                 tabControl1.TabPages.Add(tabPage5);
             }
         }
@@ -307,6 +437,5 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         #region Confirmation -- Page 5
         #endregion
-
     }
 }

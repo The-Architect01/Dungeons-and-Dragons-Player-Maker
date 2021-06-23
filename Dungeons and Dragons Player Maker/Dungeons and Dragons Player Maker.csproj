@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="Backgrounds.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Backgrounds.resx</DependentUpon>
+    </Compile>
     <Compile Update="Classes.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -26,6 +31,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Backgrounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Backgrounds.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Classes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Classes.Designer.cs</LastGenOutput>

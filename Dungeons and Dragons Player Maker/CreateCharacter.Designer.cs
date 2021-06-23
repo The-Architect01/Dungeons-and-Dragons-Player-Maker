@@ -55,59 +55,82 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.C1 = new System.Windows.Forms.Label();
             this.ClassPreview = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.No1 = new System.Windows.Forms.RadioButton();
-            this.Yes1 = new System.Windows.Forms.RadioButton();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Feature = new System.Windows.Forms.Label();
+            this.Craft_Performance = new System.Windows.Forms.Panel();
+            this.Performance = new System.Windows.Forms.RadioButton();
+            this.Craft = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.Great_Deed = new System.Windows.Forms.Panel();
+            this.NoGD = new System.Windows.Forms.RadioButton();
+            this.YesGD = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Falsifying_Documents = new System.Windows.Forms.Panel();
+            this.NoFD = new System.Windows.Forms.RadioButton();
+            this.YesFD = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Faith = new System.Windows.Forms.Panel();
+            this.NoF = new System.Windows.Forms.RadioButton();
+            this.YesF = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Trade = new System.Windows.Forms.Panel();
+            this.NoT = new System.Windows.Forms.RadioButton();
+            this.YesT = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Military = new System.Windows.Forms.Panel();
+            this.NoM = new System.Windows.Forms.RadioButton();
+            this.YesM = new System.Windows.Forms.RadioButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Crime = new System.Windows.Forms.Panel();
+            this.NoC = new System.Windows.Forms.RadioButton();
+            this.YesC = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Sea = new System.Windows.Forms.Panel();
+            this.NoS = new System.Windows.Forms.RadioButton();
+            this.YesS = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Wealthy = new System.Windows.Forms.Panel();
+            this.NoW = new System.Windows.Forms.RadioButton();
+            this.YesW = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Chosen_Background = new System.Windows.Forms.Label();
             this.Flaw = new System.Windows.Forms.ComboBox();
             this.Ideal = new System.Windows.Forms.ComboBox();
             this.Bond = new System.Windows.Forms.ComboBox();
             this.Personality = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Orphan = new System.Windows.Forms.Panel();
+            this.NoO = new System.Windows.Forms.RadioButton();
+            this.YesO = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Raised = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Coast = new System.Windows.Forms.RadioButton();
+            this.Wilderness = new System.Windows.Forms.RadioButton();
+            this.City = new System.Windows.Forms.RadioButton();
+            this.Church = new System.Windows.Forms.RadioButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Print = new System.Windows.Forms.Button();
             this.Share = new System.Windows.Forms.Button();
             this.Restart = new System.Windows.Forms.Button();
             this.Play = new System.Windows.Forms.Button();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.radioButton16 = new System.Windows.Forms.RadioButton();
-            this.radioButton17 = new System.Windows.Forms.RadioButton();
-            this.radioButton18 = new System.Windows.Forms.RadioButton();
-            this.radioButton19 = new System.Windows.Forms.RadioButton();
-            this.radioButton20 = new System.Windows.Forms.RadioButton();
-            this.radioButton21 = new System.Windows.Forms.RadioButton();
-            this.radioButton22 = new System.Windows.Forms.RadioButton();
-            this.Background = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RacePreview)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClassPreview)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.Craft_Performance.SuspendLayout();
+            this.Great_Deed.SuspendLayout();
+            this.Falsifying_Documents.SuspendLayout();
+            this.Faith.SuspendLayout();
+            this.Trade.SuspendLayout();
+            this.Military.SuspendLayout();
+            this.Crime.SuspendLayout();
+            this.Sea.SuspendLayout();
+            this.Wealthy.SuspendLayout();
+            this.Orphan.SuspendLayout();
+            this.Raised.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -463,47 +486,24 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.Background);
-            this.tabPage3.Controls.Add(this.radioButton21);
-            this.tabPage3.Controls.Add(this.radioButton22);
-            this.tabPage3.Controls.Add(this.radioButton19);
-            this.tabPage3.Controls.Add(this.radioButton20);
-            this.tabPage3.Controls.Add(this.radioButton17);
-            this.tabPage3.Controls.Add(this.radioButton18);
-            this.tabPage3.Controls.Add(this.radioButton15);
-            this.tabPage3.Controls.Add(this.radioButton16);
-            this.tabPage3.Controls.Add(this.radioButton13);
-            this.tabPage3.Controls.Add(this.radioButton14);
-            this.tabPage3.Controls.Add(this.radioButton11);
-            this.tabPage3.Controls.Add(this.radioButton12);
-            this.tabPage3.Controls.Add(this.radioButton9);
-            this.tabPage3.Controls.Add(this.radioButton10);
-            this.tabPage3.Controls.Add(this.radioButton8);
-            this.tabPage3.Controls.Add(this.radioButton7);
-            this.tabPage3.Controls.Add(this.radioButton6);
-            this.tabPage3.Controls.Add(this.radioButton5);
-            this.tabPage3.Controls.Add(this.radioButton1);
-            this.tabPage3.Controls.Add(this.radioButton2);
-            this.tabPage3.Controls.Add(this.radioButton3);
-            this.tabPage3.Controls.Add(this.radioButton4);
-            this.tabPage3.Controls.Add(this.No1);
-            this.tabPage3.Controls.Add(this.Yes1);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.Feature);
+            this.tabPage3.Controls.Add(this.Craft_Performance);
+            this.tabPage3.Controls.Add(this.Great_Deed);
+            this.tabPage3.Controls.Add(this.Falsifying_Documents);
+            this.tabPage3.Controls.Add(this.Faith);
+            this.tabPage3.Controls.Add(this.Trade);
+            this.tabPage3.Controls.Add(this.Military);
+            this.tabPage3.Controls.Add(this.Crime);
+            this.tabPage3.Controls.Add(this.Sea);
+            this.tabPage3.Controls.Add(this.Wealthy);
+            this.tabPage3.Controls.Add(this.Chosen_Background);
             this.tabPage3.Controls.Add(this.Flaw);
             this.tabPage3.Controls.Add(this.Ideal);
             this.tabPage3.Controls.Add(this.Bond);
             this.tabPage3.Controls.Add(this.Personality);
             this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.Orphan);
+            this.tabPage3.Controls.Add(this.Raised);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -512,332 +512,484 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage3.Text = "Background";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // radioButton13
+            // Feature
             // 
-            this.radioButton13.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton13.Location = new System.Drawing.Point(378, 154);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(50, 30);
-            this.radioButton13.TabIndex = 70;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "No";
-            this.radioButton13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton13.UseVisualStyleBackColor = true;
+            this.Feature.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Feature.Location = new System.Drawing.Point(255, 394);
+            this.Feature.Name = "Feature";
+            this.Feature.Size = new System.Drawing.Size(243, 49);
+            this.Feature.TabIndex = 89;
+            this.Feature.Text = "????";
+            this.Feature.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // radioButton14
+            // Craft_Performance
             // 
-            this.radioButton14.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton14.Location = new System.Drawing.Point(275, 154);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(50, 30);
-            this.radioButton14.TabIndex = 69;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Yes";
-            this.radioButton14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton14.UseVisualStyleBackColor = true;
+            this.Craft_Performance.Controls.Add(this.Performance);
+            this.Craft_Performance.Controls.Add(this.Craft);
+            this.Craft_Performance.Controls.Add(this.label5);
+            this.Craft_Performance.Location = new System.Drawing.Point(120, 316);
+            this.Craft_Performance.Name = "Craft_Performance";
+            this.Craft_Performance.Size = new System.Drawing.Size(268, 69);
+            this.Craft_Performance.TabIndex = 87;
+            this.Craft_Performance.Visible = false;
             // 
-            // radioButton11
+            // Performance
             // 
-            this.radioButton11.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton11.Location = new System.Drawing.Point(118, 221);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(50, 30);
-            this.radioButton11.TabIndex = 68;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "No";
-            this.radioButton11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.Performance.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Performance.Location = new System.Drawing.Point(135, 29);
+            this.Performance.Name = "Performance";
+            this.Performance.Size = new System.Drawing.Size(99, 30);
+            this.Performance.TabIndex = 57;
+            this.Performance.TabStop = true;
+            this.Performance.Text = "Performace";
+            this.Performance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Performance.UseVisualStyleBackColor = true;
+            this.Performance.CheckedChanged += new System.EventHandler(this.Performance_CheckedChanged);
             // 
-            // radioButton12
+            // Craft
             // 
-            this.radioButton12.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton12.Location = new System.Drawing.Point(37, 221);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(50, 30);
-            this.radioButton12.TabIndex = 67;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Yes";
-            this.radioButton12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton12.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton9.Location = new System.Drawing.Point(118, 154);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(50, 30);
-            this.radioButton9.TabIndex = 66;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "No";
-            this.radioButton9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton10.Location = new System.Drawing.Point(37, 154);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(50, 30);
-            this.radioButton10.TabIndex = 65;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Yes";
-            this.radioButton10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton8.Location = new System.Drawing.Point(411, 87);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(65, 30);
-            this.radioButton8.TabIndex = 64;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Church";
-            this.radioButton8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton7.Location = new System.Drawing.Point(361, 87);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(51, 30);
-            this.radioButton7.TabIndex = 63;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "City";
-            this.radioButton7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton6.Location = new System.Drawing.Point(263, 87);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(99, 30);
-            this.radioButton6.TabIndex = 62;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Wilderness";
-            this.radioButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton5.Location = new System.Drawing.Point(199, 87);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(65, 30);
-            this.radioButton5.TabIndex = 61;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Coast";
-            this.radioButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.Location = new System.Drawing.Point(378, 31);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(50, 30);
-            this.radioButton1.TabIndex = 60;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "No";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.Location = new System.Drawing.Point(275, 31);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 30);
-            this.radioButton2.TabIndex = 59;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Yes";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton3.Location = new System.Drawing.Point(118, 82);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(50, 30);
-            this.radioButton3.TabIndex = 58;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "No";
-            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton4.Location = new System.Drawing.Point(37, 82);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(50, 30);
-            this.radioButton4.TabIndex = 57;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Yes";
-            this.radioButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // No1
-            // 
-            this.No1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.No1.Location = new System.Drawing.Point(118, 26);
-            this.No1.Name = "No1";
-            this.No1.Size = new System.Drawing.Size(50, 30);
-            this.No1.TabIndex = 54;
-            this.No1.TabStop = true;
-            this.No1.Text = "No";
-            this.No1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.No1.UseVisualStyleBackColor = true;
-            // 
-            // Yes1
-            // 
-            this.Yes1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.Yes1.Location = new System.Drawing.Point(37, 26);
-            this.Yes1.Name = "Yes1";
-            this.Yes1.Size = new System.Drawing.Size(50, 30);
-            this.Yes1.TabIndex = 49;
-            this.Yes1.TabStop = true;
-            this.Yes1.Text = "Yes";
-            this.Yes1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Yes1.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.Location = new System.Drawing.Point(112, 320);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(272, 20);
-            this.label13.TabIndex = 46;
-            this.label13.Text = "Is this trade a craft or a Performance?";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(283, 264);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(193, 20);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Did you have a trade?";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(231, 198);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(259, 20);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Did you serve in your local Military?";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(6, 264);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(271, 20);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Are you good at falsifying documents?";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(231, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(255, 20);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Did you study your faith by yourself?";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(12, 198);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(195, 20);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Did crime help you get by?";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(12, 131);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 20);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Were you trained on the sea?";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(217, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(224, 20);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Where were you raised?";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Craft.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Craft.Location = new System.Drawing.Point(28, 29);
+            this.Craft.Name = "Craft";
+            this.Craft.Size = new System.Drawing.Size(99, 30);
+            this.Craft.TabIndex = 56;
+            this.Craft.TabStop = true;
+            this.Craft.Text = "Craft";
+            this.Craft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Craft.UseVisualStyleBackColor = true;
+            this.Craft.CheckedChanged += new System.EventHandler(this.Craft_CheckedChanged);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(231, 8);
+            this.label5.Location = new System.Drawing.Point(0, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(224, 20);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Did you Commit a Great Deed?";
+            this.label5.Size = new System.Drawing.Size(268, 25);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "Is this trade a craft or a performance?";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Great_Deed
+            // 
+            this.Great_Deed.Controls.Add(this.NoGD);
+            this.Great_Deed.Controls.Add(this.YesGD);
+            this.Great_Deed.Controls.Add(this.label9);
+            this.Great_Deed.Location = new System.Drawing.Point(208, 0);
+            this.Great_Deed.Name = "Great_Deed";
+            this.Great_Deed.Size = new System.Drawing.Size(268, 63);
+            this.Great_Deed.TabIndex = 86;
+            this.Great_Deed.Visible = false;
+            // 
+            // NoGD
+            // 
+            this.NoGD.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoGD.Location = new System.Drawing.Point(143, 29);
+            this.NoGD.Name = "NoGD";
+            this.NoGD.Size = new System.Drawing.Size(50, 30);
+            this.NoGD.TabIndex = 57;
+            this.NoGD.TabStop = true;
+            this.NoGD.Text = "No";
+            this.NoGD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoGD.UseVisualStyleBackColor = true;
+            this.NoGD.CheckedChanged += new System.EventHandler(this.NoGD_CheckedChanged);
+            // 
+            // YesGD
+            // 
+            this.YesGD.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesGD.Location = new System.Drawing.Point(62, 29);
+            this.YesGD.Name = "YesGD";
+            this.YesGD.Size = new System.Drawing.Size(50, 30);
+            this.YesGD.TabIndex = 56;
+            this.YesGD.TabStop = true;
+            this.YesGD.Text = "Yes";
+            this.YesGD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesGD.UseVisualStyleBackColor = true;
+            this.YesGD.CheckedChanged += new System.EventHandler(this.YesGD_CheckedChanged);
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(0, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(268, 25);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "Did you commit a great deed?";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Falsifying_Documents
+            // 
+            this.Falsifying_Documents.Controls.Add(this.NoFD);
+            this.Falsifying_Documents.Controls.Add(this.YesFD);
+            this.Falsifying_Documents.Controls.Add(this.label8);
+            this.Falsifying_Documents.Location = new System.Drawing.Point(2, 248);
+            this.Falsifying_Documents.Name = "Falsifying_Documents";
+            this.Falsifying_Documents.Size = new System.Drawing.Size(268, 69);
+            this.Falsifying_Documents.TabIndex = 83;
+            this.Falsifying_Documents.Visible = false;
+            // 
+            // NoFD
+            // 
+            this.NoFD.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoFD.Location = new System.Drawing.Point(117, 29);
+            this.NoFD.Name = "NoFD";
+            this.NoFD.Size = new System.Drawing.Size(50, 30);
+            this.NoFD.TabIndex = 57;
+            this.NoFD.TabStop = true;
+            this.NoFD.Text = "No";
+            this.NoFD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoFD.UseVisualStyleBackColor = true;
+            this.NoFD.CheckedChanged += new System.EventHandler(this.NoFD_CheckedChanged);
+            // 
+            // YesFD
+            // 
+            this.YesFD.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesFD.Location = new System.Drawing.Point(36, 29);
+            this.YesFD.Name = "YesFD";
+            this.YesFD.Size = new System.Drawing.Size(50, 30);
+            this.YesFD.TabIndex = 56;
+            this.YesFD.TabStop = true;
+            this.YesFD.Text = "Yes";
+            this.YesFD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesFD.UseVisualStyleBackColor = true;
+            this.YesFD.CheckedChanged += new System.EventHandler(this.YesFD_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(0, 1);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(268, 25);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Are you good at falsifying documents?";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Faith
+            // 
+            this.Faith.Controls.Add(this.NoF);
+            this.Faith.Controls.Add(this.YesF);
+            this.Faith.Controls.Add(this.label11);
+            this.Faith.Location = new System.Drawing.Point(229, 123);
+            this.Faith.Name = "Faith";
+            this.Faith.Size = new System.Drawing.Size(268, 69);
+            this.Faith.TabIndex = 86;
+            this.Faith.Visible = false;
+            // 
+            // NoF
+            // 
+            this.NoF.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoF.Location = new System.Drawing.Point(143, 29);
+            this.NoF.Name = "NoF";
+            this.NoF.Size = new System.Drawing.Size(50, 30);
+            this.NoF.TabIndex = 57;
+            this.NoF.TabStop = true;
+            this.NoF.Text = "No";
+            this.NoF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoF.UseVisualStyleBackColor = true;
+            this.NoF.CheckedChanged += new System.EventHandler(this.NoF_CheckedChanged);
+            // 
+            // YesF
+            // 
+            this.YesF.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesF.Location = new System.Drawing.Point(62, 29);
+            this.YesF.Name = "YesF";
+            this.YesF.Size = new System.Drawing.Size(50, 30);
+            this.YesF.TabIndex = 56;
+            this.YesF.TabStop = true;
+            this.YesF.Text = "Yes";
+            this.YesF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesF.UseVisualStyleBackColor = true;
+            this.YesF.CheckedChanged += new System.EventHandler(this.YesF_CheckedChanged);
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(0, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(268, 25);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Did you study your faith by yourself?";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Trade
+            // 
+            this.Trade.Controls.Add(this.NoT);
+            this.Trade.Controls.Add(this.YesT);
+            this.Trade.Controls.Add(this.label10);
+            this.Trade.Location = new System.Drawing.Point(283, 252);
+            this.Trade.Name = "Trade";
+            this.Trade.Size = new System.Drawing.Size(187, 65);
+            this.Trade.TabIndex = 84;
+            this.Trade.Visible = false;
+            // 
+            // NoT
+            // 
+            this.NoT.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoT.Location = new System.Drawing.Point(100, 27);
+            this.NoT.Name = "NoT";
+            this.NoT.Size = new System.Drawing.Size(50, 30);
+            this.NoT.TabIndex = 57;
+            this.NoT.TabStop = true;
+            this.NoT.Text = "No";
+            this.NoT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoT.UseVisualStyleBackColor = true;
+            this.NoT.CheckedChanged += new System.EventHandler(this.NoT_CheckedChanged);
+            // 
+            // YesT
+            // 
+            this.YesT.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesT.Location = new System.Drawing.Point(19, 27);
+            this.YesT.Name = "YesT";
+            this.YesT.Size = new System.Drawing.Size(50, 30);
+            this.YesT.TabIndex = 56;
+            this.YesT.TabStop = true;
+            this.YesT.Text = "Yes";
+            this.YesT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesT.UseVisualStyleBackColor = true;
+            this.YesT.CheckedChanged += new System.EventHandler(this.YesT_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(0, 1);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(190, 25);
+            this.label10.TabIndex = 55;
+            this.label10.Text = "Did you have a trade?";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Military
+            // 
+            this.Military.Controls.Add(this.NoM);
+            this.Military.Controls.Add(this.YesM);
+            this.Military.Controls.Add(this.label12);
+            this.Military.Location = new System.Drawing.Point(240, 189);
+            this.Military.Name = "Military";
+            this.Military.Size = new System.Drawing.Size(268, 69);
+            this.Military.TabIndex = 85;
+            this.Military.Visible = false;
+            // 
+            // NoM
+            // 
+            this.NoM.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoM.Location = new System.Drawing.Point(143, 29);
+            this.NoM.Name = "NoM";
+            this.NoM.Size = new System.Drawing.Size(50, 30);
+            this.NoM.TabIndex = 57;
+            this.NoM.TabStop = true;
+            this.NoM.Text = "No";
+            this.NoM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoM.UseVisualStyleBackColor = true;
+            this.NoM.CheckedChanged += new System.EventHandler(this.NoM_CheckedChanged);
+            // 
+            // YesM
+            // 
+            this.YesM.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesM.Location = new System.Drawing.Point(62, 29);
+            this.YesM.Name = "YesM";
+            this.YesM.Size = new System.Drawing.Size(50, 30);
+            this.YesM.TabIndex = 56;
+            this.YesM.TabStop = true;
+            this.YesM.Text = "Yes";
+            this.YesM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesM.UseVisualStyleBackColor = true;
+            this.YesM.CheckedChanged += new System.EventHandler(this.YesM_CheckedChanged);
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(0, 1);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(268, 25);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "Did you serve in your local Military?";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Crime
+            // 
+            this.Crime.Controls.Add(this.NoC);
+            this.Crime.Controls.Add(this.YesC);
+            this.Crime.Controls.Add(this.label7);
+            this.Crime.Location = new System.Drawing.Point(18, 187);
+            this.Crime.Name = "Crime";
+            this.Crime.Size = new System.Drawing.Size(187, 69);
+            this.Crime.TabIndex = 83;
+            this.Crime.Visible = false;
+            // 
+            // NoC
+            // 
+            this.NoC.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoC.Location = new System.Drawing.Point(100, 27);
+            this.NoC.Name = "NoC";
+            this.NoC.Size = new System.Drawing.Size(50, 30);
+            this.NoC.TabIndex = 57;
+            this.NoC.TabStop = true;
+            this.NoC.Text = "No";
+            this.NoC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoC.UseVisualStyleBackColor = true;
+            this.NoC.CheckedChanged += new System.EventHandler(this.NoC_CheckedChanged);
+            // 
+            // YesC
+            // 
+            this.YesC.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesC.Location = new System.Drawing.Point(19, 27);
+            this.YesC.Name = "YesC";
+            this.YesC.Size = new System.Drawing.Size(50, 30);
+            this.YesC.TabIndex = 56;
+            this.YesC.TabStop = true;
+            this.YesC.Text = "Yes";
+            this.YesC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesC.UseVisualStyleBackColor = true;
+            this.YesC.CheckedChanged += new System.EventHandler(this.YesC_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(0, 1);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(190, 25);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "Did crime help you get by?";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Sea
+            // 
+            this.Sea.Controls.Add(this.NoS);
+            this.Sea.Controls.Add(this.YesS);
+            this.Sea.Controls.Add(this.label4);
+            this.Sea.Location = new System.Drawing.Point(9, 122);
+            this.Sea.Name = "Sea";
+            this.Sea.Size = new System.Drawing.Size(206, 69);
+            this.Sea.TabIndex = 82;
+            this.Sea.Visible = false;
+            // 
+            // NoS
+            // 
+            this.NoS.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoS.Location = new System.Drawing.Point(110, 29);
+            this.NoS.Name = "NoS";
+            this.NoS.Size = new System.Drawing.Size(50, 30);
+            this.NoS.TabIndex = 57;
+            this.NoS.TabStop = true;
+            this.NoS.Text = "No";
+            this.NoS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoS.UseVisualStyleBackColor = true;
+            this.NoS.CheckedChanged += new System.EventHandler(this.NoS_CheckedChanged);
+            // 
+            // YesS
+            // 
+            this.YesS.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesS.Location = new System.Drawing.Point(29, 29);
+            this.YesS.Name = "YesS";
+            this.YesS.Size = new System.Drawing.Size(50, 30);
+            this.YesS.TabIndex = 56;
+            this.YesS.TabStop = true;
+            this.YesS.Text = "Yes";
+            this.YesS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesS.UseVisualStyleBackColor = true;
+            this.YesS.CheckedChanged += new System.EventHandler(this.YesS_CheckedChanged);
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(23, 59);
+            this.label4.Location = new System.Drawing.Point(0, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 20);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Is your Family Wealthy?";
+            this.label4.Size = new System.Drawing.Size(206, 25);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "Were you trained on the sea?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // Wealthy
             // 
-            this.label3.Location = new System.Drawing.Point(23, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 25);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Are you an Orphan?";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Wealthy.Controls.Add(this.NoW);
+            this.Wealthy.Controls.Add(this.YesW);
+            this.Wealthy.Controls.Add(this.label14);
+            this.Wealthy.Location = new System.Drawing.Point(25, 60);
+            this.Wealthy.Name = "Wealthy";
+            this.Wealthy.Size = new System.Drawing.Size(160, 69);
+            this.Wealthy.TabIndex = 82;
+            this.Wealthy.Visible = false;
+            // 
+            // NoW
+            // 
+            this.NoW.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoW.Location = new System.Drawing.Point(95, 27);
+            this.NoW.Name = "NoW";
+            this.NoW.Size = new System.Drawing.Size(50, 30);
+            this.NoW.TabIndex = 57;
+            this.NoW.TabStop = true;
+            this.NoW.Text = "No";
+            this.NoW.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoW.UseVisualStyleBackColor = true;
+            this.NoW.CheckedChanged += new System.EventHandler(this.NoW_CheckedChanged);
+            // 
+            // YesW
+            // 
+            this.YesW.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesW.Location = new System.Drawing.Point(14, 27);
+            this.YesW.Name = "YesW";
+            this.YesW.Size = new System.Drawing.Size(50, 30);
+            this.YesW.TabIndex = 56;
+            this.YesW.TabStop = true;
+            this.YesW.Text = "Yes";
+            this.YesW.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesW.UseVisualStyleBackColor = true;
+            this.YesW.CheckedChanged += new System.EventHandler(this.YesW_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(0, 1);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(162, 25);
+            this.label14.TabIndex = 55;
+            this.label14.Text = "Is your Family Wealthy?";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Chosen_Background
+            // 
+            this.Chosen_Background.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Chosen_Background.Location = new System.Drawing.Point(6, 394);
+            this.Chosen_Background.Name = "Chosen_Background";
+            this.Chosen_Background.Size = new System.Drawing.Size(241, 49);
+            this.Chosen_Background.TabIndex = 80;
+            this.Chosen_Background.Text = "????";
+            this.Chosen_Background.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Chosen_Background.TextChanged += new System.EventHandler(this.Chosen_Background_TextChanged);
             // 
             // Flaw
             // 
+            this.Flaw.DropDownWidth = 650;
             this.Flaw.FormattingEnabled = true;
-            this.Flaw.Location = new System.Drawing.Point(255, 499);
+            this.Flaw.Location = new System.Drawing.Point(256, 499);
             this.Flaw.Name = "Flaw";
             this.Flaw.Size = new System.Drawing.Size(242, 28);
             this.Flaw.TabIndex = 34;
-            this.Flaw.Text = "Flaw";
+            this.Flaw.Text = "Select One";
+            this.Flaw.TextChanged += new System.EventHandler(this.Personality_TextChanged);
             // 
             // Ideal
             // 
+            this.Ideal.DropDownWidth = 650;
             this.Ideal.FormattingEnabled = true;
-            this.Ideal.Location = new System.Drawing.Point(255, 465);
+            this.Ideal.Location = new System.Drawing.Point(256, 465);
             this.Ideal.Name = "Ideal";
             this.Ideal.Size = new System.Drawing.Size(242, 28);
             this.Ideal.TabIndex = 33;
-            this.Ideal.Text = "Ideal";
+            this.Ideal.Text = "Select One";
+            this.Ideal.TextChanged += new System.EventHandler(this.Personality_TextChanged);
             // 
             // Bond
             // 
+            this.Bond.DropDownWidth = 650;
             this.Bond.FormattingEnabled = true;
             this.Bond.Location = new System.Drawing.Point(6, 499);
             this.Bond.Name = "Bond";
             this.Bond.Size = new System.Drawing.Size(242, 28);
             this.Bond.TabIndex = 32;
-            this.Bond.Text = "Bond";
+            this.Bond.Text = "Select One";
+            this.Bond.TextChanged += new System.EventHandler(this.Personality_TextChanged);
             // 
             // Personality
             // 
+            this.Personality.DropDownWidth = 650;
             this.Personality.FormattingEnabled = true;
             this.Personality.Location = new System.Drawing.Point(6, 465);
             this.Personality.Name = "Personality";
             this.Personality.Size = new System.Drawing.Size(242, 28);
             this.Personality.TabIndex = 31;
-            this.Personality.Text = "Personality";
+            this.Personality.Text = "Select One";
+            this.Personality.TextChanged += new System.EventHandler(this.Personality_TextChanged);
             // 
             // label2
             // 
@@ -847,6 +999,125 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label2.TabIndex = 30;
             this.label2.Text = "Personality";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Orphan
+            // 
+            this.Orphan.Controls.Add(this.NoO);
+            this.Orphan.Controls.Add(this.YesO);
+            this.Orphan.Controls.Add(this.label3);
+            this.Orphan.Location = new System.Drawing.Point(25, 0);
+            this.Orphan.Name = "Orphan";
+            this.Orphan.Size = new System.Drawing.Size(160, 69);
+            this.Orphan.TabIndex = 81;
+            // 
+            // NoO
+            // 
+            this.NoO.Appearance = System.Windows.Forms.Appearance.Button;
+            this.NoO.Location = new System.Drawing.Point(95, 27);
+            this.NoO.Name = "NoO";
+            this.NoO.Size = new System.Drawing.Size(50, 30);
+            this.NoO.TabIndex = 57;
+            this.NoO.TabStop = true;
+            this.NoO.Text = "No";
+            this.NoO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoO.UseVisualStyleBackColor = true;
+            this.NoO.CheckedChanged += new System.EventHandler(this.NoO_CheckedChanged);
+            // 
+            // YesO
+            // 
+            this.YesO.Appearance = System.Windows.Forms.Appearance.Button;
+            this.YesO.Location = new System.Drawing.Point(14, 27);
+            this.YesO.Name = "YesO";
+            this.YesO.Size = new System.Drawing.Size(50, 30);
+            this.YesO.TabIndex = 56;
+            this.YesO.TabStop = true;
+            this.YesO.Text = "Yes";
+            this.YesO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.YesO.UseVisualStyleBackColor = true;
+            this.YesO.CheckedChanged += new System.EventHandler(this.YesO_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(0, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 25);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Are you an Orphan?";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Raised
+            // 
+            this.Raised.Controls.Add(this.label6);
+            this.Raised.Controls.Add(this.Coast);
+            this.Raised.Controls.Add(this.Wilderness);
+            this.Raised.Controls.Add(this.City);
+            this.Raised.Controls.Add(this.Church);
+            this.Raised.Location = new System.Drawing.Point(208, 58);
+            this.Raised.Name = "Raised";
+            this.Raised.Size = new System.Drawing.Size(286, 68);
+            this.Raised.TabIndex = 88;
+            this.Raised.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(21, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(224, 20);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Where were you raised?";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Coast
+            // 
+            this.Coast.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Coast.Location = new System.Drawing.Point(3, 28);
+            this.Coast.Name = "Coast";
+            this.Coast.Size = new System.Drawing.Size(65, 30);
+            this.Coast.TabIndex = 61;
+            this.Coast.TabStop = true;
+            this.Coast.Text = "Coast";
+            this.Coast.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Coast.UseVisualStyleBackColor = true;
+            this.Coast.CheckedChanged += new System.EventHandler(this.Coast_CheckedChanged);
+            // 
+            // Wilderness
+            // 
+            this.Wilderness.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Wilderness.Location = new System.Drawing.Point(67, 28);
+            this.Wilderness.Name = "Wilderness";
+            this.Wilderness.Size = new System.Drawing.Size(99, 30);
+            this.Wilderness.TabIndex = 62;
+            this.Wilderness.TabStop = true;
+            this.Wilderness.Text = "Wilderness";
+            this.Wilderness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Wilderness.UseVisualStyleBackColor = true;
+            this.Wilderness.CheckedChanged += new System.EventHandler(this.Wilderness_CheckedChanged);
+            // 
+            // City
+            // 
+            this.City.Appearance = System.Windows.Forms.Appearance.Button;
+            this.City.Location = new System.Drawing.Point(165, 28);
+            this.City.Name = "City";
+            this.City.Size = new System.Drawing.Size(51, 30);
+            this.City.TabIndex = 63;
+            this.City.TabStop = true;
+            this.City.Text = "City";
+            this.City.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.City.UseVisualStyleBackColor = true;
+            this.City.CheckedChanged += new System.EventHandler(this.City_CheckedChanged);
+            // 
+            // Church
+            // 
+            this.Church.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Church.Location = new System.Drawing.Point(215, 28);
+            this.Church.Name = "Church";
+            this.Church.Size = new System.Drawing.Size(65, 30);
+            this.Church.TabIndex = 64;
+            this.Church.TabStop = true;
+            this.Church.Text = "Church";
+            this.Church.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Church.UseVisualStyleBackColor = true;
+            this.Church.CheckedChanged += new System.EventHandler(this.Church_CheckedChanged);
             // 
             // tabPage5
             // 
@@ -908,112 +1179,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Play.Text = "Play";
             this.Play.UseVisualStyleBackColor = true;
             // 
-            // radioButton15
-            // 
-            this.radioButton15.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton15.Location = new System.Drawing.Point(378, 221);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(50, 30);
-            this.radioButton15.TabIndex = 72;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "No";
-            this.radioButton15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton15.UseVisualStyleBackColor = true;
-            // 
-            // radioButton16
-            // 
-            this.radioButton16.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton16.Location = new System.Drawing.Point(275, 221);
-            this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(50, 30);
-            this.radioButton16.TabIndex = 71;
-            this.radioButton16.TabStop = true;
-            this.radioButton16.Text = "Yes";
-            this.radioButton16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton16.UseVisualStyleBackColor = true;
-            // 
-            // radioButton17
-            // 
-            this.radioButton17.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton17.Location = new System.Drawing.Point(118, 287);
-            this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(50, 30);
-            this.radioButton17.TabIndex = 74;
-            this.radioButton17.TabStop = true;
-            this.radioButton17.Text = "No";
-            this.radioButton17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton17.UseVisualStyleBackColor = true;
-            // 
-            // radioButton18
-            // 
-            this.radioButton18.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton18.Location = new System.Drawing.Point(37, 287);
-            this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(50, 30);
-            this.radioButton18.TabIndex = 73;
-            this.radioButton18.TabStop = true;
-            this.radioButton18.Text = "Yes";
-            this.radioButton18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton18.UseVisualStyleBackColor = true;
-            // 
-            // radioButton19
-            // 
-            this.radioButton19.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton19.Location = new System.Drawing.Point(393, 287);
-            this.radioButton19.Name = "radioButton19";
-            this.radioButton19.Size = new System.Drawing.Size(50, 30);
-            this.radioButton19.TabIndex = 76;
-            this.radioButton19.TabStop = true;
-            this.radioButton19.Text = "No";
-            this.radioButton19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton19.UseVisualStyleBackColor = true;
-            // 
-            // radioButton20
-            // 
-            this.radioButton20.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton20.Location = new System.Drawing.Point(312, 287);
-            this.radioButton20.Name = "radioButton20";
-            this.radioButton20.Size = new System.Drawing.Size(50, 30);
-            this.radioButton20.TabIndex = 75;
-            this.radioButton20.TabStop = true;
-            this.radioButton20.Text = "Yes";
-            this.radioButton20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton20.UseVisualStyleBackColor = true;
-            // 
-            // radioButton21
-            // 
-            this.radioButton21.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton21.Location = new System.Drawing.Point(254, 343);
-            this.radioButton21.Name = "radioButton21";
-            this.radioButton21.Size = new System.Drawing.Size(108, 30);
-            this.radioButton21.TabIndex = 78;
-            this.radioButton21.TabStop = true;
-            this.radioButton21.Text = "Performance";
-            this.radioButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton21.UseVisualStyleBackColor = true;
-            // 
-            // radioButton22
-            // 
-            this.radioButton22.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton22.Location = new System.Drawing.Point(118, 343);
-            this.radioButton22.Name = "radioButton22";
-            this.radioButton22.Size = new System.Drawing.Size(104, 30);
-            this.radioButton22.TabIndex = 77;
-            this.radioButton22.TabStop = true;
-            this.radioButton22.Text = "Craft";
-            this.radioButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton22.UseVisualStyleBackColor = true;
-            // 
-            // Background
-            // 
-            this.Background.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Background.Location = new System.Drawing.Point(14, 385);
-            this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(470, 49);
-            this.Background.TabIndex = 80;
-            this.Background.Text = "Charlatan";
-            this.Background.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // CreateCharacter
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1030,6 +1195,17 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ClassPreview)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.Craft_Performance.ResumeLayout(false);
+            this.Great_Deed.ResumeLayout(false);
+            this.Falsifying_Documents.ResumeLayout(false);
+            this.Faith.ResumeLayout(false);
+            this.Trade.ResumeLayout(false);
+            this.Military.ResumeLayout(false);
+            this.Crime.ResumeLayout(false);
+            this.Sea.ResumeLayout(false);
+            this.Wealthy.ResumeLayout(false);
+            this.Orphan.ResumeLayout(false);
+            this.Raised.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1079,42 +1255,54 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.ComboBox Bond;
         private System.Windows.Forms.ComboBox Personality;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton No1;
-        private System.Windows.Forms.RadioButton Yes1;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.RadioButton radioButton14;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton15;
-        private System.Windows.Forms.RadioButton radioButton16;
-        private System.Windows.Forms.RadioButton radioButton21;
-        private System.Windows.Forms.RadioButton radioButton22;
-        private System.Windows.Forms.RadioButton radioButton19;
-        private System.Windows.Forms.RadioButton radioButton20;
-        private System.Windows.Forms.RadioButton radioButton17;
-        private System.Windows.Forms.RadioButton radioButton18;
+        private System.Windows.Forms.RadioButton Church;
+        private System.Windows.Forms.RadioButton City;
+        private System.Windows.Forms.RadioButton Wilderness;
+        private System.Windows.Forms.RadioButton Coast;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label Background;
+        private System.Windows.Forms.Label Chosen_Background;
+        private System.Windows.Forms.Panel Orphan;
+        private System.Windows.Forms.RadioButton NoO;
+        private System.Windows.Forms.RadioButton YesO;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel Sea;
+        private System.Windows.Forms.RadioButton NoS;
+        private System.Windows.Forms.RadioButton YesS;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel Wealthy;
+        private System.Windows.Forms.RadioButton NoW;
+        private System.Windows.Forms.RadioButton YesW;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel Crime;
+        private System.Windows.Forms.RadioButton NoC;
+        private System.Windows.Forms.RadioButton YesC;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel Falsifying_Documents;
+        private System.Windows.Forms.RadioButton NoFD;
+        private System.Windows.Forms.RadioButton YesFD;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel Faith;
+        private System.Windows.Forms.RadioButton NoF;
+        private System.Windows.Forms.RadioButton YesF;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel Trade;
+        private System.Windows.Forms.RadioButton NoT;
+        private System.Windows.Forms.RadioButton YesT;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel Military;
+        private System.Windows.Forms.RadioButton NoM;
+        private System.Windows.Forms.RadioButton YesM;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel Craft_Performance;
+        private System.Windows.Forms.RadioButton Performance;
+        private System.Windows.Forms.RadioButton Craft;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel Great_Deed;
+        private System.Windows.Forms.RadioButton NoGD;
+        private System.Windows.Forms.RadioButton YesGD;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel Raised;
+        private System.Windows.Forms.Label Feature;
     }
 }
