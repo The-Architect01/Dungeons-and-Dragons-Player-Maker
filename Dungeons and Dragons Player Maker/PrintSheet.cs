@@ -12,8 +12,59 @@ using System.Windows.Forms;
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class PrintSheet : Form {
         Bitmap bitMap;
-        public PrintSheet() {
+        // public PrintSheet() {
+        //    InitializeComponent();
+        //}
+
+        Label[] skills;
+
+
+        public PrintSheet(PC pc) {
             InitializeComponent();
+            skills = new Label[] { Athletics, Acrobatics,Sleight,Stealth, Arcana, History, Investigation,Nature,Religion,
+            Animal, Insight, Medicine,Perception, Survival, Deception, Intimidation, Performance, Persuasion};
+            foreach(Label skill in skills) {
+                skill.Visible = pc.Skills.Contains(skill.Name) ? true : false;
+            }
+            Character_Name.Text = pc.Name;
+            Background.Text = pc.Background;
+            Class.Text = pc.Class;
+            Player_Name.Text = pc.creator;
+            XP.Text = pc.XP.ToString();
+            Alignment.Text = pc.Alignment;
+            setProficiencyBonus();
+            Strength.Text = pc.Stats[0].ToString();
+            Dextarity.Text = pc.Stats[1].ToString();
+            Constitution.Text = pc.Stats[2].ToString();
+            Intelligence.Text = pc.Stats[3].ToString();
+            Wisdom.Text = pc.Stats[4].ToString();
+            Charisma.Text = pc.Stats[5].ToString();
+            setStatMod();
+            populateRace();
+            populateClass();
+            populateBackground();
+        }
+        private void populateRace() {
+            Speed.Text = Races.ResourceManager.GetString(Race.Text).Split("_")[6];
+            
+        }
+        private void populateClass() {
+
+        }
+        private void populateBackground() {
+
+        }
+        private void setStatMod() {
+            STR_Mod.Text = getModifier(Strength.Text);
+
+        }
+        private string getModifier(string stat) {
+            if () {
+
+            }return "";
+        }
+        private void setProficiencyBonus() {
+
         }
 
         private void Form1_Load(object sender, EventArgs e) {

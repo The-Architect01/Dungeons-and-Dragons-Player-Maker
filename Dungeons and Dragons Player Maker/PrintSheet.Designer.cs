@@ -31,64 +31,65 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Player_Name = new System.Windows.Forms.Label();
             this.XP = new System.Windows.Forms.Label();
             this.Background = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Alignment = new System.Windows.Forms.Label();
+            this.Class = new System.Windows.Forms.Label();
+            this.Race = new System.Windows.Forms.Label();
             this.Proficency = new System.Windows.Forms.Label();
+            this.AC = new System.Windows.Forms.Label();
+            this.Initiative = new System.Windows.Forms.Label();
+            this.Speed = new System.Windows.Forms.Label();
+            this.STR_Mod = new System.Windows.Forms.Label();
+            this.Dex_Mod = new System.Windows.Forms.Label();
+            this.Con_Mod = new System.Windows.Forms.Label();
+            this.Int_Mod = new System.Windows.Forms.Label();
+            this.Wis_Mod = new System.Windows.Forms.Label();
+            this.Cha_Mod = new System.Windows.Forms.Label();
+            this.Passive_Wis = new System.Windows.Forms.Label();
+            this.Strength = new System.Windows.Forms.Label();
+            this.Dextarity = new System.Windows.Forms.Label();
+            this.Constitution = new System.Windows.Forms.Label();
+            this.Intelligence = new System.Windows.Forms.Label();
+            this.Wisdom = new System.Windows.Forms.Label();
+            this.Charisma = new System.Windows.Forms.Label();
+            this.Str_Save = new System.Windows.Forms.Label();
+            this.Athletics = new System.Windows.Forms.Label();
+            this.Acrobatics = new System.Windows.Forms.Label();
+            this.Dex_Save = new System.Windows.Forms.Label();
+            this.Sleight = new System.Windows.Forms.Label();
+            this.Stealth = new System.Windows.Forms.Label();
+            this.Con_Save = new System.Windows.Forms.Label();
+            this.Performance = new System.Windows.Forms.Label();
+            this.Intimidation = new System.Windows.Forms.Label();
+            this.Deception = new System.Windows.Forms.Label();
+            this.Cha_Save = new System.Windows.Forms.Label();
+            this.Persuasion = new System.Windows.Forms.Label();
+            this.Perception = new System.Windows.Forms.Label();
+            this.Medicine = new System.Windows.Forms.Label();
+            this.Insight = new System.Windows.Forms.Label();
+            this.Animal = new System.Windows.Forms.Label();
+            this.Wis_Save = new System.Windows.Forms.Label();
+            this.Survival = new System.Windows.Forms.Label();
+            this.Religion = new System.Windows.Forms.Label();
+            this.Nature = new System.Windows.Forms.Label();
+            this.Investigation = new System.Windows.Forms.Label();
+            this.History = new System.Windows.Forms.Label();
+            this.Arcana = new System.Windows.Forms.Label();
+            this.Int_Save = new System.Windows.Forms.Label();
+            this.HD_Num = new System.Windows.Forms.Label();
+            this.HitDie = new System.Windows.Forms.Label();
+            this.HP = new System.Windows.Forms.Label();
+            this.D_S1 = new System.Windows.Forms.Label();
+            this.D_F1 = new System.Windows.Forms.Label();
+            this.D_F2 = new System.Windows.Forms.Label();
+            this.D_S2 = new System.Windows.Forms.Label();
+            this.D_F3 = new System.Windows.Forms.Label();
+            this.D_S3 = new System.Windows.Forms.Label();
+            this.CP = new System.Windows.Forms.Label();
+            this.SP = new System.Windows.Forms.Label();
+            this.GP = new System.Windows.Forms.Label();
+            this.PP = new System.Windows.Forms.Label();
             this.Insperation = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // printDocument1
@@ -148,38 +149,38 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Background.Text = "Charlatan";
             this.Background.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // Alignment
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(491, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Chaotic Neutral";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Alignment.BackColor = System.Drawing.Color.Transparent;
+            this.Alignment.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Alignment.Location = new System.Drawing.Point(491, 95);
+            this.Alignment.Name = "Alignment";
+            this.Alignment.Size = new System.Drawing.Size(156, 25);
+            this.Alignment.TabIndex = 4;
+            this.Alignment.Text = "Chaotic Neutral";
+            this.Alignment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // Class
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(350, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Rogue/Warlock";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Class.BackColor = System.Drawing.Color.Transparent;
+            this.Class.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Class.Location = new System.Drawing.Point(350, 61);
+            this.Class.Name = "Class";
+            this.Class.Size = new System.Drawing.Size(154, 25);
+            this.Class.TabIndex = 5;
+            this.Class.Text = "Rogue/Warlock";
+            this.Class.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // Race
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(350, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Half-Elf";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Race.BackColor = System.Drawing.Color.Transparent;
+            this.Race.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Race.Location = new System.Drawing.Point(350, 95);
+            this.Race.Name = "Race";
+            this.Race.Size = new System.Drawing.Size(135, 25);
+            this.Race.TabIndex = 6;
+            this.Race.Text = "Half-Elf";
+            this.Race.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Proficency
             // 
@@ -191,6 +192,583 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Proficency.TabIndex = 7;
             this.Proficency.Text = "6";
             // 
+            // AC
+            // 
+            this.AC.BackColor = System.Drawing.Color.Transparent;
+            this.AC.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AC.Location = new System.Drawing.Point(303, 187);
+            this.AC.Name = "AC";
+            this.AC.Size = new System.Drawing.Size(59, 43);
+            this.AC.TabIndex = 9;
+            this.AC.Text = "30";
+            this.AC.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Initiative
+            // 
+            this.Initiative.BackColor = System.Drawing.Color.Transparent;
+            this.Initiative.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Initiative.Location = new System.Drawing.Point(368, 193);
+            this.Initiative.Name = "Initiative";
+            this.Initiative.Size = new System.Drawing.Size(70, 43);
+            this.Initiative.TabIndex = 10;
+            this.Initiative.Text = "+ 15";
+            this.Initiative.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Speed
+            // 
+            this.Speed.BackColor = System.Drawing.Color.Transparent;
+            this.Speed.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Speed.Location = new System.Drawing.Point(448, 192);
+            this.Speed.Name = "Speed";
+            this.Speed.Size = new System.Drawing.Size(70, 43);
+            this.Speed.TabIndex = 11;
+            this.Speed.Text = "50";
+            this.Speed.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // STR_Mod
+            // 
+            this.STR_Mod.BackColor = System.Drawing.Color.Transparent;
+            this.STR_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.STR_Mod.Location = new System.Drawing.Point(57, 251);
+            this.STR_Mod.Name = "STR_Mod";
+            this.STR_Mod.Size = new System.Drawing.Size(59, 43);
+            this.STR_Mod.TabIndex = 12;
+            this.STR_Mod.Text = "- 10";
+            this.STR_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Dex_Mod
+            // 
+            this.Dex_Mod.BackColor = System.Drawing.Color.Transparent;
+            this.Dex_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Dex_Mod.Location = new System.Drawing.Point(57, 343);
+            this.Dex_Mod.Name = "Dex_Mod";
+            this.Dex_Mod.Size = new System.Drawing.Size(59, 43);
+            this.Dex_Mod.TabIndex = 13;
+            this.Dex_Mod.Text = "- 10";
+            this.Dex_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Con_Mod
+            // 
+            this.Con_Mod.BackColor = System.Drawing.Color.Transparent;
+            this.Con_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Con_Mod.Location = new System.Drawing.Point(57, 433);
+            this.Con_Mod.Name = "Con_Mod";
+            this.Con_Mod.Size = new System.Drawing.Size(59, 43);
+            this.Con_Mod.TabIndex = 14;
+            this.Con_Mod.Text = "- 10";
+            this.Con_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Int_Mod
+            // 
+            this.Int_Mod.BackColor = System.Drawing.Color.Transparent;
+            this.Int_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Int_Mod.Location = new System.Drawing.Point(57, 523);
+            this.Int_Mod.Name = "Int_Mod";
+            this.Int_Mod.Size = new System.Drawing.Size(59, 43);
+            this.Int_Mod.TabIndex = 15;
+            this.Int_Mod.Text = "- 10";
+            this.Int_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Wis_Mod
+            // 
+            this.Wis_Mod.BackColor = System.Drawing.Color.Transparent;
+            this.Wis_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Wis_Mod.Location = new System.Drawing.Point(57, 614);
+            this.Wis_Mod.Name = "Wis_Mod";
+            this.Wis_Mod.Size = new System.Drawing.Size(59, 43);
+            this.Wis_Mod.TabIndex = 16;
+            this.Wis_Mod.Text = "- 10";
+            this.Wis_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Cha_Mod
+            // 
+            this.Cha_Mod.BackColor = System.Drawing.Color.Transparent;
+            this.Cha_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cha_Mod.Location = new System.Drawing.Point(57, 705);
+            this.Cha_Mod.Name = "Cha_Mod";
+            this.Cha_Mod.Size = new System.Drawing.Size(59, 43);
+            this.Cha_Mod.TabIndex = 17;
+            this.Cha_Mod.Text = "- 10";
+            this.Cha_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Passive_Wis
+            // 
+            this.Passive_Wis.BackColor = System.Drawing.Color.Transparent;
+            this.Passive_Wis.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Passive_Wis.Location = new System.Drawing.Point(55, 792);
+            this.Passive_Wis.Name = "Passive_Wis";
+            this.Passive_Wis.Size = new System.Drawing.Size(59, 43);
+            this.Passive_Wis.TabIndex = 18;
+            this.Passive_Wis.Text = "6";
+            this.Passive_Wis.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Strength
+            // 
+            this.Strength.BackColor = System.Drawing.Color.Transparent;
+            this.Strength.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Strength.Location = new System.Drawing.Point(49, 280);
+            this.Strength.Name = "Strength";
+            this.Strength.Size = new System.Drawing.Size(70, 43);
+            this.Strength.TabIndex = 19;
+            this.Strength.Text = "30";
+            this.Strength.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Dextarity
+            // 
+            this.Dextarity.BackColor = System.Drawing.Color.Transparent;
+            this.Dextarity.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Dextarity.Location = new System.Drawing.Point(49, 370);
+            this.Dextarity.Name = "Dextarity";
+            this.Dextarity.Size = new System.Drawing.Size(70, 43);
+            this.Dextarity.TabIndex = 20;
+            this.Dextarity.Text = "30";
+            this.Dextarity.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Constitution
+            // 
+            this.Constitution.BackColor = System.Drawing.Color.Transparent;
+            this.Constitution.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Constitution.Location = new System.Drawing.Point(49, 461);
+            this.Constitution.Name = "Constitution";
+            this.Constitution.Size = new System.Drawing.Size(70, 43);
+            this.Constitution.TabIndex = 21;
+            this.Constitution.Text = "30";
+            this.Constitution.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Intelligence
+            // 
+            this.Intelligence.BackColor = System.Drawing.Color.Transparent;
+            this.Intelligence.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Intelligence.Location = new System.Drawing.Point(49, 551);
+            this.Intelligence.Name = "Intelligence";
+            this.Intelligence.Size = new System.Drawing.Size(70, 43);
+            this.Intelligence.TabIndex = 22;
+            this.Intelligence.Text = "30";
+            this.Intelligence.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Wisdom
+            // 
+            this.Wisdom.BackColor = System.Drawing.Color.Transparent;
+            this.Wisdom.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Wisdom.Location = new System.Drawing.Point(49, 642);
+            this.Wisdom.Name = "Wisdom";
+            this.Wisdom.Size = new System.Drawing.Size(70, 43);
+            this.Wisdom.TabIndex = 23;
+            this.Wisdom.Text = "30";
+            this.Wisdom.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Charisma
+            // 
+            this.Charisma.BackColor = System.Drawing.Color.Transparent;
+            this.Charisma.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Charisma.Location = new System.Drawing.Point(49, 734);
+            this.Charisma.Name = "Charisma";
+            this.Charisma.Size = new System.Drawing.Size(70, 43);
+            this.Charisma.TabIndex = 24;
+            this.Charisma.Text = "30";
+            this.Charisma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Str_Save
+            // 
+            this.Str_Save.BackColor = System.Drawing.Color.Transparent;
+            this.Str_Save.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Str_Save.Location = new System.Drawing.Point(131, 264);
+            this.Str_Save.Name = "Str_Save";
+            this.Str_Save.Size = new System.Drawing.Size(72, 25);
+            this.Str_Save.TabIndex = 25;
+            this.Str_Save.Text = "🔸";
+            this.Str_Save.Visible = false;
+            // 
+            // Athletics
+            // 
+            this.Athletics.BackColor = System.Drawing.Color.Transparent;
+            this.Athletics.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Athletics.Location = new System.Drawing.Point(135, 283);
+            this.Athletics.Name = "Athletics";
+            this.Athletics.Size = new System.Drawing.Size(72, 25);
+            this.Athletics.TabIndex = 26;
+            this.Athletics.Text = "⚫";
+            this.Athletics.Visible = false;
+            // 
+            // Acrobatics
+            // 
+            this.Acrobatics.BackColor = System.Drawing.Color.Transparent;
+            this.Acrobatics.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Acrobatics.Location = new System.Drawing.Point(135, 374);
+            this.Acrobatics.Name = "Acrobatics";
+            this.Acrobatics.Size = new System.Drawing.Size(72, 25);
+            this.Acrobatics.TabIndex = 28;
+            this.Acrobatics.Text = "⚫";
+            this.Acrobatics.Visible = false;
+            // 
+            // Dex_Save
+            // 
+            this.Dex_Save.BackColor = System.Drawing.Color.Transparent;
+            this.Dex_Save.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Dex_Save.Location = new System.Drawing.Point(131, 355);
+            this.Dex_Save.Name = "Dex_Save";
+            this.Dex_Save.Size = new System.Drawing.Size(72, 25);
+            this.Dex_Save.TabIndex = 27;
+            this.Dex_Save.Text = "🔸";
+            this.Dex_Save.Visible = false;
+            // 
+            // Sleight
+            // 
+            this.Sleight.BackColor = System.Drawing.Color.Transparent;
+            this.Sleight.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Sleight.Location = new System.Drawing.Point(135, 386);
+            this.Sleight.Name = "Sleight";
+            this.Sleight.Size = new System.Drawing.Size(72, 25);
+            this.Sleight.TabIndex = 29;
+            this.Sleight.Text = "⚫";
+            this.Sleight.Visible = false;
+            // 
+            // Stealth
+            // 
+            this.Stealth.BackColor = System.Drawing.Color.Transparent;
+            this.Stealth.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Stealth.Location = new System.Drawing.Point(135, 399);
+            this.Stealth.Name = "Stealth";
+            this.Stealth.Size = new System.Drawing.Size(72, 25);
+            this.Stealth.TabIndex = 30;
+            this.Stealth.Text = "⚫";
+            this.Stealth.Visible = false;
+            // 
+            // Con_Save
+            // 
+            this.Con_Save.BackColor = System.Drawing.Color.Transparent;
+            this.Con_Save.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Con_Save.Location = new System.Drawing.Point(131, 446);
+            this.Con_Save.Name = "Con_Save";
+            this.Con_Save.Size = new System.Drawing.Size(72, 25);
+            this.Con_Save.TabIndex = 31;
+            this.Con_Save.Text = "🔸";
+            this.Con_Save.Visible = false;
+            // 
+            // Performance
+            // 
+            this.Performance.BackColor = System.Drawing.Color.Transparent;
+            this.Performance.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Performance.Location = new System.Drawing.Point(135, 761);
+            this.Performance.Name = "Performance";
+            this.Performance.Size = new System.Drawing.Size(72, 25);
+            this.Performance.TabIndex = 35;
+            this.Performance.Text = "⚫";
+            this.Performance.Visible = false;
+            // 
+            // Intimidation
+            // 
+            this.Intimidation.BackColor = System.Drawing.Color.Transparent;
+            this.Intimidation.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Intimidation.Location = new System.Drawing.Point(135, 749);
+            this.Intimidation.Name = "Intimidation";
+            this.Intimidation.Size = new System.Drawing.Size(72, 25);
+            this.Intimidation.TabIndex = 34;
+            this.Intimidation.Text = "⚫";
+            this.Intimidation.Visible = false;
+            // 
+            // Deception
+            // 
+            this.Deception.BackColor = System.Drawing.Color.Transparent;
+            this.Deception.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Deception.Location = new System.Drawing.Point(135, 736);
+            this.Deception.Name = "Deception";
+            this.Deception.Size = new System.Drawing.Size(72, 25);
+            this.Deception.TabIndex = 33;
+            this.Deception.Text = "⚫";
+            this.Deception.Visible = false;
+            // 
+            // Cha_Save
+            // 
+            this.Cha_Save.BackColor = System.Drawing.Color.Transparent;
+            this.Cha_Save.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cha_Save.Location = new System.Drawing.Point(131, 717);
+            this.Cha_Save.Name = "Cha_Save";
+            this.Cha_Save.Size = new System.Drawing.Size(72, 25);
+            this.Cha_Save.TabIndex = 32;
+            this.Cha_Save.Text = "🔸";
+            this.Cha_Save.Visible = false;
+            // 
+            // Persuasion
+            // 
+            this.Persuasion.BackColor = System.Drawing.Color.Transparent;
+            this.Persuasion.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Persuasion.Location = new System.Drawing.Point(135, 774);
+            this.Persuasion.Name = "Persuasion";
+            this.Persuasion.Size = new System.Drawing.Size(72, 25);
+            this.Persuasion.TabIndex = 36;
+            this.Persuasion.Text = "⚫";
+            this.Persuasion.Visible = false;
+            // 
+            // Perception
+            // 
+            this.Perception.BackColor = System.Drawing.Color.Transparent;
+            this.Perception.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Perception.Location = new System.Drawing.Point(135, 684);
+            this.Perception.Name = "Perception";
+            this.Perception.Size = new System.Drawing.Size(72, 25);
+            this.Perception.TabIndex = 41;
+            this.Perception.Text = "⚫";
+            this.Perception.Visible = false;
+            // 
+            // Medicine
+            // 
+            this.Medicine.BackColor = System.Drawing.Color.Transparent;
+            this.Medicine.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Medicine.Location = new System.Drawing.Point(135, 671);
+            this.Medicine.Name = "Medicine";
+            this.Medicine.Size = new System.Drawing.Size(72, 25);
+            this.Medicine.TabIndex = 40;
+            this.Medicine.Text = "⚫";
+            this.Medicine.Visible = false;
+            // 
+            // Insight
+            // 
+            this.Insight.BackColor = System.Drawing.Color.Transparent;
+            this.Insight.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Insight.Location = new System.Drawing.Point(135, 658);
+            this.Insight.Name = "Insight";
+            this.Insight.Size = new System.Drawing.Size(72, 25);
+            this.Insight.TabIndex = 39;
+            this.Insight.Text = "⚫";
+            this.Insight.Visible = false;
+            // 
+            // Animal
+            // 
+            this.Animal.BackColor = System.Drawing.Color.Transparent;
+            this.Animal.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Animal.Location = new System.Drawing.Point(135, 646);
+            this.Animal.Name = "Animal";
+            this.Animal.Size = new System.Drawing.Size(72, 25);
+            this.Animal.TabIndex = 38;
+            this.Animal.Text = "⚫";
+            this.Animal.Visible = false;
+            // 
+            // Wis_Save
+            // 
+            this.Wis_Save.BackColor = System.Drawing.Color.Transparent;
+            this.Wis_Save.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Wis_Save.Location = new System.Drawing.Point(131, 627);
+            this.Wis_Save.Name = "Wis_Save";
+            this.Wis_Save.Size = new System.Drawing.Size(72, 25);
+            this.Wis_Save.TabIndex = 37;
+            this.Wis_Save.Text = "🔸";
+            this.Wis_Save.Visible = false;
+            // 
+            // Survival
+            // 
+            this.Survival.BackColor = System.Drawing.Color.Transparent;
+            this.Survival.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Survival.Location = new System.Drawing.Point(135, 696);
+            this.Survival.Name = "Survival";
+            this.Survival.Size = new System.Drawing.Size(72, 25);
+            this.Survival.TabIndex = 42;
+            this.Survival.Text = "⚫";
+            this.Survival.Visible = false;
+            // 
+            // Religion
+            // 
+            this.Religion.BackColor = System.Drawing.Color.Transparent;
+            this.Religion.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Religion.Location = new System.Drawing.Point(135, 605);
+            this.Religion.Name = "Religion";
+            this.Religion.Size = new System.Drawing.Size(72, 25);
+            this.Religion.TabIndex = 48;
+            this.Religion.Text = "⚫";
+            this.Religion.Visible = false;
+            // 
+            // Nature
+            // 
+            this.Nature.BackColor = System.Drawing.Color.Transparent;
+            this.Nature.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Nature.Location = new System.Drawing.Point(135, 593);
+            this.Nature.Name = "Nature";
+            this.Nature.Size = new System.Drawing.Size(72, 25);
+            this.Nature.TabIndex = 47;
+            this.Nature.Text = "⚫";
+            this.Nature.Visible = false;
+            // 
+            // Investigation
+            // 
+            this.Investigation.BackColor = System.Drawing.Color.Transparent;
+            this.Investigation.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Investigation.Location = new System.Drawing.Point(135, 580);
+            this.Investigation.Name = "Investigation";
+            this.Investigation.Size = new System.Drawing.Size(72, 25);
+            this.Investigation.TabIndex = 46;
+            this.Investigation.Text = "⚫";
+            this.Investigation.Visible = false;
+            // 
+            // History
+            // 
+            this.History.BackColor = System.Drawing.Color.Transparent;
+            this.History.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.History.Location = new System.Drawing.Point(135, 567);
+            this.History.Name = "History";
+            this.History.Size = new System.Drawing.Size(72, 25);
+            this.History.TabIndex = 45;
+            this.History.Text = "⚫";
+            this.History.Visible = false;
+            // 
+            // Arcana
+            // 
+            this.Arcana.BackColor = System.Drawing.Color.Transparent;
+            this.Arcana.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Arcana.Location = new System.Drawing.Point(135, 555);
+            this.Arcana.Name = "Arcana";
+            this.Arcana.Size = new System.Drawing.Size(72, 25);
+            this.Arcana.TabIndex = 44;
+            this.Arcana.Text = "⚫";
+            this.Arcana.Visible = false;
+            // 
+            // Int_Save
+            // 
+            this.Int_Save.BackColor = System.Drawing.Color.Transparent;
+            this.Int_Save.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Int_Save.Location = new System.Drawing.Point(131, 536);
+            this.Int_Save.Name = "Int_Save";
+            this.Int_Save.Size = new System.Drawing.Size(72, 25);
+            this.Int_Save.TabIndex = 43;
+            this.Int_Save.Text = "🔸";
+            this.Int_Save.Visible = false;
+            // 
+            // HD_Num
+            // 
+            this.HD_Num.BackColor = System.Drawing.Color.Transparent;
+            this.HD_Num.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HD_Num.Location = new System.Drawing.Point(326, 408);
+            this.HD_Num.Name = "HD_Num";
+            this.HD_Num.Size = new System.Drawing.Size(59, 27);
+            this.HD_Num.TabIndex = 49;
+            this.HD_Num.Text = "20";
+            this.HD_Num.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // HitDie
+            // 
+            this.HitDie.BackColor = System.Drawing.Color.Transparent;
+            this.HitDie.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HitDie.Location = new System.Drawing.Point(322, 435);
+            this.HitDie.Name = "HitDie";
+            this.HitDie.Size = new System.Drawing.Size(59, 43);
+            this.HitDie.TabIndex = 50;
+            this.HitDie.Text = "d12";
+            this.HitDie.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // HP
+            // 
+            this.HP.BackColor = System.Drawing.Color.Transparent;
+            this.HP.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HP.Location = new System.Drawing.Point(418, 248);
+            this.HP.Name = "HP";
+            this.HP.Size = new System.Drawing.Size(59, 40);
+            this.HP.TabIndex = 51;
+            this.HP.Text = "240";
+            this.HP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // D_S1
+            // 
+            this.D_S1.BackColor = System.Drawing.Color.Transparent;
+            this.D_S1.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D_S1.Location = new System.Drawing.Point(457, 428);
+            this.D_S1.Name = "D_S1";
+            this.D_S1.Size = new System.Drawing.Size(72, 25);
+            this.D_S1.TabIndex = 52;
+            this.D_S1.Text = "⚫";
+            // 
+            // D_F1
+            // 
+            this.D_F1.BackColor = System.Drawing.Color.Transparent;
+            this.D_F1.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D_F1.Location = new System.Drawing.Point(457, 448);
+            this.D_F1.Name = "D_F1";
+            this.D_F1.Size = new System.Drawing.Size(72, 25);
+            this.D_F1.TabIndex = 53;
+            this.D_F1.Text = "⚫";
+            // 
+            // D_F2
+            // 
+            this.D_F2.BackColor = System.Drawing.Color.Transparent;
+            this.D_F2.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D_F2.Location = new System.Drawing.Point(475, 448);
+            this.D_F2.Name = "D_F2";
+            this.D_F2.Size = new System.Drawing.Size(72, 25);
+            this.D_F2.TabIndex = 55;
+            this.D_F2.Text = "⚫";
+            // 
+            // D_S2
+            // 
+            this.D_S2.BackColor = System.Drawing.Color.Transparent;
+            this.D_S2.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D_S2.Location = new System.Drawing.Point(475, 428);
+            this.D_S2.Name = "D_S2";
+            this.D_S2.Size = new System.Drawing.Size(72, 25);
+            this.D_S2.TabIndex = 54;
+            this.D_S2.Text = "⚫";
+            // 
+            // D_F3
+            // 
+            this.D_F3.BackColor = System.Drawing.Color.Transparent;
+            this.D_F3.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D_F3.Location = new System.Drawing.Point(492, 448);
+            this.D_F3.Name = "D_F3";
+            this.D_F3.Size = new System.Drawing.Size(72, 25);
+            this.D_F3.TabIndex = 57;
+            this.D_F3.Text = "⚫";
+            // 
+            // D_S3
+            // 
+            this.D_S3.BackColor = System.Drawing.Color.Transparent;
+            this.D_S3.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.D_S3.Location = new System.Drawing.Point(492, 428);
+            this.D_S3.Name = "D_S3";
+            this.D_S3.Size = new System.Drawing.Size(72, 25);
+            this.D_S3.TabIndex = 56;
+            this.D_S3.Text = "⚫";
+            // 
+            // CP
+            // 
+            this.CP.BackColor = System.Drawing.Color.Transparent;
+            this.CP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CP.Location = new System.Drawing.Point(295, 858);
+            this.CP.Name = "CP";
+            this.CP.Size = new System.Drawing.Size(59, 43);
+            this.CP.TabIndex = 58;
+            this.CP.Text = "0";
+            this.CP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // SP
+            // 
+            this.SP.BackColor = System.Drawing.Color.Transparent;
+            this.SP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SP.Location = new System.Drawing.Point(295, 892);
+            this.SP.Name = "SP";
+            this.SP.Size = new System.Drawing.Size(59, 43);
+            this.SP.TabIndex = 59;
+            this.SP.Text = "0";
+            this.SP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // GP
+            // 
+            this.GP.BackColor = System.Drawing.Color.Transparent;
+            this.GP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GP.Location = new System.Drawing.Point(295, 925);
+            this.GP.Name = "GP";
+            this.GP.Size = new System.Drawing.Size(59, 43);
+            this.GP.TabIndex = 60;
+            this.GP.Text = "15";
+            this.GP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PP
+            // 
+            this.PP.BackColor = System.Drawing.Color.Transparent;
+            this.PP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PP.Location = new System.Drawing.Point(295, 960);
+            this.PP.Name = "PP";
+            this.PP.Size = new System.Drawing.Size(59, 43);
+            this.PP.TabIndex = 61;
+            this.PP.Text = "0";
+            this.PP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Insperation
             // 
             this.Insperation.BackColor = System.Drawing.Color.Transparent;
@@ -199,637 +777,96 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Insperation.Name = "Insperation";
             this.Insperation.Size = new System.Drawing.Size(59, 43);
             this.Insperation.TabIndex = 8;
-            this.Insperation.Text = "6";
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(303, 187);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 43);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "30";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(368, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 43);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "+ 15";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(448, 192);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 43);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "50";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(57, 251);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 43);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "- 10";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(57, 343);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 43);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "- 10";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(57, 433);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 43);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "- 10";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(57, 523);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 43);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "- 10";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(57, 614);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 43);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "- 10";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(57, 705);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 43);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "- 10";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(55, 792);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 43);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "6";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(49, 280);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 43);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "30";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(49, 370);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 43);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "30";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(49, 461);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(70, 43);
-            this.label16.TabIndex = 21;
-            this.label16.Text = "30";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(49, 551);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 43);
-            this.label17.TabIndex = 22;
-            this.label17.Text = "30";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(49, 642);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(70, 43);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "30";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(49, 734);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 43);
-            this.label19.TabIndex = 24;
-            this.label19.Text = "30";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(131, 264);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(72, 25);
-            this.label20.TabIndex = 25;
-            this.label20.Text = "🔸";
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(135, 283);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(72, 25);
-            this.label21.TabIndex = 26;
-            this.label21.Text = "⚫";
-            // 
-            // label22
-            // 
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(135, 374);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(72, 25);
-            this.label22.TabIndex = 28;
-            this.label22.Text = "⚫";
-            // 
-            // label23
-            // 
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(131, 355);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(72, 25);
-            this.label23.TabIndex = 27;
-            this.label23.Text = "🔸";
-            // 
-            // label24
-            // 
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(135, 386);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(72, 25);
-            this.label24.TabIndex = 29;
-            this.label24.Text = "⚫";
-            // 
-            // label25
-            // 
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(135, 399);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 25);
-            this.label25.TabIndex = 30;
-            this.label25.Text = "⚫";
-            // 
-            // label26
-            // 
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(131, 446);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(72, 25);
-            this.label26.TabIndex = 31;
-            this.label26.Text = "🔸";
-            // 
-            // label27
-            // 
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(135, 761);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(72, 25);
-            this.label27.TabIndex = 35;
-            this.label27.Text = "⚫";
-            // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(135, 749);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(72, 25);
-            this.label28.TabIndex = 34;
-            this.label28.Text = "⚫";
-            // 
-            // label29
-            // 
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(135, 736);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(72, 25);
-            this.label29.TabIndex = 33;
-            this.label29.Text = "⚫";
-            // 
-            // label30
-            // 
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label30.Location = new System.Drawing.Point(131, 717);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(72, 25);
-            this.label30.TabIndex = 32;
-            this.label30.Text = "🔸";
-            // 
-            // label31
-            // 
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label31.Location = new System.Drawing.Point(135, 774);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(72, 25);
-            this.label31.TabIndex = 36;
-            this.label31.Text = "⚫";
-            // 
-            // label32
-            // 
-            this.label32.BackColor = System.Drawing.Color.Transparent;
-            this.label32.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label32.Location = new System.Drawing.Point(135, 684);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(72, 25);
-            this.label32.TabIndex = 41;
-            this.label32.Text = "⚫";
-            // 
-            // label33
-            // 
-            this.label33.BackColor = System.Drawing.Color.Transparent;
-            this.label33.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label33.Location = new System.Drawing.Point(135, 671);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(72, 25);
-            this.label33.TabIndex = 40;
-            this.label33.Text = "⚫";
-            // 
-            // label34
-            // 
-            this.label34.BackColor = System.Drawing.Color.Transparent;
-            this.label34.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label34.Location = new System.Drawing.Point(135, 658);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(72, 25);
-            this.label34.TabIndex = 39;
-            this.label34.Text = "⚫";
-            // 
-            // label35
-            // 
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label35.Location = new System.Drawing.Point(135, 646);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(72, 25);
-            this.label35.TabIndex = 38;
-            this.label35.Text = "⚫";
-            // 
-            // label36
-            // 
-            this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label36.Location = new System.Drawing.Point(131, 627);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(72, 25);
-            this.label36.TabIndex = 37;
-            this.label36.Text = "🔸";
-            // 
-            // label37
-            // 
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label37.Location = new System.Drawing.Point(135, 696);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(72, 25);
-            this.label37.TabIndex = 42;
-            this.label37.Text = "⚫";
-            // 
-            // label38
-            // 
-            this.label38.BackColor = System.Drawing.Color.Transparent;
-            this.label38.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label38.Location = new System.Drawing.Point(135, 605);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(72, 25);
-            this.label38.TabIndex = 48;
-            this.label38.Text = "⚫";
-            // 
-            // label39
-            // 
-            this.label39.BackColor = System.Drawing.Color.Transparent;
-            this.label39.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label39.Location = new System.Drawing.Point(135, 593);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(72, 25);
-            this.label39.TabIndex = 47;
-            this.label39.Text = "⚫";
-            // 
-            // label40
-            // 
-            this.label40.BackColor = System.Drawing.Color.Transparent;
-            this.label40.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label40.Location = new System.Drawing.Point(135, 580);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(72, 25);
-            this.label40.TabIndex = 46;
-            this.label40.Text = "⚫";
-            // 
-            // label41
-            // 
-            this.label41.BackColor = System.Drawing.Color.Transparent;
-            this.label41.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label41.Location = new System.Drawing.Point(135, 567);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(72, 25);
-            this.label41.TabIndex = 45;
-            this.label41.Text = "⚫";
-            // 
-            // label42
-            // 
-            this.label42.BackColor = System.Drawing.Color.Transparent;
-            this.label42.Font = new System.Drawing.Font("Blackadder ITC", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label42.Location = new System.Drawing.Point(135, 555);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(72, 25);
-            this.label42.TabIndex = 44;
-            this.label42.Text = "⚫";
-            // 
-            // label43
-            // 
-            this.label43.BackColor = System.Drawing.Color.Transparent;
-            this.label43.Font = new System.Drawing.Font("Blackadder ITC", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label43.Location = new System.Drawing.Point(131, 536);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(72, 25);
-            this.label43.TabIndex = 43;
-            this.label43.Text = "🔸";
-            // 
-            // label44
-            // 
-            this.label44.BackColor = System.Drawing.Color.Transparent;
-            this.label44.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label44.Location = new System.Drawing.Point(326, 408);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(59, 27);
-            this.label44.TabIndex = 49;
-            this.label44.Text = "20";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label45
-            // 
-            this.label45.BackColor = System.Drawing.Color.Transparent;
-            this.label45.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label45.Location = new System.Drawing.Point(322, 435);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(59, 43);
-            this.label45.TabIndex = 50;
-            this.label45.Text = "d12";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label46
-            // 
-            this.label46.BackColor = System.Drawing.Color.Transparent;
-            this.label46.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label46.Location = new System.Drawing.Point(418, 248);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(59, 40);
-            this.label46.TabIndex = 51;
-            this.label46.Text = "240";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label47
-            // 
-            this.label47.BackColor = System.Drawing.Color.Transparent;
-            this.label47.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label47.Location = new System.Drawing.Point(457, 428);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(72, 25);
-            this.label47.TabIndex = 52;
-            this.label47.Text = "⚫";
-            // 
-            // label48
-            // 
-            this.label48.BackColor = System.Drawing.Color.Transparent;
-            this.label48.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label48.Location = new System.Drawing.Point(457, 448);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(72, 25);
-            this.label48.TabIndex = 53;
-            this.label48.Text = "⚫";
-            // 
-            // label49
-            // 
-            this.label49.BackColor = System.Drawing.Color.Transparent;
-            this.label49.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label49.Location = new System.Drawing.Point(475, 448);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(72, 25);
-            this.label49.TabIndex = 55;
-            this.label49.Text = "⚫";
-            // 
-            // label50
-            // 
-            this.label50.BackColor = System.Drawing.Color.Transparent;
-            this.label50.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label50.Location = new System.Drawing.Point(475, 428);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(72, 25);
-            this.label50.TabIndex = 54;
-            this.label50.Text = "⚫";
-            // 
-            // label51
-            // 
-            this.label51.BackColor = System.Drawing.Color.Transparent;
-            this.label51.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label51.Location = new System.Drawing.Point(492, 448);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(72, 25);
-            this.label51.TabIndex = 57;
-            this.label51.Text = "⚫";
-            // 
-            // label52
-            // 
-            this.label52.BackColor = System.Drawing.Color.Transparent;
-            this.label52.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label52.Location = new System.Drawing.Point(492, 428);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(72, 25);
-            this.label52.TabIndex = 56;
-            this.label52.Text = "⚫";
-            // 
-            // label53
-            // 
-            this.label53.BackColor = System.Drawing.Color.Transparent;
-            this.label53.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label53.Location = new System.Drawing.Point(295, 858);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(59, 43);
-            this.label53.TabIndex = 58;
-            this.label53.Text = "6";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label54
-            // 
-            this.label54.BackColor = System.Drawing.Color.Transparent;
-            this.label54.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label54.Location = new System.Drawing.Point(295, 892);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(59, 43);
-            this.label54.TabIndex = 59;
-            this.label54.Text = "6";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label55
-            // 
-            this.label55.BackColor = System.Drawing.Color.Transparent;
-            this.label55.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label55.Location = new System.Drawing.Point(295, 928);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(59, 43);
-            this.label55.TabIndex = 60;
-            this.label55.Text = "6";
-            this.label55.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label56
-            // 
-            this.label56.BackColor = System.Drawing.Color.Transparent;
-            this.label56.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label56.Location = new System.Drawing.Point(295, 960);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(59, 43);
-            this.label56.TabIndex = 61;
-            this.label56.Text = "6";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Form1
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox1.Location = new System.Drawing.Point(546, 174);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(227, 657);
+            this.textBox1.TabIndex = 62;
+            // 
+            // PrintSheet
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.CS;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(814, 1055);
-            this.Controls.Add(this.label56);
-            this.Controls.Add(this.label55);
-            this.Controls.Add(this.label54);
-            this.Controls.Add(this.label53);
-            this.Controls.Add(this.label51);
-            this.Controls.Add(this.label52);
-            this.Controls.Add(this.label49);
-            this.Controls.Add(this.label50);
-            this.Controls.Add(this.label48);
-            this.Controls.Add(this.label47);
-            this.Controls.Add(this.label46);
-            this.Controls.Add(this.label45);
-            this.Controls.Add(this.label44);
-            this.Controls.Add(this.label38);
-            this.Controls.Add(this.label39);
-            this.Controls.Add(this.label40);
-            this.Controls.Add(this.label41);
-            this.Controls.Add(this.label42);
-            this.Controls.Add(this.label43);
-            this.Controls.Add(this.label37);
-            this.Controls.Add(this.label32);
-            this.Controls.Add(this.label33);
-            this.Controls.Add(this.label34);
-            this.Controls.Add(this.label35);
-            this.Controls.Add(this.label36);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.label27);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PP);
+            this.Controls.Add(this.GP);
+            this.Controls.Add(this.SP);
+            this.Controls.Add(this.CP);
+            this.Controls.Add(this.D_F3);
+            this.Controls.Add(this.D_S3);
+            this.Controls.Add(this.D_F2);
+            this.Controls.Add(this.D_S2);
+            this.Controls.Add(this.D_F1);
+            this.Controls.Add(this.D_S1);
+            this.Controls.Add(this.HP);
+            this.Controls.Add(this.HitDie);
+            this.Controls.Add(this.HD_Num);
+            this.Controls.Add(this.Religion);
+            this.Controls.Add(this.Nature);
+            this.Controls.Add(this.Investigation);
+            this.Controls.Add(this.History);
+            this.Controls.Add(this.Arcana);
+            this.Controls.Add(this.Int_Save);
+            this.Controls.Add(this.Survival);
+            this.Controls.Add(this.Perception);
+            this.Controls.Add(this.Medicine);
+            this.Controls.Add(this.Insight);
+            this.Controls.Add(this.Animal);
+            this.Controls.Add(this.Wis_Save);
+            this.Controls.Add(this.Persuasion);
+            this.Controls.Add(this.Performance);
+            this.Controls.Add(this.Intimidation);
+            this.Controls.Add(this.Deception);
+            this.Controls.Add(this.Cha_Save);
+            this.Controls.Add(this.Con_Save);
+            this.Controls.Add(this.Stealth);
+            this.Controls.Add(this.Sleight);
+            this.Controls.Add(this.Acrobatics);
+            this.Controls.Add(this.Dex_Save);
+            this.Controls.Add(this.Athletics);
+            this.Controls.Add(this.Str_Save);
+            this.Controls.Add(this.Passive_Wis);
+            this.Controls.Add(this.Cha_Mod);
+            this.Controls.Add(this.Wis_Mod);
+            this.Controls.Add(this.Int_Mod);
+            this.Controls.Add(this.Con_Mod);
+            this.Controls.Add(this.Dex_Mod);
+            this.Controls.Add(this.STR_Mod);
+            this.Controls.Add(this.Speed);
+            this.Controls.Add(this.Initiative);
+            this.Controls.Add(this.AC);
             this.Controls.Add(this.Insperation);
             this.Controls.Add(this.Proficency);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Race);
             this.Controls.Add(this.Background);
             this.Controls.Add(this.Player_Name);
             this.Controls.Add(this.Character_Name);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Alignment);
             this.Controls.Add(this.XP);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label19);
+            this.Controls.Add(this.Class);
+            this.Controls.Add(this.Strength);
+            this.Controls.Add(this.Dextarity);
+            this.Controls.Add(this.Constitution);
+            this.Controls.Add(this.Intelligence);
+            this.Controls.Add(this.Wisdom);
+            this.Controls.Add(this.Charisma);
             this.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "PrintSheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -841,64 +878,65 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Label Player_Name;
         private System.Windows.Forms.Label XP;
         private System.Windows.Forms.Label Background;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Alignment;
+        private System.Windows.Forms.Label Class;
+        private System.Windows.Forms.Label Race;
         private System.Windows.Forms.Label Proficency;
+        private System.Windows.Forms.Label AC;
+        private System.Windows.Forms.Label Initiative;
+        private System.Windows.Forms.Label Speed;
+        private System.Windows.Forms.Label STR_Mod;
+        private System.Windows.Forms.Label Dex_Mod;
+        private System.Windows.Forms.Label Con_Mod;
+        private System.Windows.Forms.Label Int_Mod;
+        private System.Windows.Forms.Label Wis_Mod;
+        private System.Windows.Forms.Label Cha_Mod;
+        private System.Windows.Forms.Label Passive_Wis;
+        private System.Windows.Forms.Label Strength;
+        private System.Windows.Forms.Label Dextarity;
+        private System.Windows.Forms.Label Constitution;
+        private System.Windows.Forms.Label Intelligence;
+        private System.Windows.Forms.Label Wisdom;
+        private System.Windows.Forms.Label Charisma;
+        private System.Windows.Forms.Label Str_Save;
+        private System.Windows.Forms.Label Athletics;
+        private System.Windows.Forms.Label Acrobatics;
+        private System.Windows.Forms.Label Dex_Save;
+        private System.Windows.Forms.Label Sleight;
+        private System.Windows.Forms.Label Stealth;
+        private System.Windows.Forms.Label Con_Save;
+        private System.Windows.Forms.Label Performance;
+        private System.Windows.Forms.Label Intimidation;
+        private System.Windows.Forms.Label Deception;
+        private System.Windows.Forms.Label Cha_Save;
+        private System.Windows.Forms.Label Persuasion;
+        private System.Windows.Forms.Label Perception;
+        private System.Windows.Forms.Label Medicine;
+        private System.Windows.Forms.Label Insight;
+        private System.Windows.Forms.Label Animal;
+        private System.Windows.Forms.Label Wis_Save;
+        private System.Windows.Forms.Label Survival;
+        private System.Windows.Forms.Label Religion;
+        private System.Windows.Forms.Label Nature;
+        private System.Windows.Forms.Label Investigation;
+        private System.Windows.Forms.Label History;
+        private System.Windows.Forms.Label Arcana;
+        private System.Windows.Forms.Label Int_Save;
+        private System.Windows.Forms.Label HD_Num;
+        private System.Windows.Forms.Label HitDie;
+        private System.Windows.Forms.Label HP;
+        private System.Windows.Forms.Label D_S1;
+        private System.Windows.Forms.Label D_F1;
+        private System.Windows.Forms.Label D_F2;
+        private System.Windows.Forms.Label D_S2;
+        private System.Windows.Forms.Label D_F3;
+        private System.Windows.Forms.Label D_S3;
+        private System.Windows.Forms.Label CP;
+        private System.Windows.Forms.Label SP;
+        private System.Windows.Forms.Label GP;
+        private System.Windows.Forms.Label PP;
         private System.Windows.Forms.Label Insperation;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label56;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }
 
