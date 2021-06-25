@@ -18,6 +18,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public string Background { get; private set; }
 
         public string[] Inventory { get; private set; }
+        public string[] Weapons { get; private set; }
         public string[] Personality { get; private set; }
         public List<string> Skills { get; private set; }
         public string Alignment { get; private set; }

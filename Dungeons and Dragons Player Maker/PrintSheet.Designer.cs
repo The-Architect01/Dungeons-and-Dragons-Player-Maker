@@ -89,7 +89,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.GP = new System.Windows.Forms.Label();
             this.PP = new System.Windows.Forms.Label();
             this.Insperation = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Abilities = new System.Windows.Forms.TextBox();
+            this.Persona = new System.Windows.Forms.TextBox();
+            this.Equip = new System.Windows.Forms.TextBox();
+            this.Prof = new System.Windows.Forms.TextBox();
+            this.Weapons = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // printDocument1
@@ -778,17 +782,70 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Insperation.Size = new System.Drawing.Size(59, 43);
             this.Insperation.TabIndex = 8;
             // 
-            // textBox1
+            // Abilities
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Location = new System.Drawing.Point(546, 174);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(227, 657);
-            this.textBox1.TabIndex = 62;
+            this.Abilities.BackColor = System.Drawing.Color.White;
+            this.Abilities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Abilities.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Abilities.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Abilities.Location = new System.Drawing.Point(546, 174);
+            this.Abilities.Multiline = true;
+            this.Abilities.Name = "Abilities";
+            this.Abilities.ReadOnly = true;
+            this.Abilities.Size = new System.Drawing.Size(227, 657);
+            this.Abilities.TabIndex = 62;
+            // 
+            // Persona
+            // 
+            this.Persona.BackColor = System.Drawing.Color.White;
+            this.Persona.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Persona.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Persona.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Persona.Location = new System.Drawing.Point(535, 865);
+            this.Persona.Multiline = true;
+            this.Persona.Name = "Persona";
+            this.Persona.ReadOnly = true;
+            this.Persona.Size = new System.Drawing.Size(238, 142);
+            this.Persona.TabIndex = 63;
+            // 
+            // Equip
+            // 
+            this.Equip.BackColor = System.Drawing.Color.White;
+            this.Equip.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Equip.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Equip.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Equip.Location = new System.Drawing.Point(356, 866);
+            this.Equip.Multiline = true;
+            this.Equip.Name = "Equip";
+            this.Equip.ReadOnly = true;
+            this.Equip.Size = new System.Drawing.Size(173, 142);
+            this.Equip.TabIndex = 64;
+            // 
+            // Prof
+            // 
+            this.Prof.BackColor = System.Drawing.Color.White;
+            this.Prof.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Prof.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Prof.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Prof.Location = new System.Drawing.Point(42, 864);
+            this.Prof.Multiline = true;
+            this.Prof.Name = "Prof";
+            this.Prof.ReadOnly = true;
+            this.Prof.Size = new System.Drawing.Size(228, 142);
+            this.Prof.TabIndex = 65;
+            // 
+            // Weapons
+            // 
+            this.Weapons.BackColor = System.Drawing.Color.White;
+            this.Weapons.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Weapons.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Weapons.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Weapons.Location = new System.Drawing.Point(294, 522);
+            this.Weapons.Multiline = true;
+            this.Weapons.Name = "Weapons";
+            this.Weapons.ReadOnly = true;
+            this.Weapons.Size = new System.Drawing.Size(228, 309);
+            this.Weapons.TabIndex = 66;
             // 
             // PrintSheet
             // 
@@ -796,7 +853,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.BackgroundImage = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.CS;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(814, 1055);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Weapons);
+            this.Controls.Add(this.Prof);
+            this.Controls.Add(this.Equip);
+            this.Controls.Add(this.Persona);
+            this.Controls.Add(this.Abilities);
             this.Controls.Add(this.PP);
             this.Controls.Add(this.GP);
             this.Controls.Add(this.SP);
@@ -936,7 +997,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Label GP;
         private System.Windows.Forms.Label PP;
         private System.Windows.Forms.Label Insperation;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox Abilities;
+        public System.Windows.Forms.TextBox Persona;
+        public System.Windows.Forms.TextBox Equip;
+        public System.Windows.Forms.TextBox Prof;
+        public System.Windows.Forms.TextBox Weapons;
     }
 }
 
