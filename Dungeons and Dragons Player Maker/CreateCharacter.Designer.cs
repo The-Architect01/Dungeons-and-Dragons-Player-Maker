@@ -109,11 +109,51 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.City = new System.Windows.Forms.RadioButton();
             this.Church = new System.Windows.Forms.RadioButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.Barbarian = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Barbarian2 = new System.Windows.Forms.ComboBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Barbarian1 = new System.Windows.Forms.ComboBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Alignment = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Print = new System.Windows.Forms.Button();
             this.Share = new System.Windows.Forms.Button();
             this.Restart = new System.Windows.Forms.Button();
             this.Play = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.Bard = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RacePreview)).BeginInit();
@@ -131,7 +171,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Wealthy.SuspendLayout();
             this.Orphan.SuspendLayout();
             this.Raised.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.Barbarian.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.Bard.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1121,6 +1169,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.Bard);
+            this.tabPage5.Controls.Add(this.Barbarian);
+            this.tabPage5.Controls.Add(this.textBox1);
+            this.tabPage5.Controls.Add(this.label15);
+            this.tabPage5.Controls.Add(this.Alignment);
+            this.tabPage5.Controls.Add(this.label13);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -1128,6 +1182,224 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Customize";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // Barbarian
+            // 
+            this.Barbarian.Controls.Add(this.panel2);
+            this.Barbarian.Controls.Add(this.panel1);
+            this.Barbarian.Controls.Add(this.label16);
+            this.Barbarian.Controls.Add(this.label17);
+            this.Barbarian.Controls.Add(this.comboBox2);
+            this.Barbarian.Controls.Add(this.comboBox1);
+            this.Barbarian.Location = new System.Drawing.Point(6, 107);
+            this.Barbarian.Name = "Barbarian";
+            this.Barbarian.Size = new System.Drawing.Size(492, 226);
+            this.Barbarian.TabIndex = 4;
+            this.Barbarian.TabStop = false;
+            this.Barbarian.Text = "Class Customization - Barbarian";
+            this.Barbarian.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.Barbarian2);
+            this.panel2.Controls.Add(this.radioButton3);
+            this.panel2.Controls.Add(this.radioButton4);
+            this.panel2.Location = new System.Drawing.Point(220, 129);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(199, 75);
+            this.panel2.TabIndex = 6;
+            // 
+            // Barbarian2
+            // 
+            this.Barbarian2.Enabled = false;
+            this.Barbarian2.FormattingEnabled = true;
+            this.Barbarian2.Items.AddRange(new object[] {
+            "Club",
+            "Dagger",
+            "Greatclub",
+            "Handaxe",
+            "Javelin",
+            "Light hammer",
+            "Mace",
+            "Quarterstaff",
+            "Sickle",
+            "Spear",
+            "Light crossbow",
+            "Dark",
+            "Shortbow",
+            "Sling"});
+            this.Barbarian2.Location = new System.Drawing.Point(25, 39);
+            this.Barbarian2.Name = "Barbarian2";
+            this.Barbarian2.Size = new System.Drawing.Size(151, 28);
+            this.Barbarian2.TabIndex = 5;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.Location = new System.Drawing.Point(3, 38);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(146, 30);
+            this.radioButton3.TabIndex = 1;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.Location = new System.Drawing.Point(3, 3);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(146, 30);
+            this.radioButton4.TabIndex = 0;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Handaxe - 2";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Barbarian1);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Location = new System.Drawing.Point(14, 129);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(199, 75);
+            this.panel1.TabIndex = 3;
+            // 
+            // Barbarian1
+            // 
+            this.Barbarian1.Enabled = false;
+            this.Barbarian1.FormattingEnabled = true;
+            this.Barbarian1.Items.AddRange(new object[] {
+            "Battleaxe",
+            "Flail",
+            "Glaive",
+            "Greataxe",
+            "Greatsword",
+            "Halberd",
+            "Lance",
+            "Longsword",
+            "Maul",
+            "Morningstar",
+            "Pike",
+            "Rapier",
+            "Scimitar",
+            "Shortsword",
+            "Trident",
+            "War pick",
+            "Warhammer",
+            "Whip"});
+            this.Barbarian1.Location = new System.Drawing.Point(25, 39);
+            this.Barbarian1.Name = "Barbarian1";
+            this.Barbarian1.Size = new System.Drawing.Size(151, 28);
+            this.Barbarian1.TabIndex = 5;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Location = new System.Drawing.Point(3, 38);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(146, 30);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Location = new System.Drawing.Point(3, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(146, 30);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Greataxe";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // label16
+            // 
+            this.label16.Location = new System.Drawing.Point(6, 27);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(308, 25);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Skills";
+            // 
+            // label17
+            // 
+            this.label17.Location = new System.Drawing.Point(17, 101);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(308, 25);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Items";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival"});
+            this.comboBox2.Location = new System.Drawing.Point(163, 55);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(151, 28);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival"});
+            this.comboBox1.Location = new System.Drawing.Point(6, 55);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(76, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.Location = new System.Drawing.Point(76, 7);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 25);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Name";
+            // 
+            // Alignment
+            // 
+            this.Alignment.FormattingEnabled = true;
+            this.Alignment.Items.AddRange(new object[] {
+            "Chaotic Good",
+            "Neutral Good",
+            "Lawful Good",
+            "Chaotic Neutral",
+            "Lawful Neutral",
+            "Neutral",
+            "Lawful Evil",
+            "Neutral Evil",
+            "Chaotic Evil"});
+            this.Alignment.Location = new System.Drawing.Point(274, 30);
+            this.Alignment.Name = "Alignment";
+            this.Alignment.Size = new System.Drawing.Size(151, 28);
+            this.Alignment.TabIndex = 1;
+            this.Alignment.Text = "Neutral";
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(274, 7);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(151, 25);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Alignment";
             // 
             // tabPage4
             // 
@@ -1151,6 +1423,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Print.TabIndex = 3;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = true;
+            this.Print.Click += new System.EventHandler(this.Print_Click);
             // 
             // Share
             // 
@@ -1160,6 +1433,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Share.TabIndex = 2;
             this.Share.Text = "Share";
             this.Share.UseVisualStyleBackColor = true;
+            this.Share.Click += new System.EventHandler(this.Share_Click);
             // 
             // Restart
             // 
@@ -1169,6 +1443,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Restart.TabIndex = 1;
             this.Restart.Text = "Make Another";
             this.Restart.UseVisualStyleBackColor = true;
+            this.Restart.Click += new System.EventHandler(this.Restart_Click);
             // 
             // Play
             // 
@@ -1178,6 +1453,297 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Play.TabIndex = 0;
             this.Play.Text = "Play";
             this.Play.UseVisualStyleBackColor = true;
+            this.Play.Click += new System.EventHandler(this.Play_Click);
+            // 
+            // Bard
+            // 
+            this.Bard.Controls.Add(this.comboBox3);
+            this.Bard.Controls.Add(this.label20);
+            this.Bard.Controls.Add(this.comboBox9);
+            this.Bard.Controls.Add(this.comboBox10);
+            this.Bard.Controls.Add(this.panel5);
+            this.Bard.Controls.Add(this.comboBox7);
+            this.Bard.Controls.Add(this.panel3);
+            this.Bard.Controls.Add(this.panel4);
+            this.Bard.Controls.Add(this.label18);
+            this.Bard.Controls.Add(this.label19);
+            this.Bard.Controls.Add(this.comboBox5);
+            this.Bard.Controls.Add(this.comboBox6);
+            this.Bard.Location = new System.Drawing.Point(6, 107);
+            this.Bard.Name = "Bard";
+            this.Bard.Size = new System.Drawing.Size(492, 355);
+            this.Bard.TabIndex = 7;
+            this.Bard.TabStop = false;
+            this.Bard.Text = "Class Customization - Bard";
+            this.Bard.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radioButton5);
+            this.panel3.Controls.Add(this.radioButton6);
+            this.panel3.Location = new System.Drawing.Point(220, 174);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(199, 75);
+            this.panel3.TabIndex = 6;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.Location = new System.Drawing.Point(3, 38);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(146, 30);
+            this.radioButton5.TabIndex = 1;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Entertainer\'s Pack";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.Location = new System.Drawing.Point(3, 3);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(146, 30);
+            this.radioButton6.TabIndex = 0;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Diplomat\'s Pack";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.comboBox4);
+            this.panel4.Controls.Add(this.radioButton7);
+            this.panel4.Controls.Add(this.radioButton11);
+            this.panel4.Controls.Add(this.radioButton8);
+            this.panel4.Location = new System.Drawing.Point(6, 174);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(199, 118);
+            this.panel4.TabIndex = 3;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.Location = new System.Drawing.Point(3, 3);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(146, 30);
+            this.radioButton8.TabIndex = 0;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Rapier";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(6, 27);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(308, 25);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Tools";
+            // 
+            // label19
+            // 
+            this.label19.Location = new System.Drawing.Point(6, 146);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(405, 25);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Items";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival"});
+            this.comboBox5.Location = new System.Drawing.Point(163, 55);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(151, 28);
+            this.comboBox5.TabIndex = 1;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival"});
+            this.comboBox6.Location = new System.Drawing.Point(6, 55);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(151, 28);
+            this.comboBox6.TabIndex = 0;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival"});
+            this.comboBox7.Location = new System.Drawing.Point(320, 55);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(151, 28);
+            this.comboBox7.TabIndex = 7;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.comboBox8);
+            this.panel5.Controls.Add(this.radioButton9);
+            this.panel5.Controls.Add(this.radioButton10);
+            this.panel5.Location = new System.Drawing.Point(220, 259);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(199, 75);
+            this.panel5.TabIndex = 6;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.Enabled = false;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Items.AddRange(new object[] {
+            "Battleaxe",
+            "Flail",
+            "Glaive",
+            "Greataxe",
+            "Greatsword",
+            "Halberd",
+            "Lance",
+            "Longsword",
+            "Maul",
+            "Morningstar",
+            "Pike",
+            "Rapier",
+            "Scimitar",
+            "Shortsword",
+            "Trident",
+            "War pick",
+            "Warhammer",
+            "Whip"});
+            this.comboBox8.Location = new System.Drawing.Point(25, 39);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(151, 28);
+            this.comboBox8.TabIndex = 5;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.Location = new System.Drawing.Point(3, 38);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(146, 30);
+            this.radioButton9.TabIndex = 1;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.Location = new System.Drawing.Point(3, 3);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(146, 30);
+            this.radioButton10.TabIndex = 0;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "Lute";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.Location = new System.Drawing.Point(3, 37);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(146, 30);
+            this.radioButton11.TabIndex = 6;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "Longsword";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Enabled = false;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Battleaxe",
+            "Flail",
+            "Glaive",
+            "Greataxe",
+            "Greatsword",
+            "Halberd",
+            "Lance",
+            "Longsword",
+            "Maul",
+            "Morningstar",
+            "Pike",
+            "Rapier",
+            "Scimitar",
+            "Shortsword",
+            "Trident",
+            "War pick",
+            "Warhammer",
+            "Whip"});
+            this.comboBox4.Location = new System.Drawing.Point(25, 74);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(151, 28);
+            this.comboBox4.TabIndex = 8;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.Location = new System.Drawing.Point(3, 73);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(146, 30);
+            this.radioButton7.TabIndex = 7;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival"});
+            this.comboBox3.Location = new System.Drawing.Point(320, 114);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(151, 28);
+            this.comboBox3.TabIndex = 11;
+            // 
+            // label20
+            // 
+            this.label20.Location = new System.Drawing.Point(6, 86);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(308, 25);
+            this.label20.TabIndex = 9;
+            this.label20.Text = "Skills";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Items.AddRange(new object[] {
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival"});
+            this.comboBox9.Location = new System.Drawing.Point(163, 114);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(151, 28);
+            this.comboBox9.TabIndex = 10;
+            // 
+            // comboBox10
+            // 
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Items.AddRange(new object[] {
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival"});
+            this.comboBox10.Location = new System.Drawing.Point(6, 114);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(151, 28);
+            this.comboBox10.TabIndex = 8;
             // 
             // CreateCharacter
             // 
@@ -1206,7 +1772,16 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Wealthy.ResumeLayout(false);
             this.Orphan.ResumeLayout(false);
             this.Raised.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.Barbarian.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.Bard.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1304,5 +1879,44 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel Raised;
         private System.Windows.Forms.Label Feature;
+        private System.Windows.Forms.ComboBox Alignment;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox Barbarian;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.ComboBox Barbarian1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox Barbarian2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.GroupBox Bard;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox10;
     }
 }
