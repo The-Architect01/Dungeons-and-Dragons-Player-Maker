@@ -367,6 +367,57 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         #endregion
 
-        
+        #region Customize -- Page 4
+        private void radioButton2_CheckedChanged(object sender, EventArgs e) { Barbarian1.Enabled = true; }
+        private void radioButton3_CheckedChanged(object sender, EventArgs e) { Barbarian2.Enabled = true; }
+        private void radioButton4_CheckedChanged(object sender, EventArgs e) { Barbarian2.Enabled = false; }
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) { Barbarian1.Enabled = false; }
+        #endregion
+
+        #region Confirmation -- Page 5
+        [Obsolete]
+        private void Play_Click(object sender, EventArgs e) {
+            saveCharacter();
+        }
+        [Obsolete]
+        private void saveCharacter() {
+            string race = Race + "_" + SubRaces.Text;
+            string _class = Class + "_" + SubClasses.Text;
+            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
+
+            PC character = new PC(race, _class, Chosen_Background.Text, personality, 0);
+            Engine.Characters.Add(character);
+            Engine.SaveCharacters();
+        }
+        [Obsolete]
+        private void Restart_Click(object sender, EventArgs e) {
+            saveCharacter();
+            Form newCharacter = new CreateCharacter();
+            Dispose();
+            newCharacter.Show();
+        }
+        [Obsolete]
+        private void Share_Click(object sender, EventArgs e) {
+            saveCharacter();
+            
+            string race = Race + "_" + SubRaces.Text;
+            string _class = Class + "_" + SubClasses.Text;
+            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
+
+            PC character = new PC(race, _class, Chosen_Background.Text, personality, 0);
+            character.save();
+        }
+        [Obsolete]
+        private void Print_Click(object sender, EventArgs e) {
+            string race = Race + "_" + SubRaces.Text;
+            string _class = Class + "_" + SubClasses.Text;
+            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
+
+            PC character = new PC(race, _class, Chosen_Background.Text, personality, 0);
+            Form print = new PrintSheet(character);
+            print.Show();
+        }
+        #endregion
+
     }
 }
