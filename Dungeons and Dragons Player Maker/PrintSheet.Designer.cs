@@ -119,7 +119,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Character_Name.TabIndex = 0;
             this.Character_Name.Text = "Sample Character";
             this.Character_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Character_Name.Click += new System.EventHandler(this.label1_Click);
             // 
             // Player_Name
             // 
@@ -925,6 +924,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Name = "PrintSheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.PrintSheet_Shown);
             this.Click += new System.EventHandler(this.Form1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

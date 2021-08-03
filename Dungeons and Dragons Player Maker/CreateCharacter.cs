@@ -323,6 +323,27 @@ namespace Dungeons_and_Dragons_Player_Maker {
         #endregion
 
         #region Confirmation -- Page 5
+
+        List<int> ActiveIndexes = new List<int>();
+        int[] Stats;
+
+        private int[] generateStats() {
+            Random rng = new Random();
+            int[] statvalues = new int[6];
+            for(int i = 0; i < 6; i++) {
+                List<int> value = new List<int>() { rng.Next(1, 6), rng.Next(1, 6), rng.Next(1, 6), rng.Next(1, 6) };
+                statvalues[i] = value.Sum() - value.Min();
+            }
+            return statvalues;
+        }
+
+
+        private void STR_ORG_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
+
+
+
         [Obsolete]
         private void Play_Click(object sender, EventArgs e) {
             saveCharacter();
@@ -354,6 +375,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
             PC character = new PC(race, _class, Background, personality, 0);
             character.save();
+            Engine.Characters.Add(character);
+            Engine.SaveCharacters();
         }
         [Obsolete]
         private void Print_Click(object sender, EventArgs e) {
@@ -365,59 +388,22 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Form print = new PrintSheet(character);
             print.Show();
         }
-        #endregion
 
-        #region Customize -- Page 4
-        private void radioButton2_CheckedChanged(object sender, EventArgs e) { Barbarian1.Enabled = true; }
-        private void radioButton3_CheckedChanged(object sender, EventArgs e) { Barbarian2.Enabled = true; }
-        private void radioButton4_CheckedChanged(object sender, EventArgs e) { Barbarian2.Enabled = false; }
-        private void radioButton1_CheckedChanged(object sender, EventArgs e) { Barbarian1.Enabled = false; }
-        #endregion
-
-        #region Confirmation -- Page 5
-        [Obsolete]
-        private void Play_Click(object sender, EventArgs e) {
-            saveCharacter();
+        private void STR_ORG_ControlAdded(object sender, ControlEventArgs e) {
+           
         }
-        [Obsolete]
-        private void saveCharacter() {
-            string race = Race + "_" + SubRaces.Text;
-            string _class = Class + "_" + SubClasses.Text;
-            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
 
-            PC character = new PC(race, _class, Chosen_Background.Text, personality, 0);
-            Engine.Characters.Add(character);
-            Engine.SaveCharacters();
-        }
-        [Obsolete]
-        private void Restart_Click(object sender, EventArgs e) {
-            saveCharacter();
-            Form newCharacter = new CreateCharacter();
-            Dispose();
-            newCharacter.Show();
-        }
-        [Obsolete]
-        private void Share_Click(object sender, EventArgs e) {
-            saveCharacter();
-            
-            string race = Race + "_" + SubRaces.Text;
-            string _class = Class + "_" + SubClasses.Text;
-            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
+        private void comboBox6_TextChanged(object sender, EventArgs e) {
 
-            PC character = new PC(race, _class, Chosen_Background.Text, personality, 0);
-            character.save();
-        }
-        [Obsolete]
-        private void Print_Click(object sender, EventArgs e) {
-            string race = Race + "_" + SubRaces.Text;
-            string _class = Class + "_" + SubClasses.Text;
-            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
-
-            PC character = new PC(race, _class, Chosen_Background.Text, personality, 0);
-            Form print = new PrintSheet(character);
-            print.Show();
         }
         #endregion
+
+        //#region Customize -- Page 4
+        //private void radioButton2_CheckedChanged(object sender, EventArgs e) { Barbarian1.Enabled = true; }
+        //private void radioButton3_CheckedChanged(object sender, EventArgs e) { Barbarian2.Enabled = true; }
+        //private void radioButton4_CheckedChanged(object sender, EventArgs e) { Barbarian2.Enabled = false; }
+        //private void radioButton1_CheckedChanged(object sender, EventArgs e) { Barbarian1.Enabled = false; }
+        //#endregion
 
     }
 }

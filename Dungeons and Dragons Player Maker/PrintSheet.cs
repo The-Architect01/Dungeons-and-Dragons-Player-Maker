@@ -14,9 +14,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         Bitmap bitMap;
         public PrintSheet() {
             InitializeComponent();
-            foreach(Control c in Controls) {
-                c.Visible = false;
-            }
         }
 
         Label[] skills;
@@ -136,8 +133,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         private void Form1_Click(object sender, EventArgs e) {
             Panel panel = new Panel();
-            //this.Controls.Add(panel);
-            //vScrollBar1.Visible = false;
             Graphics grp = panel.CreateGraphics();
             Size formSize = this.ClientSize;
             bitMap = new Bitmap(formSize.Width, formSize.Height, grp);
@@ -148,15 +143,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
             printPreviewDialog1.UseAntiAlias = true;
             printPreviewDialog1.ShowDialog();
-            //vScrollBar1.Visible = true;
         }
 
-        private void vScrollBar1_ValueChanged(object sender, EventArgs e) {
-         //   Parent.BackgroundImage = 1;
-        }
-
-        private void label1_Click(object sender, EventArgs e) {
-
+        private void PrintSheet_Shown(object sender, EventArgs e) {
+            
         }
     }
 }
