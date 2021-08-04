@@ -11,22 +11,24 @@ using Microsoft.VisualBasic.Devices;
 namespace Dungeons_and_Dragons_Player_Maker {
     [Serializable]
     public class PC {
-        public string Name { get; private set; }
 
-        public string Race { get; private set; }
-        public string Class { get; private set; }
-        public string Background { get; private set; }
+        public string Name { get; set; }
 
-        public string[] Inventory { get; private set; }
-        public string[] Weapons { get; private set; }
-        public string[] Personality { get; private set; }
-        public List<string> Skills { get; private set; }
-        public string Alignment { get; private set; }
-        public int[] Stats { get; private set; }
+        public string Race { get; set; } = "";
+        public string Class { get; set; }
+        public string Background { get; set; }
 
-        public int XP { get; private set; }
-        public int Level { get; private set; }
-        public string creator { get; private set; }
+        public string[] Inventory { get; set; }
+        public string[] Weapons { get; set; }
+        public string[] Personality { get; set; }
+        public List<string> Languages { get; set; } = new List<string>();
+        public List<string> Skills { get; set; } = new List<string>();
+        public string Alignment { get; set; }
+        public int[] Stats { get; set; }
+
+        public int XP { get; set; }
+        public int Level { get; set; }
+        public string creator { get; set; }
 
         public PC(string Race,string Class,string Background,string[] Personality,int XP,params string[] Inventory) {
             this.Race = Race;
@@ -37,6 +39,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.XP = XP;
             this.Level = getLevel();
         }
+        public PC() {}
 
         public int getLevel() {
             if      (XP >= 0  && 300 > XP) { return 1; }

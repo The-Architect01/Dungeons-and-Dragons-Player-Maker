@@ -8,6 +8,19 @@ using System.IO;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public static class Engine {
+
+        public static readonly string[] LANGUAGES = {"Common","Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc","Abyssal","Celestial",
+        "Deep Speech","Draconic","Infernal","Primordial","Sylvan","Undercommon"};
+        public static readonly string[] SKILLS = { "Athletics","Acrobatics","Sleight of Hand","Stealth","Arcana","History","Investigation","Nature","Religion",
+        "Animal Handling","Insight","Medicine","Perception", "Survival","Deception","Intimidation","Performance","Persuasion"};
+
+        public static string[] AddChoose(string list) {
+            List<string> value = new List<string>(){ "Select One"};
+            if (list.SequenceEqual("Lang")) { value.AddRange(LANGUAGES); }
+            else if (list.SequenceEqual("Skills")) { value.AddRange(SKILLS); }
+            return value.ToArray();
+        }
+
         public static List<PC> Characters {
             get { return Characters; }
             set { Characters = value; }

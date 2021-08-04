@@ -8,16 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Backgrounds.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Backgrounds.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Classes.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Classes.resx</DependentUpon>
-    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -28,11 +18,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="Races.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Races.resx</DependentUpon>
-    </Compile>
     <Compile Update="Weapons.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -41,21 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Backgrounds.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Backgrounds.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Classes.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Classes.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Races.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Races.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Weapons.resx">
       <Generator>ResXFileCodeGenerator</Generator>

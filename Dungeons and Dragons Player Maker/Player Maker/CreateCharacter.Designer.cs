@@ -112,6 +112,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Barbarian1 = new System.Windows.Forms.ComboBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -155,7 +156,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Share = new System.Windows.Forms.Button();
             this.Restart = new System.Windows.Forms.Button();
             this.Play = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RacePreview)).BeginInit();
@@ -191,7 +191,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(512, 585);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.tabControl1_ControlAdded);
             // 
             // tabPage1
             // 
@@ -236,7 +235,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.RaceSkill2.Size = new System.Drawing.Size(151, 28);
             this.RaceSkill2.TabIndex = 13;
             this.RaceSkill2.Text = "Select One";
-            this.RaceSkill2.SelectedIndexChanged += new System.EventHandler(this.RaceSkill2_SelectedIndexChanged);
             // 
             // RaceSkill1
             // 
@@ -247,7 +245,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.RaceSkill1.Size = new System.Drawing.Size(151, 28);
             this.RaceSkill1.TabIndex = 12;
             this.RaceSkill1.Text = "Select One";
-            this.RaceSkill1.SelectedIndexChanged += new System.EventHandler(this.RaceSkill1_SelectedIndexChanged);
             // 
             // RaceLang
             // 
@@ -258,7 +255,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.RaceLang.Size = new System.Drawing.Size(151, 28);
             this.RaceLang.TabIndex = 11;
             this.RaceLang.Text = "Select One";
-            this.RaceLang.SelectedIndexChanged += new System.EventHandler(this.RaceLang_SelectedIndexChanged);
             // 
             // SubRaces
             // 
@@ -269,7 +265,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.SubRaces.Size = new System.Drawing.Size(208, 28);
             this.SubRaces.TabIndex = 10;
             this.SubRaces.Text = "Natural";
-            this.SubRaces.SelectedValueChanged += new System.EventHandler(this.SubRaces_SelectedValueChanged);
             // 
             // R6
             // 
@@ -279,8 +274,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.R6.TabIndex = 9;
             this.R6.Text = "Gnome";
             this.R6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.R6.Click += new System.EventHandler(this.Race_Click);
-            this.R6.MouseEnter += new System.EventHandler(this.Race_Hover);
             // 
             // Info
             // 
@@ -301,7 +294,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.button2.TabIndex = 7;
             this.button2.Text = "DOWN";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -311,7 +303,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.button1.TabIndex = 6;
             this.button1.Text = "UP";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // R5
             // 
@@ -321,8 +312,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.R5.TabIndex = 5;
             this.R5.Text = "Dragonborn";
             this.R5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.R5.Click += new System.EventHandler(this.Race_Click);
-            this.R5.MouseEnter += new System.EventHandler(this.Race_Hover);
             // 
             // R4
             // 
@@ -332,8 +321,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.R4.TabIndex = 4;
             this.R4.Text = "Human";
             this.R4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.R4.Click += new System.EventHandler(this.Race_Click);
-            this.R4.MouseEnter += new System.EventHandler(this.Race_Hover);
             // 
             // R3
             // 
@@ -343,8 +330,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.R3.TabIndex = 3;
             this.R3.Text = "Halfling";
             this.R3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.R3.Click += new System.EventHandler(this.Race_Click);
-            this.R3.MouseEnter += new System.EventHandler(this.Race_Hover);
             // 
             // R2
             // 
@@ -354,8 +339,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.R2.TabIndex = 2;
             this.R2.Text = "Elf";
             this.R2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.R2.Click += new System.EventHandler(this.Race_Click);
-            this.R2.MouseEnter += new System.EventHandler(this.Race_Hover);
             // 
             // R1
             // 
@@ -365,12 +348,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.R1.TabIndex = 1;
             this.R1.Text = "Dwarf";
             this.R1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.R1.Click += new System.EventHandler(this.Race_Click);
-            this.R1.MouseEnter += new System.EventHandler(this.Race_Hover);
             // 
             // RacePreview
             // 
-            this.RacePreview.Image = global::Dungeons_and_Dragons_Player_Maker.Races.Half_Elf;
             this.RacePreview.Location = new System.Drawing.Point(223, 6);
             this.RacePreview.Name = "RacePreview";
             this.RacePreview.Size = new System.Drawing.Size(275, 316);
@@ -521,7 +501,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // ClassPreview
             // 
-            this.ClassPreview.Image = global::Dungeons_and_Dragons_Player_Maker.Classes.Bard;
             this.ClassPreview.Location = new System.Drawing.Point(223, 6);
             this.ClassPreview.Name = "ClassPreview";
             this.ClassPreview.Size = new System.Drawing.Size(275, 316);
@@ -1381,6 +1360,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
+            // label16
+            // 
+            this.label16.Location = new System.Drawing.Point(6, 27);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(478, 25);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Skills";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label17
             // 
             this.label17.Location = new System.Drawing.Point(17, 101);
@@ -1848,15 +1836,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Play.Text = "Play";
             this.Play.UseVisualStyleBackColor = true;
             // 
-            // label16
-            // 
-            this.label16.Location = new System.Drawing.Point(6, 27);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(478, 25);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Skills";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // CreateCharacter
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1866,6 +1845,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Name = "CreateCharacter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Character Wizard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateCharacter_FormClosing);
             this.Load += new System.EventHandler(this.CreateCharacter_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
