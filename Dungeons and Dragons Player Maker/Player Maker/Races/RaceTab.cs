@@ -12,9 +12,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #region Variables
         Label[] RaceName;
         static readonly string[] Races = { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling" };
-        static readonly Dictionary<string, int> RacesBonus = new Dictionary<string, int>() { { "Human-Variant", 2 }, { "Half-Elf-Natural", 2 } };
+        static readonly Dictionary<string, int> RacesBonus = new() { { "Human-Variant", 2 }, { "Half-Elf-Natural", 2 } };
 
-        static readonly List<string> Races_SubRace = new List<string>() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf" };
+        static readonly List<string> Races_SubRace = new() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf" };
         static readonly string[] DWARF_SUBRACE = { "Hill", "Mountain", "Deep" };
         static readonly string[] ELF_SUBRACE = { "High", "Wood", "Drow" };
         static readonly string[] HALFLING_SUBRACE = { "Lightfoot", "Stout" };
@@ -23,9 +23,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         static readonly string[] GNOME_SUBRACE = { "Forest", "Rock" };
         static readonly string[] HALF_ELF_SUBRACE = { "Natural", "Variant" };
 
-        static readonly List<string> AdditionalRaceLang = new List<string>() { "Human", "Half-Elf" };
-        static readonly List<string> AdditionalRaceSkill1 = new List<string>() { "Half-Elf" };
-        static readonly List<string> AdditionalRaceSkill2 = new List<string>() { "Half-Elf" };
+        static readonly List<string> AdditionalRaceLang = new() { "Human", "Half-Elf" };
+        static readonly List<string> AdditionalRaceSkill1 = new() { "Half-Elf" };
+        static readonly List<string> AdditionalRaceSkill2 = new() { "Half-Elf" };
 
         int pos = 0;
 
@@ -49,43 +49,43 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         private void InitializeArrays() {
             controlsInForm = new Control[] { R1, R2, R3, R4, R5, R6, RacePreview, Info, Label1, UP, DOWN, RaceLang, RaceSkill1,RaceSkill2, SubRaces };
             RaceName = new Label[] { R1, R2, R3, R4, R5, R6 };
-            foreach(Label l in RaceName) { l.MouseEnter += new EventHandler(RaceName_MouseEnter); l.Click += new EventHandler(RaceName_OnClick); }
-            UP.Click += new EventHandler(UP_OnClick);
-            DOWN.Click += new EventHandler(DOWN_OnClick);
-            SubRaces.SelectedValueChanged += new EventHandler(SubRaces_SelectedValueChanged);
-            RaceLang.SelectedValueChanged += new EventHandler(RaceLang_SelectedValueChanged);
-            RaceSkill1.SelectedValueChanged += new EventHandler(RaceSkill1_SelectedValueChanged);
-            RaceSkill2.SelectedValueChanged += new EventHandler(RaceSkill2_SelectedValueChanged);
+            foreach(Label l in RaceName) { l.MouseEnter += RaceName_MouseEnter; l.Click += RaceName_OnClick; }
+            UP.Click += UP_OnClick;
+            DOWN.Click += DOWN_OnClick;
+            SubRaces.SelectedValueChanged += SubRaces_SelectedValueChanged;
+            RaceLang.SelectedValueChanged += RaceLang_SelectedValueChanged;
+            RaceSkill1.SelectedValueChanged += RaceSkill1_SelectedValueChanged;
+            RaceSkill2.SelectedValueChanged += RaceSkill2_SelectedValueChanged;
         }
 
         #region Controls
         #region Labels -- Race Names
-        Label R1 = new Label() {
+        Label R1 = new() {
             Text = "Dwarf",
             Size = new Size(211, 25),
             Location = new Point(6, 46),
         };
-        Label R2 = new Label() {
+        Label R2 = new() {
             Text = "Elf",
             Size = new Size(211, 25),
             Location = new Point(6, 83),
         };
-        Label R3 = new Label() {
+        Label R3 = new() {
             Text = "Halfling",
             Size = new Size(211, 25),
             Location = new Point(6, 120),
         };
-        Label R4 = new Label() {
+        Label R4 = new() {
             Text = "Human",
             Size = new Size(211, 25),
             Location = new Point(6, 157),
         };
-        Label R5 = new Label() {
+        Label R5 = new() {
             Text = "Dragonborn",
             Size = new Size(211, 25),
             Location = new Point(6, 194),
         };
-        Label R6 = new Label() {
+        Label R6 = new() {
             Text = "Gnome",
             Size = new Size(211, 25),
             Location = new Point(6, 231),
@@ -155,13 +155,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #endregion
         #endregion
 
-        Label Info = new Label() {
+        Label Info = new() {
             Location = new Point(6, 325),
             Size = new Size(492, 171),
             TextAlign = ContentAlignment.MiddleLeft,
             Text = "STR: +1 DEX: +1 CON: +1 WIS: +1 INT: +1 CHA: +1\nSpeed: 30\nSize: Medium\nLanguages: Common\nProficiencies: None\nNotes: None"
         };
-        Label Label1 = new Label() {
+        Label Label1 = new() {
             Size = new Size(492, 19),
             Location = new Point(6, 496),
             TextAlign = ContentAlignment.MiddleCenter,
@@ -169,12 +169,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         };
 
         #region Buttons
-        Button UP = new Button() {
+        Button UP = new() {
             Text = "UP",
             Size = new Size(208, 28),
             Location = new Point(6, 6),
         };
-        Button DOWN = new Button() {
+        Button DOWN = new() {
             Text = "DOWN",
             Size = new Size(208, 28),
             Location = new Point(6, 259),
@@ -204,25 +204,25 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         string Prof1 = "";
         string Prof2 = "";
         string Languages = "";
-        ComboBox RaceLang = new ComboBox() {
+        ComboBox RaceLang = new() {
             Size = new Size(151, 28),
             Location = new Point(6, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Lang")
         };
-        ComboBox RaceSkill1 = new ComboBox() {
+        ComboBox RaceSkill1 = new() {
             Size = new Size(151, 28),
             Location = new Point(176, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Skills")
         };
-        ComboBox RaceSkill2 = new ComboBox() {
+        ComboBox RaceSkill2 = new() {
             Size = new Size(151, 28),
             Location = new Point(346, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Skills")
         };
-        ComboBox SubRaces = new ComboBox() {
+        ComboBox SubRaces = new() {
             Text = "Natural",
             Size = new Size(208, 28),
             Location = new Point(6, 294),
@@ -279,7 +279,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #endregion
         #endregion
 
-        PictureBox RacePreview = new PictureBox() {
+        PictureBox RacePreview = new() {
             Image = Dungeons_and_Dragons_Player_Maker.Races.Human,
             Location = new Point(223, 6),
             Size = new Size(275, 316),
