@@ -132,7 +132,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void Form1_Click(object sender, EventArgs e) {
-            Panel panel = new Panel();
+            Panel panel = new();
             Graphics grp = panel.CreateGraphics();
             Size formSize = this.ClientSize;
             bitMap = new Bitmap(formSize.Width, formSize.Height, grp);

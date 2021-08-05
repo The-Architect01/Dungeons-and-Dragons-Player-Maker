@@ -15,7 +15,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         "Animal Handling","Insight","Medicine","Perception", "Survival","Deception","Intimidation","Performance","Persuasion"};
 
         public static string[] AddChoose(string list) {
-            List<string> value = new List<string>(){ "Select One"};
+            List<string> value = new(){ "Select One"};
             if (list.SequenceEqual("Lang")) { value.AddRange(LANGUAGES); }
             else if (list.SequenceEqual("Skills")) { value.AddRange(SKILLS); }
             return value.ToArray();
@@ -28,13 +28,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
     
         [Obsolete]
         public static void LoadCharacters() {
-            using MemoryStream ms = new MemoryStream(Convert.FromBase64String(Properties.Settings.Default.Characters)); BinaryFormatter bf = new BinaryFormatter();
+            using MemoryStream ms = new(Convert.FromBase64String(Properties.Settings.Default.Characters)); BinaryFormatter bf = new();
             Characters = (List<PC>)bf.Deserialize(ms);
         }
 
         [Obsolete]
         public static void SaveCharacters() {
-            using MemoryStream ms = new MemoryStream(); BinaryFormatter bf = new BinaryFormatter();
+            using MemoryStream ms = new(); BinaryFormatter bf = new();
             bf.Serialize(ms, Characters);
             ms.Position = 0;
             byte[] buffer = new byte[(int)ms.Length];

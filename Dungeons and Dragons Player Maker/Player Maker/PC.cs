@@ -71,7 +71,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public void save() {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + Name + " " +Class + ".hro";
             using (FileStream fs = File.Create(path)) {
-                BinaryFormatter bin = new BinaryFormatter();
+                BinaryFormatter bin = new();
                 bin.Serialize(fs, this);
             }
             MessageBox.Show("The data was saved to your desktop.");
@@ -79,7 +79,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         public static PC openCharacter(string location) {
-            using Stream stream = File.Open(location, FileMode.Open); BinaryFormatter bin = new BinaryFormatter();
+            using Stream stream = File.Open(location, FileMode.Open); BinaryFormatter bin = new();
             return (PC)bin.Deserialize(stream);
         }
     }
