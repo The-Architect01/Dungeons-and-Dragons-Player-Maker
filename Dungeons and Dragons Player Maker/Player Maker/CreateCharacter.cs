@@ -7,26 +7,27 @@ using System.Windows.Forms;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Races;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes;
+using Dungeons_and_Dragons_Player_Maker.Player_Maker;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class CreateCharacter : Form {
 
-        PC Player = new PC();
+        PC Player = new();
 
-        string Race = "";
+        //string Race = "";
         //string Languages = "";
         //string Prof = "";
         //string Prof2 = "";
-        string Class = "";
-        string FullClass = "";
-        string Background = "";
+        //string Class = "";
+        //string FullClass = "";
+        //string Background = "";
 
         readonly Label[] RaceName;
         readonly Label[] ClassName;
         readonly Label[] BackgroundName;
 
         //static readonly string[] Races = { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling" };
-        static readonly string[] Classes = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
+        //static readonly string[] Classes = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
         static readonly string[] Backgrounds = { };
 
         
@@ -46,6 +47,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         RaceTab RT;
         ClassTab CT;
         BackgroundTab BT;
+        CustomizationTab FT;
 
         private void CreateCharacter_Load(object sender, EventArgs e) {
             //RacePreview.Image = Dungeons_and_Dragons_Player_Maker.Races.Human;
@@ -66,7 +68,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             if (!tabControl1.TabPages.Contains(CT)) { tabControl1.TabPages.Add(CT); }
         }
         private void ClassDataFilled(object sender, EventArgs e) {
-
+            if (!tabControl1.TabPages.Contains(BT)) { tabControl1.TabPages.Add(BT); }
+        }
+        private void BackgroundDataFilled(object sender, EventArgs e) {
+            if (!tabControl1.TabPages.Contains(FT)) { tabControl1.TabPages.Add(FT); }
         }
 
         #region Races -- Page 1
@@ -222,84 +227,84 @@ namespace Dungeons_and_Dragons_Player_Maker {
         #endregion
 
         #region Classes -- Page 2
-        int posC = 0;
-        static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
-        static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
-        static readonly string[] CLERIC_Subclasses = { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
-        static readonly string[] DRUID_Subclasses = { "Circle of Land - Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
-        "Circle of Land - Grassland", "Circle of Land - Mountain","Circle of Land - Swamp","Circle of Land - Underdark","Circle of the Moon"};
-        static readonly string[] FIGHTER_Subclasses = { "Champion", "Battle Master", "Eldritch Knight" };
-        static readonly string[] MONK_Subclasses = { "Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements" };
-        static readonly string[] PALADIN_Subclasses = { "Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance" };
-        static readonly string[] RANGER_Subclasses = { "Hunter", "Beast Master" };
-        static readonly string[] ROGUE_Subclasses = { "Thief", "Assassin", "Arcane Trickster" };
-        static readonly string[] SORCERER_Subclasses = { "Draconic Bloodline", "Wild Magic" };
-        static readonly string[] WARLOCK_Subclasses = { "The Archfey", "The Fiend", "The Great Old One" };
-        static readonly string[] WIZARD_Subclasses = { "Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmuation" };
-        static readonly string[] ARTIFICER_Subclasses = { };
+        //int posC = 0;
+        //static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
+        //static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
+        //static readonly string[] CLERIC_Subclasses = { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
+        //static readonly string[] DRUID_Subclasses = { "Circle of Land - Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
+        //"Circle of Land - Grassland", "Circle of Land - Mountain","Circle of Land - Swamp","Circle of Land - Underdark","Circle of the Moon"};
+        //static readonly string[] FIGHTER_Subclasses = { "Champion", "Battle Master", "Eldritch Knight" };
+        //static readonly string[] MONK_Subclasses = { "Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements" };
+        //static readonly string[] PALADIN_Subclasses = { "Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance" };
+        //static readonly string[] RANGER_Subclasses = { "Hunter", "Beast Master" };
+        //static readonly string[] ROGUE_Subclasses = { "Thief", "Assassin", "Arcane Trickster" };
+        //static readonly string[] SORCERER_Subclasses = { "Draconic Bloodline", "Wild Magic" };
+        //static readonly string[] WARLOCK_Subclasses = { "The Archfey", "The Fiend", "The Great Old One" };
+        //static readonly string[] WIZARD_Subclasses = { "Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmuation" };
+        //static readonly string[] ARTIFICER_Subclasses = { };
 
         private void updateClass() {
-            int j = posC;
-            foreach (Label c in ClassName) {
-                c.Text = Classes[j];
-                if (j > Classes.Length - 2) { j = 0; } else { j++; }
-            }
+            //int j = posC;
+            //foreach (Label c in ClassName) {
+            //    c.Text = Classes[j];
+            //    if (j > Classes.Length - 2) { j = 0; } else { j++; }
+            //}
         }
 
         private void button4_Click(object sender, EventArgs e) { //UP
-            posC--;
-            if (posC < 0) { posC = Classes.Length - 1; }
-            updateClass();
+            //posC--;
+            //if (posC < 0) { posC = Classes.Length - 1; }
+            //updateClass();
         }
 
         private void button3_Click(object sender, EventArgs e) { // Down
-            posC++;
-            if (posC > Classes.Length - 1) { posC = 0; }
-            updateClass();
+            //posC++;
+            //if (posC > Classes.Length - 1) { posC = 0; }
+            //updateClass();
         }
 
         private void classClick(object sender, EventArgs e) {
-            Class = ((Label)sender).Text;
+            //Class = ((Label)sender).Text;
             //ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(Class);
-            SubClasses.Items.Clear();
-            SubClasses.Items.AddRange((string[])this.GetType().GetField((Class.ToUpper() + "_Subclasses").ToString(),
-                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));
-            SubClasses.SelectedIndex = 0;
-            classUpdate(Class, SubClasses.Text);
-            if (!tabControl1.TabPages.Contains(tabPage3)) { tabControl1.TabPages.Add(tabPage3); }
+            //SubClasses.Items.Clear();
+            //SubClasses.Items.AddRange((string[])this.GetType().GetField((Class.ToUpper() + "_Subclasses").ToString(),
+            //    BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));
+            //SubClasses.SelectedIndex = 0;
+            //classUpdate(Class, SubClasses.Text);
+            //if (!tabControl1.TabPages.Contains(tabPage3)) { tabControl1.TabPages.Add(tabPage3); }
         }
 
         private void classHover(object sender, EventArgs e) {
-            if (Class != "") {
-               // ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(Class);
-                classUpdate(Class, SubClasses.Text);
-            } else {
-             //   ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
-                classUpdate(((Label)sender).Text, "Select One");
-            }
+            //if (Class != "") {
+            //    ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(Class);
+            //    classUpdate(Class, SubClasses.Text);
+            //} else {
+            //    ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
+            //    classUpdate(((Label)sender).Text, "Select One");
+            //}
         }
 
         private void classUpdate(string classBase, string subclass) {
-            string cLass = Class == "" ? classBase : Class;
-            try {
-                string[] baseClassStats = null;// Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(cLass + "-Base").Split("_");
-                BaseClass.Text = "";
-                foreach (string item in baseClassStats) {
-                    BaseClass.Text = BaseClass.Text + item + "\n";
-                }
-            } catch (Exception) { BaseClass.Text = "No Data Found"; }
-            try {
-                if (subclass.SequenceEqual("Select One")) { SubClass.Text = "No Data Found"; } else {
-                    string[] subStats = null;// Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(cLass + "-" + subclass).Split("_");
-                    SubClass.Text = "";
-                    foreach (string item in subStats) {
-                        SubClass.Text = SubClass.Text + item + "\n";
-                    }
-                }
-            } catch (Exception) { SubClass.Text = "No Data Found"; }
+            //string cLass = Class == "" ? classBase : Class;
+            //try {
+            //    string[] baseClassStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(cLass + "-Base").Split("_");
+            //    BaseClass.Text = "";
+            //    foreach (string item in baseClassStats) {
+            //        BaseClass.Text = BaseClass.Text + item + "\n";
+            //    }
+            //} catch (Exception) { BaseClass.Text = "No Data Found"; }
+            //try {
+            //    if (subclass.SequenceEqual("Select One")) { SubClass.Text = "No Data Found"; } else {
+            //        string[] subStats = null;// Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(cLass + "-" + subclass).Split("_");
+            //        SubClass.Text = "";
+            //        foreach (string item in subStats) {
+            //            SubClass.Text = SubClass.Text + item + "\n";
+            //        }
+            //    }
+            //} catch (Exception) { SubClass.Text = "No Data Found"; }
         }
         private void SubClasses_SelectedIndexChanged(object sender, EventArgs e) {
-            classUpdate(Class, SubClasses.Text);
+         //   classUpdate(Class, SubClasses.Text);
         }
 
         #endregion
@@ -334,18 +339,18 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         #region Confirmation -- Page 5
 
-        List<int> ActiveIndexes = new List<int>();
-        int[] Stats;
+        List<int> ActiveIndexes = new();
+        //int[] Stats;
 
-        private int[] generateStats() {
-            Random rng = new Random();
-            int[] statvalues = new int[6];
-            for(int i = 0; i < 6; i++) {
-                List<int> value = new List<int>() { rng.Next(1, 6), rng.Next(1, 6), rng.Next(1, 6), rng.Next(1, 6) };
-                statvalues[i] = value.Sum() - value.Min();
-            }
-            return statvalues;
-        }
+        //private int[] generateStats() {
+        //    Random rng = new();
+        //    int[] statvalues = new int[6];
+        //    for(int i = 0; i < 6; i++) {
+        //        List<int> value = new() { rng.Next(1, 6), rng.Next(1, 6), rng.Next(1, 6), rng.Next(1, 6) };
+        //        statvalues[i] = value.Sum() - value.Min();
+        //    }
+        //    return statvalues;
+        //}
 
 
         private void STR_ORG_SelectedIndexChanged(object sender, EventArgs e) {
@@ -360,13 +365,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         [Obsolete]
         private void saveCharacter() {
-            string race = Race + "_" + SubRaces.Text;
-            string _class = Class + "_" + SubClasses.Text;
-            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
+            //string race = Race + "_" + SubRaces.Text;
+            //string _class = Class + "_" + SubClasses.Text;
+            //string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
 
-            PC character = new PC(race, _class, Background, personality, 0);
-            Engine.Characters.Add(character);
-            Engine.SaveCharacters();
+            //PC character = new(race, _class, Background, personality, 0);
+            //Engine.Characters.Add(character);
+            //Engine.SaveCharacters();
         }
         [Obsolete]
         private void Restart_Click(object sender, EventArgs e) {
@@ -379,24 +384,24 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private void Share_Click(object sender, EventArgs e) {
             saveCharacter();
             
-            string race = Race + "_" + SubRaces.Text;
-            string _class = Class + "_" + SubClasses.Text;
-            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
+            ////string race = Race + "_" + SubRaces.Text;
+            ////string _class = Class + "_" + SubClasses.Text;
+            ////string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
 
-            PC character = new PC(race, _class, Background, personality, 0);
-            character.save();
-            Engine.Characters.Add(character);
+            //PC character = new(race, _class, Background, personality, 0);
+            //character.save();
+            //Engine.Characters.Add(character);
             Engine.SaveCharacters();
         }
         [Obsolete]
         private void Print_Click(object sender, EventArgs e) {
-            string race = Race + "_" + SubRaces.Text;
-            string _class = Class + "_" + SubClasses.Text;
-            string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
+            //string race = Race + "_" + SubRaces.Text;
+            //string _class = Class + "_" + SubClasses.Text;
+            //string[] personality = { Personality.Text, Ideal.Text, Bond.Text, Flaw.Text };
 
-            PC character = new PC(race, _class, Background, personality, 0);
-            Form print = new PrintSheet(character);
-            print.Show();
+            //PC character = new(race, _class, Background, personality, 0);
+            //Form print = new PrintSheet(character);
+            //print.Show();
         }
 
         private void STR_ORG_ControlAdded(object sender, ControlEventArgs e) {

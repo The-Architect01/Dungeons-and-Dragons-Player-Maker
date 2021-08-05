@@ -382,14 +382,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // SubClass
             // 
-            this.SubClass.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SubClass.Location = new System.Drawing.Point(234, 325);
+            this.SubClass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SubClass.Location = new System.Drawing.Point(234, 344);
             this.SubClass.Name = "SubClass";
-            this.SubClass.Size = new System.Drawing.Size(264, 224);
+            this.SubClass.Size = new System.Drawing.Size(264, 205);
             this.SubClass.TabIndex = 26;
             this.SubClass.Text = "Subclass Bonus:\r\nBonus Proficiencies - 3\r\nCutting Words - 3\r\nAdditional Magical S" +
     "ecrets - 6\r\nPeerless Skill - 14\r\n";
-            this.SubClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SubClasses
             // 
@@ -414,15 +413,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // BaseClass
             // 
-            this.BaseClass.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BaseClass.Location = new System.Drawing.Point(6, 325);
+            this.BaseClass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BaseClass.Location = new System.Drawing.Point(6, 344);
             this.BaseClass.Name = "BaseClass";
-            this.BaseClass.Size = new System.Drawing.Size(222, 224);
+            this.BaseClass.Size = new System.Drawing.Size(222, 205);
             this.BaseClass.TabIndex = 23;
             this.BaseClass.Text = "Class Bonus:\r\nBardic Inspiration - 1, 20\r\nJack of All Trades - 2\r\nSong of Rest - " +
     "2\r\nExpertise - 3\r\nFont of Inspiration - 5\r\nCountercharm - 6\r\nMagical Secrets - 1" +
     "0\r\n";
-            this.BaseClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button3
             // 
