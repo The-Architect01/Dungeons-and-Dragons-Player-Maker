@@ -5,6 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>Dungeons_and_Dragons_Player_Maker</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>D20.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
