@@ -25,6 +25,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         [System.Obsolete]
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateCharacter));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,6 +57,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.C1 = new System.Windows.Forms.Label();
             this.ClassPreview = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox18 = new System.Windows.Forms.ComboBox();
+            this.comboBox17 = new System.Windows.Forms.ComboBox();
+            this.comboBox16 = new System.Windows.Forms.ComboBox();
+            this.comboBox15 = new System.Windows.Forms.ComboBox();
             this.Background_Info = new System.Windows.Forms.Label();
             this.Feature = new System.Windows.Forms.Label();
             this.B6 = new System.Windows.Forms.Label();
@@ -508,6 +513,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.comboBox18);
+            this.tabPage3.Controls.Add(this.comboBox17);
+            this.tabPage3.Controls.Add(this.comboBox16);
+            this.tabPage3.Controls.Add(this.comboBox15);
             this.tabPage3.Controls.Add(this.Background_Info);
             this.tabPage3.Controls.Add(this.Feature);
             this.tabPage3.Controls.Add(this.B6);
@@ -531,16 +540,47 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage3.Text = "Background";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comboBox18
+            // 
+            this.comboBox18.FormattingEnabled = true;
+            this.comboBox18.Location = new System.Drawing.Point(223, 259);
+            this.comboBox18.Name = "comboBox18";
+            this.comboBox18.Size = new System.Drawing.Size(275, 28);
+            this.comboBox18.TabIndex = 48;
+            // 
+            // comboBox17
+            // 
+            this.comboBox17.FormattingEnabled = true;
+            this.comboBox17.Location = new System.Drawing.Point(223, 222);
+            this.comboBox17.Name = "comboBox17";
+            this.comboBox17.Size = new System.Drawing.Size(275, 28);
+            this.comboBox17.TabIndex = 47;
+            // 
+            // comboBox16
+            // 
+            this.comboBox16.FormattingEnabled = true;
+            this.comboBox16.Location = new System.Drawing.Point(223, 185);
+            this.comboBox16.Name = "comboBox16";
+            this.comboBox16.Size = new System.Drawing.Size(275, 28);
+            this.comboBox16.TabIndex = 46;
+            // 
+            // comboBox15
+            // 
+            this.comboBox15.FormattingEnabled = true;
+            this.comboBox15.Location = new System.Drawing.Point(223, 148);
+            this.comboBox15.Name = "comboBox15";
+            this.comboBox15.Size = new System.Drawing.Size(275, 28);
+            this.comboBox15.TabIndex = 45;
+            // 
             // Background_Info
             // 
             this.Background_Info.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Background_Info.Location = new System.Drawing.Point(220, 6);
             this.Background_Info.Name = "Background_Info";
-            this.Background_Info.Size = new System.Drawing.Size(278, 281);
+            this.Background_Info.Size = new System.Drawing.Size(278, 139);
             this.Background_Info.TabIndex = 44;
-            this.Background_Info.Text = "Class Bonus:\r\nBardic Inspiration - 1, 20\r\nJack of All Trades - 2\r\nSong of Rest - " +
-    "2\r\nExpertise - 3\r\nFont of Inspiration - 5\r\nCountercharm - 6\r\nMagical Secrets - 1" +
-    "0\r\n";
+            this.Background_Info.Text = "Background Proficiencies:\r\nLanguage(s): None\r\nSkill(s): Deception, Stealth\r\nTool(" +
+    "s): Thieves\' Tools";
             this.Background_Info.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Feature
@@ -1840,6 +1880,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.ClientSize = new System.Drawing.Size(536, 609);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateCharacter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Character Wizard";
@@ -2004,5 +2045,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.ComboBox DEX_ORG;
         private System.Windows.Forms.ComboBox STR_ORG;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBox17;
+        private System.Windows.Forms.ComboBox comboBox16;
+        private System.Windows.Forms.ComboBox comboBox15;
+        private System.Windows.Forms.ComboBox comboBox18;
     }
 }

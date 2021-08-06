@@ -93,8 +93,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         }
         private void ClassName_Enter(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(PC.Class)) {
-                ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(PC.Class);
-                classUpdate(PC.Class, SubClasses.Text);
+                return;
+                //ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(PC.Class);
+                //classUpdate(PC.Class, SubClasses.Text);
             } else {
                 ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
                 classUpdate(((Label)sender).Text, "Select One");

@@ -58,10 +58,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
             tabControl1.TabPages.Remove(tabPage1);
             RT = new RaceTab(Player);
             CT = new ClassTab(Player);
-            BT = new BackgroundTab();
+            BT = new BackgroundTab(Player);
+            FT = new CustomizationTab(Player);
             tabControl1.TabPages.Add(RT);
-            RT.OnReady += new EventHandler(RaceDataFilled);
-            CT.OnReady += new EventHandler(ClassDataFilled);
+            RT.OnReady += RaceDataFilled;
+            CT.OnReady += ClassDataFilled;
+            BT.OnReady += BackgroundDataFilled;
         }
 
         private void RaceDataFilled(object sender, EventArgs e) {

@@ -93,8 +93,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #region Events
         private void RaceName_MouseEnter(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(PC.Race)) {
-                RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(PC.Race.Split("-")[0]);
-                updateInfo(PC.Race.Split("-")[0]);
+                //RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(PC.Race.Split("-")[0]);
+                //updateInfo(PC.Race.Split("-")[0]);
                 return;
             } else {
                 RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(((Label)sender).Text);
