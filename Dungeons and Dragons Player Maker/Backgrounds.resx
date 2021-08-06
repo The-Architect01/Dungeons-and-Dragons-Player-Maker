@@ -132,4 +132,7 @@
   <data name="Urchin-Personality" xml:space="preserve">
     <value>I hide scraps of food and trinkets away in my pockets._I ask a lot of questions._I like to squeeze into small places where no one else can get to me._I sleep with my back to a wall or tree, with everything I own wrapped in a bundle in my arms._I eat like a pig and have bad manners._I think anyone who's nice to me is hiding evil intent._I don't like to bathe._I bluntly say what other people are hinting at or hiding.</value>
   </data>
+  <data name="Urchin-Skills" xml:space="preserve">
+    <value />
+  </data>
 </root>
