@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
     public partial class BackgroundTab : TabPage {
@@ -14,6 +11,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         PC PC;
 
         Control[] controlsOnControl;
+        ComboBox[] EXOptions;
         Label[] BackgroundsVisible;
         readonly static string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One","Noble","Sage","Soldier","Urchin" };
         int pos = 0;
@@ -27,10 +25,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             Text = "Backgrounds";
             BackColor = Color.White;
             BackgroundsVisible = new Label[] { B1, B2, B3, B4, B5, B6 };
-            controlsOnControl = new Control[] { B1, B2, B3, B4, B5, B6, UP, DOWN, label1, BackgroundBonus, BackgroundData, Personality, Ideal,Bond, Flaw };
+            EXOptions = new ComboBox[] { EXOption1, EXOption2, EXOption3, EXOption4 };
+            controlsOnControl = new Control[] { B1, B2, B3, B4, B5, B6, UP, DOWN, label1, BackgroundBonus, BackgroundData,
+                Personality, Ideal,Bond, Flaw, EXOption1, EXOption2,EXOption3, EXOption4 };
             PC = Player;
             InitializeComponent();
             foreach(Label l in BackgroundsVisible) { l.Click += Background_Click; l.MouseEnter += Background_Hover; }
+            foreach(ComboBox c in EXOptions) { c.SelectedValueChanged += Option_SelectedValueChanged; }
             UP.Click += UP_Click;
             DOWN.Click += DOWN_Click;
             Personality.SelectedValueChanged += ID_SelectedValueChanged;
@@ -102,6 +103,19 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
                 Ideal.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Ideal").Split("_"));
                 Bond.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Bond").Split("_"));
                 Flaw.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Flaw").Split("_"));
+                foreach (string data in BackgroundBonus.Text.Split("\n")) {
+                    for (int i = 0; i < Regex.Matches(data, "<CHOOSE>").Count; i++) {
+                        foreach (ComboBox c in EXOptions) {
+                            if (!c.Enabled) {
+                                if (data.Contains("Languages")) { c.Items.AddRange(Engine.LANGUAGES); }
+                                else if (data.Contains("Skills")) { c.Items.AddRange(Engine.SKILLS); }
+                                else if (data.Contains("Tools")) { c.Items.AddRange(Engine.TOOLS); c.Items.Remove(data.Split(": ")[1].Split(",")[0]); }
+                                c.Enabled = true;
+                                break;
+                            }
+                        }
+                    }
+                }
             } catch (NullReferenceException) {
                 BackgroundData.Text = "Background Skill:\nNo Data Currently Available";
                 BackgroundBonus.Text = "Background Bonus:\nNo Data Currently Available";
@@ -110,7 +124,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         #endregion
         Label BackgroundBonus = new() {
             TextAlign = ContentAlignment.MiddleLeft,
-            Size = new Size(278, 281),
+            Size = new Size(278, 139),
             Location = new Point(220, 6)
         };
         Label BackgroundData = new() {
@@ -180,8 +194,72 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
                 informationFilled = true;
             }
         }
+        
+        ComboBox EXOption1 = new() {
+            Name = "EXOption1",
+            Location = new Point(223, 148),
+            Size = new Size(275, 28),
+            Enabled = false,
+            Text = "Select One"
+        };
+        ComboBox EXOption2 = new() {
+            Name = "EXOption2",
+            Location = new Point(223, 185),
+            Size = new Size(275, 28),
+            Enabled = false,
+            Text = "Select One"
+        };
+        ComboBox EXOption3 = new() {
+            Name = "EXOption3",
+            Location = new Point(223, 222),
+            Size = new Size(275, 28),
+            Enabled = false,
+            Text = "Select One"
+        };
+        ComboBox EXOption4 = new() {
+            Name = "EXOption4",
+            Location = new Point(223, 259),
+            Size = new Size(275, 28),
+            Enabled = false,
+            Text = "Select One"
+        };
+
+        string selectedValueEXOption1;
+        string selectedValueEXOption2;
+        string selectedValueEXOption3;
+        string selectedValueEXOption4;
+        private void Option_SelectedValueChanged(object sender, EventArgs e) {
+            ComboBox c = (ComboBox)sender;
+            switch (c.Name) {
+                case "EXOption1":
+                    updateSelection(c, ref selectedValueEXOption1);
+                    break;
+                case "EXOption2":
+                    updateSelection(c, ref selectedValueEXOption2);
+                    break;
+                case "EXOption3":
+                    updateSelection(c, ref selectedValueEXOption3);
+                    break;
+                case "EXOption4":
+                    updateSelection(c, ref selectedValueEXOption4);
+                    break;
+            }
+        }
+        
+        private void updateSelection(ComboBox c, ref string oldValue) {
+            if (c.Items.Count == Engine.LANGUAGES.Count()) {
+                string data = BackgroundBonus.Text.Split("\n")[1];
+                data.Replace("<CHOOSE>", c.Text);
+            } else if (c.Items.Count == Engine.SKILLS.Count()) {
+                string data = BackgroundBonus.Text.Split("\n")[2];
+                data.Replace("<CHOOSE>", c.Text);
+            } else if (c.Items.Count == Engine.TOOLS.Count()) {
+                string data = BackgroundBonus.Text.Split("\n")[3];
+                string newV = data.Contains("<CHOOSE>") ? data.Replace("<CHOOSE>", c.Text) : data.Replace(oldValue, c.Text);
+                BackgroundBonus.Text = BackgroundBonus.Text.Replace(data, newV);
+                oldValue = c.Text;
+            }
+        }
         #endregion
-
-
     }
 }
