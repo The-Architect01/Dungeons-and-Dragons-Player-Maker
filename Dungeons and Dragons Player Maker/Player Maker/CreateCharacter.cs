@@ -50,7 +50,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         CustomizationTab FT;
 
         private void CreateCharacter_Load(object sender, EventArgs e) {
-            //RacePreview.Image = Dungeons_and_Dragons_Player_Maker.Races.Human;
+            RacePreview.Image = Dungeons_and_Dragons_Player_Maker.Races.Human;
             tabControl1.TabPages.Remove(tabPage2);
             tabControl1.TabPages.Remove(tabPage3);
             tabControl1.TabPages.Remove(tabPage4);
