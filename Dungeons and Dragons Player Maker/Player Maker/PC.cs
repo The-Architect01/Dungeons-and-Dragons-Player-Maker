@@ -18,8 +18,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public string Class { get; set; }
         public string Background { get; set; }
 
-        public string[] Inventory { get; set; }
-        public string[] Weapons { get; set; }
+        public List<string> Inventory { get; set; } = new List<string>();
+        public List<string> Weapons { get; set; } = new List<string>();
         public string[] Personality { get; set; }
         public List<string> Languages { get; set; } = new List<string>();
         public List<string> Skills { get; set; } = new List<string>();
@@ -35,7 +35,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Class = Class;
             this.Background = Background;
             this.Personality = Personality;
-            this.Inventory = Inventory;
+            this.Inventory.AddRange(Inventory);
             this.XP = XP;
             this.Level = getLevel();
         }

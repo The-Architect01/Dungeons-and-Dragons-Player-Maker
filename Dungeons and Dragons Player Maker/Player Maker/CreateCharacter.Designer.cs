@@ -161,6 +161,52 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Share = new System.Windows.Forms.Button();
             this.Restart = new System.Windows.Forms.Button();
             this.Play = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.comboBox20 = new System.Windows.Forms.ComboBox();
+            this.comboBox21 = new System.Windows.Forms.ComboBox();
+            this.comboBox22 = new System.Windows.Forms.ComboBox();
+            this.comboBox23 = new System.Windows.Forms.ComboBox();
+            this.comboBox24 = new System.Windows.Forms.ComboBox();
+            this.comboBox25 = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.comboBox19 = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RacePreview)).BeginInit();
@@ -182,6 +228,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             ((System.ComponentModel.ISupportInitialize)(this.CON_MOD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DEX_MOD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.STR_MOD)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -191,6 +241,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1874,6 +1925,468 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Play.Text = "Play";
             this.Play.UseVisualStyleBackColor = true;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.tabControl2);
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(504, 552);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "tabPage6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage7);
+            this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Location = new System.Drawing.Point(6, 6);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(492, 540);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 29);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(484, 507);
+            this.tabPage7.TabIndex = 0;
+            this.tabPage7.Text = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.panel6);
+            this.tabPage8.Controls.Add(this.button7);
+            this.tabPage8.Controls.Add(this.comboBox20);
+            this.tabPage8.Controls.Add(this.comboBox21);
+            this.tabPage8.Controls.Add(this.comboBox22);
+            this.tabPage8.Controls.Add(this.comboBox23);
+            this.tabPage8.Controls.Add(this.comboBox24);
+            this.tabPage8.Controls.Add(this.comboBox25);
+            this.tabPage8.Controls.Add(this.label40);
+            this.tabPage8.Controls.Add(this.label41);
+            this.tabPage8.Controls.Add(this.label42);
+            this.tabPage8.Controls.Add(this.label43);
+            this.tabPage8.Controls.Add(this.label44);
+            this.tabPage8.Controls.Add(this.label45);
+            this.tabPage8.Controls.Add(this.label46);
+            this.tabPage8.Controls.Add(this.label47);
+            this.tabPage8.Controls.Add(this.label48);
+            this.tabPage8.Controls.Add(this.label49);
+            this.tabPage8.Controls.Add(this.label50);
+            this.tabPage8.Controls.Add(this.label51);
+            this.tabPage8.Controls.Add(this.label28);
+            this.tabPage8.Controls.Add(this.label29);
+            this.tabPage8.Controls.Add(this.label30);
+            this.tabPage8.Controls.Add(this.label31);
+            this.tabPage8.Controls.Add(this.label32);
+            this.tabPage8.Controls.Add(this.label33);
+            this.tabPage8.Controls.Add(this.label34);
+            this.tabPage8.Controls.Add(this.label35);
+            this.tabPage8.Controls.Add(this.label36);
+            this.tabPage8.Controls.Add(this.label37);
+            this.tabPage8.Controls.Add(this.label38);
+            this.tabPage8.Controls.Add(this.label39);
+            this.tabPage8.Controls.Add(this.comboBox19);
+            this.tabPage8.Controls.Add(this.label27);
+            this.tabPage8.Controls.Add(this.textBox1);
+            this.tabPage8.Controls.Add(this.label13);
+            this.tabPage8.Location = new System.Drawing.Point(4, 29);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(484, 507);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "tabPage8";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.checkBox6);
+            this.panel6.Controls.Add(this.checkBox5);
+            this.panel6.Controls.Add(this.checkBox4);
+            this.panel6.Controls.Add(this.checkBox3);
+            this.panel6.Controls.Add(this.checkBox2);
+            this.panel6.Controls.Add(this.checkBox1);
+            this.panel6.Location = new System.Drawing.Point(6, 164);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(472, 40);
+            this.panel6.TabIndex = 59;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox6.Location = new System.Drawing.Point(378, 3);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(62, 34);
+            this.checkBox6.TabIndex = 5;
+            this.checkBox6.Text = "+1";
+            this.checkBox6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox5.Location = new System.Drawing.Point(307, 3);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(62, 34);
+            this.checkBox5.TabIndex = 4;
+            this.checkBox5.Text = "+1";
+            this.checkBox5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox4.Location = new System.Drawing.Point(236, 3);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(62, 34);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "+1";
+            this.checkBox4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox3.Location = new System.Drawing.Point(165, 3);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(62, 34);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "+1";
+            this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox2.Location = new System.Drawing.Point(94, 3);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(62, 34);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "+1";
+            this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox1.Location = new System.Drawing.Point(23, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(62, 34);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "+1";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(171, 350);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(133, 75);
+            this.button7.TabIndex = 58;
+            this.button7.Text = "CONFIRM";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // comboBox20
+            // 
+            this.comboBox20.FormattingEnabled = true;
+            this.comboBox20.Location = new System.Drawing.Point(384, 294);
+            this.comboBox20.Name = "comboBox20";
+            this.comboBox20.Size = new System.Drawing.Size(62, 28);
+            this.comboBox20.TabIndex = 57;
+            // 
+            // comboBox21
+            // 
+            this.comboBox21.FormattingEnabled = true;
+            this.comboBox21.Location = new System.Drawing.Point(313, 294);
+            this.comboBox21.Name = "comboBox21";
+            this.comboBox21.Size = new System.Drawing.Size(62, 28);
+            this.comboBox21.TabIndex = 56;
+            // 
+            // comboBox22
+            // 
+            this.comboBox22.FormattingEnabled = true;
+            this.comboBox22.Location = new System.Drawing.Point(242, 294);
+            this.comboBox22.Name = "comboBox22";
+            this.comboBox22.Size = new System.Drawing.Size(62, 28);
+            this.comboBox22.TabIndex = 55;
+            // 
+            // comboBox23
+            // 
+            this.comboBox23.FormattingEnabled = true;
+            this.comboBox23.Location = new System.Drawing.Point(171, 295);
+            this.comboBox23.Name = "comboBox23";
+            this.comboBox23.Size = new System.Drawing.Size(62, 28);
+            this.comboBox23.TabIndex = 54;
+            // 
+            // comboBox24
+            // 
+            this.comboBox24.FormattingEnabled = true;
+            this.comboBox24.Location = new System.Drawing.Point(100, 294);
+            this.comboBox24.Name = "comboBox24";
+            this.comboBox24.Size = new System.Drawing.Size(62, 28);
+            this.comboBox24.TabIndex = 53;
+            // 
+            // comboBox25
+            // 
+            this.comboBox25.FormattingEnabled = true;
+            this.comboBox25.Location = new System.Drawing.Point(29, 294);
+            this.comboBox25.Name = "comboBox25";
+            this.comboBox25.Size = new System.Drawing.Size(62, 28);
+            this.comboBox25.TabIndex = 52;
+            // 
+            // label40
+            // 
+            this.label40.Location = new System.Drawing.Point(384, 241);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(62, 25);
+            this.label40.TabIndex = 51;
+            this.label40.Text = "Roll 6";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label41
+            // 
+            this.label41.Location = new System.Drawing.Point(313, 241);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(62, 25);
+            this.label41.TabIndex = 50;
+            this.label41.Text = "Roll 5";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label42
+            // 
+            this.label42.Location = new System.Drawing.Point(242, 241);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(62, 25);
+            this.label42.TabIndex = 49;
+            this.label42.Text = "Roll 4";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label43
+            // 
+            this.label43.Location = new System.Drawing.Point(100, 241);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(62, 25);
+            this.label43.TabIndex = 48;
+            this.label43.Text = "Roll 2";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label44
+            // 
+            this.label44.Location = new System.Drawing.Point(171, 241);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(62, 25);
+            this.label44.TabIndex = 47;
+            this.label44.Text = "Roll 3";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label45
+            // 
+            this.label45.Location = new System.Drawing.Point(29, 241);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(62, 25);
+            this.label45.TabIndex = 46;
+            this.label45.Text = "Roll 1";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label46
+            // 
+            this.label46.Location = new System.Drawing.Point(384, 266);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(62, 25);
+            this.label46.TabIndex = 45;
+            this.label46.Text = "20";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label47
+            // 
+            this.label47.Location = new System.Drawing.Point(313, 266);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(62, 25);
+            this.label47.TabIndex = 44;
+            this.label47.Text = "20";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label48
+            // 
+            this.label48.Location = new System.Drawing.Point(242, 266);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(62, 25);
+            this.label48.TabIndex = 43;
+            this.label48.Text = "20";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label49
+            // 
+            this.label49.Location = new System.Drawing.Point(100, 266);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(62, 25);
+            this.label49.TabIndex = 42;
+            this.label49.Text = "20";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label50
+            // 
+            this.label50.Location = new System.Drawing.Point(171, 266);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(62, 25);
+            this.label50.TabIndex = 41;
+            this.label50.Text = "20";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label51
+            // 
+            this.label51.Location = new System.Drawing.Point(29, 266);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(62, 25);
+            this.label51.TabIndex = 40;
+            this.label51.Text = "20";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.Location = new System.Drawing.Point(384, 102);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(62, 25);
+            this.label28.TabIndex = 28;
+            this.label28.Text = "CHA";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.Location = new System.Drawing.Point(313, 102);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(62, 25);
+            this.label29.TabIndex = 27;
+            this.label29.Text = "WIS";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.Location = new System.Drawing.Point(242, 102);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(62, 25);
+            this.label30.TabIndex = 26;
+            this.label30.Text = "INT";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.Location = new System.Drawing.Point(100, 102);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(62, 25);
+            this.label31.TabIndex = 25;
+            this.label31.Text = "DEX";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.Location = new System.Drawing.Point(171, 102);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(62, 25);
+            this.label32.TabIndex = 24;
+            this.label32.Text = "CON";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.Location = new System.Drawing.Point(29, 102);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(62, 25);
+            this.label33.TabIndex = 23;
+            this.label33.Text = "STR";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.Location = new System.Drawing.Point(384, 127);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(62, 25);
+            this.label34.TabIndex = 22;
+            this.label34.Text = "20";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.Location = new System.Drawing.Point(313, 127);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(62, 25);
+            this.label35.TabIndex = 21;
+            this.label35.Text = "20";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.Location = new System.Drawing.Point(242, 127);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(62, 25);
+            this.label36.TabIndex = 20;
+            this.label36.Text = "20";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            this.label37.Location = new System.Drawing.Point(100, 127);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(62, 25);
+            this.label37.TabIndex = 19;
+            this.label37.Text = "20";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            this.label38.Location = new System.Drawing.Point(171, 127);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(62, 25);
+            this.label38.TabIndex = 18;
+            this.label38.Text = "20";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label39
+            // 
+            this.label39.Location = new System.Drawing.Point(29, 127);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(62, 25);
+            this.label39.TabIndex = 17;
+            this.label39.Text = "20";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox19
+            // 
+            this.comboBox19.FormattingEnabled = true;
+            this.comboBox19.Location = new System.Drawing.Point(196, 48);
+            this.comboBox19.Name = "comboBox19";
+            this.comboBox19.Size = new System.Drawing.Size(125, 28);
+            this.comboBox19.TabIndex = 3;
+            // 
+            // label27
+            // 
+            this.label27.Location = new System.Drawing.Point(97, 48);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(93, 25);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Alignment: ";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(196, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(118, 15);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 25);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Name: ";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // CreateCharacter
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1908,6 +2421,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             ((System.ComponentModel.ISupportInitialize)(this.CON_MOD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DEX_MOD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.STR_MOD)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2049,5 +2567,51 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.ComboBox comboBox16;
         private System.Windows.Forms.ComboBox comboBox15;
         private System.Windows.Forms.ComboBox comboBox18;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.ComboBox comboBox19;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.ComboBox comboBox20;
+        private System.Windows.Forms.ComboBox comboBox21;
+        private System.Windows.Forms.ComboBox comboBox22;
+        private System.Windows.Forms.ComboBox comboBox23;
+        private System.Windows.Forms.ComboBox comboBox24;
+        private System.Windows.Forms.ComboBox comboBox25;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

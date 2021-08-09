@@ -129,6 +129,9 @@
   <data name="Criminal/Spy-Ideal" xml:space="preserve">
     <value>Honor. I don’t steal from others in the trade._Freedom. Chains are meant to be broken, as are those who would forge them._Charity. I steal from the wealthy so that I can help people in need._Greed. I will do whatever it takes to become wealthy._People. I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care._Redemption. There’s a spark of good in everyone.</value>
   </data>
+  <data name="Criminal/Spy-Items" xml:space="preserve">
+    <value>A crowbar, a set of dark common clothes, a pouch containing 15 gp.</value>
+  </data>
   <data name="Criminal/Spy-Personality" xml:space="preserve">
     <value>I always have a plan for what to do when things go wrong._I am always calm, no matter what the situation. I never raise my voice or let my emotions control me._The first thing I do in a new place is note the locations of everything valuable—or where such things could be hidden._I would rather make a new friend than a new enemy._I am incredibly slow to trust. Those who seem the fairest often have the most to hide._I don’t pay attention to the risks in a situation. Never tell me the odds._The best way to get me to do something is to tell me I can’t do it._I blow up at the slightest insult.</value>
   </data>

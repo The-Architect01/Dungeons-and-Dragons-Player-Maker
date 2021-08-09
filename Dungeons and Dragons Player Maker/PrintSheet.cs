@@ -25,21 +25,22 @@ namespace Dungeons_and_Dragons_Player_Maker {
             skills = new Label[] { Athletics, Acrobatics,Sleight,Stealth, Arcana, History, Investigation,Nature,Religion,
             Animal, Insight, Medicine,Perception, Survival, Deception, Intimidation, Performance, Persuasion};
             foreach(Label skill in skills) {
-                skill.Visible = pc.Skills.Contains(skill.Name) ? true : false;
+                skill.Visible = player.Skills.Contains(skill.Name);
             }
-            Character_Name.Text = pc.Name;
-            Background.Text = pc.Background;
-            Class.Text = pc.Class;
-            Player_Name.Text = pc.creator;
-            XP.Text = pc.XP.ToString();
-            Alignment.Text = pc.Alignment;
+            player.Skills.RemoveAll(i => Engine.SKILLS.Contains(i));
+            Character_Name.Text = player.Name;
+            Background.Text = player.Background;
+            Class.Text = player.Class;
+            Player_Name.Text = player.creator;
+            XP.Text = player.XP.ToString();
+            Alignment.Text = player.Alignment;
             setProficiencyBonus();
-            Strength.Text = pc.Stats[0].ToString();
-            Dextarity.Text = pc.Stats[1].ToString();
-            Constitution.Text = pc.Stats[2].ToString();
-            Intelligence.Text = pc.Stats[3].ToString();
-            Wisdom.Text = pc.Stats[4].ToString();
-            Charisma.Text = pc.Stats[5].ToString();
+            Strength.Text = player.Stats[0].ToString();
+            Dextarity.Text = player.Stats[1].ToString();
+            Constitution.Text = player.Stats[2].ToString();
+            Intelligence.Text = player.Stats[3].ToString();
+            Wisdom.Text = player.Stats[4].ToString();
+            Charisma.Text = player.Stats[5].ToString();
             setStatMod();
             populateRace();
             populateClass();
@@ -49,12 +50,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
             foreach (string item in player.Weapons) { Weapons.Text += Dungeons_and_Dragons_Player_Maker.Weapons.ResourceManager.GetString(item) + "\n";}
         }
         private void populateRace() {
-            Speed.Text = Races.ResourceManager.GetString(Race.Text).Split("_")[6];
-            string[] abilities = Races.ResourceManager.GetString(Race.Text).Split("_")[10].Split(", ");
+            Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
+            string[] abilities = Races.ResourceManager.GetString(player.Race).Split("_")[10].Split(", ");
             foreach(string ability in abilities) {Abilities.Text += ability + "\n";}
         }
         private void populateClass() {
-            string[] abilities = Classes.ResourceManager.GetString(Class.Text.Split("-")[0] + "-Base").Split("_");
+            string[] abilities = Classes.ResourceManager.GetString(player.Class.Split(":")[0] + ":Base").Split("_");
             foreach(string ability in abilities) {
                 string[] ability1 = ability.Split(" - ");
                 string[] levels = ability1[1].Split(", ");
@@ -62,7 +63,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 foreach(string level in levels) { if(int.Parse(level)==player.Level) { canhave = true; break; } }
                 if (canhave) { Abilities.Text += ability1[0] + "\n"; }
             }
-            string[] subAbilitites = Classes.ResourceManager.GetString(Class.Text).Split("_");
+            string[] subAbilitites = Classes.ResourceManager.GetString(player.Class).Split("_");
             foreach(string ability in subAbilitites) {
                 string[] ability1 = ability.Split(" - ");
                 string[] levels = ability1[1].Split(", ");

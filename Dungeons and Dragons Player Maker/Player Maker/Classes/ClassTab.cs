@@ -34,7 +34,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         public event EventHandler OnReady;
 
         bool _ready = false;
-        bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
+        bool informationFilled { get { return _ready; } set { _ready = value; if (value) { PC.Class += ":" + SubClasses.Text; OnReady.Invoke(this, EventArgs.Empty); } } }
 
         public ClassTab(PC Player) {
             PC = Player;
@@ -165,7 +165,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         private void classUpdate(string classBase, string subclass) {
             string Class = string.IsNullOrEmpty(PC.Class) ? classBase : PC.Class;
             try {
-                string[] baseClassStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + "-Base").Split("_");
+                string[] baseClassStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + ":Base").Split("_");
                 ClassInfo.Text = "Class Skill - Level:\n";
                 foreach (string item in baseClassStats) {
                     ClassInfo.Text = ClassInfo.Text + item + "\n";
@@ -173,7 +173,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             } catch (Exception) { ClassInfo.Text = "No Data Found"; }
             try {
                 if (subclass.SequenceEqual("Select One")) { SubClassInfo.Text = "No Data Found"; } else {
-                    string[] subStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + "-" + subclass).Split("_");
+                    string[] subStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + ":" + subclass).Split("_");
                     SubClassInfo.Text = "Subclass Skill - Level:\n";
                     foreach (string item in subStats) {
                         SubClassInfo.Text = SubClassInfo.Text + item + "\n";

@@ -127,13 +127,13 @@
   <data name="Bard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Bard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bard-Base" xml:space="preserve">
+  <data name="Bard:Base" xml:space="preserve">
     <value>Bardic Insperation - 1, 20_Jack of All Trades - 2_Expertise - 3_Font of Inspiration - 5_Countercharm - 6_Magical Secrets - 10</value>
   </data>
-  <data name="Bard-Lore" xml:space="preserve">
+  <data name="Bard:Lore" xml:space="preserve">
     <value>Bonus Proficiencies - 3_Cutting Words - 3_Additional Magical Secrets - 6_Peerless Skill - 14</value>
   </data>
-  <data name="Bard-Valor" xml:space="preserve">
+  <data name="Bard:Valor" xml:space="preserve">
     <value>Bonus Proficiencies - 3_Combat Inspiration - 3_Extra Attack - 6_Battle Magic - 14</value>
   </data>
   <data name="Cleric" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -142,10 +142,10 @@
   <data name="Druid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Druid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Druid-Base" xml:space="preserve">
+  <data name="Druid:Base" xml:space="preserve">
     <value>Sample</value>
   </data>
-  <data name="Druid-Circle of Land - Artic" xml:space="preserve">
+  <data name="Druid:Circle of Land - Artic" xml:space="preserve">
     <value>test</value>
   </data>
   <data name="Fighter" type="System.Resources.ResXFileRef, System.Windows.Forms">

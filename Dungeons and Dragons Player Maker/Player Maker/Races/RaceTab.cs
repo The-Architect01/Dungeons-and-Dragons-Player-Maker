@@ -47,9 +47,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         }
 
         private void InitializeArrays() {
-            controlsInForm = new Control[] { R1, R2, R3, R4, R5, R6, RacePreview, Info, Label1, UP, DOWN, RaceLang, RaceSkill1,RaceSkill2, SubRaces };
+            controlsInForm = new Control[] { R1, R2, R3, R4, R5, R6, RacePreview, Info, Label1, UP, DOWN, RaceLang, RaceSkill1, RaceSkill2, SubRaces };
             RaceName = new Label[] { R1, R2, R3, R4, R5, R6 };
-            foreach(Label l in RaceName) { l.MouseEnter += RaceName_MouseEnter; l.Click += RaceName_OnClick; }
+            foreach (Label l in RaceName) { l.MouseEnter += RaceName_MouseEnter; l.Click += RaceName_OnClick; }
             UP.Click += UP_OnClick;
             DOWN.Click += DOWN_OnClick;
             SubRaces.SelectedValueChanged += SubRaces_SelectedValueChanged;
@@ -149,8 +149,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
             if (AdditionalRaceLang.Contains(PC.Race)) { RaceLang.Text = "Select One"; RaceLang.Enabled = true; } else { RaceLang.Text = ""; RaceLang.Enabled = false; }
             if (AdditionalRaceSkill1.Contains(PC.Race) && (PC.Race == "Half-Elf" && !SubRaces.Text.SequenceEqual("Variant"))) { RaceSkill1.Text = "Select One"; RaceSkill1.Enabled = true; } else { RaceSkill1.Text = ""; RaceSkill1.Enabled = false; }
             if (AdditionalRaceSkill2.Contains(PC.Race) && (PC.Race == "Half-Elf" && !SubRaces.Text.SequenceEqual("Variant"))) { RaceSkill2.Text = "Select One"; RaceSkill2.Enabled = true; } else { RaceSkill2.Text = ""; RaceSkill2.Enabled = false; }
-            PC.Race = PC.Race + "-" + SubRaces.Text;
-            informationFilled = true;
+            PC.Race = PC.Race + ":" + SubRaces.Text;
+            if (!RaceLang.Enabled && !RaceSkill1.Enabled && !RaceSkill2.Enabled) { informationFilled = true; }
         }
         #endregion
         #endregion
@@ -232,11 +232,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         private void SubRaces_SelectedValueChanged(object sender, EventArgs e) {
             RaceLang.Text = "Select One";
             RaceSkill1.Text = "Select One"; RaceSkill2.Text = "Select One";
-            Prof1 = ""; Prof2 = ""; updateInfo(PC.Race.Split("-")[0]);
+            Prof1 = ""; Prof2 = ""; updateInfo(PC.Race.Split(":")[0]);
         }
         private void RaceLang_SelectedValueChanged(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(PC.Race)) { return; }
-            string defaultLang = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race + "-" + SubRaces.Text).Split("_")[8];
+            string defaultLang = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[8];
             string[] data = Info.Text.Split("\n");
             if (PC.Race == "Human" && SubRaces.Text == "Variant") {
                 string[] languages = data[2].Split(defaultLang);
@@ -251,6 +251,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                 Info.Text = data[0] + "\n" + data[1] + "\n" + data[2] + "\n" + data[3] + "\n" + data[4] + "\n" + data[5];
                 Languages = data[3];
             }
+            if ((!RaceSkill1.Enabled || RaceSkill1.Text != "Select One") && (!RaceSkill2.Enabled || RaceSkill2.Text != "Select One")) { informationFilled = true; }
         }
         private void RaceSkill1_SelectedValueChanged(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(PC.Race)) { return; }
@@ -266,6 +267,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
             }
             Info.Text = data[0] + "\n" + data[1] + "\n" + data[2] + "\n" + data[3] + "\n" + data[4] + "\n" + data[5];
             Prof1 = data[4];
+            if ((!RaceLang.Enabled || RaceLang.Text != "Select One") && (!RaceSkill2.Enabled || RaceSkill2.Text != "Select One")) { informationFilled = true; }
         }
         private void RaceSkill2_SelectedValueChanged(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(PC.Race)) { return; }
@@ -275,6 +277,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
             data[4] = prof2[0] + Prof1 + ", " + prof2[1];
             Info.Text = data[0] + "\n" + data[1] + "\n" + data[2] + "\n" + data[3] + "\n" + data[4] + "\n" + data[5];
             Prof2 = data[4];
+            if ((!RaceLang.Enabled || RaceLang.Text != "Select One") && (!RaceSkill1.Enabled || RaceSkill1.Text != "Select One")) { informationFilled = true; }
         }
         #endregion
         #endregion
@@ -290,7 +293,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
 
         private void updateInfo(string RaceName) {
             try {
-                string[] info = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(RaceName + "-" + SubRaces.Text).Split("_");
+                string[] info = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(RaceName + ":" + SubRaces.Text).Split("_");
                 string final = "";
                 if (info[0] != "0") { final = final + "STR: " + info[0] + " "; }
                 if (info[1] != "0") { final = final + "DEX: " + info[1] + " "; }
@@ -309,8 +312,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                 Info.Text = final;
             } catch (Exception) {
                 Info.Text = "No data found.";
-            }            
+            }
         }
-
     }
 }

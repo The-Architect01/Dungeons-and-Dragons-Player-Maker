@@ -56,6 +56,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             tabControl1.TabPages.Remove(tabPage4);
             tabControl1.TabPages.Remove(tabPage5);
             tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage6);
             RT = new RaceTab(Player);
             CT = new ClassTab(Player);
             BT = new BackgroundTab(Player);

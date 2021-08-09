@@ -190,7 +190,16 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         };
         private void ID_SelectedValueChanged(object sender, EventArgs e) {
             if (!Personality.Text.SequenceEqual("Select One") && !Ideal.Text.SequenceEqual("Select One") &&
-                !Bond.Text.SequenceEqual("Select One") && !Flaw.Text.SequenceEqual("Select One")) {
+                !Bond.Text.SequenceEqual("Select One") && !Flaw.Text.SequenceEqual("Select One") && !BackgroundBonus.Text.Contains("<CHOOSE>")) {
+                string[] Languages = BackgroundBonus.Text.Split("\n")[1].Split("Languages: ")[1].Split(", ");
+                PC.Languages.AddRange(Languages);
+                PC.Languages.Remove("None");
+                string[] Skills = BackgroundBonus.Text.Split("\n")[2].Split("Skills: ")[1].Split(", ");
+                PC.Skills.AddRange(Skills);
+                string[] Tools = BackgroundBonus.Text.Split("\n")[3].Split("Tools: ")[1].Split(", ");
+                PC.Skills.AddRange(Tools);
+                PC.Personality = new[] { Personality.Text, Bond.Text, Ideal.Text, Flaw.Text };
+                PC.Inventory.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Items").Split(", "));
                 informationFilled = true;
             }
         }
@@ -244,6 +253,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
                     updateSelection(c, ref selectedValueEXOption4);
                     break;
             }
+            ID_SelectedValueChanged(sender, e);
         }
         
         private void updateSelection(ComboBox c, ref string oldValue) {
