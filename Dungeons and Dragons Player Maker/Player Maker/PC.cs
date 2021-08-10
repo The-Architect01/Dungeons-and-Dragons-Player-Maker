@@ -69,7 +69,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         public void save() {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + Name + " " +Class + ".hro";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + Name + " - " +Class.Split(":")[0] + ".hro";
             using (FileStream fs = File.Create(path)) {
                 BinaryFormatter bin = new();
                 bin.Serialize(fs, this);

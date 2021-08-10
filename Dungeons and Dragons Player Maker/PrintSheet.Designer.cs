@@ -78,22 +78,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.HD_Num = new System.Windows.Forms.Label();
             this.HitDie = new System.Windows.Forms.Label();
             this.HP = new System.Windows.Forms.Label();
-            this.D_S1 = new System.Windows.Forms.Label();
-            this.D_F1 = new System.Windows.Forms.Label();
-            this.D_F2 = new System.Windows.Forms.Label();
-            this.D_S2 = new System.Windows.Forms.Label();
-            this.D_F3 = new System.Windows.Forms.Label();
-            this.D_S3 = new System.Windows.Forms.Label();
-            this.CP = new System.Windows.Forms.Label();
-            this.SP = new System.Windows.Forms.Label();
-            this.GP = new System.Windows.Forms.Label();
-            this.PP = new System.Windows.Forms.Label();
-            this.Insperation = new System.Windows.Forms.Label();
-            this.Abilities = new System.Windows.Forms.TextBox();
-            this.Persona = new System.Windows.Forms.TextBox();
-            this.Equip = new System.Windows.Forms.TextBox();
-            this.Prof = new System.Windows.Forms.TextBox();
-            this.Weapons = new System.Windows.Forms.TextBox();
+            this.Abilities = new System.Windows.Forms.Label();
+            this.Equip = new System.Windows.Forms.Label();
+            this.Prof = new System.Windows.Forms.Label();
+            this.Personality = new System.Windows.Forms.Label();
+            this.Ideal = new System.Windows.Forms.Label();
+            this.Bond = new System.Windows.Forms.Label();
+            this.Flaw = new System.Windows.Forms.Label();
+            this.Weapons = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // printDocument1
@@ -113,263 +105,314 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // Character_Name
             // 
             this.Character_Name.BackColor = System.Drawing.Color.Transparent;
+            this.Character_Name.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Character_Name.Location = new System.Drawing.Point(57, 74);
             this.Character_Name.Name = "Character_Name";
             this.Character_Name.Size = new System.Drawing.Size(285, 43);
             this.Character_Name.TabIndex = 0;
+            this.Character_Name.Tag = "0";
             this.Character_Name.Text = "Sample Character";
             this.Character_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Character_Name.UseCompatibleTextRendering = true;
             // 
             // Player_Name
             // 
             this.Player_Name.BackColor = System.Drawing.Color.Transparent;
-            this.Player_Name.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Player_Name.Font = new System.Drawing.Font("Book Antiqua", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Player_Name.Location = new System.Drawing.Point(622, 61);
             this.Player_Name.Name = "Player_Name";
             this.Player_Name.Size = new System.Drawing.Size(135, 25);
             this.Player_Name.TabIndex = 1;
+            this.Player_Name.Tag = "0";
             this.Player_Name.Text = "The Architect";
             this.Player_Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Player_Name.UseCompatibleTextRendering = true;
             // 
             // XP
             // 
             this.XP.BackColor = System.Drawing.Color.Transparent;
-            this.XP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.XP.Location = new System.Drawing.Point(659, 86);
+            this.XP.Font = new System.Drawing.Font("Book Antiqua", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.XP.Location = new System.Drawing.Point(643, 89);
             this.XP.Name = "XP";
-            this.XP.Size = new System.Drawing.Size(98, 43);
+            this.XP.Size = new System.Drawing.Size(118, 43);
             this.XP.TabIndex = 2;
+            this.XP.Tag = "0";
             this.XP.Text = "0";
+            this.XP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.XP.UseCompatibleTextRendering = true;
             // 
             // Background
             // 
             this.Background.BackColor = System.Drawing.Color.Transparent;
-            this.Background.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Background.Font = new System.Drawing.Font("Book Antiqua", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Background.Location = new System.Drawing.Point(491, 61);
             this.Background.Name = "Background";
             this.Background.Size = new System.Drawing.Size(123, 25);
             this.Background.TabIndex = 3;
+            this.Background.Tag = "0";
             this.Background.Text = "Charlatan";
             this.Background.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Background.UseCompatibleTextRendering = true;
             // 
             // Alignment
             // 
             this.Alignment.BackColor = System.Drawing.Color.Transparent;
-            this.Alignment.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Alignment.Font = new System.Drawing.Font("Book Antiqua", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Alignment.Location = new System.Drawing.Point(491, 95);
             this.Alignment.Name = "Alignment";
             this.Alignment.Size = new System.Drawing.Size(156, 25);
             this.Alignment.TabIndex = 4;
+            this.Alignment.Tag = "0";
             this.Alignment.Text = "Chaotic Neutral";
             this.Alignment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Alignment.UseCompatibleTextRendering = true;
             // 
             // Class
             // 
             this.Class.BackColor = System.Drawing.Color.Transparent;
-            this.Class.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Class.Font = new System.Drawing.Font("Book Antiqua", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Class.Location = new System.Drawing.Point(350, 61);
             this.Class.Name = "Class";
             this.Class.Size = new System.Drawing.Size(154, 25);
             this.Class.TabIndex = 5;
+            this.Class.Tag = "0";
             this.Class.Text = "Rogue/Warlock";
             this.Class.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Class.UseCompatibleTextRendering = true;
             // 
             // Race
             // 
             this.Race.BackColor = System.Drawing.Color.Transparent;
-            this.Race.Font = new System.Drawing.Font("Blackadder ITC", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Race.Font = new System.Drawing.Font("Book Antiqua", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Race.Location = new System.Drawing.Point(350, 95);
             this.Race.Name = "Race";
             this.Race.Size = new System.Drawing.Size(135, 25);
             this.Race.TabIndex = 6;
+            this.Race.Tag = "0";
             this.Race.Text = "Half-Elf";
             this.Race.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Race.UseCompatibleTextRendering = true;
             // 
             // Proficency
             // 
             this.Proficency.BackColor = System.Drawing.Color.Transparent;
-            this.Proficency.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Proficency.Location = new System.Drawing.Point(68, 174);
+            this.Proficency.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Proficency.Location = new System.Drawing.Point(46, 177);
             this.Proficency.Name = "Proficency";
-            this.Proficency.Size = new System.Drawing.Size(59, 43);
+            this.Proficency.Size = new System.Drawing.Size(70, 43);
             this.Proficency.TabIndex = 7;
-            this.Proficency.Text = "6";
+            this.Proficency.Tag = "0";
+            this.Proficency.Text = "+ 6";
+            this.Proficency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Proficency.UseCompatibleTextRendering = true;
             // 
             // AC
             // 
             this.AC.BackColor = System.Drawing.Color.Transparent;
-            this.AC.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AC.Location = new System.Drawing.Point(303, 187);
+            this.AC.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AC.Location = new System.Drawing.Point(299, 190);
             this.AC.Name = "AC";
             this.AC.Size = new System.Drawing.Size(59, 43);
             this.AC.TabIndex = 9;
+            this.AC.Tag = "0";
             this.AC.Text = "30";
-            this.AC.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.AC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AC.UseCompatibleTextRendering = true;
             // 
             // Initiative
             // 
             this.Initiative.BackColor = System.Drawing.Color.Transparent;
-            this.Initiative.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Initiative.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Initiative.Location = new System.Drawing.Point(368, 193);
             this.Initiative.Name = "Initiative";
             this.Initiative.Size = new System.Drawing.Size(70, 43);
             this.Initiative.TabIndex = 10;
+            this.Initiative.Tag = "0";
             this.Initiative.Text = "+ 15";
-            this.Initiative.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Initiative.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Initiative.UseCompatibleTextRendering = true;
             // 
             // Speed
             // 
             this.Speed.BackColor = System.Drawing.Color.Transparent;
-            this.Speed.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Speed.Location = new System.Drawing.Point(448, 192);
+            this.Speed.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Speed.Location = new System.Drawing.Point(447, 194);
             this.Speed.Name = "Speed";
             this.Speed.Size = new System.Drawing.Size(70, 43);
             this.Speed.TabIndex = 11;
+            this.Speed.Tag = "0";
             this.Speed.Text = "50";
-            this.Speed.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Speed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Speed.UseCompatibleTextRendering = true;
             // 
             // STR_Mod
             // 
             this.STR_Mod.BackColor = System.Drawing.Color.Transparent;
-            this.STR_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.STR_Mod.Location = new System.Drawing.Point(57, 251);
+            this.STR_Mod.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.STR_Mod.Location = new System.Drawing.Point(54, 254);
             this.STR_Mod.Name = "STR_Mod";
             this.STR_Mod.Size = new System.Drawing.Size(59, 43);
             this.STR_Mod.TabIndex = 12;
+            this.STR_Mod.Tag = "0";
             this.STR_Mod.Text = "- 10";
-            this.STR_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.STR_Mod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.STR_Mod.UseCompatibleTextRendering = true;
             // 
             // Dex_Mod
             // 
             this.Dex_Mod.BackColor = System.Drawing.Color.Transparent;
-            this.Dex_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Dex_Mod.Location = new System.Drawing.Point(57, 343);
+            this.Dex_Mod.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Dex_Mod.Location = new System.Drawing.Point(54, 345);
             this.Dex_Mod.Name = "Dex_Mod";
             this.Dex_Mod.Size = new System.Drawing.Size(59, 43);
             this.Dex_Mod.TabIndex = 13;
+            this.Dex_Mod.Tag = "0";
             this.Dex_Mod.Text = "- 10";
-            this.Dex_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Dex_Mod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Dex_Mod.UseCompatibleTextRendering = true;
             // 
             // Con_Mod
             // 
             this.Con_Mod.BackColor = System.Drawing.Color.Transparent;
-            this.Con_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Con_Mod.Location = new System.Drawing.Point(57, 433);
+            this.Con_Mod.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Con_Mod.Location = new System.Drawing.Point(54, 435);
             this.Con_Mod.Name = "Con_Mod";
             this.Con_Mod.Size = new System.Drawing.Size(59, 43);
             this.Con_Mod.TabIndex = 14;
+            this.Con_Mod.Tag = "0";
             this.Con_Mod.Text = "- 10";
-            this.Con_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Con_Mod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Con_Mod.UseCompatibleTextRendering = true;
             // 
             // Int_Mod
             // 
             this.Int_Mod.BackColor = System.Drawing.Color.Transparent;
-            this.Int_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Int_Mod.Location = new System.Drawing.Point(57, 523);
+            this.Int_Mod.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Int_Mod.Location = new System.Drawing.Point(54, 525);
             this.Int_Mod.Name = "Int_Mod";
             this.Int_Mod.Size = new System.Drawing.Size(59, 43);
             this.Int_Mod.TabIndex = 15;
+            this.Int_Mod.Tag = "0";
             this.Int_Mod.Text = "- 10";
-            this.Int_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Int_Mod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Int_Mod.UseCompatibleTextRendering = true;
             // 
             // Wis_Mod
             // 
             this.Wis_Mod.BackColor = System.Drawing.Color.Transparent;
-            this.Wis_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Wis_Mod.Location = new System.Drawing.Point(57, 614);
+            this.Wis_Mod.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Wis_Mod.Location = new System.Drawing.Point(54, 616);
             this.Wis_Mod.Name = "Wis_Mod";
             this.Wis_Mod.Size = new System.Drawing.Size(59, 43);
             this.Wis_Mod.TabIndex = 16;
+            this.Wis_Mod.Tag = "0";
             this.Wis_Mod.Text = "- 10";
-            this.Wis_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Wis_Mod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Wis_Mod.UseCompatibleTextRendering = true;
             // 
             // Cha_Mod
             // 
             this.Cha_Mod.BackColor = System.Drawing.Color.Transparent;
-            this.Cha_Mod.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Cha_Mod.Location = new System.Drawing.Point(57, 705);
+            this.Cha_Mod.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cha_Mod.Location = new System.Drawing.Point(54, 707);
             this.Cha_Mod.Name = "Cha_Mod";
             this.Cha_Mod.Size = new System.Drawing.Size(59, 43);
             this.Cha_Mod.TabIndex = 17;
+            this.Cha_Mod.Tag = "0";
             this.Cha_Mod.Text = "- 10";
-            this.Cha_Mod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Cha_Mod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Cha_Mod.UseCompatibleTextRendering = true;
             // 
             // Passive_Wis
             // 
             this.Passive_Wis.BackColor = System.Drawing.Color.Transparent;
-            this.Passive_Wis.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Passive_Wis.Location = new System.Drawing.Point(55, 792);
+            this.Passive_Wis.Font = new System.Drawing.Font("Book Antiqua", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Passive_Wis.Location = new System.Drawing.Point(55, 797);
             this.Passive_Wis.Name = "Passive_Wis";
             this.Passive_Wis.Size = new System.Drawing.Size(59, 43);
             this.Passive_Wis.TabIndex = 18;
+            this.Passive_Wis.Tag = "0";
             this.Passive_Wis.Text = "6";
-            this.Passive_Wis.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Passive_Wis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Passive_Wis.UseCompatibleTextRendering = true;
             // 
             // Strength
             // 
             this.Strength.BackColor = System.Drawing.Color.Transparent;
-            this.Strength.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Strength.Location = new System.Drawing.Point(49, 280);
+            this.Strength.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Strength.Location = new System.Drawing.Point(49, 285);
             this.Strength.Name = "Strength";
             this.Strength.Size = new System.Drawing.Size(70, 43);
             this.Strength.TabIndex = 19;
+            this.Strength.Tag = "0";
             this.Strength.Text = "30";
-            this.Strength.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Strength.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Strength.UseCompatibleTextRendering = true;
             // 
             // Dextarity
             // 
             this.Dextarity.BackColor = System.Drawing.Color.Transparent;
-            this.Dextarity.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Dextarity.Location = new System.Drawing.Point(49, 370);
+            this.Dextarity.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Dextarity.Location = new System.Drawing.Point(49, 376);
             this.Dextarity.Name = "Dextarity";
             this.Dextarity.Size = new System.Drawing.Size(70, 43);
             this.Dextarity.TabIndex = 20;
+            this.Dextarity.Tag = "0";
             this.Dextarity.Text = "30";
-            this.Dextarity.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Dextarity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Dextarity.UseCompatibleTextRendering = true;
             // 
             // Constitution
             // 
             this.Constitution.BackColor = System.Drawing.Color.Transparent;
-            this.Constitution.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Constitution.Location = new System.Drawing.Point(49, 461);
+            this.Constitution.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Constitution.Location = new System.Drawing.Point(49, 467);
             this.Constitution.Name = "Constitution";
             this.Constitution.Size = new System.Drawing.Size(70, 43);
             this.Constitution.TabIndex = 21;
+            this.Constitution.Tag = "0";
             this.Constitution.Text = "30";
-            this.Constitution.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Constitution.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Constitution.UseCompatibleTextRendering = true;
             // 
             // Intelligence
             // 
             this.Intelligence.BackColor = System.Drawing.Color.Transparent;
-            this.Intelligence.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Intelligence.Location = new System.Drawing.Point(49, 551);
+            this.Intelligence.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Intelligence.Location = new System.Drawing.Point(49, 558);
             this.Intelligence.Name = "Intelligence";
             this.Intelligence.Size = new System.Drawing.Size(70, 43);
             this.Intelligence.TabIndex = 22;
+            this.Intelligence.Tag = "0";
             this.Intelligence.Text = "30";
-            this.Intelligence.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Intelligence.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Intelligence.UseCompatibleTextRendering = true;
             // 
             // Wisdom
             // 
             this.Wisdom.BackColor = System.Drawing.Color.Transparent;
-            this.Wisdom.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Wisdom.Location = new System.Drawing.Point(49, 642);
+            this.Wisdom.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Wisdom.Location = new System.Drawing.Point(49, 649);
             this.Wisdom.Name = "Wisdom";
             this.Wisdom.Size = new System.Drawing.Size(70, 43);
             this.Wisdom.TabIndex = 23;
+            this.Wisdom.Tag = "0";
             this.Wisdom.Text = "30";
-            this.Wisdom.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Wisdom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Wisdom.UseCompatibleTextRendering = true;
             // 
             // Charisma
             // 
             this.Charisma.BackColor = System.Drawing.Color.Transparent;
-            this.Charisma.Font = new System.Drawing.Font("Blackadder ITC", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Charisma.Location = new System.Drawing.Point(49, 734);
+            this.Charisma.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Charisma.Location = new System.Drawing.Point(49, 741);
             this.Charisma.Name = "Charisma";
             this.Charisma.Size = new System.Drawing.Size(70, 43);
             this.Charisma.TabIndex = 24;
+            this.Charisma.Tag = "0";
             this.Charisma.Text = "30";
-            this.Charisma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Charisma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Charisma.UseCompatibleTextRendering = true;
             // 
             // Str_Save
             // 
@@ -638,235 +681,145 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // HD_Num
             // 
             this.HD_Num.BackColor = System.Drawing.Color.Transparent;
-            this.HD_Num.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.HD_Num.Location = new System.Drawing.Point(326, 408);
+            this.HD_Num.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HD_Num.Location = new System.Drawing.Point(326, 421);
             this.HD_Num.Name = "HD_Num";
             this.HD_Num.Size = new System.Drawing.Size(59, 27);
             this.HD_Num.TabIndex = 49;
+            this.HD_Num.Tag = "0";
             this.HD_Num.Text = "20";
             this.HD_Num.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.HD_Num.UseCompatibleTextRendering = true;
             // 
             // HitDie
             // 
             this.HitDie.BackColor = System.Drawing.Color.Transparent;
-            this.HitDie.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.HitDie.Location = new System.Drawing.Point(322, 435);
+            this.HitDie.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HitDie.Location = new System.Drawing.Point(320, 445);
             this.HitDie.Name = "HitDie";
             this.HitDie.Size = new System.Drawing.Size(59, 43);
             this.HitDie.TabIndex = 50;
+            this.HitDie.Tag = "0";
             this.HitDie.Text = "d12";
             this.HitDie.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.HitDie.UseCompatibleTextRendering = true;
             // 
             // HP
             // 
             this.HP.BackColor = System.Drawing.Color.Transparent;
-            this.HP.Font = new System.Drawing.Font("Blackadder ITC", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.HP.Location = new System.Drawing.Point(418, 248);
+            this.HP.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HP.Location = new System.Drawing.Point(418, 254);
             this.HP.Name = "HP";
             this.HP.Size = new System.Drawing.Size(59, 40);
             this.HP.TabIndex = 51;
+            this.HP.Tag = "0";
             this.HP.Text = "240";
-            this.HP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // D_S1
-            // 
-            this.D_S1.BackColor = System.Drawing.Color.Transparent;
-            this.D_S1.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.D_S1.Location = new System.Drawing.Point(457, 428);
-            this.D_S1.Name = "D_S1";
-            this.D_S1.Size = new System.Drawing.Size(72, 25);
-            this.D_S1.TabIndex = 52;
-            this.D_S1.Text = "⚫";
-            // 
-            // D_F1
-            // 
-            this.D_F1.BackColor = System.Drawing.Color.Transparent;
-            this.D_F1.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.D_F1.Location = new System.Drawing.Point(457, 448);
-            this.D_F1.Name = "D_F1";
-            this.D_F1.Size = new System.Drawing.Size(72, 25);
-            this.D_F1.TabIndex = 53;
-            this.D_F1.Text = "⚫";
-            // 
-            // D_F2
-            // 
-            this.D_F2.BackColor = System.Drawing.Color.Transparent;
-            this.D_F2.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.D_F2.Location = new System.Drawing.Point(475, 448);
-            this.D_F2.Name = "D_F2";
-            this.D_F2.Size = new System.Drawing.Size(72, 25);
-            this.D_F2.TabIndex = 55;
-            this.D_F2.Text = "⚫";
-            // 
-            // D_S2
-            // 
-            this.D_S2.BackColor = System.Drawing.Color.Transparent;
-            this.D_S2.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.D_S2.Location = new System.Drawing.Point(475, 428);
-            this.D_S2.Name = "D_S2";
-            this.D_S2.Size = new System.Drawing.Size(72, 25);
-            this.D_S2.TabIndex = 54;
-            this.D_S2.Text = "⚫";
-            // 
-            // D_F3
-            // 
-            this.D_F3.BackColor = System.Drawing.Color.Transparent;
-            this.D_F3.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.D_F3.Location = new System.Drawing.Point(492, 448);
-            this.D_F3.Name = "D_F3";
-            this.D_F3.Size = new System.Drawing.Size(72, 25);
-            this.D_F3.TabIndex = 57;
-            this.D_F3.Text = "⚫";
-            // 
-            // D_S3
-            // 
-            this.D_S3.BackColor = System.Drawing.Color.Transparent;
-            this.D_S3.Font = new System.Drawing.Font("Blackadder ITC", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.D_S3.Location = new System.Drawing.Point(492, 428);
-            this.D_S3.Name = "D_S3";
-            this.D_S3.Size = new System.Drawing.Size(72, 25);
-            this.D_S3.TabIndex = 56;
-            this.D_S3.Text = "⚫";
-            // 
-            // CP
-            // 
-            this.CP.BackColor = System.Drawing.Color.Transparent;
-            this.CP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CP.Location = new System.Drawing.Point(295, 858);
-            this.CP.Name = "CP";
-            this.CP.Size = new System.Drawing.Size(59, 43);
-            this.CP.TabIndex = 58;
-            this.CP.Text = "0";
-            this.CP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // SP
-            // 
-            this.SP.BackColor = System.Drawing.Color.Transparent;
-            this.SP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SP.Location = new System.Drawing.Point(295, 892);
-            this.SP.Name = "SP";
-            this.SP.Size = new System.Drawing.Size(59, 43);
-            this.SP.TabIndex = 59;
-            this.SP.Text = "0";
-            this.SP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // GP
-            // 
-            this.GP.BackColor = System.Drawing.Color.Transparent;
-            this.GP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.GP.Location = new System.Drawing.Point(295, 925);
-            this.GP.Name = "GP";
-            this.GP.Size = new System.Drawing.Size(59, 43);
-            this.GP.TabIndex = 60;
-            this.GP.Text = "15";
-            this.GP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // PP
-            // 
-            this.PP.BackColor = System.Drawing.Color.Transparent;
-            this.PP.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PP.Location = new System.Drawing.Point(295, 960);
-            this.PP.Name = "PP";
-            this.PP.Size = new System.Drawing.Size(59, 43);
-            this.PP.TabIndex = 61;
-            this.PP.Text = "0";
-            this.PP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Insperation
-            // 
-            this.Insperation.BackColor = System.Drawing.Color.Transparent;
-            this.Insperation.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Insperation.Location = new System.Drawing.Point(68, 212);
-            this.Insperation.Name = "Insperation";
-            this.Insperation.Size = new System.Drawing.Size(59, 43);
-            this.Insperation.TabIndex = 8;
+            this.HP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HP.UseCompatibleTextRendering = true;
             // 
             // Abilities
             // 
             this.Abilities.BackColor = System.Drawing.Color.White;
-            this.Abilities.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Abilities.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Abilities.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Abilities.Location = new System.Drawing.Point(546, 174);
-            this.Abilities.Multiline = true;
+            this.Abilities.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Abilities.Location = new System.Drawing.Point(546, 515);
             this.Abilities.Name = "Abilities";
-            this.Abilities.ReadOnly = true;
-            this.Abilities.Size = new System.Drawing.Size(227, 657);
-            this.Abilities.TabIndex = 62;
-            // 
-            // Persona
-            // 
-            this.Persona.BackColor = System.Drawing.Color.White;
-            this.Persona.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Persona.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Persona.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Persona.Location = new System.Drawing.Point(535, 865);
-            this.Persona.Multiline = true;
-            this.Persona.Name = "Persona";
-            this.Persona.ReadOnly = true;
-            this.Persona.Size = new System.Drawing.Size(238, 142);
-            this.Persona.TabIndex = 63;
+            this.Abilities.Size = new System.Drawing.Size(227, 316);
+            this.Abilities.TabIndex = 67;
+            this.Abilities.Tag = "1";
+            this.Abilities.UseCompatibleTextRendering = true;
             // 
             // Equip
             // 
             this.Equip.BackColor = System.Drawing.Color.White;
-            this.Equip.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Equip.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Equip.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Equip.Location = new System.Drawing.Point(356, 866);
-            this.Equip.Multiline = true;
+            this.Equip.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Equip.Location = new System.Drawing.Point(294, 866);
             this.Equip.Name = "Equip";
-            this.Equip.ReadOnly = true;
-            this.Equip.Size = new System.Drawing.Size(173, 142);
-            this.Equip.TabIndex = 64;
+            this.Equip.Size = new System.Drawing.Size(479, 142);
+            this.Equip.TabIndex = 69;
+            this.Equip.Tag = "1";
+            this.Equip.UseCompatibleTextRendering = true;
             // 
             // Prof
             // 
             this.Prof.BackColor = System.Drawing.Color.White;
-            this.Prof.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Prof.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Prof.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Prof.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Prof.Location = new System.Drawing.Point(42, 864);
-            this.Prof.Multiline = true;
             this.Prof.Name = "Prof";
-            this.Prof.ReadOnly = true;
             this.Prof.Size = new System.Drawing.Size(228, 142);
-            this.Prof.TabIndex = 65;
+            this.Prof.TabIndex = 70;
+            this.Prof.Tag = "1";
+            this.Prof.UseCompatibleTextRendering = true;
+            // 
+            // Personality
+            // 
+            this.Personality.BackColor = System.Drawing.Color.White;
+            this.Personality.Font = new System.Drawing.Font("Book Antiqua", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Personality.Location = new System.Drawing.Point(561, 187);
+            this.Personality.Name = "Personality";
+            this.Personality.Size = new System.Drawing.Size(197, 68);
+            this.Personality.TabIndex = 72;
+            this.Personality.Tag = "1";
+            this.Personality.UseCompatibleTextRendering = true;
+            // 
+            // Ideal
+            // 
+            this.Ideal.BackColor = System.Drawing.Color.White;
+            this.Ideal.Font = new System.Drawing.Font("Book Antiqua", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Ideal.Location = new System.Drawing.Point(561, 278);
+            this.Ideal.Name = "Ideal";
+            this.Ideal.Size = new System.Drawing.Size(197, 49);
+            this.Ideal.TabIndex = 73;
+            this.Ideal.Tag = "1";
+            this.Ideal.UseCompatibleTextRendering = true;
+            // 
+            // Bond
+            // 
+            this.Bond.BackColor = System.Drawing.Color.White;
+            this.Bond.Font = new System.Drawing.Font("Book Antiqua", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bond.Location = new System.Drawing.Point(561, 353);
+            this.Bond.Name = "Bond";
+            this.Bond.Size = new System.Drawing.Size(197, 49);
+            this.Bond.TabIndex = 74;
+            this.Bond.Tag = "1";
+            this.Bond.UseCompatibleTextRendering = true;
+            // 
+            // Flaw
+            // 
+            this.Flaw.BackColor = System.Drawing.Color.White;
+            this.Flaw.Font = new System.Drawing.Font("Book Antiqua", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Flaw.Location = new System.Drawing.Point(561, 425);
+            this.Flaw.Name = "Flaw";
+            this.Flaw.Size = new System.Drawing.Size(197, 49);
+            this.Flaw.TabIndex = 75;
+            this.Flaw.Tag = "1";
+            this.Flaw.UseCompatibleTextRendering = true;
             // 
             // Weapons
             // 
             this.Weapons.BackColor = System.Drawing.Color.White;
-            this.Weapons.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Weapons.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Weapons.Font = new System.Drawing.Font("Blackadder ITC", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Weapons.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Weapons.Location = new System.Drawing.Point(294, 522);
-            this.Weapons.Multiline = true;
             this.Weapons.Name = "Weapons";
-            this.Weapons.ReadOnly = true;
             this.Weapons.Size = new System.Drawing.Size(228, 309);
-            this.Weapons.TabIndex = 66;
+            this.Weapons.TabIndex = 76;
+            this.Weapons.Tag = "1";
+            this.Weapons.UseCompatibleTextRendering = true;
             // 
             // PrintSheet
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.CS;
+            this.BackgroundImage = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.Character_Sheet___Alternative___Form_Fillable_page_001;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(814, 1055);
+            this.Controls.Add(this.XP);
             this.Controls.Add(this.Weapons);
+            this.Controls.Add(this.Flaw);
+            this.Controls.Add(this.Bond);
+            this.Controls.Add(this.Ideal);
+            this.Controls.Add(this.Personality);
             this.Controls.Add(this.Prof);
             this.Controls.Add(this.Equip);
-            this.Controls.Add(this.Persona);
             this.Controls.Add(this.Abilities);
-            this.Controls.Add(this.PP);
-            this.Controls.Add(this.GP);
-            this.Controls.Add(this.SP);
-            this.Controls.Add(this.CP);
-            this.Controls.Add(this.D_F3);
-            this.Controls.Add(this.D_S3);
-            this.Controls.Add(this.D_F2);
-            this.Controls.Add(this.D_S2);
-            this.Controls.Add(this.D_F1);
-            this.Controls.Add(this.D_S1);
             this.Controls.Add(this.HP);
             this.Controls.Add(this.HitDie);
             this.Controls.Add(this.HD_Num);
@@ -904,14 +857,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Controls.Add(this.Speed);
             this.Controls.Add(this.Initiative);
             this.Controls.Add(this.AC);
-            this.Controls.Add(this.Insperation);
             this.Controls.Add(this.Proficency);
             this.Controls.Add(this.Race);
             this.Controls.Add(this.Background);
             this.Controls.Add(this.Player_Name);
             this.Controls.Add(this.Character_Name);
             this.Controls.Add(this.Alignment);
-            this.Controls.Add(this.XP);
             this.Controls.Add(this.Class);
             this.Controls.Add(this.Strength);
             this.Controls.Add(this.Dextarity);
@@ -919,16 +870,16 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Controls.Add(this.Intelligence);
             this.Controls.Add(this.Wisdom);
             this.Controls.Add(this.Charisma);
-            this.Font = new System.Drawing.Font("Blackadder ITC", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Font = new System.Drawing.Font("Book Antiqua", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PrintSheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Shown += new System.EventHandler(this.PrintSheet_Shown);
             this.Click += new System.EventHandler(this.Form1_Click);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -987,22 +938,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Label HD_Num;
         private System.Windows.Forms.Label HitDie;
         private System.Windows.Forms.Label HP;
-        private System.Windows.Forms.Label D_S1;
-        private System.Windows.Forms.Label D_F1;
-        private System.Windows.Forms.Label D_F2;
-        private System.Windows.Forms.Label D_S2;
-        private System.Windows.Forms.Label D_F3;
-        private System.Windows.Forms.Label D_S3;
-        private System.Windows.Forms.Label CP;
-        private System.Windows.Forms.Label SP;
-        private System.Windows.Forms.Label GP;
-        private System.Windows.Forms.Label PP;
-        private System.Windows.Forms.Label Insperation;
-        public System.Windows.Forms.TextBox Abilities;
-        public System.Windows.Forms.TextBox Persona;
-        public System.Windows.Forms.TextBox Equip;
-        public System.Windows.Forms.TextBox Prof;
-        public System.Windows.Forms.TextBox Weapons;
+        private System.Windows.Forms.Label Abilities;
+        private System.Windows.Forms.Label Equip;
+        private System.Windows.Forms.Label Prof;
+        private System.Windows.Forms.Label Personality;
+        private System.Windows.Forms.Label Ideal;
+        private System.Windows.Forms.Label Bond;
+        private System.Windows.Forms.Label Flaw;
+        private System.Windows.Forms.Label Weapons;
     }
 }
 

@@ -61,6 +61,69 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Criminal Contact: You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you..
+        /// </summary>
+        internal static string Criminal_Spy {
+            get {
+                return ResourceManager.GetString("Criminal/Spy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I’m trying to pay off an old debt I owe to a generous benefactor._My ill-gotten gains go to support my family._Something important was taken from me, and I aim to steal it back._I will become the greatest thief that ever lived._I’m guilty of a terrible crime. I hope I can redeem myself for it._Someone I loved died because of a mistake I made. That will never happen again..
+        /// </summary>
+        internal static string Criminal_Spy_Bond {
+            get {
+                return ResourceManager.GetString("Criminal/Spy-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When I see something valuable, I can’t think about anything but how to steal it._When faced with a choice between money and my friends, I usually choose the money._If there’s a plan, I’ll forget it. If I don’t forget it, I’ll ignore it._I have a “tell” that reveals when I’m lying._I turn tail and run when things look bad._An innocent person is in prison for a crime that I committed. I’m okay with that..
+        /// </summary>
+        internal static string Criminal_Spy_Flaw {
+            get {
+                return ResourceManager.GetString("Criminal/Spy-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Honor. I don’t steal from others in the trade._Freedom. Chains are meant to be broken, as are those who would forge them._Charity. I steal from the wealthy so that I can help people in need._Greed. I will do whatever it takes to become wealthy._People. I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care._Redemption. There’s a spark of good in everyone..
+        /// </summary>
+        internal static string Criminal_Spy_Ideal {
+            get {
+                return ResourceManager.GetString("Criminal/Spy-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A crowbar, a set of dark common clothes, a pouch containing 15 gp..
+        /// </summary>
+        internal static string Criminal_Spy_Items {
+            get {
+                return ResourceManager.GetString("Criminal/Spy-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I always have a plan for what to do when things go wrong._I am always calm, no matter what the situation. I never raise my voice or let my emotions control me._The first thing I do in a new place is note the locations of everything valuable—or where such things could be hidden._I would rather make a new friend than a new enemy._I am incredibly slow to trust. Those who seem the fairest often have the most to hide._I don’t pay attention to the risks in a situation. Never tell me the odds._The best way to get  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Criminal_Spy_Personality {
+            get {
+                return ResourceManager.GetString("Criminal/Spy-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: None_Skills: Deception, Stealth_Tools: Thieves&apos; Tools, &lt;CHOOSE&gt;.
+        /// </summary>
+        internal static string Criminal_Spy_Skills {
+            get {
+                return ResourceManager.GetString("Criminal/Spy-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City Secrets.
         /// </summary>
         internal static string Urchin {
@@ -102,6 +165,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Urchin_Personality {
             get {
                 return ResourceManager.GetString("Urchin-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Urchin_Skills {
+            get {
+                return ResourceManager.GetString("Urchin-Skills", resourceCulture);
             }
         }
     }

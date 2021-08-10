@@ -14,7 +14,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreateCharacter());
+            Application.Run(new SplashScreen());
+            Application.Run(new MainMenu());
         }
     }
 }

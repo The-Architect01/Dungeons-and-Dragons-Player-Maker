@@ -12,7 +12,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #region Variables
         Label[] RaceName;
         static readonly string[] Races = { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling" };
-        static readonly Dictionary<string, int> RacesBonus = new() { { "Human-Variant", 2 }, { "Half-Elf-Natural", 2 } };
+        static readonly Dictionary<string, int> RacesBonus = new() { { "Human:Variant", 2 }, { "Half-Elf:Natural", 2 } };
 
         static readonly List<string> Races_SubRace = new() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf" };
         static readonly string[] DWARF_SUBRACE = { "Hill", "Mountain", "Deep" };
@@ -35,7 +35,21 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         public event EventHandler OnReady;
 
         bool _ready = false;
-        bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
+        bool informationFilled { get { return _ready; } set { _ready = value; if (value) {
+                    PC.Race = PC.Race.Split(":")[0] + ":" + SubRaces.Text;
+                    if(Prof1 != "" && Prof2 != "") {
+                        PC.Skills.AddRange(new[] { Prof1, Prof2 });
+                    }else if(Prof2 != "") {
+                        PC.Skills.Add(Prof2);
+                    }else if (Prof1 != "") {
+                        PC.Skills.Add(Prof1);
+                    }
+                    PC.Skills.AddRange(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[9].Split(", "));
+                    PC.Skills.Remove("None");
+                    PC.Languages.AddRange(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[8].Split(", "));
+                    PC.Languages.Add(Languages);
+                    
+                    OnReady.Invoke(this, EventArgs.Empty); } } }
 
         public RaceTab(PC character) {
             PC = character;
@@ -110,12 +124,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                 updateInfo(((Label)sender).Text);
             }
             PC.Race = ((Label)sender).Text;
-            RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(PC.Race);
+            RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(PC.Race.Split(":")[0]);
             updateInfo(PC.Race);
-            if (Races_SubRace.Contains(PC.Race)) {
+            if (Races_SubRace.Contains(PC.Race.Split(":")[0])){
                 SubRaces.Enabled = true;
                 object[] items = null;
-                switch (PC.Race) {
+                switch (PC.Race.Split(":")[0]) {
                     case "Dwarf":
                         items = DWARF_SUBRACE;
                         break;
@@ -255,7 +269,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         }
         private void RaceSkill1_SelectedValueChanged(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(PC.Race)) { return; }
-            string defaultProf = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race + "-" + SubRaces.Text).Split("_")[9];
+            string defaultProf = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race + ":" + SubRaces.Text).Split("_")[9];
             string[] data = Info.Text.Split("\n");
             if (defaultProf.SequenceEqual("None")) {
                 data[4] = "Proficiencies: " + RaceSkill1.Text;
@@ -295,21 +309,16 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
             try {
                 string[] info = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(RaceName + ":" + SubRaces.Text).Split("_");
                 string final = "";
-                if (info[0] != "0") { final = final + "STR: " + info[0] + " "; }
-                if (info[1] != "0") { final = final + "DEX: " + info[1] + " "; }
-                if (info[2] != "0") { final = final + "CON: " + info[2] + " "; }
-                if (info[3] != "0") { final = final + "WIS: " + info[3] + " "; }
-                if (info[4] != "0") { final = final + "INT: " + info[4] + " "; }
-                if (info[5] != "0") { final = final + "CHA: " + info[5] + " "; }
-                if (final != "") { final = final + "\n"; }
+                final = final + "STR: " + info[0] + " DEX: " + info[1] + " CON: " + info[2] + " WIS: " + info[3] + " INT: " + info[4] + " CHA: " + info[5] + "\n";
                 final = final + "Speed: " + info[6] + "\n";
                 final = final + "Size: " + info[7] + "\n";
 
-                final = PC.Languages.Count != 0 ? final + PC.Languages + "\n" : final + "Languages: " + info[8] + "\n";
+                final = final + "Languages: " + info[8] + "\n";
                 final = Prof2 != "" ? final + Prof2 + "\n" :
                         Prof1 != "" ? final + Prof1 + "\n" : final + "Proficiencies: " + info[9] + "\n";
                 final = final + "Notes: " + info[10];
                 Info.Text = final;
+                PC.Race = RaceName + ":" + SubRaces.Text;
             } catch (Exception) {
                 Info.Text = "No data found.";
             }

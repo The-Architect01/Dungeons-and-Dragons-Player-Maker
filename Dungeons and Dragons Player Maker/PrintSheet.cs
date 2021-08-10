@@ -1,19 +1,65 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.Drawing.Text;
+using System.Linq;
 using System.Windows.Forms;
+using System.Reflection;
+using System.IO;
+using System.Runtime.InteropServices;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class PrintSheet : Form {
         Bitmap bitMap;
+        PrivateFontCollection Fonts = new();
+
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
+
+        private PrivateFontCollection populateFonts() { 
+            PrivateFontCollection pFC = new PrivateFontCollection();
+
+            try {
+                string[] resource = { "Benguiat Bold.ttf" }; // specify embedded resource name
+
+                foreach (var item in resource) {
+                    // receive resource stream
+                    Stream fontStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(item);
+
+                    // create an unsafe memory block for the font data
+                    System.IntPtr data = Marshal.AllocCoTaskMem((int)fontStream.Length);
+
+                    // create a buffer to read in to
+                    byte[] fontdata = new byte[fontStream.Length];
+
+                    // read the font data from the resource
+                    fontStream.Read(fontdata, 0, (int)fontStream.Length);
+
+                    // copy the bytes to the unsafe memory block
+                    Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
+
+                    ///IMPORTANT line to register font in system
+                    uint cFonts = 0;
+                    AddFontMemResourceEx(data, (uint)fontdata.Length, IntPtr.Zero, ref cFonts);
+
+                    // pass the font to the font collection
+                    pFC.AddMemoryFont(data, (int)fontStream.Length);
+
+                    // close the resource stream
+                    fontStream.Close();
+                    // free up the unsafe memory
+                    Marshal.FreeCoTaskMem(data);
+                }
+            } catch (Exception) {
+                
+            }
+
+            return pFC;
+        }
+
         public PrintSheet() {
             InitializeComponent();
+            Fonts = populateFonts();
         }
 
         Label[] skills;
@@ -22,6 +68,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public PrintSheet(PC pc) {
             InitializeComponent();
             player = pc;
+            Race.Text = player.Race.Split(":")[0];
             skills = new Label[] { Athletics, Acrobatics,Sleight,Stealth, Arcana, History, Investigation,Nature,Religion,
             Animal, Insight, Medicine,Perception, Survival, Deception, Intimidation, Performance, Persuasion};
             foreach(Label skill in skills) {
@@ -45,9 +92,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
             populateRace();
             populateClass();
             populateBackground();
+            populateWeapons();
             foreach(string skill in player.Skills) { Prof.Text += skill + ", "; }
             foreach(string item in player.Inventory) { Equip.Text += item + ", "; }
             foreach (string item in player.Weapons) { Weapons.Text += Dungeons_and_Dragons_Player_Maker.Weapons.ResourceManager.GetString(item) + "\n";}
+            Fonts.AddFontFile(Path.GetDirectoryName(Application.ExecutablePath).Split("bin")[0] + "Benguiat Bold.ttf");
+            foreach(Control c in Controls) {
+                try { c.Font = new Font(Fonts.Families[int.Parse(c.Tag.ToString())], c.Font.SizeInPoints); } catch (Exception) { }
+            }
         }
         private void populateRace() {
             Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
@@ -73,11 +125,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             }
         }
         private void populateBackground() {
-            Abilities.Text += Backgrounds.ResourceManager.GetString(Background.Text);
-            Persona.Text += "Personality: " + player.Personality[0] + "\n";
-            Persona.Text += "Ideal: " + player.Personality[1] + "\n";
-            Persona.Text += "Bond: " + player.Personality[2] + "\n";
-            Persona.Text += "Flaw: " + player.Personality[3];
+            Abilities.Text += Backgrounds.ResourceManager.GetString(Background.Text).Split(":")[0];
+            Personality.Text = player.Personality[0];
+            Ideal.Text = player.Personality[1];
+            Bond.Text = player.Personality[2];
+            Flaw.Text = player.Personality[3];
         }
         private void setStatMod() {
             STR_Mod.Text = getModifier(Strength.Text);
@@ -117,7 +169,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
         
 
         private void Form1_Load(object sender, EventArgs e) {
+            Text = player.Name;
             MessageBox.Show("Click anywhere to print.");
+            Passive_Wis.Text = (10 + int.Parse(Wis_Mod.Text)).ToString();
+            Passive_Wis.Text = Perception.Visible ? (int.Parse(Passive_Wis.Text) + int.Parse(Proficency.Text)).ToString() : Passive_Wis.Text;
+            Initiative.Text = Dex_Mod.Text;
+            Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e) {
@@ -146,8 +203,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
             printPreviewDialog1.ShowDialog();
         }
 
-        private void PrintSheet_Shown(object sender, EventArgs e) {
-            
+        private void populateWeapons() {
+        
         }
     }
 }

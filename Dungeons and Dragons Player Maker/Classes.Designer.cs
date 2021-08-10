@@ -95,7 +95,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Bard_Base {
             get {
-                return ResourceManager.GetString("Bard-Base", resourceCulture);
+                return ResourceManager.GetString("Bard:Base", resourceCulture);
             }
         }
         
@@ -104,7 +104,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Bard_Lore {
             get {
-                return ResourceManager.GetString("Bard-Lore", resourceCulture);
+                return ResourceManager.GetString("Bard:Lore", resourceCulture);
             }
         }
         
@@ -113,7 +113,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Bard_Valor {
             get {
-                return ResourceManager.GetString("Bard-Valor", resourceCulture);
+                return ResourceManager.GetString("Bard:Valor", resourceCulture);
             }
         }
         
@@ -142,7 +142,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Druid_Base {
             get {
-                return ResourceManager.GetString("Druid-Base", resourceCulture);
+                return ResourceManager.GetString("Druid:Base", resourceCulture);
             }
         }
         
@@ -151,7 +151,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Druid_Circle_of_Land___Artic {
             get {
-                return ResourceManager.GetString("Druid-Circle of Land - Artic", resourceCulture);
+                return ResourceManager.GetString("Druid:Circle of Land - Artic", resourceCulture);
             }
         }
         

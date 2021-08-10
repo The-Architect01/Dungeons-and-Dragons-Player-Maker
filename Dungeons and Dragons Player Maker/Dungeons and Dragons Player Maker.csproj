@@ -6,9 +6,40 @@
     <RootNamespace>Dungeons_and_Dragons_Player_Maker</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>D20.ico</ApplicationIcon>
+    <StartupObject>Dungeons_and_Dragons_Player_Maker.Program</StartupObject>
+    <Authors>Neal Birchfield</Authors>
+    <Company>Grumpy Lion Games</Company>
+    <Copyright>© 2021 Grumpy Lion Games - Some Rights Reserved</Copyright>
+    <Description>A simple TTRPG character creation tool.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Benguiat Bold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Benguiat Bold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Backgrounds.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Backgrounds.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Classes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Classes.resx</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -19,6 +50,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Update="Races.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Races.resx</DependentUpon>
+    </Compile>
     <Compile Update="Weapons.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -27,9 +63,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Backgrounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Backgrounds.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Classes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Classes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Races.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Races.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Weapons.resx">
       <Generator>ResXFileCodeGenerator</Generator>

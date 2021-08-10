@@ -165,6 +165,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.Reroll = new System.Windows.Forms.Button();
+            this.SaveAndClose = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
@@ -172,7 +175,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.PrintAndSave = new System.Windows.Forms.Button();
             this.comboBox20 = new System.Windows.Forms.ComboBox();
             this.comboBox21 = new System.Windows.Forms.ComboBox();
             this.comboBox22 = new System.Windows.Forms.ComboBox();
@@ -1958,8 +1961,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // tabPage8
             // 
-            this.tabPage8.Controls.Add(this.panel6);
             this.tabPage8.Controls.Add(this.button7);
+            this.tabPage8.Controls.Add(this.Reroll);
+            this.tabPage8.Controls.Add(this.SaveAndClose);
+            this.tabPage8.Controls.Add(this.panel6);
+            this.tabPage8.Controls.Add(this.PrintAndSave);
             this.tabPage8.Controls.Add(this.comboBox20);
             this.tabPage8.Controls.Add(this.comboBox21);
             this.tabPage8.Controls.Add(this.comboBox22);
@@ -2001,6 +2007,33 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(171, 385);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(133, 75);
+            this.button7.TabIndex = 61;
+            this.button7.Text = "Save + Share";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // Reroll
+            // 
+            this.Reroll.Location = new System.Drawing.Point(352, 328);
+            this.Reroll.Name = "Reroll";
+            this.Reroll.Size = new System.Drawing.Size(94, 29);
+            this.Reroll.TabIndex = 1;
+            this.Reroll.Text = "Reroll";
+            this.Reroll.UseVisualStyleBackColor = true;
+            // 
+            // SaveAndClose
+            // 
+            this.SaveAndClose.Location = new System.Drawing.Point(313, 385);
+            this.SaveAndClose.Name = "SaveAndClose";
+            this.SaveAndClose.Size = new System.Drawing.Size(133, 75);
+            this.SaveAndClose.TabIndex = 60;
+            this.SaveAndClose.Text = "Save + Close";
+            this.SaveAndClose.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -2081,14 +2114,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // PrintAndSave
             // 
-            this.button7.Location = new System.Drawing.Point(171, 350);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(133, 75);
-            this.button7.TabIndex = 58;
-            this.button7.Text = "CONFIRM";
-            this.button7.UseVisualStyleBackColor = true;
+            this.PrintAndSave.Location = new System.Drawing.Point(29, 385);
+            this.PrintAndSave.Name = "PrintAndSave";
+            this.PrintAndSave.Size = new System.Drawing.Size(133, 75);
+            this.PrintAndSave.TabIndex = 58;
+            this.PrintAndSave.Text = "Print + Save";
+            this.PrintAndSave.UseVisualStyleBackColor = true;
             // 
             // comboBox20
             // 
@@ -2392,8 +2425,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(536, 609);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CreateCharacter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Character Wizard";
@@ -2605,7 +2640,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button PrintAndSave;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.CheckBox checkBox5;
@@ -2613,5 +2648,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button SaveAndClose;
+        private System.Windows.Forms.Button Reroll;
+        private System.Windows.Forms.Button button7;
     }
 }

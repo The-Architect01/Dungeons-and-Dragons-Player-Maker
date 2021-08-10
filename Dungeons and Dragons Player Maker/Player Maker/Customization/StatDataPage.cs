@@ -18,8 +18,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             
             StatLocations = new[] { Value1_Options, Value2_Options, Value3_Options, Value4_Options, Value5_Options, Value6_Options };
             Controls.AddRange(new Control[]{ STRValue, CHAValue, WISValue, INTValue, CONValue, DEXValue, STRLabel, DEXLabel, CONLabel, WISLabel, INTLabel, CHALabel,
-                                             Confirm, NameLabel, NameTextBox, AlignmentCombBox, AlignmentLabel, CheckBoxRegion, Roll1, Roll1Value, Roll2, Roll2Value,
-                                             Roll3, Roll3Value, Roll4, Roll4Value, Roll5, Roll5Value, Roll6, Roll6Value
+                                             SaveAndPrint, SaveAndClose, Reroll, NameLabel, NameTextBox, AlignmentCombBox, AlignmentLabel, CheckBoxRegion, Roll1, Roll1Value, Roll2, Roll2Value,
+                                             Roll3, Roll3Value, Roll4, Roll4Value, Roll5, Roll5Value, Roll6, Roll6Value, SaveAndExport
                               });
             Controls.AddRange(StatLocations);
             
@@ -34,26 +34,61 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
 
         private void AddEvents() {
             foreach (ComboBox c in StatLocations) { c.SelectedValueChanged += StatPlaceChanged; }
-            Confirm.Click += Confirm_Click;
+            SaveAndPrint.Click += SaveAndPrint_Click;
+            SaveAndClose.Click += SaveAndClose_Click;
+            Reroll.Click += ReRoll_Click;
+            SaveAndExport.Click += SaveAndExport_Click;
             NameTextBox.TextChanged += NameTextBox_ValueChanged;
             AlignmentCombBox.SelectedValueChanged += Alignment_ValueChanged;
             foreach(CheckBox c in new[] { STR_PLUS, DEX_PLUS, CON_PLUS, WIS_PLUS, INT_PLUS, CHA_PLUS }) {c.CheckStateChanged += CheckBonus;}
         }
 
         #region Controls
-        Button Confirm = new() {
-            Text = "Confirm",
+        Button SaveAndPrint = new() {
+            Text = "Print + Save",
             Size = new Size(133, 75),
-            Location = new Point(171, 350),
+            Location = new Point(29, 385),
             Enabled = false
         };
-        private void Confirm_Click(object sender, EventArgs e) {
+        private void SaveAndPrint_Click(object sender, EventArgs e) {
             PC.Name = NameTextBox.Text;
             PC.Alignment = AlignmentCombBox.Text;
             int[] stats = { int.Parse(STRValue.Text), int.Parse(DEXValue.Text), int.Parse(CONValue.Text), int.Parse(INTValue.Text), int.Parse(WISValue.Text), int.Parse(CHAValue.Text) };
             PC.Stats = stats;
             Form print = new PrintSheet(PC);
             print.Show();
+        }
+        Button SaveAndClose = new() {
+            Enabled = false,
+            Text = "Save + Close",
+            Size = new Size(133, 75),
+            Location = new Point(313, 385)
+        };
+        private void SaveAndClose_Click(object sender, EventArgs e) {
+            PC.Name = NameTextBox.Text;
+            PC.Alignment = AlignmentCombBox.Text;
+            int[] stats = { int.Parse(STRValue.Text), int.Parse(DEXValue.Text), int.Parse(CONValue.Text), int.Parse(INTValue.Text), int.Parse(WISValue.Text), int.Parse(CHAValue.Text) };
+            PC.Stats = stats;
+            try {
+                Engine.Characters.Add(PC.Name, PC);
+            } catch (Exception) { }
+            Engine.SaveCharacters();
+            Properties.Settings.Default.Save();
+            ((Form)(Parent.Parent)).Close();
+        }
+        Button SaveAndExport = new() {
+            Size = new Size(133, 75),
+            Location = new Point(171, 385),
+            Enabled = false,
+            Text = "Save + Share"
+        };
+        private void SaveAndExport_Click(object sender, EventArgs e) {
+            PC.Name = NameTextBox.Text;
+            PC.Alignment = AlignmentCombBox.Text;
+            int[] stats = { int.Parse(STRValue.Text), int.Parse(DEXValue.Text), int.Parse(CONValue.Text), int.Parse(INTValue.Text), int.Parse(WISValue.Text), int.Parse(CHAValue.Text) };
+            PC.Stats = stats;
+            PC.save();
+            MessageBox.Show("Your character has been saved.","Character Wizard");
         }
         #region Personality
         Label NameLabel = new() {
@@ -69,7 +104,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         };
         private void NameTextBox_ValueChanged(object sender, EventArgs e) { PC.Name = NameTextBox.Text; 
             if (STRValue.Text != "---" && DEXValue.Text != "---" && CONValue.Text != "---" &&
-                 INTValue.Text != "---" && WISValue.Text != "---" && CHAValue.Text != "---" && NameTextBox.Text != "") { Confirm.Enabled = true; }
+                 INTValue.Text != "---" && WISValue.Text != "---" && CHAValue.Text != "---" && NameTextBox.Text != "") { SaveAndExport.Enabled = true; SaveAndPrint.Enabled = true; SaveAndClose.Enabled = true; }
         }
 
         Label AlignmentLabel = new() {
@@ -192,7 +227,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
                     break;
             }
             if (STRValue.Text != "---" && DEXValue.Text != "---" && CONValue.Text != "---" &&
-                INTValue.Text != "---" && WISValue.Text != "---" && CHAValue.Text != "---" && NameTextBox.Text != "") { Confirm.Enabled = true; }
+                INTValue.Text != "---" && WISValue.Text != "---" && CHAValue.Text != "---" && NameTextBox.Text != "") { SaveAndExport.Enabled = true; SaveAndPrint.Enabled = true; SaveAndClose.Enabled = true; }
         }
         #endregion
         #region Stat Selection
@@ -462,6 +497,28 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         }
         #endregion
         #endregion
+
+        Button Reroll = new() {
+            Size = new Size(94, 29),
+            Location = new Point(352, 328),
+            Text = "Reroll",
+        };
+        private void ReRoll_Click(object sender, EventArgs e) {
+            STRValue.Text = "---"; DEXValue.Text = "---"; CONValue.Text = "---";
+            WISValue.Text = "---"; INTValue.Text = "---"; CHAValue.Text = "---";
+            Roll1Value.Text = "---"; Roll2Value.Text = "---"; Roll3Value.Text = "---";
+            Roll4Value.Text = "---"; Roll5Value.Text = "---"; Roll6Value.Text = "---";
+            Value1_Prev = "---"; Value2_Prev = "---"; Value3_Prev = "---"; Value4_Prev = "---";
+            Value5_Prev = "---"; Value6_Prev = "---";
+            Value1_Options.Text = "---"; Value2_Options.Text = "---"; Value3_Options.Text = "---";
+            Value4_Options.Text = "---"; Value5_Options.Text = "---"; Value6_Options.Text = "---";
+            foreach(string key in stats.Keys) {
+                stats[key] = GenerateStat();
+            }
+            Roll1Value.Text = stats["Roll 1"].ToString(); Roll2Value.Text = stats["Roll 2"].ToString();
+            Roll3Value.Text = stats["Roll 3"].ToString(); Roll4Value.Text = stats["Roll 4"].ToString();
+            Roll5Value.Text = stats["Roll 5"].ToString(); Roll6Value.Text = stats["Roll 6"].ToString();
+        }
 
         Dictionary<string, int> stats = new() {
             { "Roll 1", GenerateStat() },

@@ -27,15 +27,18 @@ namespace Dungeons_and_Dragons_Player_Maker {
             return value.ToArray();
         }
 
-        public static List<PC> Characters {
-            get { return Characters; }
-            set { Characters = value; }
-        }
-    
+        public static string[] CharacterList { get; set; } = LoadCharacters().Keys.ToArray();
+
+        public static Dictionary<string, PC> Characters { get; set; } = LoadCharacters();
+
         [Obsolete]
-        public static void LoadCharacters() {
-            using MemoryStream ms = new(Convert.FromBase64String(Properties.Settings.Default.Characters)); BinaryFormatter bf = new();
-            Characters = (List<PC>)bf.Deserialize(ms);
+        public static Dictionary<string, PC> LoadCharacters() {
+            try {
+                using MemoryStream ms = new(Convert.FromBase64String(Properties.Settings.Default.Characters)); BinaryFormatter bf = new();
+                return (Dictionary<string, PC>)bf.Deserialize(ms);
+            } catch (Exception) {
+                return new Dictionary<string, PC>();
+            }
         }
 
         [Obsolete]
@@ -49,6 +52,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Properties.Settings.Default.Save();
         }
 
+        public static void CheckSettings() {
+            Characters = LoadCharacters();
+        }
 
     }
 }

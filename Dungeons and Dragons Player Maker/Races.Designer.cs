@@ -75,7 +75,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Black {
             get {
-                return ResourceManager.GetString("Dragonborn-Black", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Black", resourceCulture);
             }
         }
         
@@ -84,7 +84,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Blue {
             get {
-                return ResourceManager.GetString("Dragonborn-Blue", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Blue", resourceCulture);
             }
         }
         
@@ -93,7 +93,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Brass {
             get {
-                return ResourceManager.GetString("Dragonborn-Brass", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Brass", resourceCulture);
             }
         }
         
@@ -102,7 +102,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Bronze {
             get {
-                return ResourceManager.GetString("Dragonborn-Bronze", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Bronze", resourceCulture);
             }
         }
         
@@ -111,7 +111,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Copper {
             get {
-                return ResourceManager.GetString("Dragonborn-Copper", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Copper", resourceCulture);
             }
         }
         
@@ -120,7 +120,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Gold {
             get {
-                return ResourceManager.GetString("Dragonborn-Gold", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Gold", resourceCulture);
             }
         }
         
@@ -129,7 +129,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Green {
             get {
-                return ResourceManager.GetString("Dragonborn-Green", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Green", resourceCulture);
             }
         }
         
@@ -138,7 +138,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Natural {
             get {
-                return ResourceManager.GetString("Dragonborn-Natural", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Natural", resourceCulture);
             }
         }
         
@@ -147,7 +147,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Red {
             get {
-                return ResourceManager.GetString("Dragonborn-Red", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Red", resourceCulture);
             }
         }
         
@@ -156,7 +156,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_Silver {
             get {
-                return ResourceManager.GetString("Dragonborn-Silver", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:Silver", resourceCulture);
             }
         }
         
@@ -165,7 +165,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dragonborn_White {
             get {
-                return ResourceManager.GetString("Dragonborn-White", resourceCulture);
+                return ResourceManager.GetString("Dragonborn:White", resourceCulture);
             }
         }
         
@@ -184,7 +184,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dwarf_Hill {
             get {
-                return ResourceManager.GetString("Dwarf-Hill", resourceCulture);
+                return ResourceManager.GetString("Dwarf:Hill", resourceCulture);
             }
         }
         
@@ -193,7 +193,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dwarf_Mountain {
             get {
-                return ResourceManager.GetString("Dwarf-Mountain", resourceCulture);
+                return ResourceManager.GetString("Dwarf:Mountain", resourceCulture);
             }
         }
         
@@ -202,7 +202,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Dwarf_Natural {
             get {
-                return ResourceManager.GetString("Dwarf-Natural", resourceCulture);
+                return ResourceManager.GetString("Dwarf:Natural", resourceCulture);
             }
         }
         
@@ -221,7 +221,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Elf_Drow {
             get {
-                return ResourceManager.GetString("Elf-Drow", resourceCulture);
+                return ResourceManager.GetString("Elf:Drow", resourceCulture);
             }
         }
         
@@ -230,7 +230,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Elf_High {
             get {
-                return ResourceManager.GetString("Elf-High", resourceCulture);
+                return ResourceManager.GetString("Elf:High", resourceCulture);
             }
         }
         
@@ -239,7 +239,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Elf_Natural {
             get {
-                return ResourceManager.GetString("Elf-Natural", resourceCulture);
+                return ResourceManager.GetString("Elf:Natural", resourceCulture);
             }
         }
         
@@ -248,7 +248,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Elf_Wood {
             get {
-                return ResourceManager.GetString("Elf-Wood", resourceCulture);
+                return ResourceManager.GetString("Elf:Wood", resourceCulture);
             }
         }
         
@@ -267,7 +267,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Gnome_Forest {
             get {
-                return ResourceManager.GetString("Gnome-Forest", resourceCulture);
+                return ResourceManager.GetString("Gnome:Forest", resourceCulture);
             }
         }
         
@@ -276,7 +276,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Gnome_Natural {
             get {
-                return ResourceManager.GetString("Gnome-Natural", resourceCulture);
+                return ResourceManager.GetString("Gnome:Natural", resourceCulture);
             }
         }
         
@@ -285,7 +285,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Gnome_Rock {
             get {
-                return ResourceManager.GetString("Gnome-Rock", resourceCulture);
+                return ResourceManager.GetString("Gnome:Rock", resourceCulture);
             }
         }
         
@@ -304,7 +304,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Half_Elf_Natural {
             get {
-                return ResourceManager.GetString("Half-Elf-Natural", resourceCulture);
+                return ResourceManager.GetString("Half-Elf:Natural", resourceCulture);
             }
         }
         
@@ -313,7 +313,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Half_Elf_Variant {
             get {
-                return ResourceManager.GetString("Half-Elf-Variant", resourceCulture);
+                return ResourceManager.GetString("Half-Elf:Variant", resourceCulture);
             }
         }
         
@@ -332,7 +332,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Half_Orc_Natural {
             get {
-                return ResourceManager.GetString("Half-Orc-Natural", resourceCulture);
+                return ResourceManager.GetString("Half-Orc:Natural", resourceCulture);
             }
         }
         
@@ -351,7 +351,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Halfling_Lightfoot {
             get {
-                return ResourceManager.GetString("Halfling-Lightfoot", resourceCulture);
+                return ResourceManager.GetString("Halfling:Lightfoot", resourceCulture);
             }
         }
         
@@ -360,7 +360,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Halfling_Natural {
             get {
-                return ResourceManager.GetString("Halfling-Natural", resourceCulture);
+                return ResourceManager.GetString("Halfling:Natural", resourceCulture);
             }
         }
         
@@ -369,7 +369,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Halfling_Stout {
             get {
-                return ResourceManager.GetString("Halfling-Stout", resourceCulture);
+                return ResourceManager.GetString("Halfling:Stout", resourceCulture);
             }
         }
         
@@ -388,7 +388,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Human_Natural {
             get {
-                return ResourceManager.GetString("Human-Natural", resourceCulture);
+                return ResourceManager.GetString("Human:Natural", resourceCulture);
             }
         }
         
@@ -397,7 +397,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Human_Variant {
             get {
-                return ResourceManager.GetString("Human-Variant", resourceCulture);
+                return ResourceManager.GetString("Human:Variant", resourceCulture);
             }
         }
         
@@ -425,7 +425,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         internal static string Tiefling_Natural {
             get {
-                return ResourceManager.GetString("Tiefling-Natural", resourceCulture);
+                return ResourceManager.GetString("Tiefling:Natural", resourceCulture);
             }
         }
     }

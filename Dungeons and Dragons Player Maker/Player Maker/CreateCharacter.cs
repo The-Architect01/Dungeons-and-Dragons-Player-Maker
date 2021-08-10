@@ -34,6 +34,16 @@ namespace Dungeons_and_Dragons_Player_Maker {
        // static readonly Dictionary<string, int> RacesBonus = new Dictionary<string, int>() { { "Human-Variant", 2 }, { "Half-Elf-Natural", 2 } };
 
         [Obsolete]
+        public CreateCharacter(SplashScreen splash) {
+            InitializeComponent();
+            RaceName = new Label[] { R1, R2, R3, R4, R5, R6 };
+            RaceSkill1.Items.AddRange(Engine.SKILLS);
+            RaceSkill2.Items.AddRange(Engine.SKILLS);
+            RaceLang.Items.AddRange(Engine.LANGUAGES);
+            ClassName = new Label[] { C1, C2, C3, C4, C5, C6 };
+            BackgroundName = new Label[] { };
+            splash.Close();
+        }
         public CreateCharacter() {
             InitializeComponent();
             RaceName = new Label[] { R1, R2, R3, R4, R5, R6 };
@@ -51,6 +61,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         private void CreateCharacter_Load(object sender, EventArgs e) {
             RacePreview.Image = Dungeons_and_Dragons_Player_Maker.Races.Human;
+            Player.creator = Properties.Settings.Default.Name;
             tabControl1.TabPages.Remove(tabPage2);
             tabControl1.TabPages.Remove(tabPage3);
             tabControl1.TabPages.Remove(tabPage4);
