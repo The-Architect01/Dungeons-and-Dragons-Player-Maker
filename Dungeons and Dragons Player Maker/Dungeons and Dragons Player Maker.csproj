@@ -30,6 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Deployment">
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Deployment.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Backgrounds.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
