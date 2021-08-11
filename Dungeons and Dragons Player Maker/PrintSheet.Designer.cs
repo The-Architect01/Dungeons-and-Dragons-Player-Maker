@@ -85,7 +85,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Ideal = new System.Windows.Forms.Label();
             this.Bond = new System.Windows.Forms.Label();
             this.Flaw = new System.Windows.Forms.Label();
-            this.Weapons = new System.Windows.Forms.Label();
+            this.WeaponName = new System.Windows.Forms.Label();
+            this.WeaponDamage = new System.Windows.Forms.Label();
+            this.WeaponDamageType = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // printDocument1
@@ -140,6 +142,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.XP.Text = "0";
             this.XP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.XP.UseCompatibleTextRendering = true;
+            this.XP.Visible = false;
             // 
             // Background
             // 
@@ -205,6 +208,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Proficency.Text = "+ 6";
             this.Proficency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Proficency.UseCompatibleTextRendering = true;
+            this.Proficency.Visible = false;
             // 
             // AC
             // 
@@ -690,6 +694,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.HD_Num.Text = "20";
             this.HD_Num.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.HD_Num.UseCompatibleTextRendering = true;
+            this.HD_Num.Visible = false;
             // 
             // HitDie
             // 
@@ -716,6 +721,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.HP.Text = "240";
             this.HP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.HP.UseCompatibleTextRendering = true;
+            this.HP.Visible = false;
             // 
             // Abilities
             // 
@@ -753,7 +759,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // Personality
             // 
             this.Personality.BackColor = System.Drawing.Color.White;
-            this.Personality.Font = new System.Drawing.Font("Book Antiqua", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Personality.Font = new System.Drawing.Font("Book Antiqua", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Personality.Location = new System.Drawing.Point(561, 187);
             this.Personality.Name = "Personality";
             this.Personality.Size = new System.Drawing.Size(197, 68);
@@ -764,7 +770,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // Ideal
             // 
             this.Ideal.BackColor = System.Drawing.Color.White;
-            this.Ideal.Font = new System.Drawing.Font("Book Antiqua", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Ideal.Font = new System.Drawing.Font("Book Antiqua", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Ideal.Location = new System.Drawing.Point(561, 278);
             this.Ideal.Name = "Ideal";
             this.Ideal.Size = new System.Drawing.Size(197, 49);
@@ -775,7 +781,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // Bond
             // 
             this.Bond.BackColor = System.Drawing.Color.White;
-            this.Bond.Font = new System.Drawing.Font("Book Antiqua", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Bond.Font = new System.Drawing.Font("Book Antiqua", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bond.Location = new System.Drawing.Point(561, 353);
             this.Bond.Name = "Bond";
             this.Bond.Size = new System.Drawing.Size(197, 49);
@@ -786,7 +792,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // Flaw
             // 
             this.Flaw.BackColor = System.Drawing.Color.White;
-            this.Flaw.Font = new System.Drawing.Font("Book Antiqua", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Flaw.Font = new System.Drawing.Font("Book Antiqua", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Flaw.Location = new System.Drawing.Point(561, 425);
             this.Flaw.Name = "Flaw";
             this.Flaw.Size = new System.Drawing.Size(197, 49);
@@ -794,16 +800,38 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Flaw.Tag = "1";
             this.Flaw.UseCompatibleTextRendering = true;
             // 
-            // Weapons
+            // WeaponName
             // 
-            this.Weapons.BackColor = System.Drawing.Color.White;
-            this.Weapons.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Weapons.Location = new System.Drawing.Point(294, 522);
-            this.Weapons.Name = "Weapons";
-            this.Weapons.Size = new System.Drawing.Size(228, 309);
-            this.Weapons.TabIndex = 76;
-            this.Weapons.Tag = "1";
-            this.Weapons.UseCompatibleTextRendering = true;
+            this.WeaponName.BackColor = System.Drawing.Color.White;
+            this.WeaponName.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WeaponName.Location = new System.Drawing.Point(294, 522);
+            this.WeaponName.Name = "WeaponName";
+            this.WeaponName.Size = new System.Drawing.Size(91, 309);
+            this.WeaponName.TabIndex = 76;
+            this.WeaponName.Tag = "1";
+            this.WeaponName.UseCompatibleTextRendering = true;
+            // 
+            // WeaponDamage
+            // 
+            this.WeaponDamage.BackColor = System.Drawing.Color.White;
+            this.WeaponDamage.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WeaponDamage.Location = new System.Drawing.Point(390, 522);
+            this.WeaponDamage.Name = "WeaponDamage";
+            this.WeaponDamage.Size = new System.Drawing.Size(48, 309);
+            this.WeaponDamage.TabIndex = 77;
+            this.WeaponDamage.Tag = "1";
+            this.WeaponDamage.UseCompatibleTextRendering = true;
+            // 
+            // WeaponDamageType
+            // 
+            this.WeaponDamageType.BackColor = System.Drawing.Color.White;
+            this.WeaponDamageType.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WeaponDamageType.Location = new System.Drawing.Point(432, 522);
+            this.WeaponDamageType.Name = "WeaponDamageType";
+            this.WeaponDamageType.Size = new System.Drawing.Size(86, 309);
+            this.WeaponDamageType.TabIndex = 78;
+            this.WeaponDamageType.Tag = "1";
+            this.WeaponDamageType.UseCompatibleTextRendering = true;
             // 
             // PrintSheet
             // 
@@ -811,8 +839,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.BackgroundImage = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.Character_Sheet___Alternative___Form_Fillable_page_001;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(814, 1055);
+            this.Controls.Add(this.WeaponDamageType);
+            this.Controls.Add(this.WeaponDamage);
             this.Controls.Add(this.XP);
-            this.Controls.Add(this.Weapons);
+            this.Controls.Add(this.WeaponName);
             this.Controls.Add(this.Flaw);
             this.Controls.Add(this.Bond);
             this.Controls.Add(this.Ideal);
@@ -945,7 +975,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Label Ideal;
         private System.Windows.Forms.Label Bond;
         private System.Windows.Forms.Label Flaw;
-        private System.Windows.Forms.Label Weapons;
+        private System.Windows.Forms.Label WeaponName;
+        private System.Windows.Forms.Label WeaponDamage;
+        private System.Windows.Forms.Label WeaponDamageType;
     }
 }
 

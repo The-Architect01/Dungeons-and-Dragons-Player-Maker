@@ -6,8 +6,7 @@ using System.Windows.Forms;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
     public partial class RaceTab : TabPage {
-
-        PC PC;
+        readonly PC PC;
 
         #region Variables
         Label[] RaceName;
@@ -37,7 +36,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         bool _ready = false;
         bool informationFilled { get { return _ready; } set { _ready = value; if (value) {
                     PC.Race = PC.Race.Split(":")[0] + ":" + SubRaces.Text;
-                    if(Prof1 != "" && Prof2 != "") {
+                    if (Prof1 != "" && Prof2 != "") {
                         PC.Skills.AddRange(new[] { Prof1, Prof2 });
                     }else if(Prof2 != "") {
                         PC.Skills.Add(Prof2);
@@ -74,32 +73,32 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
 
         #region Controls
         #region Labels -- Race Names
-        Label R1 = new() {
+        readonly Label R1 = new() {
             Text = "Dwarf",
             Size = new Size(211, 25),
             Location = new Point(6, 46),
         };
-        Label R2 = new() {
+        readonly Label R2 = new() {
             Text = "Elf",
             Size = new Size(211, 25),
             Location = new Point(6, 83),
         };
-        Label R3 = new() {
+        readonly Label R3 = new() {
             Text = "Halfling",
             Size = new Size(211, 25),
             Location = new Point(6, 120),
         };
-        Label R4 = new() {
+        readonly Label R4 = new() {
             Text = "Human",
             Size = new Size(211, 25),
             Location = new Point(6, 157),
         };
-        Label R5 = new() {
+        readonly Label R5 = new() {
             Text = "Dragonborn",
             Size = new Size(211, 25),
             Location = new Point(6, 194),
         };
-        Label R6 = new() {
+        readonly Label R6 = new() {
             Text = "Gnome",
             Size = new Size(211, 25),
             Location = new Point(6, 231),
@@ -163,19 +162,18 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
             if (AdditionalRaceLang.Contains(PC.Race)) { RaceLang.Text = "Select One"; RaceLang.Enabled = true; } else { RaceLang.Text = ""; RaceLang.Enabled = false; }
             if (AdditionalRaceSkill1.Contains(PC.Race) && (PC.Race == "Half-Elf" && !SubRaces.Text.SequenceEqual("Variant"))) { RaceSkill1.Text = "Select One"; RaceSkill1.Enabled = true; } else { RaceSkill1.Text = ""; RaceSkill1.Enabled = false; }
             if (AdditionalRaceSkill2.Contains(PC.Race) && (PC.Race == "Half-Elf" && !SubRaces.Text.SequenceEqual("Variant"))) { RaceSkill2.Text = "Select One"; RaceSkill2.Enabled = true; } else { RaceSkill2.Text = ""; RaceSkill2.Enabled = false; }
-            PC.Race = PC.Race + ":" + SubRaces.Text;
             if (!RaceLang.Enabled && !RaceSkill1.Enabled && !RaceSkill2.Enabled) { informationFilled = true; }
         }
         #endregion
         #endregion
 
-        Label Info = new() {
+        readonly Label Info = new() {
             Location = new Point(6, 325),
             Size = new Size(492, 171),
             TextAlign = ContentAlignment.MiddleLeft,
             Text = "STR: +1 DEX: +1 CON: +1 WIS: +1 INT: +1 CHA: +1\nSpeed: 30\nSize: Medium\nLanguages: Common\nProficiencies: None\nNotes: None"
         };
-        Label Label1 = new() {
+        readonly Label Label1 = new() {
             Size = new Size(492, 19),
             Location = new Point(6, 496),
             TextAlign = ContentAlignment.MiddleCenter,
@@ -183,12 +181,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         };
 
         #region Buttons
-        Button UP = new() {
+        readonly Button UP = new() {
             Text = "UP",
             Size = new Size(208, 28),
             Location = new Point(6, 6),
         };
-        Button DOWN = new() {
+        readonly Button DOWN = new() {
             Text = "DOWN",
             Size = new Size(208, 28),
             Location = new Point(6, 259),
@@ -218,25 +216,25 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         string Prof1 = "";
         string Prof2 = "";
         string Languages = "";
-        ComboBox RaceLang = new() {
+        readonly ComboBox RaceLang = new() {
             Size = new Size(151, 28),
             Location = new Point(6, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Lang")
         };
-        ComboBox RaceSkill1 = new() {
+        readonly ComboBox RaceSkill1 = new() {
             Size = new Size(151, 28),
             Location = new Point(176, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Skills")
         };
-        ComboBox RaceSkill2 = new() {
+        readonly ComboBox RaceSkill2 = new() {
             Size = new Size(151, 28),
             Location = new Point(346, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Skills")
         };
-        ComboBox SubRaces = new() {
+        readonly ComboBox SubRaces = new() {
             Text = "Natural",
             Size = new Size(208, 28),
             Location = new Point(6, 294),
@@ -247,6 +245,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
             RaceLang.Text = "Select One";
             RaceSkill1.Text = "Select One"; RaceSkill2.Text = "Select One";
             Prof1 = ""; Prof2 = ""; updateInfo(PC.Race.Split(":")[0]);
+            if (!RaceLang.Enabled && !RaceSkill1.Enabled && !RaceSkill2.Enabled) { informationFilled = true; }
         }
         private void RaceLang_SelectedValueChanged(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(PC.Race)) { return; }
@@ -296,7 +295,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #endregion
         #endregion
 
-        PictureBox RacePreview = new() {
+        readonly PictureBox RacePreview = new() {
             Image = Dungeons_and_Dragons_Player_Maker.Races.Human,
             Location = new Point(223, 6),
             Size = new Size(275, 316),
@@ -318,7 +317,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                         Prof1 != "" ? final + Prof1 + "\n" : final + "Proficiencies: " + info[9] + "\n";
                 final = final + "Notes: " + info[10];
                 Info.Text = final;
-                PC.Race = RaceName + ":" + SubRaces.Text;
             } catch (Exception) {
                 Info.Text = "No data found.";
             }

@@ -7,11 +7,12 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class PrintSheet : Form {
         Bitmap bitMap;
-        PrivateFontCollection Fonts = new();
+        readonly PrivateFontCollection Fonts = new();
 
         [DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
@@ -62,18 +63,20 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Fonts = populateFonts();
         }
 
-        Label[] skills;
-        PC player;
+        readonly Label[] skills;
+        readonly PC player;
 
         public PrintSheet(PC pc) {
             InitializeComponent();
+            
             player = pc;
             Race.Text = player.Race.Split(":")[0];
+            
             skills = new Label[] { Athletics, Acrobatics,Sleight,Stealth, Arcana, History, Investigation,Nature,Religion,
             Animal, Insight, Medicine,Perception, Survival, Deception, Intimidation, Performance, Persuasion};
-            foreach(Label skill in skills) {
-                skill.Visible = player.Skills.Contains(skill.Name);
-            }
+            
+            foreach(Label skill in skills) {skill.Visible = player.Skills.Contains(skill.Name);}
+
             player.Skills.RemoveAll(i => Engine.SKILLS.Contains(i));
             Character_Name.Text = player.Name;
             Background.Text = player.Background;
@@ -81,6 +84,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Player_Name.Text = player.creator;
             XP.Text = player.XP.ToString();
             Alignment.Text = player.Alignment;
+            
             setProficiencyBonus();
             Strength.Text = player.Stats[0].ToString();
             Dextarity.Text = player.Stats[1].ToString();
@@ -88,41 +92,120 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Intelligence.Text = player.Stats[3].ToString();
             Wisdom.Text = player.Stats[4].ToString();
             Charisma.Text = player.Stats[5].ToString();
+            
             setStatMod();
             populateRace();
             populateClass();
             populateBackground();
             populateWeapons();
-            foreach(string skill in player.Skills) { Prof.Text += skill + ", "; }
+            
+            foreach(string skill in player.Skills) { if (!Prof.Text.Contains(skill)) { Prof.Text += skill + ", "; } }
             foreach(string item in player.Inventory) { Equip.Text += item + ", "; }
-            foreach (string item in player.Weapons) { Weapons.Text += Dungeons_and_Dragons_Player_Maker.Weapons.ResourceManager.GetString(item) + "\n";}
-            Fonts.AddFontFile(Path.GetDirectoryName(Application.ExecutablePath).Split("bin")[0] + "Benguiat Bold.ttf");
-            foreach(Control c in Controls) {
-                try { c.Font = new Font(Fonts.Families[int.Parse(c.Tag.ToString())], c.Font.SizeInPoints); } catch (Exception) { }
+            foreach (string item in player.Weapons) { 
+                WeaponName.Text += item + "\n";
+                if (Engine.RANGEDWEAPONS.Contains(item)) { WeaponDamage.Text += (int.Parse(Dex_Mod.Text)) + "\n";  }
+                else if (Engine.RANGEDWEAPONS.Contains(item) && 
+                    (player.Skills.Contains(item)||
+                    (player.Skills.Contains("Simple Weapons")&& Engine.SIMPLE_WEAPONS.Contains(item)) ||
+                    (player.Skills.Contains("Martial Weapons") && Engine.MARTIAL_WEAPONS.Contains(item)))) { WeaponDamage.Text += (int.Parse(Dex_Mod.Text) + int.Parse(Proficency.Text)).ToString() + "\n"; }
+                else if (Engine.MELEEWEAPONS.Contains(item)) { WeaponDamage.Text += (int.Parse(STR_Mod.Text)) + "\n"; }
+                else if (Engine.MELEEWEAPONS.Contains(item) && (player.Skills.Contains(item) ||
+                    (player.Skills.Contains("Simple Weapons") && Engine.SIMPLE_WEAPONS.Contains(item)) ||
+                    (player.Skills.Contains("Martial Weapons") && Engine.MARTIAL_WEAPONS.Contains(item))))
+                    { WeaponDamage.Text += (int.Parse(STR_Mod.Text) + int.Parse(Proficency.Text)).ToString() + "\n"; }
+                WeaponDamageType.Text += Weapons.ResourceManager.GetString(item) + "\n";
             }
+
+            Fonts.AddFontFile(Path.GetDirectoryName(Application.ExecutablePath).Split("bin")[0] + "Benguiat Bold.ttf");
+            foreach(Control c in Controls) {try { c.Font = new Font(Fonts.Families[int.Parse(c.Tag.ToString())], c.Font.SizeInPoints); } catch (Exception) { }}
         }
+
         private void populateRace() {
             Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
-            string[] abilities = Races.ResourceManager.GetString(player.Race).Split("_")[10].Split(", ");
+            List<string> abilities = new List<string>();
+            abilities.AddRange(Races.ResourceManager.GetString(player.Race).Split("_")[10].Split(", "));
+            abilities.Remove("None");
             foreach(string ability in abilities) {Abilities.Text += ability + "\n";}
         }
+        
         private void populateClass() {
             string[] abilities = Classes.ResourceManager.GetString(player.Class.Split(":")[0] + ":Base").Split("_");
-            foreach(string ability in abilities) {
-                string[] ability1 = ability.Split(" - ");
-                string[] levels = ability1[1].Split(", ");
-                bool canhave = false;
-                foreach(string level in levels) { if(int.Parse(level)==player.Level) { canhave = true; break; } }
-                if (canhave) { Abilities.Text += ability1[0] + "\n"; }
-            }
+            foreach(string ability in abilities) {Abilities.Text += ability + "\n";}
             string[] subAbilitites = Classes.ResourceManager.GetString(player.Class).Split("_");
-            foreach(string ability in subAbilitites) {
-                string[] ability1 = ability.Split(" - ");
-                string[] levels = ability1[1].Split(", ");
-                bool canhave = false;
-                foreach (string level in levels) { if (int.Parse(level) == player.Level) { canhave = true; break; } }
-                if (canhave) { Abilities.Text +=ability1[0] + "\n"; }
+            foreach(string ability in subAbilitites) {Abilities.Text += ability + "\n";}
+            switch (player.Class.Split(":")[0]) {
+                case "Artificer":
+                    HitDie.Text = "d8";
+                    break;
+                case "Bard":
+                    Cha_Save.Visible = true;
+                    Dex_Save.Visible = true;
+                    HitDie.Text = "d8";
+                    break;
+                case "Druid":
+                    Int_Save.Visible = true;
+                    Wis_Save.Visible = true;
+                    HitDie.Text = "d8";
+                    break;
+                case "Monk":
+                    Str_Save.Visible = true;
+                    Dex_Save.Visible = true;
+                    HitDie.Text = "d8";
+                    break;
+                case "Warlock":
+                    Wis_Save.Visible = true;
+                    Cha_Save.Visible = true;
+                    HitDie.Text = "d8";
+                    break;
+                case "Rogue":
+                    Dex_Save.Visible = true;
+                    Int_Save.Visible = true;
+                    HitDie.Text = "d8";
+                    break;
+                case "Cleric":
+                    Wis_Save.Visible = true;
+                    Cha_Save.Visible = true;
+                    HitDie.Text = "d8";
+                    break;
+                case "Fighter":
+                    Str_Save.Visible = true;
+                    Con_Save.Visible = true;
+                    HitDie.Text = "d10";
+                    break;
+                case "Paladin":
+                    Wis_Save.Visible = true;
+                    Cha_Save.Visible = true;
+                    HitDie.Text = "d10";
+                    break;
+                case "Ranger":
+                    Str_Save.Visible = true;
+                    Dex_Save.Visible = true;
+                    HitDie.Text = "d10";
+                    break;
+                case "Sorcerer":
+                    Con_Save.Visible = true;
+                    Cha_Save.Visible = true;
+                    HitDie.Text = "d6";
+                    break;
+                case "Wizard":
+                    Int_Save.Visible = true;
+                    Wis_Save.Visible = true;
+                    HitDie.Text = "d6";
+                    break;
+                case "Barbarian":
+                    Str_Save.Visible = true;
+                    Con_Save.Visible = true;
+                    HitDie.Text = "d12";
+                    break;
             }
+            player.Skills.AddRange(Classes.ResourceManager.GetString(player.Class.Split(":")[0] + ":Skills").Split("_"));
+            player.Inventory.AddRange(Classes.ResourceManager.GetString(player.Class.Split(":")[0] + ":Items").Split("_"));
+            foreach(string item in player.Inventory) {
+                if(Engine.SIMPLE_WEAPONS.Contains(item) || Engine.MARTIAL_WEAPONS.Contains(item)) {
+                    player.Weapons.Add(item);
+                }
+            }
+
         }
         private void populateBackground() {
             Abilities.Text += Backgrounds.ResourceManager.GetString(Background.Text).Split(":")[0];
@@ -169,8 +252,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
         
 
         private void Form1_Load(object sender, EventArgs e) {
-            Text = player.Name;
             MessageBox.Show("Click anywhere to print.");
+            Text = player.Name;
             Passive_Wis.Text = (10 + int.Parse(Wis_Mod.Text)).ToString();
             Passive_Wis.Text = Perception.Visible ? (int.Parse(Passive_Wis.Text) + int.Parse(Proficency.Text)).ToString() : Passive_Wis.Text;
             Initiative.Text = Dex_Mod.Text;

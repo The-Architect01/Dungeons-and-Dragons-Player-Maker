@@ -6,14 +6,13 @@ using System.Reflection;
 using System.Windows.Forms;
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
     public partial class ClassTab : TabPage {
-
-        PC PC;
+        readonly PC PC;
 
         #region Variables
-        Label[] ClassName;
+        readonly Label[] ClassName;
         static readonly string[] Classes = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
         int pos = 0;
-        Control[] ControlsOnForm;
+        readonly Control[] ControlsOnForm;
 
         static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
         static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
@@ -34,7 +33,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         public event EventHandler OnReady;
 
         bool _ready = false;
-        bool informationFilled { get { return _ready; } set { _ready = value; if (value) { PC.Class += ":" + SubClasses.Text; OnReady.Invoke(this, EventArgs.Empty); } } }
+        bool informationFilled { get { return _ready; } 
+            set { _ready = value; if (value) { 
+                    PC.Class = PC.Class.Split(":")[0] + ":" + SubClasses.Text;
+                    
+                    OnReady.Invoke(this, EventArgs.Empty); } } }
 
         public ClassTab(PC Player) {
             PC = Player;
@@ -52,32 +55,32 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
 
         #region Controls
         #region Labels -- Class Names
-        Label C1 = new() {
+        readonly Label C1 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 46),
             Text = "Barbarian",
         };
-        Label C2 = new() {
+        readonly Label C2 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 83),
             Text = "Bard",
         };
-        Label C3 = new() {
+        readonly Label C3 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 120),
             Text = "Cleric",
         };
-        Label C4 = new() {
+        readonly Label C4 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 157),
             Text = "Druid",
         };
-        Label C5 = new() {
+        readonly Label C5 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 194),
             Text = "Fighter",
         };
-        Label C6 = new() {
+        readonly Label C6 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 231),
             Text = "Monk",
@@ -89,7 +92,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             SubClasses.Items.AddRange((string[])this.GetType().GetField((PC.Class.ToUpper() + "_Subclasses").ToString(),
                 BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));
             SubClasses.SelectedIndex = 0;
-            classUpdate(PC.Class, SubClasses.Text);
+          //  classUpdate(PC.Class, SubClasses.Text);
         }
         private void ClassName_Enter(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(PC.Class)) {
@@ -103,13 +106,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         }
         #endregion
         #region Buttons
-        Button UP = new() {
+        readonly Button UP = new() {
             Text = "UP",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(208, 28),
             Location = new Point(6, 6),
         };
-        Button DOWN = new() {
+        readonly Button DOWN = new() {
             Text = "DOWN",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(208, 28),
@@ -134,18 +137,17 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             }
         }
         #endregion
-        Label ClassInfo = new() {
+        readonly Label ClassInfo = new() {
             Location = new Point(6, 325),
             Size = new Size(222, 224),
             TextAlign = ContentAlignment.MiddleLeft
         };
-        Label SubClassInfo = new() {
+        readonly Label SubClassInfo = new() {
             Location = new Point(234, 325),
             Size = new Size(264, 224),
             TextAlign = ContentAlignment.MiddleLeft
         };
-
-        ComboBox SubClasses = new() {
+        readonly ComboBox SubClasses = new() {
             Location = new Point(6, 294),
             Size = new Size(208, 28),
             Text = "Select One"
@@ -155,7 +157,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             informationFilled = true;
         }
 
-        PictureBox ClassPreview = new() {
+        readonly PictureBox ClassPreview = new() {
             Image = Dungeons_and_Dragons_Player_Maker.Classes.Barbarian,
             Size = new Size(275, 316),
             Location = new Point(223, 6),
@@ -163,7 +165,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         };
         #endregion
         private void classUpdate(string classBase, string subclass) {
-            string Class = string.IsNullOrEmpty(PC.Class) ? classBase : PC.Class;
+            string Class = string.IsNullOrEmpty(PC.Class) ? classBase : PC.Class.Split(":")[0];
             try {
                 string[] baseClassStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + ":Base").Split("_");
                 ClassInfo.Text = "Class Skill - Level:\n";

@@ -130,8 +130,14 @@
   <data name="Bard:Base" xml:space="preserve">
     <value>Bardic Insperation - 1, 20_Jack of All Trades - 2_Expertise - 3_Font of Inspiration - 5_Countercharm - 6_Magical Secrets - 10</value>
   </data>
+  <data name="Bard:Items" xml:space="preserve">
+    <value>Leather armor_Dagger</value>
+  </data>
   <data name="Bard:Lore" xml:space="preserve">
     <value>Bonus Proficiencies - 3_Cutting Words - 3_Additional Magical Secrets - 6_Peerless Skill - 14</value>
+  </data>
+  <data name="Bard:Skills" xml:space="preserve">
+    <value>Simple weapons_hand crossbows_longswords_rapiers_shortswords</value>
   </data>
   <data name="Bard:Valor" xml:space="preserve">
     <value>Bonus Proficiencies - 3_Combat Inspiration - 3_Extra Attack - 6_Battle Magic - 14</value>

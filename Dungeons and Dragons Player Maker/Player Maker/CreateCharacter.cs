@@ -11,8 +11,7 @@ using Dungeons_and_Dragons_Player_Maker.Player_Maker;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class CreateCharacter : Form {
-
-        PC Player = new();
+        readonly PC Player = new();
 
         //string Race = "";
         //string Languages = "";
@@ -353,7 +352,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         #region Confirmation -- Page 5
 
-        List<int> ActiveIndexes = new();
+        readonly List<int> ActiveIndexes = new();
         //int[] Stats;
 
         //private int[] generateStats() {

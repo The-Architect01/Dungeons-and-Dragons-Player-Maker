@@ -100,11 +100,29 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Leather armor_Dagger.
+        /// </summary>
+        internal static string Bard_Items {
+            get {
+                return ResourceManager.GetString("Bard:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bonus Proficiencies - 3_Cutting Words - 3_Additional Magical Secrets - 6_Peerless Skill - 14.
         /// </summary>
         internal static string Bard_Lore {
             get {
                 return ResourceManager.GetString("Bard:Lore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simple weapons_hand crossbows_longswords_rapiers_shortswords.
+        /// </summary>
+        internal static string Bard_Skills {
+            get {
+                return ResourceManager.GetString("Bard:Skills", resourceCulture);
             }
         }
         

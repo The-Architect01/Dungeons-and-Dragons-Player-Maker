@@ -59,5 +59,32 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d4 pierce.
+        /// </summary>
+        internal static string Dagger {
+            get {
+                return ResourceManager.GetString("Dagger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Longsword {
+            get {
+                return ResourceManager.GetString("Longsword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Rapier {
+            get {
+                return ResourceManager.GetString("Rapier", resourceCulture);
+            }
+        }
     }
 }

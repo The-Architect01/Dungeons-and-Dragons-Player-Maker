@@ -7,12 +7,10 @@ using System.Reflection;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
     public partial class BackgroundTab : TabPage {
-
-        PC PC;
-
-        Control[] controlsOnControl;
-        ComboBox[] EXOptions;
-        Label[] BackgroundsVisible;
+        readonly PC PC;
+        readonly Control[] controlsOnControl;
+        readonly ComboBox[] EXOptions;
+        readonly Label[] BackgroundsVisible;
         readonly static string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One","Noble","Sage","Soldier","Urchin" };
         int pos = 0;
 
@@ -42,39 +40,39 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         }
 
         #region Controls
-        Label label1 = new() {
+        readonly Label label1 = new() {
             Text = "Personality",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(492, 19),
             Location = new Point(6, 443)
         };
         #region Labels -- Names
-        Label B1 = new() {
+        readonly Label B1 = new() {
             Size = new Size(211, 25),
             Text = "Acolyte",
             Location = new Point(6, 46),
         };
-        Label B2 = new() {
+        readonly Label B2 = new() {
             Size = new Size(211, 25),
             Text = "Criminal/Spy",
             Location = new Point(6, 83),
         };
-        Label B3 = new() {
+        readonly Label B3 = new() {
             Size = new Size(211, 25),
             Text = "Folk Hero",
             Location = new Point(6, 120),
         };
-        Label B4 = new() {
+        readonly Label B4 = new() {
             Size = new Size(211, 25),
             Text = "Haunted One",
             Location = new Point(6, 157),
         };
-        Label B5 = new() { 
+        readonly Label B5 = new() { 
             Size = new Size(211, 25),
             Text = "Noble",
             Location = new Point(6, 194),
         };
-        Label B6 = new() {
+        readonly Label B6 = new() {
             Size = new Size(211, 25),
             Text = "Sage",
             Location = new Point(6, 231),
@@ -122,24 +120,23 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             }
         }
         #endregion
-        Label BackgroundBonus = new() {
+        readonly Label BackgroundBonus = new() {
             TextAlign = ContentAlignment.MiddleLeft,
             Size = new Size(278, 139),
             Location = new Point(220, 6)
         };
-        Label BackgroundData = new() {
+        readonly Label BackgroundData = new() {
             TextAlign = ContentAlignment.MiddleLeft,
             Size = new Size(492, 153),
             Location = new Point(6, 290)
         };
-
-        Button UP = new() {
+        readonly Button UP = new() {
             Text = "UP",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(208, 28),
             Location = new Point(6, 6)
         };
-        Button DOWN = new() {
+        readonly Button DOWN = new() {
             Text = "DOWN",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(208, 28),
@@ -164,25 +161,25 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             }
         }
 
-        ComboBox Personality = new() {
+        readonly ComboBox Personality = new() {
             Text = "Select One",
             DropDownWidth = 650,
             Size = new Size(242, 28),
             Location = new Point(6, 465),
         };
-        ComboBox Bond = new() { 
+        readonly ComboBox Bond = new() { 
             Text = "Select One",
             DropDownWidth = 650,
             Size = new Size(242, 28),
             Location = new Point(6, 499),
         };
-        ComboBox Ideal = new() {
+        readonly ComboBox Ideal = new() {
             Text = "Select One",
             DropDownWidth = 650,
             Size = new Size(242, 28),
             Location = new Point(256, 465),
         };
-        ComboBox Flaw = new() { 
+        readonly ComboBox Flaw = new() { 
             Text = "Select One",
             DropDownWidth = 650,
             Size = new Size(242, 28),
@@ -203,29 +200,29 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
                 informationFilled = true;
             }
         }
-        
-        ComboBox EXOption1 = new() {
+
+        readonly ComboBox EXOption1 = new() {
             Name = "EXOption1",
             Location = new Point(223, 148),
             Size = new Size(275, 28),
             Enabled = false,
             Text = "Select One"
         };
-        ComboBox EXOption2 = new() {
+        readonly ComboBox EXOption2 = new() {
             Name = "EXOption2",
             Location = new Point(223, 185),
             Size = new Size(275, 28),
             Enabled = false,
             Text = "Select One"
         };
-        ComboBox EXOption3 = new() {
+        readonly ComboBox EXOption3 = new() {
             Name = "EXOption3",
             Location = new Point(223, 222),
             Size = new Size(275, 28),
             Enabled = false,
             Text = "Select One"
         };
-        ComboBox EXOption4 = new() {
+        readonly ComboBox EXOption4 = new() {
             Name = "EXOption4",
             Location = new Point(223, 259),
             Size = new Size(275, 28),

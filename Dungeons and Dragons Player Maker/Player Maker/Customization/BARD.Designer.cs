@@ -1,6 +1,6 @@
 ﻿
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
-    partial class ClassDataTab {
+    partial class BARD {
         /// <summary>
         /// Required designer variable.
         /// </summary>

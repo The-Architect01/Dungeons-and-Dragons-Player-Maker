@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Dagger" xml:space="preserve">
+    <value>1d4 pierce</value>
+  </data>
+  <data name="Longsword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rapier" xml:space="preserve">
+    <value />
+  </data>
 </root>
