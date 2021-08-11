@@ -33,14 +33,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public static readonly string[] RANGEDWEAPONS = { "Light Crossbow", "Dart", "Shortbow", "Sling", "Blowgun", "Heavy Crossbow", "Hand Crossbow", "Longbow", "Net" };
 
         public static string[] AddChoose(string list) {
-            List<string> value = new(){ "Select One"};
+            List<string> value = new List<string>(){ "Select One"};
             if (list.SequenceEqual("Lang")) { value.AddRange(LANGUAGES); }
             else if (list.SequenceEqual("Skills")) { value.AddRange(SKILLS); }
             return value.ToArray();
         }
 
         public static string[] ClassOptions(string[] list, params string[] AdditionalOptions) {
-            List<string> value = new() { "Select One" };
+            List<string> value = new List<string>() { "Select One" };
             value.AddRange(AdditionalOptions);
             value.AddRange(list);
             return value.ToArray();

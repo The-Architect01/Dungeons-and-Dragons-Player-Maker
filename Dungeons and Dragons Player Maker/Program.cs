@@ -11,7 +11,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         [STAThread, Obsolete]
         static void Main() {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.SetHighDpiMode(HighDpiMode.PerMonitor);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SplashScreen());
