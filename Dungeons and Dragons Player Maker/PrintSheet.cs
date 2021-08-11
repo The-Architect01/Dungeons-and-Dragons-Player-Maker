@@ -97,7 +97,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             populateRace();
             populateClass();
             populateBackground();
-            populateWeapons();
             
             foreach(string skill in player.Skills) { if (!Prof.Text.Contains(skill)) { Prof.Text += skill + ", "; } }
             foreach(string item in player.Inventory) { Equip.Text += item + ", "; }
@@ -115,6 +114,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
                     { WeaponDamage.Text += (int.Parse(STR_Mod.Text) + int.Parse(Proficency.Text)).ToString() + "\n"; }
                 WeaponDamageType.Text += Weapons.ResourceManager.GetString(item) + "\n";
             }
+
+            populateAC();
 
             Fonts.AddFontFile(Path.GetDirectoryName(Application.ExecutablePath).Split("bin")[0] + "Benguiat Bold.ttf");
             foreach(Control c in Controls) {try { c.Font = new Font(Fonts.Families[int.Parse(c.Tag.ToString())], c.Font.SizeInPoints); } catch (Exception) { }}
@@ -286,8 +287,25 @@ namespace Dungeons_and_Dragons_Player_Maker {
             printPreviewDialog1.ShowDialog();
         }
 
-        private void populateWeapons() {
-        
+        private void populateAC() {
+            if (player.Inventory.Contains("Padded Armor") || player.Inventory.Contains("Leather Armor") || player.Inventory.Contains("Studded Leather Armor")) {
+                AC.Text = (int.Parse(Dex_Mod.Text) + 11).ToString();
+            }else if (player.Inventory.Contains("Hide Armor")) {
+                AC.Text = int.Parse(Dex_Mod.Text) > 2 ? "14" : (int.Parse(Dex_Mod.Text) + 12).ToString();  
+            }else if (player.Inventory.Contains("Chain Shirt")) {
+                AC.Text = int.Parse(Dex_Mod.Text) > 2 ? "15" : (int.Parse(Dex_Mod.Text) + 13).ToString();
+            }else if (player.Inventory.Contains("Scale Mail") || player.Inventory.Contains("Breastplate")) {
+                AC.Text = int.Parse(Dex_Mod.Text) > 2 ? "16" : (int.Parse(Dex_Mod.Text) + 14).ToString();
+            }else if (player.Inventory.Contains("Half Plate")) {
+                AC.Text = int.Parse(Dex_Mod.Text) > 2 ? "17" : (int.Parse(Dex_Mod.Text) + 15).ToString();
+            }else if (player.Inventory.Contains("Ring Mail")){ AC.Text = "14"; 
+            }else if (player.Inventory.Contains("Chain Mail")) { AC.Text = "16";
+            }else if (player.Inventory.Contains("Splint")) { AC.Text = "17"; 
+            }else if (player.Inventory.Contains("Plate Armor")) { AC.Text = "18";
+            }else { AC.Text = (int.Parse(Dex_Mod.Text) + 10).ToString(); }
+            
+            if (player.Inventory.Contains("Shield")) { AC.Text = (int.Parse(AC.Text) + 2).ToString(); }
         }
+
     }
 }

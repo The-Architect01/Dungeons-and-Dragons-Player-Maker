@@ -100,7 +100,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Leather armor_Dagger.
+        ///   Looks up a localized string similar to Leather Armor_Dagger.
         /// </summary>
         internal static string Bard_Items {
             get {
