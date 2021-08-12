@@ -62,12 +62,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         public static void SaveCharacters() {
-            using MemoryStream ms = new(); BinaryFormatter bf = new();
-            bf.Serialize(ms, Characters);
-            ms.Position = 0;
-            byte[] buffer = new byte[(int)ms.Length];
-            ms.Read(buffer, 0, buffer.Length);
-            Properties.Settings.Default.Characters = Convert.ToBase64String(buffer);
+            try {
+                using MemoryStream ms = new(); BinaryFormatter bf = new();
+                bf.Serialize(ms, Characters);
+                ms.Position = 0;
+                byte[] buffer = new byte[(int)ms.Length];
+                ms.Read(buffer, 0, buffer.Length);
+                Properties.Settings.Default.Characters = Convert.ToBase64String(buffer);
+            } catch (Exception) { }
             Properties.Settings.Default.Save();
         }
 
