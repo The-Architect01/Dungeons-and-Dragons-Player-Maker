@@ -2807,7 +2807,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateCharacter";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Character Wizard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateCharacter_FormClosing);

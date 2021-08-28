@@ -13,7 +13,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         static void Main() {
             Application.SetHighDpiMode(HighDpiMode.PerMonitor);
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(true);
             Application.Run(new SplashScreen());
             Application.Run(new MainMenu());
         }

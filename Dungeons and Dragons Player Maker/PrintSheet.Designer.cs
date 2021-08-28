@@ -906,7 +906,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PrintSheet";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
