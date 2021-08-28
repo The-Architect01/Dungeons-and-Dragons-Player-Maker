@@ -7,19 +7,23 @@ using System.Reflection;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
     public partial class BackgroundTab : TabPage {
+
+        #region Variables -- Do not change
         readonly PC PC;
         readonly Control[] controlsOnControl;
         readonly ComboBox[] EXOptions;
         readonly Label[] BackgroundsVisible;
-        readonly static string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One","Noble","Sage","Soldier","Urchin" };
         int pos = 0;
 
         public event EventHandler OnReady;
 
         bool _ready = false;
         bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
+        #endregion
 
-        public BackgroundTab(PC Player) {
+        readonly static string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin" }; //Change this line to add new Backgrounds
+
+        public BackgroundTab(PC Player) { //Initializer, do not change
             Text = "Backgrounds";
             BackColor = Color.White;
             BackgroundsVisible = new Label[] { B1, B2, B3, B4, B5, B6 };
@@ -39,7 +43,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             Controls.AddRange(controlsOnControl);
         }
 
-        #region Controls
+        #region Controls - Do not Change
         readonly Label label1 = new() {
             Text = "Personality",
             TextAlign = ContentAlignment.MiddleCenter,
@@ -185,7 +189,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             Size = new Size(242, 28),
             Location = new Point(256, 499),
         };
-        private void ID_SelectedValueChanged(object sender, EventArgs e) {
+        private void ID_SelectedValueChanged(object sender, EventArgs e) {  //Checks if the user has filled out all necessary data.
             if (!Personality.Text.SequenceEqual("Select One") && !Ideal.Text.SequenceEqual("Select One") &&
                 !Bond.Text.SequenceEqual("Select One") && !Flaw.Text.SequenceEqual("Select One") && !BackgroundBonus.Text.Contains("<CHOOSE>")) {
                 string[] Languages = BackgroundBonus.Text.Split("\n")[1].Split("Languages: ")[1].Split(", ");
@@ -234,7 +238,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         string selectedValueEXOption2;
         string selectedValueEXOption3;
         string selectedValueEXOption4;
-        private void Option_SelectedValueChanged(object sender, EventArgs e) {
+        private void Option_SelectedValueChanged(object sender, EventArgs e) { //Checks if the data is valid
             ComboBox c = (ComboBox)sender;
             switch (c.Name) {
                 case "EXOption1":
@@ -253,7 +257,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             ID_SelectedValueChanged(sender, e);
         }
         
-        private void updateSelection(ComboBox c, ref string oldValue) {
+        private void updateSelection(ComboBox c, ref string oldValue) { //removes the old value or the choose
             if (c.Items.Count == Engine.LANGUAGES.Count()) {
                 string data = BackgroundBonus.Text.Split("\n")[1];
                 data.Replace("<CHOOSE>", c.Text);

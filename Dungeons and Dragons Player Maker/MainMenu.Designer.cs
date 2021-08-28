@@ -83,7 +83,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "\"Character Files\"|*.hro";
             this.openFileDialog1.InitialDirectory = "Desktop";
             this.openFileDialog1.Title = "Load Character";
@@ -118,6 +117,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
+            this.VisibleChanged += new System.EventHandler(this.MainMenu_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

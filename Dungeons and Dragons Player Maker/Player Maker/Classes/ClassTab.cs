@@ -8,11 +8,26 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
     public partial class ClassTab : TabPage {
         readonly PC PC;
 
-        #region Variables
+        #region Variables - Do not Change
         readonly Label[] ClassName;
-        static readonly string[] Classes = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
         int pos = 0;
         readonly Control[] ControlsOnForm;
+
+        public event EventHandler OnReady;
+
+        bool _ready = false;
+        bool informationFilled {
+            get { return _ready; }
+            set {
+                _ready = value; if (value) {
+                    PC.Class = PC.Class.Split(":")[0] + ":" + SubClasses.Text;
+                    OnReady.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+        #endregion
+        #region Variables -- Change to add new Class and/or subclass
+        static readonly string[] Classes = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
 
         static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
         static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
@@ -30,16 +45,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         static readonly string[] ARTIFICER_Subclasses = { };
         #endregion
 
-        public event EventHandler OnReady;
-
-        bool _ready = false;
-        bool informationFilled { get { return _ready; } 
-            set { _ready = value; if (value) { 
-                    PC.Class = PC.Class.Split(":")[0] + ":" + SubClasses.Text;
-                    
-                    OnReady.Invoke(this, EventArgs.Empty); } } }
-
-        public ClassTab(PC Player) {
+        public ClassTab(PC Player) { //Initalize
             PC = Player;
             InitializeComponent();
             ControlsOnForm = new Control[] { C1, C2, C3,C4,C5,C6, UP, DOWN, SubClasses, ClassPreview, ClassInfo, SubClassInfo };
@@ -164,7 +170,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             SizeMode = PictureBoxSizeMode.Zoom
         };
         #endregion
-        private void classUpdate(string classBase, string subclass) {
+
+        private void classUpdate(string classBase, string subclass) { //Repopulates data
             string Class = string.IsNullOrEmpty(PC.Class) ? classBase : PC.Class.Split(":")[0];
             try {
                 string[] baseClassStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + ":Base").Split("_");

@@ -6,32 +6,44 @@
     <RootNamespace>Dungeons_and_Dragons_Player_Maker</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>D20.ico</ApplicationIcon>
-    <StartupObject></StartupObject>
+    <StartupObject>Dungeons_and_Dragons_Player_Maker.Program</StartupObject>
     <Authors>Neal Birchfield</Authors>
     <Company>Grumpy Lion Games</Company>
     <Copyright>© 2021 Grumpy Lion Games - Some Rights Reserved</Copyright>
     <Description>A simple TTRPG character creation tool.</Description>
     <Version>1.0.0.0</Version>
-    <PackageIcon></PackageIcon>
+    <PackageIcon>D202.ico</PackageIcon>
     <PackageIconUrl />
-    <ApplicationManifest>app.manifest</ApplicationManifest>
     <RepositoryUrl>https://github.com/The-Architect01/Dungeons-and-Dragons-Player-Maker</RepositoryUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
-    <None Remove="Benguiat Bold.ttf" />
     <None Remove="D20.ico" />
+    <None Remove="Regula Old Face.otf" />
+    <None Include="..\..\..\..\Downloads\D202.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Benguiat Bold.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
     <Content Include="D20.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Regula Old Face.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

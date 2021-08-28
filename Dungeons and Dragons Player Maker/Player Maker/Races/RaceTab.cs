@@ -37,11 +37,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         bool informationFilled { get { return _ready; } set { _ready = value; if (value) {
                     PC.Race = PC.Race.Split(":")[0] + ":" + SubRaces.Text;
                     if (Prof1 != "" && Prof2 != "") {
-                        PC.Skills.AddRange(new[] { Prof1, Prof2 });
+                        PC.Skills.AddRange(new[] { Prof1.Split(" ")[0], Prof2.Split(" ")[0] });
                     }else if(Prof2 != "") {
-                        PC.Skills.Add(Prof2);
+                        PC.Skills.Add(Prof2.Split(" ")[0]);
                     }else if (Prof1 != "") {
-                        PC.Skills.Add(Prof1);
+                        PC.Skills.Add(Prof1.Split(" ")[0]);
                     }
                     PC.Skills.AddRange(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[9].Split(", "));
                     PC.Skills.Remove("None");

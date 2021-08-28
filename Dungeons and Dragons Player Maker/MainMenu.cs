@@ -39,12 +39,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void PrintOldCharacter_Click(object sender, EventArgs e) {
-            try {
+           try {
                 PrintSheet ps = new(Engine.Characters[CharactersCreated.Text]);
                 ps.Show();
-            } catch (Exception) {
+           } catch (Exception) {
                 MessageBox.Show("Something is wrong with this character. It cannot be opened.","Character Wizard Error");
-            }
+           }
         }
 
         [Obsolete]
@@ -55,7 +55,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 PC loadedPC = null;
                 try {
                     BinaryFormatter formatter = new BinaryFormatter();
-                    loadedPC = (PC)formatter.Deserialize(Character);
+                    loadedPC = (PC) formatter.Deserialize(Character);
                 } catch (SerializationException) {
 
                 } finally { Character.Close(); }
@@ -66,8 +66,18 @@ namespace Dungeons_and_Dragons_Player_Maker {
                     MessageBox.Show("Something is wrong with this character. It cannot be opened.", "Character Wizard Error");
                 }
             } catch (FileNotFoundException) {
+                MessageBox.Show("Something is wrong with this character. It cannot be opened.", "Character Wizard Error");
+            } catch (Exception) { }
+        }
 
+        private void MainMenu_VisibleChanged(object sender, EventArgs e) {
+            if (Engine.Characters.Count != 0) {
+                PrintOldCharacter.Enabled = true;
+                CharactersCreated.Enabled = true;
+                CharactersCreated.Items.Clear();
+                CharactersCreated.Items.AddRange(Engine.CharacterList);
             }
+            UserName.Text = Properties.Settings.Default.Name;
         }
     }
 }

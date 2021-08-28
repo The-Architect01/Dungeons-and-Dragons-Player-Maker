@@ -88,7 +88,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Honor. I don’t steal from others in the trade._Freedom. Chains are meant to be broken, as are those who would forge them._Charity. I steal from the wealthy so that I can help people in need._Greed. I will do whatever it takes to become wealthy._People. I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care._Redemption. There’s a spark of good in everyone..
+        ///   Looks up a localized string similar to I don’t steal from others in the trade._Chains are meant to be broken, as are those who would forge them._I steal from the wealthy so that I can help people in need._I will do whatever it takes to become wealthy._I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care._There’s a spark of good in everyone..
         /// </summary>
         internal static string Criminal_Spy_Ideal {
             get {
@@ -124,7 +124,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to City Secrets.
+        ///   Looks up a localized string similar to City Secrets: You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow..
         /// </summary>
         internal static string Urchin {
             get {
@@ -160,6 +160,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A small knife, a map of the city, a pet mouse, a token, a set of common clothes, a pouch containing 10 gp..
+        /// </summary>
+        internal static string Urchin_Items {
+            get {
+                return ResourceManager.GetString("Urchin-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I hide scraps of food and trinkets away in my pockets._I ask a lot of questions._I like to squeeze into small places where no one else can get to me._I sleep with my back to a wall or tree, with everything I own wrapped in a bundle in my arms._I eat like a pig and have bad manners._I think anyone who&apos;s nice to me is hiding evil intent._I don&apos;t like to bathe._I bluntly say what other people are hinting at or hiding..
         /// </summary>
         internal static string Urchin_Personality {
@@ -169,7 +178,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Languages: None_Skills: Sleight of Hand, Stealth_Tools: Disguise kit, thieves&apos; tools.
         /// </summary>
         internal static string Urchin_Skills {
             get {

@@ -46,7 +46,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             return value.ToArray();
         }
 
-        public static string[] CharacterList { get; set; } = LoadCharacters().Keys.ToArray();
+        public static string[] CharacterList { get { return LoadCharacters().Keys.ToArray(); } } 
 
         public static Dictionary<string, PC> Characters { get; set; } = LoadCharacters();
 

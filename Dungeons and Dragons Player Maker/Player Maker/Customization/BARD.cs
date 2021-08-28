@@ -20,8 +20,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
                     PC.Skills.Add(MusicalInstrument2.Text);
                     PC.Skills.Add(MusicalInstrument3.Text);
 
-                    PC.Skills.Add(Skill1.Text);PC.Skills.Add(Skill2.Text);
-                    PC.Skills.Add(Skill3.Text);
+                    PC.Skills.Add(Skill1.Text.Split(" ")[0]);PC.Skills.Add(Skill2.Text.Split(" ")[0]);
+                    PC.Skills.Add(Skill3.Text.Split(" ")[0]);
 
                     PC.Inventory.Add(Option1.Text); PC.Inventory.Add(Option2.Text);PC.Inventory.Add(Option3.Text);
                     

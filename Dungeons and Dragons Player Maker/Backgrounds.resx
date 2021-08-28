@@ -127,7 +127,7 @@
     <value>When I see something valuable, I can’t think about anything but how to steal it._When faced with a choice between money and my friends, I usually choose the money._If there’s a plan, I’ll forget it. If I don’t forget it, I’ll ignore it._I have a “tell” that reveals when I’m lying._I turn tail and run when things look bad._An innocent person is in prison for a crime that I committed. I’m okay with that.</value>
   </data>
   <data name="Criminal/Spy-Ideal" xml:space="preserve">
-    <value>Honor. I don’t steal from others in the trade._Freedom. Chains are meant to be broken, as are those who would forge them._Charity. I steal from the wealthy so that I can help people in need._Greed. I will do whatever it takes to become wealthy._People. I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care._Redemption. There’s a spark of good in everyone.</value>
+    <value>I don’t steal from others in the trade._Chains are meant to be broken, as are those who would forge them._I steal from the wealthy so that I can help people in need._I will do whatever it takes to become wealthy._I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care._There’s a spark of good in everyone.</value>
   </data>
   <data name="Criminal/Spy-Items" xml:space="preserve">
     <value>A crowbar, a set of dark common clothes, a pouch containing 15 gp.</value>
@@ -139,7 +139,7 @@
     <value>Languages: None_Skills: Deception, Stealth_Tools: Thieves' Tools, &lt;CHOOSE&gt;</value>
   </data>
   <data name="Urchin" xml:space="preserve">
-    <value>City Secrets</value>
+    <value>City Secrets: You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow.</value>
   </data>
   <data name="Urchin-Bond" xml:space="preserve">
     <value>My town or city is my home, and I'll fight to defend it._I sponsor an orphanage to keep others from enduring what I was forced to endure._I owe my survival to another urchin who taught me to live on the streets._I owe a debt I can never repay to the person who took pity on me._I escaped my life of poverty by robbing an important person, and I'm wanted for it._No one else should have to endure the hardships I've been through.</value>
@@ -150,10 +150,13 @@
   <data name="Urchin-Ideal" xml:space="preserve">
     <value>All people, rich or poor, deserve respect._We have to take care of each other, because no one else is going to do it._The low are lifted up, and the high and mighty are brought down. Change is the nature of things._The rich need to be shown what life and death are like in the gutters._I help the people who help me-that's what keeps us alive._I'm going to prove that I'm worthy of a better life.</value>
   </data>
+  <data name="Urchin-Items" xml:space="preserve">
+    <value>A small knife, a map of the city, a pet mouse, a token, a set of common clothes, a pouch containing 10 gp.</value>
+  </data>
   <data name="Urchin-Personality" xml:space="preserve">
     <value>I hide scraps of food and trinkets away in my pockets._I ask a lot of questions._I like to squeeze into small places where no one else can get to me._I sleep with my back to a wall or tree, with everything I own wrapped in a bundle in my arms._I eat like a pig and have bad manners._I think anyone who's nice to me is hiding evil intent._I don't like to bathe._I bluntly say what other people are hinting at or hiding.</value>
   </data>
   <data name="Urchin-Skills" xml:space="preserve">
-    <value />
+    <value>Languages: None_Skills: Sleight of Hand, Stealth_Tools: Disguise kit, thieves' tools</value>
   </data>
 </root>

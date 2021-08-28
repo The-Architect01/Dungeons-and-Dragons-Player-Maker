@@ -12,72 +12,33 @@ using System.Collections.Generic;
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class PrintSheet : Form {
         Bitmap bitMap;
-        readonly PrivateFontCollection Fonts = new();
-
-        [DllImport("gdi32.dll")]
-        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
-
-        private PrivateFontCollection populateFonts() { 
-            PrivateFontCollection pFC = new PrivateFontCollection();
-
-            try {
-                string[] resource = { "Benguiat Bold.ttf" }; // specify embedded resource name
-
-                foreach (var item in resource) {
-                    // receive resource stream
-                    Stream fontStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(item);
-
-                    // create an unsafe memory block for the font data
-                    System.IntPtr data = Marshal.AllocCoTaskMem((int)fontStream.Length);
-
-                    // create a buffer to read in to
-                    byte[] fontdata = new byte[fontStream.Length];
-
-                    // read the font data from the resource
-                    fontStream.Read(fontdata, 0, (int)fontStream.Length);
-
-                    // copy the bytes to the unsafe memory block
-                    Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
-
-                    ///IMPORTANT line to register font in system
-                    uint cFonts = 0;
-                    AddFontMemResourceEx(data, (uint)fontdata.Length, IntPtr.Zero, ref cFonts);
-
-                    // pass the font to the font collection
-                    pFC.AddMemoryFont(data, (int)fontStream.Length);
-
-                    // close the resource stream
-                    fontStream.Close();
-                    // free up the unsafe memory
-                    Marshal.FreeCoTaskMem(data);
-                }
-            } catch (Exception) {
-                
-            }
-
-            return pFC;
-        }
+      //  PrivateFontCollection pfc = new();
 
         public PrintSheet() {
             InitializeComponent();
-            Fonts = populateFonts();
+       //     pfc.AddFontFile(Path.GetDirectoryName(Application.ExecutablePath).Split("bin")[0] + "Regula Old Face.otf");
+        
         }
 
         readonly Label[] skills;
+        readonly List<string> Skills;
         readonly PC player;
 
         public PrintSheet(PC pc) {
             InitializeComponent();
             
             player = pc;
+            Skills = pc.Skills;
             Race.Text = player.Race.Split(":")[0];
             
             skills = new Label[] { Athletics, Acrobatics,Sleight,Stealth, Arcana, History, Investigation,Nature,Religion,
             Animal, Insight, Medicine,Perception, Survival, Deception, Intimidation, Performance, Persuasion};
-            
-            foreach(Label skill in skills) {skill.Visible = player.Skills.Contains(skill.Name);}
 
-            player.Skills.RemoveAll(i => Engine.SKILLS.Contains(i));
+            foreach(Label skill in skills) {skill.Visible = Skills.Contains(skill.Name);}
+
+            Skills.RemoveAll(i => Engine.SKILLS.Contains(i));
+
+            //player.Skills.RemoveAll(i => Engine.SKILLS.Contains(i));
             Character_Name.Text = player.Name;
             Background.Text = player.Background;
             Class.Text = player.Class;
@@ -98,7 +59,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             populateClass();
             populateBackground();
             
-            foreach(string skill in player.Skills) { if (!Prof.Text.Contains(skill)) { Prof.Text += skill + ", "; } }
+            foreach(string skill in Skills) { if (!Prof.Text.Contains(skill)) { Prof.Text += skill + ", "; } }
             foreach(string item in player.Inventory) { Equip.Text += item + ", "; }
             foreach (string item in player.Weapons) { 
                 WeaponName.Text += item + "\n";
@@ -117,8 +78,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
             populateAC();
 
-            Fonts.AddFontFile(Path.GetDirectoryName(Application.ExecutablePath).Split("bin")[0] + "Benguiat Bold.ttf");
-            foreach(Control c in Controls) {try { c.Font = new Font(Fonts.Families[int.Parse(c.Tag.ToString())], c.Font.SizeInPoints); } catch (Exception) { }}
+         //   foreach(Control c in Controls) {try { c.Font = new Font(pfc.Families[0], c.Font.SizeInPoints); } catch (Exception) { }}
         }
 
         private void populateRace() {
