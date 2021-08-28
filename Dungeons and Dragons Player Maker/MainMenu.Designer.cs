@@ -114,6 +114,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainMenu";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);

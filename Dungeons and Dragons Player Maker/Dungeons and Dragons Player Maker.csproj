@@ -5,7 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>Dungeons_and_Dragons_Player_Maker</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>D20.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\D202.ico</ApplicationIcon>
     <StartupObject>Dungeons_and_Dragons_Player_Maker.Program</StartupObject>
     <Authors>Neal Birchfield</Authors>
     <Company>Grumpy Lion Games</Company>
@@ -16,6 +16,7 @@
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/The-Architect01/Dungeons-and-Dragons-Player-Maker</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <Win32Resource />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -30,10 +31,6 @@
   <ItemGroup>
     <None Remove="D20.ico" />
     <None Remove="Regula Old Face.otf" />
-    <None Include="..\..\..\..\Downloads\D202.ico">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -64,9 +61,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Classes.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Engine.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="MainMenu.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
