@@ -6,35 +6,32 @@ using System.Windows.Forms;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
     public partial class RaceTab : TabPage {
-        readonly PC PC;
+        private readonly PC PC;
 
         #region Variables
-        Label[] RaceName;
-        static readonly string[] Races = { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling" };
-        static readonly Dictionary<string, int> RacesBonus = new() { { "Human:Variant", 2 }, { "Half-Elf:Natural", 2 } };
-
-        static readonly List<string> Races_SubRace = new() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf" };
-        static readonly string[] DWARF_SUBRACE = { "Hill", "Mountain", "Deep" };
-        static readonly string[] ELF_SUBRACE = { "High", "Wood", "Drow" };
-        static readonly string[] HALFLING_SUBRACE = { "Lightfoot", "Stout" };
-        static readonly string[] HUMAN_SUBRACE = { "Natural", "Variant" };
-        static readonly string[] DRAGONBORN_SUBRACE = { "Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White" };
-        static readonly string[] GNOME_SUBRACE = { "Forest", "Rock" };
-        static readonly string[] HALF_ELF_SUBRACE = { "Natural", "Variant" };
-
-        static readonly List<string> AdditionalRaceLang = new() { "Human", "Half-Elf" };
-        static readonly List<string> AdditionalRaceSkill1 = new() { "Half-Elf" };
-        static readonly List<string> AdditionalRaceSkill2 = new() { "Half-Elf" };
-
-        int pos = 0;
-
-        Control[] controlsInForm;
+        private Label[] RaceName;
+        private static readonly string[] Races = { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling" };
+        private static readonly Dictionary<string, int> RacesBonus = new() { { "Human:Variant", 2 }, { "Half-Elf:Natural", 2 } };
+        private static readonly List<string> Races_SubRace = new() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf" };
+        private static readonly string[] DWARF_SUBRACE = { "Hill", "Mountain", "Deep" };
+        private static readonly string[] ELF_SUBRACE = { "High", "Wood", "Drow" };
+        private static readonly string[] HALFLING_SUBRACE = { "Lightfoot", "Stout" };
+        private static readonly string[] HUMAN_SUBRACE = { "Natural", "Variant" };
+        private static readonly string[] DRAGONBORN_SUBRACE = { "Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White" };
+        private static readonly string[] GNOME_SUBRACE = { "Forest", "Rock" };
+        private static readonly string[] HALF_ELF_SUBRACE = { "Natural", "Variant" };
+        private static readonly List<string> AdditionalRaceLang = new() { "Human", "Half-Elf" };
+        private static readonly List<string> AdditionalRaceSkill1 = new() { "Half-Elf" };
+        private static readonly List<string> AdditionalRaceSkill2 = new() { "Half-Elf" };
+        private int pos = 0;
+        private Control[] controlsInForm;
         #endregion
 
         public event EventHandler OnReady;
 
-        bool _ready = false;
-        bool informationFilled { get { return _ready; } set { _ready = value; if (value) {
+        private bool _ready = false;
+
+        private bool informationFilled { get { return _ready; } set { _ready = value; if (value) {
                     PC.Race = PC.Race.Split(":")[0] + ":" + SubRaces.Text;
                     if (Prof1 != "" && Prof2 != "") {
                         PC.Skills.AddRange(new[] { Prof1.Split(" ")[0], Prof2.Split(" ")[0] });
@@ -73,32 +70,32 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
 
         #region Controls
         #region Labels -- Race Names
-        readonly Label R1 = new() {
+        private readonly Label R1 = new() {
             Text = "Dwarf",
             Size = new Size(211, 25),
             Location = new Point(6, 46),
         };
-        readonly Label R2 = new() {
+        private readonly Label R2 = new() {
             Text = "Elf",
             Size = new Size(211, 25),
             Location = new Point(6, 83),
         };
-        readonly Label R3 = new() {
+        private readonly Label R3 = new() {
             Text = "Halfling",
             Size = new Size(211, 25),
             Location = new Point(6, 120),
         };
-        readonly Label R4 = new() {
+        private readonly Label R4 = new() {
             Text = "Human",
             Size = new Size(211, 25),
             Location = new Point(6, 157),
         };
-        readonly Label R5 = new() {
+        private readonly Label R5 = new() {
             Text = "Dragonborn",
             Size = new Size(211, 25),
             Location = new Point(6, 194),
         };
-        readonly Label R6 = new() {
+        private readonly Label R6 = new() {
             Text = "Gnome",
             Size = new Size(211, 25),
             Location = new Point(6, 231),
@@ -167,13 +164,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #endregion
         #endregion
 
-        readonly Label Info = new() {
+        private readonly Label Info = new() {
             Location = new Point(6, 325),
             Size = new Size(492, 171),
             TextAlign = ContentAlignment.MiddleLeft,
             Text = "STR: +1 DEX: +1 CON: +1 WIS: +1 INT: +1 CHA: +1\nSpeed: 30\nSize: Medium\nLanguages: Common\nProficiencies: None\nNotes: None"
         };
-        readonly Label Label1 = new() {
+        private readonly Label Label1 = new() {
             Size = new Size(492, 19),
             Location = new Point(6, 496),
             TextAlign = ContentAlignment.MiddleCenter,
@@ -181,12 +178,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         };
 
         #region Buttons
-        readonly Button UP = new() {
+        private readonly Button UP = new() {
             Text = "UP",
             Size = new Size(208, 28),
             Location = new Point(6, 6),
         };
-        readonly Button DOWN = new() {
+        private readonly Button DOWN = new() {
             Text = "DOWN",
             Size = new Size(208, 28),
             Location = new Point(6, 259),
@@ -213,28 +210,28 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #endregion
 
         #region ComboBoxes
-        string Prof1 = "";
-        string Prof2 = "";
-        string Languages = "";
-        readonly ComboBox RaceLang = new() {
+        private string Prof1 = "";
+        private string Prof2 = "";
+        private string Languages = "";
+        private readonly ComboBox RaceLang = new() {
             Size = new Size(151, 28),
             Location = new Point(6, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Lang")
         };
-        readonly ComboBox RaceSkill1 = new() {
+        private readonly ComboBox RaceSkill1 = new() {
             Size = new Size(151, 28),
             Location = new Point(176, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Skills")
         };
-        readonly ComboBox RaceSkill2 = new() {
+        private readonly ComboBox RaceSkill2 = new() {
             Size = new Size(151, 28),
             Location = new Point(346, 518),
             Enabled = false,
             DataSource = Engine.AddChoose("Skills")
         };
-        readonly ComboBox SubRaces = new() {
+        private readonly ComboBox SubRaces = new() {
             Text = "Natural",
             Size = new Size(208, 28),
             Location = new Point(6, 294),
@@ -295,7 +292,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #endregion
         #endregion
 
-        readonly PictureBox RacePreview = new() {
+        private readonly PictureBox RacePreview = new() {
             Image = Dungeons_and_Dragons_Player_Maker.Races.Human,
             Location = new Point(223, 6),
             Size = new Size(275, 316),

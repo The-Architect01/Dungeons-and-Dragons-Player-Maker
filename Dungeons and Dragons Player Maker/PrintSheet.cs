@@ -11,19 +11,17 @@ using System.Collections.Generic;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class PrintSheet : Form {
-        Bitmap bitMap;
-      //  PrivateFontCollection pfc = new();
+        private Bitmap bitMap;
 
         public PrintSheet() {
-            InitializeComponent();
-       //     pfc.AddFontFile(Path.GetDirectoryName(Application.ExecutablePath).Split("bin")[0] + "Regula Old Face.otf");
-        
+            InitializeComponent();        
         }
 
-        readonly Label[] skills;
-        readonly List<string> Skills;
-        readonly PC player;
+        private readonly Label[] skills;
+        private readonly List<string> Skills;
+        private readonly PC player;
 
+        [Obsolete]
         public PrintSheet(PC pc) {
             InitializeComponent();
             
@@ -54,7 +52,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Wisdom.Text = player.Stats[4].ToString();
             Charisma.Text = player.Stats[5].ToString();
             
-            setStatMod();
+            SetStatMod();
             populateRace();
             populateClass();
             populateBackground();
@@ -77,13 +75,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
             }
 
             populateAC();
-
-         //   foreach(Control c in Controls) {try { c.Font = new Font(pfc.Families[0], c.Font.SizeInPoints); } catch (Exception) { }}
+            Scale(.75f);
+            CenterToScreen();
         }
 
         private void populateRace() {
             Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
-            List<string> abilities = new List<string>();
+            List<string> abilities = new();
             abilities.AddRange(Races.ResourceManager.GetString(player.Race).Split("_")[10].Split(", "));
             abilities.Remove("None");
             foreach(string ability in abilities) {Abilities.Text += ability + "\n";}
@@ -175,7 +173,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Bond.Text = player.Personality[2];
             Flaw.Text = player.Personality[3];
         }
-        private void setStatMod() {
+        private void SetStatMod() {
             STR_Mod.Text = getModifier(Strength.Text);
             Dex_Mod.Text = getModifier(Dextarity.Text);
             Con_Mod.Text = getModifier(Constitution.Text);
@@ -183,7 +181,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Int_Mod.Text = getModifier(Intelligence.Text);
             Cha_Mod.Text = getModifier(Charisma.Text);
         }
-        private string getModifier(string stat) {
+        private static string getModifier(string stat) {
             int statvalue = int.Parse(stat);
             if (statvalue == 1)  { return "-5";  } 
             if (4 > statvalue)   { return "-4";  }

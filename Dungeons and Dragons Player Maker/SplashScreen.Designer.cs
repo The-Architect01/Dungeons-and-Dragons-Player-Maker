@@ -35,7 +35,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(3, 363);
+            this.label1.Location = new System.Drawing.Point(3, 456);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(585, 117);
             this.label1.TabIndex = 0;
@@ -47,7 +47,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(3, 507);
+            this.label3.Location = new System.Drawing.Point(3, 601);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(985, 56);
             this.label3.TabIndex = 2;
@@ -65,7 +65,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.DnD_bg_starter01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1000, 562);
+            this.ClientSize = new System.Drawing.Size(1000, 666);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

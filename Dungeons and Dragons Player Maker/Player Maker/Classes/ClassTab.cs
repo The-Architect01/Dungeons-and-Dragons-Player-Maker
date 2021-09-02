@@ -6,17 +6,18 @@ using System.Reflection;
 using System.Windows.Forms;
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
     public partial class ClassTab : TabPage {
-        readonly PC PC;
+        private readonly PC PC;
 
         #region Variables - Do not Change
-        readonly Label[] ClassName;
-        int pos = 0;
-        readonly Control[] ControlsOnForm;
+        private readonly Label[] ClassName;
+        private int pos = 0;
+        private readonly Control[] ControlsOnForm;
 
         public event EventHandler OnReady;
 
-        bool _ready = false;
-        bool informationFilled {
+        private bool _ready = false;
+
+        private bool informationFilled {
             get { return _ready; }
             set {
                 _ready = value; if (value) {
@@ -27,24 +28,23 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         }
         #endregion
         #region Variables -- Change to add new Class and/or subclass
-        static readonly string[] Classes = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
-
-        static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
-        static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
-        static readonly string[] CLERIC_Subclasses = { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
-        static readonly string[] DRUID_Subclasses = { "Circle of Land - Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
+        private static readonly string[] Classes = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
+        private static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
+        private static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
+        private static readonly string[] CLERIC_Subclasses = { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
+        private static readonly string[] DRUID_Subclasses = { "Circle of Land - Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
         "Circle of Land - Grassland", "Circle of Land - Mountain","Circle of Land - Swamp","Circle of Land - Underdark","Circle of the Moon"};
-        static readonly string[] FIGHTER_Subclasses = { "Champion", "Battle Master", "Eldritch Knight" };
-        static readonly string[] MONK_Subclasses = { "Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements" };
-        static readonly string[] PALADIN_Subclasses = { "Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance" };
-        static readonly string[] RANGER_Subclasses = { "Hunter", "Beast Master" };
-        static readonly string[] ROGUE_Subclasses = { "Thief", "Assassin", "Arcane Trickster" };
-        static readonly string[] SORCERER_Subclasses = { "Draconic Bloodline", "Wild Magic" };
-        static readonly string[] WARLOCK_Subclasses = { "The Archfey", "The Fiend", "The Great Old One" };
-        static readonly string[] WIZARD_Subclasses = { "Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmuation" };
-        static readonly string[] ARTIFICER_Subclasses = { };
+        private static readonly string[] FIGHTER_Subclasses = { "Champion", "Battle Master", "Eldritch Knight" };
+        private static readonly string[] MONK_Subclasses = { "Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements" };
+        private static readonly string[] PALADIN_Subclasses = { "Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance" };
+        private static readonly string[] RANGER_Subclasses = { "Hunter", "Beast Master" };
+        private static readonly string[] ROGUE_Subclasses = { "Thief", "Assassin", "Arcane Trickster" };
+        private static readonly string[] SORCERER_Subclasses = { "Draconic Bloodline", "Wild Magic" };
+        private static readonly string[] WARLOCK_Subclasses = { "The Archfey", "The Fiend", "The Great Old One" };
+        private static readonly string[] WIZARD_Subclasses = { "Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmuation" };
+        private static readonly string[] ARTIFICER_Subclasses = { };
         #endregion
-
+        [Obsolete]
         public ClassTab(PC Player) { //Initalize
             PC = Player;
             InitializeComponent();
@@ -57,36 +57,37 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             foreach (Label l in ClassName) { l.Click += ClassName_Click; l.MouseEnter += ClassName_Enter; }
             UP.Click += UP_Click; DOWN.Click += DOWN_Click;
             SubClasses.SelectedValueChanged += SubClasses_OnValueChanged;
+            Scale(.75f);
         }
 
         #region Controls
         #region Labels -- Class Names
-        readonly Label C1 = new() {
+        private readonly Label C1 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 46),
             Text = "Barbarian",
         };
-        readonly Label C2 = new() {
+        private readonly Label C2 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 83),
             Text = "Bard",
         };
-        readonly Label C3 = new() {
+        private readonly Label C3 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 120),
             Text = "Cleric",
         };
-        readonly Label C4 = new() {
+        private readonly Label C4 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 157),
             Text = "Druid",
         };
-        readonly Label C5 = new() {
+        private readonly Label C5 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 194),
             Text = "Fighter",
         };
-        readonly Label C6 = new() {
+        private readonly Label C6 = new() {
             Size = new Size(211, 25),
             Location = new Point(6, 231),
             Text = "Monk",
@@ -112,13 +113,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         }
         #endregion
         #region Buttons
-        readonly Button UP = new() {
+        private readonly Button UP = new() {
             Text = "UP",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(208, 28),
             Location = new Point(6, 6),
         };
-        readonly Button DOWN = new() {
+        private readonly Button DOWN = new() {
             Text = "DOWN",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(208, 28),
@@ -143,17 +144,17 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             }
         }
         #endregion
-        readonly Label ClassInfo = new() {
+        private readonly Label ClassInfo = new() {
             Location = new Point(6, 325),
             Size = new Size(222, 224),
             TextAlign = ContentAlignment.MiddleLeft
         };
-        readonly Label SubClassInfo = new() {
+        private readonly Label SubClassInfo = new() {
             Location = new Point(234, 325),
             Size = new Size(264, 224),
             TextAlign = ContentAlignment.MiddleLeft
         };
-        readonly ComboBox SubClasses = new() {
+        private readonly ComboBox SubClasses = new() {
             Location = new Point(6, 294),
             Size = new Size(208, 28),
             Text = "Select One"
@@ -163,7 +164,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             informationFilled = true;
         }
 
-        readonly PictureBox ClassPreview = new() {
+        private readonly PictureBox ClassPreview = new() {
             Image = Dungeons_and_Dragons_Player_Maker.Classes.Barbarian,
             Size = new Size(275, 316),
             Location = new Point(223, 6),

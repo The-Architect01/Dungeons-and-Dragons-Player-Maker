@@ -9,20 +9,22 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
     public partial class BackgroundTab : TabPage {
 
         #region Variables -- Do not change
-        readonly PC PC;
-        readonly Control[] controlsOnControl;
-        readonly ComboBox[] EXOptions;
-        readonly Label[] BackgroundsVisible;
-        int pos = 0;
+        private readonly PC PC;
+        private readonly Control[] controlsOnControl;
+        private readonly ComboBox[] EXOptions;
+        private readonly Label[] BackgroundsVisible;
+        private int pos = 0;
 
         public event EventHandler OnReady;
 
-        bool _ready = false;
-        bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
+        private bool _ready = false;
+
+        private bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
         #endregion
 
-        readonly static string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin" }; //Change this line to add new Backgrounds
+        private static readonly string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin" }; //Change this line to add new Backgrounds
 
+        [Obsolete]
         public BackgroundTab(PC Player) { //Initializer, do not change
             Text = "Backgrounds";
             BackColor = Color.White;
@@ -41,42 +43,43 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             Bond.SelectedValueChanged += ID_SelectedValueChanged;
             Flaw.SelectedValueChanged += ID_SelectedValueChanged;
             Controls.AddRange(controlsOnControl);
+            Scale(.75f);
         }
 
         #region Controls - Do not Change
-        readonly Label label1 = new() {
+        private readonly Label label1 = new() {
             Text = "Personality",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(492, 19),
             Location = new Point(6, 443)
         };
         #region Labels -- Names
-        readonly Label B1 = new() {
+        private readonly Label B1 = new() {
             Size = new Size(211, 25),
             Text = "Acolyte",
             Location = new Point(6, 46),
         };
-        readonly Label B2 = new() {
+        private readonly Label B2 = new() {
             Size = new Size(211, 25),
             Text = "Criminal/Spy",
             Location = new Point(6, 83),
         };
-        readonly Label B3 = new() {
+        private readonly Label B3 = new() {
             Size = new Size(211, 25),
             Text = "Folk Hero",
             Location = new Point(6, 120),
         };
-        readonly Label B4 = new() {
+        private readonly Label B4 = new() {
             Size = new Size(211, 25),
             Text = "Haunted One",
             Location = new Point(6, 157),
         };
-        readonly Label B5 = new() { 
+        private readonly Label B5 = new() { 
             Size = new Size(211, 25),
             Text = "Noble",
             Location = new Point(6, 194),
         };
-        readonly Label B6 = new() {
+        private readonly Label B6 = new() {
             Size = new Size(211, 25),
             Text = "Sage",
             Location = new Point(6, 231),
@@ -124,23 +127,23 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             }
         }
         #endregion
-        readonly Label BackgroundBonus = new() {
+        private readonly Label BackgroundBonus = new() {
             TextAlign = ContentAlignment.MiddleLeft,
             Size = new Size(278, 139),
             Location = new Point(220, 6)
         };
-        readonly Label BackgroundData = new() {
+        private readonly Label BackgroundData = new() {
             TextAlign = ContentAlignment.MiddleLeft,
             Size = new Size(492, 153),
             Location = new Point(6, 290)
         };
-        readonly Button UP = new() {
+        private readonly Button UP = new() {
             Text = "UP",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(208, 28),
             Location = new Point(6, 6)
         };
-        readonly Button DOWN = new() {
+        private readonly Button DOWN = new() {
             Text = "DOWN",
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(208, 28),
@@ -165,25 +168,25 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             }
         }
 
-        readonly ComboBox Personality = new() {
+        private readonly ComboBox Personality = new() {
             Text = "Select One",
             DropDownWidth = 650,
             Size = new Size(242, 28),
             Location = new Point(6, 465),
         };
-        readonly ComboBox Bond = new() { 
+        private readonly ComboBox Bond = new() { 
             Text = "Select One",
             DropDownWidth = 650,
             Size = new Size(242, 28),
             Location = new Point(6, 499),
         };
-        readonly ComboBox Ideal = new() {
+        private readonly ComboBox Ideal = new() {
             Text = "Select One",
             DropDownWidth = 650,
             Size = new Size(242, 28),
             Location = new Point(256, 465),
         };
-        readonly ComboBox Flaw = new() { 
+        private readonly ComboBox Flaw = new() { 
             Text = "Select One",
             DropDownWidth = 650,
             Size = new Size(242, 28),
@@ -205,39 +208,38 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             }
         }
 
-        readonly ComboBox EXOption1 = new() {
+        private readonly ComboBox EXOption1 = new() {
             Name = "EXOption1",
             Location = new Point(223, 148),
             Size = new Size(275, 28),
             Enabled = false,
             Text = "Select One"
         };
-        readonly ComboBox EXOption2 = new() {
+        private readonly ComboBox EXOption2 = new() {
             Name = "EXOption2",
             Location = new Point(223, 185),
             Size = new Size(275, 28),
             Enabled = false,
             Text = "Select One"
         };
-        readonly ComboBox EXOption3 = new() {
+        private readonly ComboBox EXOption3 = new() {
             Name = "EXOption3",
             Location = new Point(223, 222),
             Size = new Size(275, 28),
             Enabled = false,
             Text = "Select One"
         };
-        readonly ComboBox EXOption4 = new() {
+        private readonly ComboBox EXOption4 = new() {
             Name = "EXOption4",
             Location = new Point(223, 259),
             Size = new Size(275, 28),
             Enabled = false,
             Text = "Select One"
         };
-
-        string selectedValueEXOption1;
-        string selectedValueEXOption2;
-        string selectedValueEXOption3;
-        string selectedValueEXOption4;
+        private string selectedValueEXOption1;
+        private string selectedValueEXOption2;
+        private string selectedValueEXOption3;
+        private string selectedValueEXOption4;
         private void Option_SelectedValueChanged(object sender, EventArgs e) { //Checks if the data is valid
             ComboBox c = (ComboBox)sender;
             switch (c.Name) {
@@ -258,13 +260,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         }
         
         private void updateSelection(ComboBox c, ref string oldValue) { //removes the old value or the choose
-            if (c.Items.Count == Engine.LANGUAGES.Count()) {
+            if (c.Items.Count == Engine.LANGUAGES.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[1];
                 data.Replace("<CHOOSE>", c.Text);
-            } else if (c.Items.Count == Engine.SKILLS.Count()) {
+            } else if (c.Items.Count == Engine.SKILLS.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[2];
                 data.Replace("<CHOOSE>", c.Text);
-            } else if (c.Items.Count == Engine.TOOLS.Count()) {
+            } else if (c.Items.Count == Engine.TOOLS.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[3];
                 string newV = data.Contains("<CHOOSE>") ? data.Replace("<CHOOSE>", c.Text) : data.Replace(oldValue, c.Text);
                 BackgroundBonus.Text = BackgroundBonus.Text.Replace(data, newV);

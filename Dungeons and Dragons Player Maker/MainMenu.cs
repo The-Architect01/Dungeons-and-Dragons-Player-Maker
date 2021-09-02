@@ -7,8 +7,11 @@ using System.Runtime.Serialization;
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class MainMenu : Form {
 
+        [Obsolete]
         public MainMenu() {
             InitializeComponent();
+            Scale(.85f);
+            CenterToScreen();
         }
 
         private void MainMenu_Load(object sender, EventArgs e) {
@@ -25,7 +28,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Properties.Settings.Default.Name = UserName.Text;
             Properties.Settings.Default.Save();
         }
-
+        [Obsolete]
         private void NewCharacter_Click(object sender, EventArgs e) {
             Hide();
             CreateCharacter createCharacter = new();
@@ -34,6 +37,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Show();
         }
 
+        [Obsolete]
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e) {
             Engine.SaveCharacters();
         }
@@ -54,7 +58,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 Stream Character = openFileDialog1.OpenFile();
                 PC loadedPC = null;
                 try {
-                    BinaryFormatter formatter = new BinaryFormatter();
+                    BinaryFormatter formatter = new();
                     loadedPC = (PC) formatter.Deserialize(Character);
                 } catch (SerializationException) {
 

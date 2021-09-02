@@ -6,8 +6,9 @@ using System.Collections.Generic;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
     public partial class StatDataPage : TabPage {
-        readonly PC PC;
+        private readonly PC PC;
 
+        [Obsolete]
         public StatDataPage(PC Player) {
             PC = Player;
             Text = "Abilities and Stats";
@@ -29,8 +30,10 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
 
             CheckBoxRegion.Controls.AddRange(new[] {STR_PLUS, DEX_PLUS, CON_PLUS, WIS_PLUS, INT_PLUS, CHA_PLUS});
             this.Enter += OnShown;
+            Scale(.75f);
         }
 
+        [Obsolete]
         private void AddEvents() {
             foreach (ComboBox c in StatLocations) { c.SelectedValueChanged += StatPlaceChanged; }
             SaveAndPrint.Click += SaveAndPrint_Click;
@@ -43,16 +46,18 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         }
 
         #region Controls
-        readonly Button SaveAndPrint = new() {
+        private readonly Button SaveAndPrint = new() {
             Text = "Save + Print",
             Size = new Size(133, 75),
             Location = new Point(29, 385),
             Enabled = false
         };
+        [Obsolete]
         private void SaveAndPrint_Click(object sender, EventArgs e) {
             PC.Name = NameTextBox.Text;
             PC.Alignment = AlignmentCombBox.Text;
-            int[] stats = { int.Parse(STRValue.Text), int.Parse(DEXValue.Text), int.Parse(CONValue.Text), int.Parse(INTValue.Text), int.Parse(WISValue.Text), int.Parse(CHAValue.Text) };
+            int[] stats = { int.Parse(STRValue.Text.Split("+")[1]), int.Parse(DEXValue.Text.Split("+")[1]), int.Parse(CONValue.Text.Split("+")[1]),
+                int.Parse(INTValue.Text.Split("+")[1]), int.Parse(WISValue.Text.Split("+")[1]), int.Parse(CHAValue.Text.Split("+")[1]) };
             PC.Stats = stats;
             try {Engine.Characters.Add(PC.Name, PC);} catch (Exception) {}
             Engine.SaveCharacters();
@@ -62,12 +67,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
 
         }
 
-        readonly Button SaveAndClose = new() {
+        private readonly Button SaveAndClose = new() {
             Enabled = false,
             Text = "Save + Close",
             Size = new Size(133, 75),
             Location = new Point(313, 385)
         };
+        [Obsolete]
         private void SaveAndClose_Click(object sender, EventArgs e) {
             PC.Name = NameTextBox.Text;
             PC.Alignment = AlignmentCombBox.Text;
@@ -79,12 +85,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             FindForm().Close();
         }
 
-        readonly Button SaveAndExport = new() {
+        private readonly Button SaveAndExport = new() {
             Size = new Size(133, 75),
             Location = new Point(171, 385),
             Enabled = false,
             Text = "Save + Share"
         };
+        [Obsolete]
         private void SaveAndExport_Click(object sender, EventArgs e) {
             PC.Name = NameTextBox.Text;
             PC.Alignment = AlignmentCombBox.Text;
@@ -97,13 +104,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             MessageBox.Show("Your character has been saved.","Character Wizard");
         }
         #region Personality
-        readonly Label NameLabel = new() {
+        private readonly Label NameLabel = new() {
             Text = "Name: ",
             Location = new Point(118, 15),
             Size = new Size(72, 25),
             TextAlign = ContentAlignment.MiddleRight
         };
-        readonly TextBox NameTextBox = new() {
+        private readonly TextBox NameTextBox = new() {
             TextAlign = HorizontalAlignment.Left,
             Size = new Size(125, 27),
             Location = new Point(196, 15)
@@ -113,13 +120,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
                  INTValue.Text != "---" && WISValue.Text != "---" && CHAValue.Text != "---" && NameTextBox.Text != "") { SaveAndExport.Enabled = true; SaveAndPrint.Enabled = true; SaveAndClose.Enabled = true; }
         }
 
-        readonly Label AlignmentLabel = new() {
+        private readonly Label AlignmentLabel = new() {
             TextAlign = ContentAlignment.MiddleRight,
             Text = "Alignment: ",
             Size = new Size(93, 25),
             Location = new Point(97, 48)
         };
-        readonly ComboBox AlignmentCombBox = new() {
+        private readonly ComboBox AlignmentCombBox = new() {
             Items = {"Chaotic Good", "Neutral Good","Lawful Good",
                      "Chaotic Neutral", "Neutral", "Lawful Neutral",
                      "Chaotic Evil", "Neutral Evil","Lawful Evil"},
@@ -131,37 +138,37 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         #endregion
         #region Labels - Stat Display
         #region Stat Names
-        readonly Label STRLabel = new() {
+        private readonly Label STRLabel = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "STR",
             Size = new Size(62, 25),
             Location = new Point(29, 102)
         };
-        readonly Label DEXLabel = new() {
+        private readonly Label DEXLabel = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "DEX",
             Size = new Size(62, 25),
             Location = new Point(100, 102)
         };
-        readonly Label CONLabel = new() {
+        private readonly Label CONLabel = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "CON",
             Size = new Size(62, 25),
             Location = new Point(171, 102)
         };
-        readonly Label INTLabel = new() {
+        private readonly Label INTLabel = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "INT",
             Size = new Size(62, 25),
             Location = new Point(242, 102)
         };
-        readonly Label WISLabel = new() {
+        private readonly Label WISLabel = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "WIS",
             Size = new Size(62, 25),
             Location = new Point(313, 102)
         };
-        readonly Label CHALabel = new() {
+        private readonly Label CHALabel = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "CHA",
             Size = new Size(62, 25),
@@ -169,42 +176,42 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         };
         #endregion
         #region Stat Values
-        readonly Label STRValue = new() {
+        private readonly Label STRValue = new() {
             Name = "STRValue",
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "---",
             Size = new Size(62, 25),
             Location = new Point(29, 127)
         };
-        readonly Label DEXValue = new() {
+        private readonly Label DEXValue = new() {
             Name = "DEXValue",
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "---",
             Size = new Size(62, 25),
             Location = new Point(100, 127)
         };
-        readonly Label CONValue = new() {
+        private readonly Label CONValue = new() {
             Name = "CONValue",
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "---",
             Size = new Size(62, 25),
             Location = new Point(171, 127)
         };
-        readonly Label INTValue = new() {
+        private readonly Label INTValue = new() {
             Name = "INTValue",
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "---",
             Size = new Size(62, 25),
             Location = new Point(242, 127)
         };
-        readonly Label WISValue = new() {
+        private readonly Label WISValue = new() {
             Name = "WISValue",
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "---",
             Size = new Size(62, 25),
             Location = new Point(313, 127)
         };
-        readonly Label CHAValue = new() {
+        private readonly Label CHAValue = new() {
             Name = "CHAValue",
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "---",
@@ -239,37 +246,37 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         #region Stat Selection
         #region Roll Display
         #region Roll Labels
-        readonly Label Roll1 = new() {
+        private readonly Label Roll1 = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "Roll 1",
             Size = new Size(62, 25),
             Location = new Point(29, 241)
         };
-        readonly Label Roll2 = new() {
+        private readonly Label Roll2 = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "Roll 2",
             Size = new Size(62, 25),
             Location = new Point(100, 241)
         };
-        readonly Label Roll3 = new() {
+        private readonly Label Roll3 = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "Roll 3",
             Size = new Size(62, 25),
             Location = new Point(171, 241)
         };
-        readonly Label Roll4 = new() {
+        private readonly Label Roll4 = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "Roll 4",
             Size = new Size(62, 25),
             Location = new Point(242, 241)
         };
-        readonly Label Roll5 = new() {
+        private readonly Label Roll5 = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "Roll 5",
             Size = new Size(62, 25),
             Location = new Point(313, 241)
         };
-        readonly Label Roll6 = new() {
+        private readonly Label Roll6 = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Text = "Roll 6",
             Size = new Size(62, 25),
@@ -277,87 +284,87 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         };
         #endregion
         #region RollValues
-        readonly Label Roll1Value = new() {
+        private readonly Label Roll1Value = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(62, 25),
             Location = new Point(29, 266)
         };
-        readonly Label Roll2Value = new() {
+        private readonly Label Roll2Value = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(62, 25),
             Location = new Point(100, 266)
         };
-        readonly Label Roll3Value = new() {
+        private readonly Label Roll3Value = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(62, 25),
             Location = new Point(171, 266)
         };
-        readonly Label Roll4Value = new() {
+        private readonly Label Roll4Value = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(62, 25),
             Location = new Point(242, 266)
         };
-        readonly Label Roll5Value = new() {
+        private readonly Label Roll5Value = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(62, 25),
             Location = new Point(313, 266)
         };
-        readonly Label Roll6Value = new() {
+        private readonly Label Roll6Value = new() {
             TextAlign = ContentAlignment.MiddleCenter,
             Size = new Size(62, 25),
             Location = new Point(384, 266)
         };
         #endregion
         #endregion
-        string Value1_Prev = "---";
-        string Value2_Prev = "---";
-        string Value3_Prev = "---";
-        string Value4_Prev = "---";
-        string Value5_Prev = "---";
-        string Value6_Prev = "---";
-        readonly ComboBox Value1_Options = new() {
+        private string Value1_Prev = "---";
+        private string Value2_Prev = "---";
+        private string Value3_Prev = "---";
+        private string Value4_Prev = "---";
+        private string Value5_Prev = "---";
+        private string Value6_Prev = "---";
+        private readonly ComboBox Value1_Options = new() {
             Name = "Value1_Options",
             Items = { "---", "STR", "DEX", "CON", "INT", "WIS", "CHA" },
             Size = new Size(62, 28),
             Location = new Point(29, 294),
             Text = "---"
         };
-        readonly ComboBox Value2_Options = new() {
+        private readonly ComboBox Value2_Options = new() {
             Name = "Value2_Options",
             Items = { "---", "STR", "DEX", "CON", "INT", "WIS", "CHA" },
             Size = new Size(62, 28),
             Location = new Point(100, 294),
             Text = "---"
         };
-        readonly ComboBox Value3_Options = new() {
+        private readonly ComboBox Value3_Options = new() {
             Name = "Value3_Options",
             Items = { "---", "STR", "DEX", "CON", "INT", "WIS", "CHA" },
             Size = new Size(62, 28),
             Location = new Point(171, 295),
             Text = "---"
         };
-        readonly ComboBox Value4_Options = new() {
+        private readonly ComboBox Value4_Options = new() {
             Name = "Value4_Options",
             Items = { "---", "STR", "DEX", "CON", "INT", "WIS", "CHA" },
             Size = new Size(62, 28),
             Location = new Point(242, 294),
             Text = "---"
         };
-        readonly ComboBox Value5_Options = new() {
+        private readonly ComboBox Value5_Options = new() {
             Name = "Value5_Options",
             Items = { "---", "STR", "DEX", "CON", "INT", "WIS", "CHA" },
             Size = new Size(62, 28),
             Location = new Point(313, 294),
             Text = "---"
         };
-        readonly ComboBox Value6_Options = new() {
+        private readonly ComboBox Value6_Options = new() {
             Name = "Value6_Options",
             Items = { "---","STR", "DEX", "CON", "INT", "WIS", "CHA" },
             Size = new Size(62, 28),
             Location = new Point(384, 294),
             Text = "---"
         };
-        readonly ComboBox[] StatLocations;
+        private readonly ComboBox[] StatLocations;
         private void StatPlaceChanged(object sender, EventArgs e) {
             ComboBox cb = (ComboBox)sender;
             foreach(ComboBox c in StatLocations) {
@@ -402,7 +409,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             updateStat(cb.Text, "Roll " + cb.Name.Split("_")[0].Split("Value")[1]);
         }
         private List<string> remainingValues() {
-            List<string> statTypes = new List<string>() { "---", "STR", "DEX", "CON", "INT", "WIS", "CHA" };
+            List<string> statTypes = new() { "---", "STR", "DEX", "CON", "INT", "WIS", "CHA" };
             foreach(ComboBox c in StatLocations) {
                 if(c.Text == "---") { continue; }
                 statTypes.Remove(c.Text);
@@ -412,11 +419,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         #endregion
         #endregion
         #region Race Bonus
-        readonly Panel CheckBoxRegion = new() {
+        private readonly Panel CheckBoxRegion = new() {
             Location = new Point(6, 164),
             Size = new Size(472, 40)
         };
-        readonly CheckBox STR_PLUS = new() {
+        private readonly CheckBox STR_PLUS = new() {
             Name = "STR_PLUS",
             Appearance = Appearance.Button,
             TextAlign = ContentAlignment.MiddleCenter,
@@ -425,7 +432,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             Location = new Point(23, 3),
             Enabled = false
         };
-        readonly CheckBox DEX_PLUS = new() {
+        private readonly CheckBox DEX_PLUS = new() {
             Name = "DEX_PLUS",
             Appearance = Appearance.Button,
             TextAlign = ContentAlignment.MiddleCenter,
@@ -434,7 +441,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             Location = new Point(94, 3),
             Enabled = false
         };
-        readonly CheckBox CON_PLUS = new() {
+        private readonly CheckBox CON_PLUS = new() {
             Name = "CON_PLUS",
             Appearance = Appearance.Button,
             TextAlign = ContentAlignment.MiddleCenter,
@@ -443,7 +450,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             Location = new Point(165, 3),
             Enabled = false
         };
-        readonly CheckBox INT_PLUS = new() {
+        private readonly CheckBox INT_PLUS = new() {
             Name = "INT_PLUS",
             Appearance = Appearance.Button,
             TextAlign = ContentAlignment.MiddleCenter,
@@ -452,7 +459,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             Location = new Point(236, 3),
             Enabled = false
         };
-        readonly CheckBox WIS_PLUS = new() {
+        private readonly CheckBox WIS_PLUS = new() {
             Name = "WIS_PLUS",
             Appearance = Appearance.Button,
             TextAlign = ContentAlignment.MiddleCenter,
@@ -461,7 +468,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             Location = new Point(307, 3),
             Enabled = false
         };
-        readonly CheckBox CHA_PLUS = new() {
+        private readonly CheckBox CHA_PLUS = new() {
             Name = "CHA_PLUS",
             Appearance = Appearance.Button,
             TextAlign = ContentAlignment.MiddleCenter,
@@ -470,8 +477,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             Location = new Point(378, 3),
             Enabled = false
         };
-        int numberAllowed = 0;
-        int numberSelected = 0;
+        private int numberAllowed = 0;
+        private int numberSelected = 0;
         private void CheckBonus(object sender, EventArgs e) {
             numberSelected = 0;
             foreach (CheckBox cb in new[] { STR_PLUS, DEX_PLUS, CON_PLUS, WIS_PLUS, INT_PLUS, CHA_PLUS }) {
@@ -499,12 +506,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
                             CHAValue.Text = (int.Parse(CHAValue.Text) + 1).ToString();
                             break;
                     }
-                } catch (FormatException) { }
+                } catch (InvalidCastException) { }
         }
         #endregion
         #endregion
 
-        readonly Button Reroll = new() {
+        private readonly Button Reroll = new() {
             Size = new Size(94, 29),
             Location = new Point(352, 328),
             Text = "Reroll",
@@ -526,7 +533,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             Roll5Value.Text = stats["Roll 5"].ToString(); Roll6Value.Text = stats["Roll 6"].ToString();
         }
 
-        readonly Dictionary<string, int> stats = new() {
+        private readonly Dictionary<string, int> stats = new() {
             { "Roll 1", GenerateStat() },
             { "Roll 2", GenerateStat() },
             { "Roll 3", GenerateStat() },

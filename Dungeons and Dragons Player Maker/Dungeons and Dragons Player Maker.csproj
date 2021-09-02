@@ -30,17 +30,14 @@
 
   <ItemGroup>
     <None Remove="D20.ico" />
-    <None Remove="Regula Old Face.otf" />
+    <None Remove="D202.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="D20.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Regula Old Face.otf">
+    <Content Include="D202.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -150,9 +147,6 @@
   <ItemGroup>
     <None Update="app.manifest">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="D202.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
