@@ -42,7 +42,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             SaveAndExport.Click += SaveAndExport_Click;
             NameTextBox.TextChanged += NameTextBox_ValueChanged;
             AlignmentCombBox.SelectedValueChanged += Alignment_ValueChanged;
-            foreach(CheckBox c in new[] { STR_PLUS, DEX_PLUS, CON_PLUS, WIS_PLUS, INT_PLUS, CHA_PLUS }) {c.CheckStateChanged += CheckBonus;}
+            foreach(CheckBox c in new[] { STR_PLUS, DEX_PLUS, CON_PLUS, WIS_PLUS, INT_PLUS, CHA_PLUS }) {c.CheckedChanged += CheckBonus;}
         }
 
         #region Controls
@@ -486,27 +486,27 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
                 if (cb.Checked && numberSelected > numberAllowed) { cb.Checked = false; }
             }
                 try {
-                    switch (((ComboBox)sender).Name) {
+                    switch (((CheckBox)sender).Name) {
                         case "STR_PLUS":
-                        STRValue.Text = (int.Parse(STRValue.Text) + 1).ToString();
+                            STRValue.Text = STR_PLUS.Checked ? (int.Parse(STRValue.Text) + 1).ToString() : (int.Parse(STRValue.Text)-1).ToString();
                             break;
                         case "DEX_PLUS":
-                            DEXValue.Text = (int.Parse(DEXValue.Text) + 1).ToString();
+                            DEXValue.Text = DEX_PLUS.Checked ? (int.Parse(DEXValue.Text) + 1).ToString() : (int.Parse(DEXValue.Text)-1).ToString();
                             break;
                         case "CON_PLUS":
-                            CONValue.Text = (int.Parse(CONValue.Text) + 1).ToString();
+                            CONValue.Text = CON_PLUS.Checked ? (int.Parse(CONValue.Text) + 1).ToString() : (int.Parse(CONValue.Text)-1).ToString();
                             break;
                         case "INT_PLUS":
-                            INTValue.Text = (int.Parse(INTValue.Text) + 1).ToString();
+                            INTValue.Text = INT_PLUS.Checked ? (int.Parse(INTValue.Text) + 1).ToString() : (int.Parse(INTValue.Text)-1).ToString();
                             break;
                         case "WIS_PLUS":
-                            WISValue.Text = (int.Parse(WISValue.Text) + 1).ToString();
+                            WISValue.Text = WIS_PLUS.Checked ? (int.Parse(WISValue.Text) + 1).ToString() : (int.Parse(WISValue.Text)-1).ToString();
                             break;
                         case "CHA_PLUS":
-                            CHAValue.Text = (int.Parse(CHAValue.Text) + 1).ToString();
+                            CHAValue.Text = CHA_PLUS.Checked ? (int.Parse(CHAValue.Text) + 1).ToString() : (int.Parse(CHAValue.Text)-1).ToString();
                             break;
                     }
-                } catch (InvalidCastException) { }
+                } catch (FormatException) { }
         }
         #endregion
         #endregion
