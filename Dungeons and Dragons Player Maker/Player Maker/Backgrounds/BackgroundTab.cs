@@ -16,10 +16,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private int pos = 0;
 
         public event EventHandler OnReady;
+        public event EventHandler OnReset;
 
         private bool _ready = false;
 
-        private bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
+        private bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } else { OnReset.Invoke(this, EventArgs.Empty); } } }
         #endregion
 
         private static readonly string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin" }; //Change this line to add new Backgrounds
@@ -98,6 +99,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             }
         }
         private void Background_Click(object sender, EventArgs e) {
+            Reset();
             PC.Background = ((Label)sender).Text;
             try {
                 string[] Skills = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Skills").Split("_");
@@ -192,6 +194,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             Size = new Size(242, 28),
             Location = new Point(256, 499),
         };
+        
         private void ID_SelectedValueChanged(object sender, EventArgs e) {  //Checks if the user has filled out all necessary data.
             if (!Personality.Text.SequenceEqual("Select One") && !Ideal.Text.SequenceEqual("Select One") &&
                 !Bond.Text.SequenceEqual("Select One") && !Flaw.Text.SequenceEqual("Select One") && !BackgroundBonus.Text.Contains("<CHOOSE>")) {
@@ -240,6 +243,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private string selectedValueEXOption2;
         private string selectedValueEXOption3;
         private string selectedValueEXOption4;
+
         private void Option_SelectedValueChanged(object sender, EventArgs e) { //Checks if the data is valid
             ComboBox c = (ComboBox)sender;
             switch (c.Name) {
@@ -262,16 +266,45 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private void updateSelection(ComboBox c, ref string oldValue) { //removes the old value or the choose
             if (c.Items.Count == Engine.LANGUAGES.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[1];
-                data.Replace("<CHOOSE>", c.Text);
+                string newV = data.Contains("<CHOOSE>") ?  data.Replace("<CHOOSE>", c.Text) : data.Replace(oldValue,c.Text);
+                BackgroundBonus.Text = BackgroundBonus.Text.Replace(data, newV);
+                oldValue = c.Text;
             } else if (c.Items.Count == Engine.SKILLS.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[2];
-                data.Replace("<CHOOSE>", c.Text);
+                string newV = data.Contains("<CHOOSE>") ? data.Replace("<CHOOSE>", c.Text) : data.Replace(oldValue,c.Text);
+                BackgroundBonus.Text = BackgroundBonus.Text.Replace(data, newV);
+                oldValue = c.Text;
             } else if (c.Items.Count == Engine.TOOLS.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[3];
                 string newV = data.Contains("<CHOOSE>") ? data.Replace("<CHOOSE>", c.Text) : data.Replace(oldValue, c.Text);
                 BackgroundBonus.Text = BackgroundBonus.Text.Replace(data, newV);
                 oldValue = c.Text;
             }
+        }
+        
+        private void Reset() {
+            selectedValueEXOption1 = "";
+            selectedValueEXOption2 = "";
+            selectedValueEXOption3 = "";
+            selectedValueEXOption4 = "";
+            
+            Personality.Items.Clear();
+            Personality.Text = "Select One";
+            Bond.Items.Clear();
+            Bond.Text = "Select One";
+            Ideal.Items.Clear();
+            Ideal.Text = "Select One";
+            Flaw.Items.Clear();
+            Flaw.Text = "Select One";
+
+            foreach(ComboBox c in EXOptions) {
+                c.Enabled = false;
+                c.Items.Clear();
+                c.Text = "Select One";
+            }
+            
+            ID_SelectedValueChanged(null, EventArgs.Empty);
+            informationFilled = false;
         }
         #endregion
     }

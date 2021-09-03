@@ -33,6 +33,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             RT.OnReady += RaceDataFilled;
             CT.OnReady += ClassDataFilled;
             BT.OnReady += BackgroundDataFilled;
+            BT.OnReset += BackgroundDataReset;
             Scale(.75f);
             CenterToScreen();
         }
@@ -46,7 +47,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private void BackgroundDataFilled(object sender, EventArgs e) {
             if (!tabControl1.TabPages.Contains(FT)) { tabControl1.TabPages.Add(FT); }
         }
-   
+        private void BackgroundDataReset(object sender, EventArgs e) {
+            if (tabControl1.TabPages.Contains(FT)) { tabControl1.TabPages.Remove(FT); }
+        }
+
         private void CreateCharacter_FormClosing(object sender, FormClosingEventArgs e) {
             var Answer = MessageBox.Show("Are you sure you want to close? All unsaved data will be lost.", "D&D Player Maker", MessageBoxButtons.YesNo);
             if (Answer == DialogResult.No) { e.Cancel = true; }
