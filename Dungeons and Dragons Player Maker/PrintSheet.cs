@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Drawing.Text;
 using System.Linq;
 using System.Windows.Forms;
-using System.Reflection;
-using System.IO;
-using System.Runtime.InteropServices;
 using System.Collections.Generic;
 
 namespace Dungeons_and_Dragons_Player_Maker {
@@ -18,25 +14,36 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private readonly Label[] skills;
-        private readonly List<string> Skills;
+        private readonly List<string> Skills = new();
         private readonly PC player;
+
+        private readonly List<Label> MODS = new();
+
+        private static readonly List<string> DEX_SKILLS = new() { "Acrobatics", "Sleight","Stealth" };
+        private static readonly List<string> WIS_SKILLS = new() { "Animal", "Insight", "Medicine","Perception","Survival" };
+        private static readonly List<string> INT_SKILLS = new() { "Arcana","History","Investigation","Nature","Religion"};
+        private static readonly List<string> CHA_SKILLS = new() { "Deception", "Intimidation","Performance","Persuasion"};
 
         [Obsolete]
         public PrintSheet(PC pc) {
             InitializeComponent();
             
             player = pc;
-            Skills = pc.Skills;
+            Skills.AddRange(pc.Skills.ToArray());
             Race.Text = player.Race.Split(":")[0];
             
             skills = new Label[] { Athletics, Acrobatics,Sleight,Stealth, Arcana, History, Investigation,Nature,Religion,
             Animal, Insight, Medicine,Perception, Survival, Deception, Intimidation, Performance, Persuasion};
 
+            MODS.AddRange(new Label[] { ATHLETICS_MOD, ACROBATICS_MOD, SLEIGHT_MOD, STEALTH_MOD, ARCANA_MOD,HISTORY_MOD,INVESTIGATION_MOD,NATURE_MOD,
+            RELIGION_MOD, ANIMAL_MOD, INSIGHT_MOD, MEDICINE_MOD, PERCEPTION_MOD, SURVIVAL_MOD, DECEPTION_MOD, INTIMIDATION_MOD, PERFORMANCE_MOD, PERSUASION_MOD});
+
             foreach(Label skill in skills) {skill.Visible = Skills.Contains(skill.Name);}
 
             Skills.RemoveAll(i => Engine.SKILLS.Contains(i));
+            Skills.Remove("Sleight");
+            Skills.Remove("Animal");
 
-            //player.Skills.RemoveAll(i => Engine.SKILLS.Contains(i));
             Character_Name.Text = player.Name;
             Background.Text = player.Background;
             Class.Text = player.Class;
@@ -56,25 +63,27 @@ namespace Dungeons_and_Dragons_Player_Maker {
             populateRace();
             populateClass();
             populateBackground();
-            
+
             foreach(string skill in Skills) { if (!Prof.Text.Contains(skill)) { Prof.Text += skill + ", "; } }
-            foreach(string item in player.Inventory) { Equip.Text += item + ", "; }
-            foreach (string item in player.Weapons) { 
-                WeaponName.Text += item + "\n";
-                if (Engine.RANGEDWEAPONS.Contains(item)) { WeaponDamage.Text += (int.Parse(Dex_Mod.Text)) + "\n";  }
-                else if (Engine.RANGEDWEAPONS.Contains(item) && 
-                    (player.Skills.Contains(item)||
-                    (player.Skills.Contains("Simple Weapons")&& Engine.SIMPLE_WEAPONS.Contains(item)) ||
-                    (player.Skills.Contains("Martial Weapons") && Engine.MARTIAL_WEAPONS.Contains(item)))) { WeaponDamage.Text += (int.Parse(Dex_Mod.Text) + int.Parse(Proficency.Text)).ToString() + "\n"; }
-                else if (Engine.MELEEWEAPONS.Contains(item)) { WeaponDamage.Text += (int.Parse(STR_Mod.Text)) + "\n"; }
-                else if (Engine.MELEEWEAPONS.Contains(item) && (player.Skills.Contains(item) ||
-                    (player.Skills.Contains("Simple Weapons") && Engine.SIMPLE_WEAPONS.Contains(item)) ||
-                    (player.Skills.Contains("Martial Weapons") && Engine.MARTIAL_WEAPONS.Contains(item))))
-                    { WeaponDamage.Text += (int.Parse(STR_Mod.Text) + int.Parse(Proficency.Text)).ToString() + "\n"; }
-                WeaponDamageType.Text += Weapons.ResourceManager.GetString(item) + "\n";
+            foreach(string item in player.Inventory) { if (!Equip.Text.Contains(item)) { Equip.Text += item + ", "; } }
+            foreach (string item in player.Weapons) {
+                if (!WeaponName.Text.Contains(item)) {
+                    WeaponName.Text += item + "\n";
+                    if (Engine.RANGEDWEAPONS.Contains(item)) { WeaponDamage.Text += ( int.Parse(Dex_Mod.Text) ) + "\n"; }
+                    else if (Engine.RANGEDWEAPONS.Contains(item) &&
+                            ( player.Skills.Contains(item) ||
+                            ( player.Skills.Contains("Simple Weapons") && Engine.SIMPLE_WEAPONS.Contains(item) ) ||
+                            ( player.Skills.Contains("Martial Weapons") && Engine.MARTIAL_WEAPONS.Contains(item) ) ))
+                            { WeaponDamage.Text += ( int.Parse(Dex_Mod.Text) + int.Parse(Proficency.Text) ).ToString() + "\n"; 
+                    } else if (Engine.MELEEWEAPONS.Contains(item)) { WeaponDamage.Text += ( int.Parse(STR_Mod.Text) ) + "\n"; 
+                    } else if (Engine.MELEEWEAPONS.Contains(item) && ( player.Skills.Contains(item) ||                                                                                                                                                                                                                                                                                                                                                                                                                        ( player.Skills.Contains("Martial Weapons") && Engine.MARTIAL_WEAPONS.Contains(item) ) )) { WeaponDamage.Text += ( int.Parse(STR_Mod.Text) + int.Parse(Proficency.Text) ).ToString() + "\n"; }
+                    WeaponDamageType.Text += Weapons.ResourceManager.GetString(item) + "\n";
+                }
             }
 
             populateAC();
+            Prof.Text = Prof.Text.Remove(Prof.Text.Length - 2);
+            Equip.Text = Equip.Text.Remove(Equip.Text.Length - 2);
             Scale(.75f);
             CenterToScreen();
         }
@@ -157,10 +166,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
                     HitDie.Text = "d12";
                     break;
             }
-            player.Skills.AddRange(Classes.ResourceManager.GetString(player.Class.Split(":")[0] + ":Skills").Split("_"));
-            player.Inventory.AddRange(Classes.ResourceManager.GetString(player.Class.Split(":")[0] + ":Items").Split("_"));
+            
+            player.Weapons.Clear();
             foreach(string item in player.Inventory) {
-                if(Engine.SIMPLE_WEAPONS.Contains(item) || Engine.MARTIAL_WEAPONS.Contains(item)) {
+                if(((Engine.SIMPLE_WEAPONS.Contains(item) || Engine.MARTIAL_WEAPONS.Contains(item)) && !player.Weapons.Contains(item))) {
                     player.Weapons.Add(item);
                 }
             }
@@ -181,7 +190,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Int_Mod.Text = getModifier(Intelligence.Text);
             Cha_Mod.Text = getModifier(Charisma.Text);
         }
-        private static string getModifier(string stat) {
+        public static string getModifier(string stat) {
             int statvalue = int.Parse(stat);
             if (statvalue == 1)  { return "-5";  } 
             if (4 > statvalue)   { return "-4";  }
@@ -212,6 +221,30 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         private void Form1_Load(object sender, EventArgs e) {
             MessageBox.Show("Click anywhere to print.");
+            
+            foreach (Label skill in skills) {
+                Label s = (Label) Controls.Find(skill.Name.ToUpper() + "_MOD", true)[0];
+                string mod = skill.Name == "Athletics" ? STR_Mod.Text : DEX_SKILLS.Contains(skill.Name) ? Dex_Mod.Text :
+                             WIS_SKILLS.Contains(skill.Name) ? Wis_Mod.Text : INT_SKILLS.Contains(skill.Name) ? Int_Mod.Text :
+                             CHA_SKILLS.Contains(skill.Name) ? Cha_Mod.Text : "0";
+                if (skill.Visible) { s.Text = ( int.Parse(mod) + int.Parse(Proficency.Text) ).ToString(); } else { s.Text = mod; }
+                if (!s.Text.Contains("-") && !s.Text.Contains("+")) { s.Text = "+" + s.Text; }
+            }
+
+            if (Str_Save.Visible) { STR_SAVE_MOD.Text = ( int.Parse(STR_Mod.Text) + int.Parse(Proficency.Text) ).ToString(); } else { STR_SAVE_MOD.Text = STR_Mod.Text; }
+            if (Dex_Save.Visible) { DEX_SAVE_MOD.Text = ( int.Parse(Dex_Mod.Text) + int.Parse(Proficency.Text) ).ToString(); } else { DEX_SAVE_MOD.Text = Dex_Mod.Text; }
+            if (Con_Save.Visible) { CON_SAVE_MOD.Text = ( int.Parse(Con_Mod.Text) + int.Parse(Proficency.Text) ).ToString(); } else { CON_SAVE_MOD.Text = Con_Mod.Text; }
+            if (Wis_Save.Visible) { WIS_SAVE_MOD.Text = ( int.Parse(Wis_Mod.Text) + int.Parse(Proficency.Text) ).ToString(); } else { WIS_SAVE_MOD.Text = Wis_Mod.Text; }
+            if (Int_Save.Visible) { INT_SAVE_MOD.Text = ( int.Parse(Int_Mod.Text) + int.Parse(Proficency.Text) ).ToString(); } else { INT_SAVE_MOD.Text = Int_Mod.Text; }
+            if (Cha_Save.Visible) { CHA_SAVE_MOD.Text = ( int.Parse(Cha_Mod.Text) + int.Parse(Proficency.Text) ).ToString(); } else { CHA_SAVE_MOD.Text = Cha_Mod.Text; }
+
+            if (!STR_SAVE_MOD.Text.Contains("-") && !STR_SAVE_MOD.Text.Contains("+")) { STR_SAVE_MOD.Text = "+" + STR_SAVE_MOD.Text; }
+            if (!DEX_SAVE_MOD.Text.Contains("-") && !DEX_SAVE_MOD.Text.Contains("+")) { DEX_SAVE_MOD.Text = "+" + DEX_SAVE_MOD.Text; }
+            if (!CON_SAVE_MOD.Text.Contains("-") && !CON_SAVE_MOD.Text.Contains("+")) { CON_SAVE_MOD.Text = "+" + CON_SAVE_MOD.Text; }
+            if (!WIS_SAVE_MOD.Text.Contains("-") && !WIS_SAVE_MOD.Text.Contains("+")) { WIS_SAVE_MOD.Text = "+" + WIS_SAVE_MOD.Text; }
+            if (!INT_SAVE_MOD.Text.Contains("-") && !INT_SAVE_MOD.Text.Contains("+")) { INT_SAVE_MOD.Text = "+" + INT_SAVE_MOD.Text; }
+            if (!CHA_SAVE_MOD.Text.Contains("-") && !CHA_SAVE_MOD.Text.Contains("+")) { CHA_SAVE_MOD.Text = "+" + CHA_SAVE_MOD.Text; }
+
             Text = player.Name;
             Passive_Wis.Text = (10 + int.Parse(Wis_Mod.Text)).ToString();
             Passive_Wis.Text = Perception.Visible ? (int.Parse(Passive_Wis.Text) + int.Parse(Proficency.Text)).ToString() : Passive_Wis.Text;
@@ -220,25 +253,19 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e) {
-            e.Graphics.DrawImage(bitMap, 0, 0,(int)(ClientSize.Width * 1.045m),(int) (ClientSize.Height *1.045m));
-        }
-
-        private void CaptureScreen() {
-            Graphics graphics = this.CreateGraphics();
-            Size s = this.Size;
-            bitMap = new Bitmap(s.Width, s.Height, graphics);
-            Graphics memoryGraphics = Graphics.FromImage(bitMap);
-            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
+            e.Graphics.DrawImage(bitMap, 0, 0, (int)(bitMap.Size.Width * 1.12d), (int) (bitMap.Size.Height *1.12d));//(int)(ClientSize.Width * 1.5m), (int) (ClientSize.Height *1.5m));
+            SpellSheet spells = new(player); spells.Print();
         }
 
         private void Form1_Click(object sender, EventArgs e) {
             Panel panel = new();
             Graphics grp = panel.CreateGraphics();
-            Size formSize = this.ClientSize;
-            bitMap = new Bitmap(formSize.Width, formSize.Height, grp);
+            Size formSize = new((int)(this.ClientSize.Width * 1.25d), (int)(this.ClientSize.Height * 1.25d));
+            bitMap = new Bitmap((int)(formSize.Width * 1.5d), (int)(formSize.Height *1.5d), grp);
             grp = Graphics.FromImage(bitMap);
             Point panelLocation = PointToScreen(panel.Location);
-            grp.CopyFromScreen(panelLocation.X, panelLocation.Y, 0, 0, formSize);
+            grp.CopyFromScreen((int)(panelLocation.X * 1.25d), (int)(panelLocation.Y * 1.25d), 0, 0, formSize);
+            
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
             printPreviewDialog1.UseAntiAlias = true;
