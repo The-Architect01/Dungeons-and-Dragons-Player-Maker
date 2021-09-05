@@ -56,8 +56,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         private void SaveAndPrint_Click(object sender, EventArgs e) {
             PC.Name = NameTextBox.Text;
             PC.Alignment = AlignmentCombBox.Text;
-            int[] stats = { int.Parse(STRValue.Text.Split("+")[1]), int.Parse(DEXValue.Text.Split("+")[1]), int.Parse(CONValue.Text.Split("+")[1]),
-                int.Parse(INTValue.Text.Split("+")[1]), int.Parse(WISValue.Text.Split("+")[1]), int.Parse(CHAValue.Text.Split("+")[1]) };
+            int[] stats = { int.Parse(STRValue.Text.Split("+")[0]), int.Parse(DEXValue.Text.Split("+")[0]), int.Parse(CONValue.Text.Split("+")[0]),
+                int.Parse(INTValue.Text.Split("+")[0]), int.Parse(WISValue.Text.Split("+")[0]), int.Parse(CHAValue.Text.Split("+")[0]) };
             PC.Stats = stats;
             try {Engine.Characters.Add(PC.Name, PC);} catch (Exception) {}
             Engine.SaveCharacters();
