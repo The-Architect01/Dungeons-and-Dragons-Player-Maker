@@ -32,6 +32,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
                                                          "Morningstar","Pike","Rapier","Scimitar","Shortsword","Trident","War pick","Warhammer","Whip", };
         public static readonly string[] RANGEDWEAPONS = { "Light Crossbow", "Dart", "Shortbow", "Sling", "Blowgun", "Heavy Crossbow", "Hand Crossbow", "Longbow", "Net" };
 
+        public static readonly List<string> SpellCasters = new(){ "Wizard","Bard","Cleric","Druid","Sorcerer","Paladin","Ranger","Warlock",
+                                                                  "Fighter-Eldritch Knight", "Rogue-Arcane Trickster"};
+
         public static string[] AddChoose(string list) {
             List<string> value = new List<string>(){ "Select One"};
             if (list.SequenceEqual("Lang")) { value.AddRange(LANGUAGES); }
@@ -76,6 +79,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public static void CheckSettings() {
             Characters = LoadCharacters();
         }
-
+     
     }
 }
