@@ -245,6 +245,16 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Spell_Sheet {
+            get {
+                object obj = ResourceManager.GetObject("Spell Sheet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Warlock {
             get {
                 object obj = ResourceManager.GetObject("Warlock", resourceCulture);
