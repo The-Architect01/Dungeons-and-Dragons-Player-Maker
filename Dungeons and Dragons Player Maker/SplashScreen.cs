@@ -14,5 +14,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private void timer1_Tick(object sender, EventArgs e) {
             Close();
         }
+
     }
 }
