@@ -160,8 +160,53 @@
   <data name="Cleric" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Cleric.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cleric:Base" xml:space="preserve">
+    <value>Divine Domain - 1_Channel Divinity - 2, 6_Destroy Undead - 5_Divine Intervention - 10</value>
+  </data>
+  <data name="Cleric:Items" xml:space="preserve">
+    <value>Shield_Holy Symbol</value>
+  </data>
+  <data name="Cleric:Knowledge" xml:space="preserve">
+    <value>Blessings Of Knowledge - 1_Potent Spellcasting - 8_Visions of the Past - 17</value>
+  </data>
+  <data name="Cleric:Life" xml:space="preserve">
+    <value>Bonus Proficiency, Disciple of Life - 1_Blessed Healer - 6_Divine Strike - 8_Supreme Healing - 17</value>
+  </data>
+  <data name="Cleric:Light" xml:space="preserve">
+    <value>Bonus Cantrip, Warding Flare - 1_Improved Flare - 6_Potent Spellcasting - 8_Corona of Light - 17</value>
+  </data>
+  <data name="Cleric:Nature" xml:space="preserve">
+    <value>Acolyte of Nature, Bonus Proficiency - 1_Dampen Elements - 6_Divine Strike - 8_Master of Nature - 17</value>
+  </data>
+  <data name="Cleric:Skills" xml:space="preserve">
+    <value>Light Armor_Medium Armor_Shields_Simple Weapons</value>
+  </data>
+  <data name="Cleric:Tempest" xml:space="preserve">
+    <value>Bonus Proficiencies, Wrath of the Storm - 1_Thunderbolt Strike - 6_Divine Strike - 8_Stormborn - 17</value>
+  </data>
+  <data name="Cleric:Trickery" xml:space="preserve">
+    <value>Blessing of the Trickster - 1_Divine Strike - 8_Improved Duplicity - 17</value>
+  </data>
+  <data name="Cleric:War" xml:space="preserve">
+    <value>Bonus Proficiencies, War Priest - 1_Dvine Strike - 8_Avatar of Battle - 17</value>
+  </data>
   <data name="Druid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Druid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Druid:Base" xml:space="preserve">
+    <value>Druidic - 1_Wild Shape - 2_Timeless Body - 18_Beast Spells - 18_Archdruid - 20</value>
+  </data>
+  <data name="Druid:Circle of the Land" xml:space="preserve">
+    <value>Bonus Cantrip, Natural Recovery - 2_Land's Stride - 6_Nature's Ward - 10_Nature's Sanctuary - 14</value>
+  </data>
+  <data name="Druid:Circle of the Moon" xml:space="preserve">
+    <value>Combat Wild Shape, Circle Forms - 2_Primal Strike - 6_Elemental Wild Shape - 10_Thousand Forms - 14</value>
+  </data>
+  <data name="Druid:Items" xml:space="preserve">
+    <value>Leather Armor_Explorer's Pack_Druidic Focus</value>
+  </data>
+  <data name="Druid:Skills" xml:space="preserve">
+    <value>Light Armor_Medium Armor_Shields_Clubs_Daggers_Darts_Javelins_Maces_Quarterstaffs_Scimitars_Sickles_Slings_Spears_Herbalism kit</value>
   </data>
   <data name="Fighter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Fighter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -191,12 +191,147 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Divine Domain - 1_Channel Divinity - 2, 6_Destroy Undead - 5_Divine Intervention - 10.
+        /// </summary>
+        internal static string Cleric_Base {
+            get {
+                return ResourceManager.GetString("Cleric:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shield_Holy Symbol.
+        /// </summary>
+        internal static string Cleric_Items {
+            get {
+                return ResourceManager.GetString("Cleric:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blessings Of Knowledge - 1_Potent Spellcasting - 8_Visions of the Past - 17.
+        /// </summary>
+        internal static string Cleric_Knowledge {
+            get {
+                return ResourceManager.GetString("Cleric:Knowledge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonus Proficiency, Disciple of Life - 1_Blessed Healer - 6_Divine Strike - 8_Supreme Healing - 17.
+        /// </summary>
+        internal static string Cleric_Life {
+            get {
+                return ResourceManager.GetString("Cleric:Life", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonus Cantrip, Warding Flare - 1_Improved Flare - 6_Potent Spellcasting - 8_Corona of Light - 17.
+        /// </summary>
+        internal static string Cleric_Light {
+            get {
+                return ResourceManager.GetString("Cleric:Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acolyte of Nature, Bonus Proficiency - 1_Dampen Elements - 6_Divine Strike - 8_Master of Nature - 17.
+        /// </summary>
+        internal static string Cleric_Nature {
+            get {
+                return ResourceManager.GetString("Cleric:Nature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Armor_Medium Armor_Shields_Simple Weapons.
+        /// </summary>
+        internal static string Cleric_Skills {
+            get {
+                return ResourceManager.GetString("Cleric:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonus Proficiencies, Wrath of the Storm - 1_Thunderbolt Strike - 6_Divine Strike - 8_Stormborn - 17.
+        /// </summary>
+        internal static string Cleric_Tempest {
+            get {
+                return ResourceManager.GetString("Cleric:Tempest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blessing of the Trickster - 1_Divine Strike - 8_Improved Duplicity - 17.
+        /// </summary>
+        internal static string Cleric_Trickery {
+            get {
+                return ResourceManager.GetString("Cleric:Trickery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonus Proficiencies, War Priest - 1_Dvine Strike - 8_Avatar of Battle - 17.
+        /// </summary>
+        internal static string Cleric_War {
+            get {
+                return ResourceManager.GetString("Cleric:War", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Druid {
             get {
                 object obj = ResourceManager.GetObject("Druid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Druidic - 1_Wild Shape - 2_Timeless Body - 18_Beast Spells - 18_Archdruid - 20.
+        /// </summary>
+        internal static string Druid_Base {
+            get {
+                return ResourceManager.GetString("Druid:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonus Cantrip, Natural Recovery - 2_Land&apos;s Stride - 6_Nature&apos;s Ward - 10_Nature&apos;s Sanctuary - 14.
+        /// </summary>
+        internal static string Druid_Circle_of_the_Land {
+            get {
+                return ResourceManager.GetString("Druid:Circle of the Land", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combat Wild Shape, Circle Forms - 2_Primal Strike - 6_Elemental Wild Shape - 10_Thousand Forms - 14.
+        /// </summary>
+        internal static string Druid_Circle_of_the_Moon {
+            get {
+                return ResourceManager.GetString("Druid:Circle of the Moon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leather Armor_Explorer&apos;s Pack_Druidic Focus.
+        /// </summary>
+        internal static string Druid_Items {
+            get {
+                return ResourceManager.GetString("Druid:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Armor_Medium Armor_Shields_Clubs_Daggers_Darts_Javelins_Maces_Quarterstaffs_Scimitars_Sickles_Slings_Spears_Herbalism kit.
+        /// </summary>
+        internal static string Druid_Skills {
+            get {
+                return ResourceManager.GetString("Druid:Skills", resourceCulture);
             }
         }
         

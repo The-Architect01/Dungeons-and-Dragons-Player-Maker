@@ -32,8 +32,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         private static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
         private static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
         private static readonly string[] CLERIC_Subclasses = { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
-        private static readonly string[] DRUID_Subclasses = { "Circle of Land - Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
-        "Circle of Land - Grassland", "Circle of Land - Mountain","Circle of Land - Swamp","Circle of Land - Underdark","Circle of the Moon"};
+        private static readonly string[] DRUID_Subclasses = { "Circle of the Land" /*- Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
+        "Circle of Land - Grassland", "Circle of Land - Mountain","Circle of Land - Swamp","Circle of Land - Underdark"*/,"Circle of the Moon"};
         private static readonly string[] FIGHTER_Subclasses = { "Champion", "Battle Master", "Eldritch Knight" };
         private static readonly string[] MONK_Subclasses = { "Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements" };
         private static readonly string[] PALADIN_Subclasses = { "Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance" };
