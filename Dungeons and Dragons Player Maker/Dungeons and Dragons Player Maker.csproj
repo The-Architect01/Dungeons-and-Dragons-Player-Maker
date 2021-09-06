@@ -20,7 +20,7 @@ You can use this tool to automatically format and print charactersheets as well 
     <Win32Resource />
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <AssemblyVersion>1.0.1.0906</AssemblyVersion>
-    <FileVersion>1.0.1.1</FileVersion>
+    <FileVersion>1.0.1.0906</FileVersion>
   </PropertyGroup>
 
 	<PropertyGroup>
