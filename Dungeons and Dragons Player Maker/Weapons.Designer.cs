@@ -61,6 +61,33 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1d8 slash.
+        /// </summary>
+        internal static string Battleaxe {
+            get {
+                return ResourceManager.GetString("Battleaxe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 pierce.
+        /// </summary>
+        internal static string Blowgun {
+            get {
+                return ResourceManager.GetString("Blowgun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d4 bludge..
+        /// </summary>
+        internal static string Club {
+            get {
+                return ResourceManager.GetString("Club", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1d4 pierce.
         /// </summary>
         internal static string Dagger {
@@ -70,7 +97,142 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 1d4 pierce.
+        /// </summary>
+        internal static string Dart {
+            get {
+                return ResourceManager.GetString("Dart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 bludge..
+        /// </summary>
+        internal static string Flail {
+            get {
+                return ResourceManager.GetString("Flail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d10 slash.
+        /// </summary>
+        internal static string Glaive {
+            get {
+                return ResourceManager.GetString("Glaive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d12 slash.
+        /// </summary>
+        internal static string Greataxe {
+            get {
+                return ResourceManager.GetString("Greataxe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 bludge..
+        /// </summary>
+        internal static string Greatclub {
+            get {
+                return ResourceManager.GetString("Greatclub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2d6 slash.
+        /// </summary>
+        internal static string Greatsword {
+            get {
+                return ResourceManager.GetString("Greatsword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d10 slash.
+        /// </summary>
+        internal static string Halberd {
+            get {
+                return ResourceManager.GetString("Halberd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 pierce.
+        /// </summary>
+        internal static string Hand_Crossbow {
+            get {
+                return ResourceManager.GetString("Hand Crossbow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 slash.
+        /// </summary>
+        internal static string Handaxe {
+            get {
+                return ResourceManager.GetString("Handaxe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d10 pierce.
+        /// </summary>
+        internal static string Heavy_Crossbow {
+            get {
+                return ResourceManager.GetString("Heavy Crossbow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 pierce.
+        /// </summary>
+        internal static string Javelin {
+            get {
+                return ResourceManager.GetString("Javelin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d12 pierce.
+        /// </summary>
+        internal static string Lance {
+            get {
+                return ResourceManager.GetString("Lance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 pierce.
+        /// </summary>
+        internal static string Light_Crossbow {
+            get {
+                return ResourceManager.GetString("Light Crossbow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d4 bludge..
+        /// </summary>
+        internal static string Light_Hammer {
+            get {
+                return ResourceManager.GetString("Light Hammer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 pierce.
+        /// </summary>
+        internal static string Longbow {
+            get {
+                return ResourceManager.GetString("Longbow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 slash.
         /// </summary>
         internal static string Longsword {
             get {
@@ -79,11 +241,155 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1d6 bludge..
+        /// </summary>
+        internal static string Mace {
+            get {
+                return ResourceManager.GetString("Mace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2d6 bludge..
+        /// </summary>
+        internal static string Maul {
+            get {
+                return ResourceManager.GetString("Maul", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 pierce.
+        /// </summary>
+        internal static string Morningstar {
+            get {
+                return ResourceManager.GetString("Morningstar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Net {
+            get {
+                return ResourceManager.GetString("Net", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d10 pierce.
+        /// </summary>
+        internal static string Pike {
+            get {
+                return ResourceManager.GetString("Pike", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 bludge..
+        /// </summary>
+        internal static string Quarterstaff {
+            get {
+                return ResourceManager.GetString("Quarterstaff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 pierce.
         /// </summary>
         internal static string Rapier {
             get {
                 return ResourceManager.GetString("Rapier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 slash.
+        /// </summary>
+        internal static string Scimitar {
+            get {
+                return ResourceManager.GetString("Scimitar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 pierce.
+        /// </summary>
+        internal static string Shortbow {
+            get {
+                return ResourceManager.GetString("Shortbow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 pierce.
+        /// </summary>
+        internal static string Shortsword {
+            get {
+                return ResourceManager.GetString("Shortsword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d4 slash.
+        /// </summary>
+        internal static string Sickle {
+            get {
+                return ResourceManager.GetString("Sickle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d4 bludge..
+        /// </summary>
+        internal static string Sling {
+            get {
+                return ResourceManager.GetString("Sling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 pierce.
+        /// </summary>
+        internal static string Spear {
+            get {
+                return ResourceManager.GetString("Spear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d6 pierce.
+        /// </summary>
+        internal static string Trident {
+            get {
+                return ResourceManager.GetString("Trident", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 pierce.
+        /// </summary>
+        internal static string War_pick {
+            get {
+                return ResourceManager.GetString("War pick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d8 bludge..
+        /// </summary>
+        internal static string Warhammer {
+            get {
+                return ResourceManager.GetString("Warhammer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1d4 slash.
+        /// </summary>
+        internal static string Whip {
+            get {
+                return ResourceManager.GetString("Whip", resourceCulture);
             }
         }
     }

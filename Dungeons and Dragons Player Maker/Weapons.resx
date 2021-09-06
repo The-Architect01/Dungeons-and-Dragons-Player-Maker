@@ -117,13 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Battleaxe" xml:space="preserve">
+    <value>1d8 slash</value>
+  </data>
+  <data name="Blowgun" xml:space="preserve">
+    <value>1 pierce</value>
+  </data>
+  <data name="Club" xml:space="preserve">
+    <value>1d4 bludge.</value>
+  </data>
   <data name="Dagger" xml:space="preserve">
     <value>1d4 pierce</value>
   </data>
+  <data name="Dart" xml:space="preserve">
+    <value>1d4 pierce</value>
+  </data>
+  <data name="Flail" xml:space="preserve">
+    <value>1d8 bludge.</value>
+  </data>
+  <data name="Glaive" xml:space="preserve">
+    <value>1d10 slash</value>
+  </data>
+  <data name="Greataxe" xml:space="preserve">
+    <value>1d12 slash</value>
+  </data>
+  <data name="Greatclub" xml:space="preserve">
+    <value>1d8 bludge.</value>
+  </data>
+  <data name="Greatsword" xml:space="preserve">
+    <value>2d6 slash</value>
+  </data>
+  <data name="Halberd" xml:space="preserve">
+    <value>1d10 slash</value>
+  </data>
+  <data name="Hand Crossbow" xml:space="preserve">
+    <value>1d6 pierce</value>
+  </data>
+  <data name="Handaxe" xml:space="preserve">
+    <value>1d6 slash</value>
+  </data>
+  <data name="Heavy Crossbow" xml:space="preserve">
+    <value>1d10 pierce</value>
+  </data>
+  <data name="Javelin" xml:space="preserve">
+    <value>1d6 pierce</value>
+  </data>
+  <data name="Lance" xml:space="preserve">
+    <value>1d12 pierce</value>
+  </data>
+  <data name="Light Crossbow" xml:space="preserve">
+    <value>1d8 pierce</value>
+  </data>
+  <data name="Light Hammer" xml:space="preserve">
+    <value>1d4 bludge.</value>
+  </data>
+  <data name="Longbow" xml:space="preserve">
+    <value>1d8 pierce</value>
+  </data>
   <data name="Longsword" xml:space="preserve">
+    <value>1d8 slash</value>
+  </data>
+  <data name="Mace" xml:space="preserve">
+    <value>1d6 bludge.</value>
+  </data>
+  <data name="Maul" xml:space="preserve">
+    <value>2d6 bludge.</value>
+  </data>
+  <data name="Morningstar" xml:space="preserve">
+    <value>1d8 pierce</value>
+  </data>
+  <data name="Net" xml:space="preserve">
     <value />
   </data>
+  <data name="Pike" xml:space="preserve">
+    <value>1d10 pierce</value>
+  </data>
+  <data name="Quarterstaff" xml:space="preserve">
+    <value>1d6 bludge.</value>
+  </data>
   <data name="Rapier" xml:space="preserve">
-    <value />
+    <value>1d8 pierce</value>
+  </data>
+  <data name="Scimitar" xml:space="preserve">
+    <value>1d6 slash</value>
+  </data>
+  <data name="Shortbow" xml:space="preserve">
+    <value>1d6 pierce</value>
+  </data>
+  <data name="Shortsword" xml:space="preserve">
+    <value>1d6 pierce</value>
+  </data>
+  <data name="Sickle" xml:space="preserve">
+    <value>1d4 slash</value>
+  </data>
+  <data name="Sling" xml:space="preserve">
+    <value>1d4 bludge.</value>
+  </data>
+  <data name="Spear" xml:space="preserve">
+    <value>1d6 pierce</value>
+  </data>
+  <data name="Trident" xml:space="preserve">
+    <value>1d6 pierce</value>
+  </data>
+  <data name="War pick" xml:space="preserve">
+    <value>1d8 pierce</value>
+  </data>
+  <data name="Warhammer" xml:space="preserve">
+    <value>1d8 bludge.</value>
+  </data>
+  <data name="Whip" xml:space="preserve">
+    <value>1d4 slash</value>
   </data>
 </root>
