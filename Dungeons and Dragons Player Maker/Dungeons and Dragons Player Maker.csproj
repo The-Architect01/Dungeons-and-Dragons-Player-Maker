@@ -20,9 +20,12 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <AssemblyVersion>1.0.1.0906</AssemblyVersion>
     <FileVersion>1.0.1.1</FileVersion>
-    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
 
+	<PropertyGroup>
+		<NoWin32Manifest>true</NoWin32Manifest>
+	</PropertyGroup>
+	
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
