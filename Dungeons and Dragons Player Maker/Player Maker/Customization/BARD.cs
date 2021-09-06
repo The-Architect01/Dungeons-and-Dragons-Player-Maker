@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Drawing;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
+namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
+{
     public partial class BARD : TabPage {
         private readonly PC PC;
 

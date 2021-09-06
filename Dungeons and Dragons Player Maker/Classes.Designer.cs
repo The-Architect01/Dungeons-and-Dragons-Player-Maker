@@ -81,6 +81,51 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rage - 1, 9, 15_Unarmored Defense - 1_Reckless Attack, Danger Sense - 2_Extra Attack, Fast Movement - 5_Feral Instinct - 7_Brutal Critical - 9_Indomitable Might - 18_Primal Champion - 20.
+        /// </summary>
+        internal static string Barbarian_Base {
+            get {
+                return ResourceManager.GetString("Barbarian:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frenzy - 3_Mindless Rage - 6_Intimidating Presence - 10_Retaliation - 14.
+        /// </summary>
+        internal static string Barbarian_Berserker {
+            get {
+                return ResourceManager.GetString("Barbarian:Berserker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explorer&apos;s Pack_Javelin x4.
+        /// </summary>
+        internal static string Barbarian_Items {
+            get {
+                return ResourceManager.GetString("Barbarian:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Armor_Medium Armor_Shields_Simple Weapons_Martial Weapons.
+        /// </summary>
+        internal static string Barbarian_Skills {
+            get {
+                return ResourceManager.GetString("Barbarian:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spirit Seeker, Totem Spirit - 3_Aspect of the Beast - 6_Spirit Walker - 10_Totem Attunement - 14.
+        /// </summary>
+        internal static string Barbarian_Totem_Warrior {
+            get {
+                return ResourceManager.GetString("Barbarian:Totem Warrior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Bard {
@@ -118,7 +163,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Simple weapons_hand crossbows_longswords_rapiers_shortswords.
+        ///   Looks up a localized string similar to Simple weapons_hand crossbow_longsword_rapier_shortsword.
         /// </summary>
         internal static string Bard_Skills {
             get {
@@ -152,24 +197,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             get {
                 object obj = ResourceManager.GetObject("Druid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sample.
-        /// </summary>
-        internal static string Druid_Base {
-            get {
-                return ResourceManager.GetString("Druid:Base", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to test.
-        /// </summary>
-        internal static string Druid_Circle_of_Land___Artic {
-            get {
-                return ResourceManager.GetString("Druid:Circle of Land - Artic", resourceCulture);
             }
         }
         
@@ -220,15 +247,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             get {
                 object obj = ResourceManager.GetObject("Rogue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Item 1 - 1_Item 2 - 3, 5_etc..
-        /// </summary>
-        internal static string Sample {
-            get {
-                return ResourceManager.GetString("Sample", resourceCulture);
             }
         }
         

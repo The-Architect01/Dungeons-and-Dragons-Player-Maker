@@ -124,6 +124,21 @@
   <data name="Barbarian" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Barbarian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Barbarian:Base" xml:space="preserve">
+    <value>Rage - 1, 9, 15_Unarmored Defense - 1_Reckless Attack, Danger Sense - 2_Extra Attack, Fast Movement - 5_Feral Instinct - 7_Brutal Critical - 9_Indomitable Might - 18_Primal Champion - 20</value>
+  </data>
+  <data name="Barbarian:Berserker" xml:space="preserve">
+    <value>Frenzy - 3_Mindless Rage - 6_Intimidating Presence - 10_Retaliation - 14</value>
+  </data>
+  <data name="Barbarian:Items" xml:space="preserve">
+    <value>Explorer's Pack_Javelin x4</value>
+  </data>
+  <data name="Barbarian:Skills" xml:space="preserve">
+    <value>Light Armor_Medium Armor_Shields_Simple Weapons_Martial Weapons</value>
+  </data>
+  <data name="Barbarian:Totem Warrior" xml:space="preserve">
+    <value>Spirit Seeker, Totem Spirit - 3_Aspect of the Beast - 6_Spirit Walker - 10_Totem Attunement - 14</value>
+  </data>
   <data name="Bard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Bard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -137,7 +152,7 @@
     <value>Bonus Proficiencies - 3_Cutting Words - 3_Additional Magical Secrets - 6_Peerless Skill - 14</value>
   </data>
   <data name="Bard:Skills" xml:space="preserve">
-    <value>Simple weapons_hand crossbows_longswords_rapiers_shortswords</value>
+    <value>Simple weapons_hand crossbow_longsword_rapier_shortsword</value>
   </data>
   <data name="Bard:Valor" xml:space="preserve">
     <value>Bonus Proficiencies - 3_Combat Inspiration - 3_Extra Attack - 6_Battle Magic - 14</value>
@@ -147,12 +162,6 @@
   </data>
   <data name="Druid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Druid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Druid:Base" xml:space="preserve">
-    <value>Sample</value>
-  </data>
-  <data name="Druid:Circle of Land - Artic" xml:space="preserve">
-    <value>test</value>
   </data>
   <data name="Fighter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Fighter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -168,9 +177,6 @@
   </data>
   <data name="Rogue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Rogue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sample" xml:space="preserve">
-    <value>Item 1 - 1_Item 2 - 3, 5_etc.</value>
   </data>
   <data name="Sorcerer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Sorcerer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

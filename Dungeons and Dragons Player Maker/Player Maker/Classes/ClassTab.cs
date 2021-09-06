@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
     public partial class ClassTab : TabPage {
         private readonly PC PC;
@@ -99,13 +99,10 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             SubClasses.Items.AddRange((string[])this.GetType().GetField((PC.Class.ToUpper() + "_Subclasses").ToString(),
                 BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));
             SubClasses.SelectedIndex = 0;
-          //  classUpdate(PC.Class, SubClasses.Text);
         }
         private void ClassName_Enter(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(PC.Class)) {
                 return;
-                //ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(PC.Class);
-                //classUpdate(PC.Class, SubClasses.Text);
             } else {
                 ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
                 classUpdate(((Label)sender).Text, "Select One");
@@ -146,12 +143,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         #endregion
         private readonly Label ClassInfo = new() {
             Location = new Point(6, 325),
-            Size = new Size(222, 224),
+            Size = new Size(264, 224),
             TextAlign = ContentAlignment.MiddleLeft
         };
         private readonly Label SubClassInfo = new() {
-            Location = new Point(234, 325),
-            Size = new Size(264, 224),
+            Location = new Point(270, 325),
+            Size = new Size(230, 224),
             TextAlign = ContentAlignment.MiddleLeft
         };
         private readonly ComboBox SubClasses = new() {
