@@ -1,163 +1,165 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
-    <RootNamespace>Dungeons_and_Dragons_Player_Maker</RootNamespace>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>D202.ico</ApplicationIcon>
-    <StartupObject>Dungeons_and_Dragons_Player_Maker.Program</StartupObject>
-    <Authors>Neal Birchfield</Authors>
-    <Company>Grumpy Lion Games</Company>
-    <Copyright>© 2021 Grumpy Lion Games - Some Rights Reserved</Copyright>
-    <Description>A simple TTRPG character creation tool. 
-You can use this tool to automatically format and print charactersheets as well as open previously made characters or characters made by friends.</Description>
-    <Version>1.0.1.0907</Version>
-    <PackageIcon>D202.ico</PackageIcon>
-    <PackageIconUrl />
-    <RepositoryUrl>https://github.com/The-Architect01/Dungeons-and-Dragons-Player-Maker</RepositoryUrl>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <Win32Resource />
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>1.0.1.0907</AssemblyVersion>
-    <FileVersion>1.0.1.0907</FileVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<RootNamespace>Dungeons_and_Dragons_Player_Maker</RootNamespace>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ApplicationIcon>D202.ico</ApplicationIcon>
+		<StartupObject>Dungeons_and_Dragons_Player_Maker.Program</StartupObject>
+		<Authors>Neal Birchfield</Authors>
+		<Company>Grumpy Lion Games</Company>
+		<Copyright>© 2021 Grumpy Lion Games - Some Rights Reserved</Copyright>
+		<Description>
+			A simple TTRPG character creation tool.
+			You can use this tool to automatically format and print charactersheets as well as open previously made characters or characters made by friends.
+		</Description>
+		<Version>1.0.1.0907</Version>
+		<PackageIcon>D202.ico</PackageIcon>
+		<!--<PackageIconUrl />-->
+		<RepositoryUrl>https://github.com/The-Architect01/Dungeons-and-Dragons-Player-Maker</RepositoryUrl>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<!-- <Win32Resource />-->
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<AssemblyVersion>1.0.1.0907</AssemblyVersion>
+		<FileVersion>1.0.1.0907</FileVersion>
+	</PropertyGroup>
 
 	<PropertyGroup>
-	  <NoWin32Manifest>true</NoWin32Manifest>
+		<NoWin32Manifest>true</NoWin32Manifest>
 	</PropertyGroup>
-	
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-  </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <Optimize>false</Optimize>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="D20.ico" />
-    <None Remove="D202.ico" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<Optimize>false</Optimize>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="D20.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="D202.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="D20.ico" />
+		<None Remove="D202.ico" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Backgrounds.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Backgrounds.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Classes.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Classes.resx</DependentUpon>
-    </Compile>
-    <Compile Update="MainMenu.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Player Maker\Backgrounds\BackgroundTab.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Player Maker\Classes\ClassTab.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Player Maker\CreateCharacter.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Player Maker\Customization\BARD.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Player Maker\Customization\CustomizationTab.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Player Maker\Customization\StatDataPage.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Player Maker\PC.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Player Maker\Races\RaceTab.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="PrintSheet.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Program.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Update="Races.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Races.resx</DependentUpon>
-    </Compile>
-    <Compile Update="SplashScreen.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Weapons.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Weapons.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="D20.ico">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="D202.ico">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Backgrounds.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Backgrounds.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Classes.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Classes.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Races.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Races.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Weapons.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Weapons.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Backgrounds.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Backgrounds.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Classes.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Classes.resx</DependentUpon>
+		</Compile>
+		<Compile Update="MainMenu.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Player Maker\Backgrounds\BackgroundTab.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Player Maker\Classes\ClassTab.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Player Maker\CreateCharacter.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Player Maker\Customization\BARD.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Player Maker\Customization\CustomizationTab.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Player Maker\Customization\StatDataPage.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Player Maker\PC.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Player Maker\Races\RaceTab.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="PrintSheet.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Program.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+		<Compile Update="Races.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Races.resx</DependentUpon>
+		</Compile>
+		<Compile Update="SplashScreen.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Weapons.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Weapons.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Backgrounds.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Backgrounds.Designer.cs</LastGenOutput>
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Classes.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Classes.Designer.cs</LastGenOutput>
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Races.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Races.Designer.cs</LastGenOutput>
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Weapons.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Weapons.Designer.cs</LastGenOutput>
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
 
 </Project>
