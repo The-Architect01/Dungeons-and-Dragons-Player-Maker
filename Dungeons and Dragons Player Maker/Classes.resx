@@ -211,6 +211,18 @@
   <data name="Fighter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Fighter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Fighter:Base" xml:space="preserve">
+    <value>Fighting Style, Second Wind - 1_Action Surge - 2_Extra Attack - 5_Indomitable - 9</value>
+  </data>
+  <data name="Fighter:Champion" xml:space="preserve">
+    <value>Improved Critical - 3_Remarkable Athlete - 7_Additional Fighting Style - 10_Superior Critical - 15_Survivor - 18</value>
+  </data>
+  <data name="Fighter:Items" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Fighter:Skills" xml:space="preserve">
+    <value>Light Armor_Medium Armor_Heavy Armor_Shields_Simple Weapoons_Martial Weapons</value>
+  </data>
   <data name="Monk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Monk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

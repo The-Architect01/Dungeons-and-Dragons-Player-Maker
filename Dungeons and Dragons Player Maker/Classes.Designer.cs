@@ -346,6 +346,42 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fighting Style, Second Wind - 1_Action Surge - 2_Extra Attack - 5_Indomitable - 9.
+        /// </summary>
+        internal static string Fighter_Base {
+            get {
+                return ResourceManager.GetString("Fighter:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improved Critical - 3_Remarkable Athlete - 7_Additional Fighting Style - 10_Superior Critical - 15_Survivor - 18.
+        /// </summary>
+        internal static string Fighter_Champion {
+            get {
+                return ResourceManager.GetString("Fighter:Champion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Fighter_Items {
+            get {
+                return ResourceManager.GetString("Fighter:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Armor_Medium Armor_Heavy Armor_Shields_Simple Weapoons_Martial Weapons.
+        /// </summary>
+        internal static string Fighter_Skills {
+            get {
+                return ResourceManager.GetString("Fighter:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Monk {

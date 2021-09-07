@@ -24,7 +24,7 @@ You can use this tool to automatically format and print charactersheets as well 
   </PropertyGroup>
 
 	<PropertyGroup>
-		<NoWin32Manifest>true</NoWin32Manifest>
+	  <ApplicationManifest>app.manifest</ApplicationManifest>
 	</PropertyGroup>
 	
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
