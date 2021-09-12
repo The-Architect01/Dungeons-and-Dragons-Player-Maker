@@ -10,10 +10,8 @@
 		<Authors>Neal Birchfield</Authors>
 		<Company>Grumpy Lion Games</Company>
 		<Copyright>© 2021 Grumpy Lion Games - Some Rights Reserved</Copyright>
-		<Description>
-			A simple TTRPG character creation tool.
-			You can use this tool to automatically format and print charactersheets as well as open previously made characters or characters made by friends.
-		</Description>
+		<Description>A simple TTRPG character creation tool.
+You can use this tool to automatically format and print charactersheets as well as open previously made characters or characters made by friends.		</Description>
 		<Version>1.0.1.0907</Version>
 		<PackageIcon>D202.ico</PackageIcon>
 		<!--<PackageIconUrl />-->
@@ -22,12 +20,10 @@
 		<!-- <Win32Resource />-->
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<AssemblyVersion>1.0.1.0907</AssemblyVersion>
-		<FileVersion>1.0.1.0907</FileVersion>
+		<FileVersion>1.0.1.0906</FileVersion>
 	</PropertyGroup>
 
-	<PropertyGroup>
-		<NoWin32Manifest>true</NoWin32Manifest>
-	</PropertyGroup>
+	<PropertyGroup />
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<AllowUnsafeBlocks>false</AllowUnsafeBlocks>

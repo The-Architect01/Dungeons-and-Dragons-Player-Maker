@@ -124,6 +124,96 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Haunted_One {
+            get {
+                return ResourceManager.GetString("Haunted One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Haunted_One_Items {
+            get {
+                return ResourceManager.GetString("Haunted One-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Haunted_One_Skills {
+            get {
+                return ResourceManager.GetString("Haunted One-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I desperately need to geet back to someone or someplace, but I have lost them in the Mists._Everything I do is in the service of a powerful master, one I must keep a secret from everyone._I owe much to my vanished methor. I seek to continue their work even as I search to find them._I&apos;ve seen great darkness, and I&apos;m committed to being a light against it - the light of all lights._Someone I love has become a monster, murderer, or other threat. It&apos;s up to me to redeem them._The world has been convinced of a te [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Horror_Bond {
+            get {
+                return ResourceManager.GetString("Horror-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I believe doom follows me and that anyone who gets close to me will face a tragic end._I&apos;m convinced something is after me, appearing in mirrors, dreams, and places where no one could._I&apos;m especially supersitious and live life seeking to avoid bad luck, wicked spirits, or the Mists._I&apos;ve done unspeakable evil and will do anything to prevent others from finding out._I am exceptionally credulous and believe any story or legend immediately._I&apos;m a skeptic and don&apos;t believe in the power of rituals, religion, sup [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Horror_Flaw {
+            get {
+                return ResourceManager.GetString("Horror-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;ve experienced such strangeness that now I feel alive only in extreme situations._I strive to counter the deeds of someone for whom I feel responsible_I&apos;ve wronged someone and must work their will to avoid their curse._I believe there is something beyond the world I know, and I must find it._I must do something great so that I&apos;m remembered, and my time is running out._I work vigorously to keep others from realizing my flaws or misdeeds._I&apos;ve lived this way for so long that I can&apos;t imagine another way._I o [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Horror_Ideal {
+            get {
+                return ResourceManager.GetString("Horror-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I had an encounter that I believe gives me a special affinity with a supernatural creature or event._A signiture piece of clothing or distinct weapon serves as an emblem of who I am._I never accept that I&apos;m out of my depth._I must know the answer to every secret. No door remains unopened in my presence._I let people underestimate me, revealing my full competency only to those close to me._I compulsively seek to collect trophies of my travels and victories._It doesn&apos;t matter if the whole world&apos;s against me.  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Horror_Personality {
+            get {
+                return ResourceManager.GetString("Horror-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Official Inquiry: Through a combination of fast-talking, determination, and official-looking documentation, you can gain access to a place or an individual related to a crime you&apos;re investigating. Those who aren&apos;t involved try to avoid impeding you and pass along your requests..
+        /// </summary>
+        internal static string Investigator {
+            get {
+                return ResourceManager.GetString("Investigator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A magnifying glass, evidence from a past case, a set of common clothes, 10gp.
+        /// </summary>
+        internal static string Investigator_Items {
+            get {
+                return ResourceManager.GetString("Investigator-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: None_Skills: &lt;CHOOSE&gt;, &lt;CHOOSE&gt;_Tools: Disguise kit, thieves&apos; tools.
+        /// </summary>
+        internal static string Investigator_Skills {
+            get {
+                return ResourceManager.GetString("Investigator-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City Secrets: You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow..
         /// </summary>
         internal static string Urchin {

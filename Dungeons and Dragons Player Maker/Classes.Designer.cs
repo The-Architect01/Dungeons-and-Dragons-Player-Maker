@@ -392,6 +392,42 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unarmored Defense, Martial Arts - 1_Ki, Unarmored Movement - 2_Deflect Missiles - 3_Slow Fall - 4_Extra Attack, Stunning Strike - 5_Ki-Empowered Strikes - 6_Evasion, Stillness of Mind - 7_Purity of Body - 10_Tongue of the Sun and Moon - 13_Diamond Soul - 14_Timeless Body - 15_Empty Body - 18_Perfect Self - 20.
+        /// </summary>
+        internal static string Monk_Base {
+            get {
+                return ResourceManager.GetString("Monk:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10 darts.
+        /// </summary>
+        internal static string Monk_Items {
+            get {
+                return ResourceManager.GetString("Monk:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simple Weapons_Shortsword.
+        /// </summary>
+        internal static string Monk_Skills {
+            get {
+                return ResourceManager.GetString("Monk:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Hand Technique - 3_Wholeness of Body - 6_Tranquility - 11_Quivering Palm - 17.
+        /// </summary>
+        internal static string Monk_Way_of_the_Open_Hand {
+            get {
+                return ResourceManager.GetString("Monk:Way of the Open Hand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Paladin {

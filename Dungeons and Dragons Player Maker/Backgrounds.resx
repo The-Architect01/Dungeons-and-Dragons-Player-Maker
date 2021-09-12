@@ -138,6 +138,36 @@
   <data name="Criminal/Spy-Skills" xml:space="preserve">
     <value>Languages: None_Skills: Deception, Stealth_Tools: Thieves' Tools, &lt;CHOOSE&gt;</value>
   </data>
+  <data name="Haunted One" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Haunted One-Items" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Haunted One-Skills" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Horror-Bond" xml:space="preserve">
+    <value>I desperately need to geet back to someone or someplace, but I have lost them in the Mists._Everything I do is in the service of a powerful master, one I must keep a secret from everyone._I owe much to my vanished methor. I seek to continue their work even as I search to find them._I've seen great darkness, and I'm committed to being a light against it - the light of all lights._Someone I love has become a monster, murderer, or other threat. It's up to me to redeem them._The world has been convinced of a terrible lie. It's up to me to reveal the truth._I deeply miss someone and am quick to adopt people who remind me of them._A great evil dwells within me. I will fight against it and the world's other evils for as long as I can._I'm desperately seeking a cure to an affliction or a curse, either for someone close to me or for myself._Spirits are drawn to me. I do all I can to help them find peace._I use my cunning mind to solve mysteries and find custice for those who've been wronged._I lost someone I care about, but I still see them in guilty visions, recurring dreams, or as a spirit.</value>
+  </data>
+  <data name="Horror-Flaw" xml:space="preserve">
+    <value>I believe doom follows me and that anyone who gets close to me will face a tragic end._I'm convinced something is after me, appearing in mirrors, dreams, and places where no one could._I'm especially supersitious and live life seeking to avoid bad luck, wicked spirits, or the Mists._I've done unspeakable evil and will do anything to prevent others from finding out._I am exceptionally credulous and believe any story or legend immediately._I'm a skeptic and don't believe in the power of rituals, religion, superstition, or spirits._I know my future is written and that anything I do will lead to a prophesied end._I need to find the best in everyone and everything, even when that means denying obvious malice._I've seen the evil of a type of place - like forests, cities, or graveyards - and resist going there._I'm exceptionally cautious, planning laboriously and devising countless contigencies._I have a reputation for defeating a great evil, but that's a lie and the wicked force knows._I know the ends always justify the means and am quick to make sacrifices to attain my goals.</value>
+  </data>
+  <data name="Horror-Ideal" xml:space="preserve">
+    <value>I've experienced such strangeness that now I feel alive only in extreme situations._I strive to counter the deeds of someone for whom I feel responsible_I've wronged someone and must work their will to avoid their curse._I believe there is something beyond the world I know, and I must find it._I must do something great so that I'm remembered, and my time is running out._I work vigorously to keep others from realizing my flaws or misdeeds._I've lived this way for so long that I can't imagine another way._I owe it to my people, faith, family, or teacher to continue a vaunted legacy._My life is no longer my own. I must fulfill the dream of someone who's gone._I need to know what lies beyond the mysteries of death, the world, or the planes of existance._I know the forces at work in the world and strive to create islands apart from them._I care about the truth above all else, even if it doesn't benefit anyone.</value>
+  </data>
+  <data name="Horror-Personality" xml:space="preserve">
+    <value>I had an encounter that I believe gives me a special affinity with a supernatural creature or event._A signiture piece of clothing or distinct weapon serves as an emblem of who I am._I never accept that I'm out of my depth._I must know the answer to every secret. No door remains unopened in my presence._I let people underestimate me, revealing my full competency only to those close to me._I compulsively seek to collect trophies of my travels and victories._It doesn't matter if the whole world's against me. I'll always do what I think is right._I have morbid interests and a macabre aesthetic._I have a personal ritual, mantra, or relaxation method I use to deal with stress._Nothing is more important than life, and I never leave anyone in danger._I'm quick to jump to extreme solutions. Why risk a lesser option not working?_I'm easily startled, but I'm no coward.</value>
+  </data>
+  <data name="Investigator" xml:space="preserve">
+    <value>Official Inquiry: Through a combination of fast-talking, determination, and official-looking documentation, you can gain access to a place or an individual related to a crime you're investigating. Those who aren't involved try to avoid impeding you and pass along your requests.</value>
+  </data>
+  <data name="Investigator-Items" xml:space="preserve">
+    <value>A magnifying glass, evidence from a past case, a set of common clothes, 10gp</value>
+  </data>
+  <data name="Investigator-Skills" xml:space="preserve">
+    <value>Languages: None_Skills: &lt;CHOOSE&gt;, &lt;CHOOSE&gt;_Tools: Disguise kit, thieves' tools</value>
+  </data>
   <data name="Urchin" xml:space="preserve">
     <value>City Secrets: You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow.</value>
   </data>

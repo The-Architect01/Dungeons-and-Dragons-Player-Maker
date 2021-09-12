@@ -226,6 +226,18 @@
   <data name="Monk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Monk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Monk:Base" xml:space="preserve">
+    <value>Unarmored Defense, Martial Arts - 1_Ki, Unarmored Movement - 2_Deflect Missiles - 3_Slow Fall - 4_Extra Attack, Stunning Strike - 5_Ki-Empowered Strikes - 6_Evasion, Stillness of Mind - 7_Purity of Body - 10_Tongue of the Sun and Moon - 13_Diamond Soul - 14_Timeless Body - 15_Empty Body - 18_Perfect Self - 20</value>
+  </data>
+  <data name="Monk:Items" xml:space="preserve">
+    <value>10 darts</value>
+  </data>
+  <data name="Monk:Skills" xml:space="preserve">
+    <value>Simple Weapons_Shortsword</value>
+  </data>
+  <data name="Monk:Way of the Open Hand" xml:space="preserve">
+    <value>Open Hand Technique - 3_Wholeness of Body - 6_Tranquility - 11_Quivering Palm - 17</value>
+  </data>
   <data name="Paladin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Paladin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
