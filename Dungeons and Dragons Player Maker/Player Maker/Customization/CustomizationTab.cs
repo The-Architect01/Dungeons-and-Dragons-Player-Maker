@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization.Classes;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
@@ -30,44 +31,56 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
             TabPage ClassOptions = null;
             switch (PC.Class.Split(":")[0]) {
                 case "Artificer":
-                    //ClassOptions = new ARTIFICER(PC);
+                    ClassOptions = new ARTIFICER(PC);
+                    ((ARTIFICER)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Bard":
                     ClassOptions = new BARD(PC);
                     ((BARD)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Druid":
-                    //ClassOptions = new Druid(PC);
+                    ClassOptions = new DRUID(PC);
+                    ((DRUID)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Monk":
-                    //ClassOptions = new Monk(PC);
+                    ClassOptions = new MONK(PC); 
+                    ((MONK)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Warlock":
-                    //ClassOptions = new Warlock(PC);
+                    ClassOptions = new WARLOCK(PC);
+                    ((WARLOCK)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Rogue":
-                    //ClassOptions = new Rogue(PC);
+                    ClassOptions = new ROGUE(PC);
+                    ((ROGUE)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Cleric":
-                    //ClassOptions = new Cleric(PC);
+                    ClassOptions = new CLERIC(PC);
+                    ((CLERIC)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Fighter":
-                    //ClassOptions = new Fighter(PC);
+                    ClassOptions = new FIGHTER(PC);
+                    ((FIGHTER)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Paladin":
-                    //ClassOptions = new Paladin(PC);
+                    ClassOptions = new PALADIN(PC);
+                    ((PALADIN)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Ranger":
-                    //ClassOptions = new Ranger(PC);
+                    ClassOptions = new RANGER(PC);
+                    ((RANGER)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Sorcerer":
-                    //ClassOptions = new Sorcerer(PC);
+                    ClassOptions = new SORCERER(PC);
+                    ((SORCERER)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Wizard":
-                    //ClassOptions = new Wizard(PC);
+                    ClassOptions = new WIZARD(PC);
+                    ((WIZARD)ClassOptions).OnReady += CustomClass_Finished;
                     break;
                 case "Barbarian":
-                    //ClassOptions = new Barbarian(PC);
+                    ClassOptions = new BARBARIAN(PC);
+                    ((BARBARIAN)ClassOptions).OnReady += CustomClass_Finished;
                     break;
             }
             if ((!Pages.TabPages.OfType<TabPage>().Any(i => ClassOptions.GetType() == i.GetType())) &&
@@ -88,4 +101,3 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
 
     }
 }
-#pragma warning restore IDE1006 // Naming Styles

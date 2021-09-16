@@ -3,8 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
-{
+namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization{
     public partial class ARTIFICER : TabPage {
 
         private readonly PC PC;
@@ -34,4 +33,3 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
         }
     }
 }
-#pragma warning restore IDE1006 // Naming Styles

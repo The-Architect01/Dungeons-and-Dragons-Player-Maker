@@ -33,4 +33,3 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization.Classes {
         }
     }
 }
-#pragma warning restore IDE1006 // Naming Styles
