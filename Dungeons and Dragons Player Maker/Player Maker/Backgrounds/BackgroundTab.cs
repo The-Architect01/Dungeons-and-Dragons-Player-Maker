@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Reflection;
+using System.Collections.Generic;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
     public partial class BackgroundTab : TabPage {
@@ -23,7 +23,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } else { OnReset.Invoke(this, EventArgs.Empty); } } }
         #endregion
 
-        private static readonly string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin" }; //Change this line to add new Backgrounds
+        private static readonly string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin", "Investigator" }; //Change this line to add new Backgrounds
+        private static readonly List<string> HORROR_BACKGROUNDS = new(){ "Investigator", "Haunted One" };
 
         [Obsolete]
         public BackgroundTab(PC Player) { //Initializer, do not change
@@ -106,10 +107,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
                 BackgroundBonus.Text = "Background Bonus:\n";
                 foreach (string s in Skills) { BackgroundBonus.Text += s + "\n"; }
                 BackgroundData.Text = "Background Skill:\n" + Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background);
-                Personality.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Personality").Split("_"));
-                Ideal.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Ideal").Split("_"));
-                Bond.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Bond").Split("_"));
-                Flaw.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Flaw").Split("_"));
+                PopulateBackgroundPersonality();
                 foreach (string data in BackgroundBonus.Text.Split("\n")) {
                     for (int i = 0; i < Regex.Matches(data, "<CHOOSE>").Count; i++) {
                         foreach (ComboBox c in EXOptions) {
@@ -126,6 +124,19 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             } catch (NullReferenceException) {
                 BackgroundData.Text = "Background Skill:\nNo Data Currently Available";
                 BackgroundBonus.Text = "Background Bonus:\nNo Data Currently Available";
+            }
+        }
+        private void PopulateBackgroundPersonality(){
+            if (HORROR_BACKGROUNDS.Contains(PC.Background)) {
+                Personality.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Personality.Split("_"));
+                Ideal.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Ideal.Split("_"));
+                Bond.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Bond.Split("_"));
+                Flaw.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Flaw.Split("_"));
+            } else {
+                Personality.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Personality").Split("_"));
+                Ideal.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Ideal").Split("_"));
+                Bond.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Bond").Split("_"));
+                Flaw.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Flaw").Split("_")); 
             }
         }
         #endregion
@@ -266,17 +277,17 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private void updateSelection(ComboBox c, ref string oldValue) { //removes the old value or the choose
             if (c.Items.Count == Engine.LANGUAGES.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[1];
-                string newV = data.Contains("<CHOOSE>") ?  data.Replace("<CHOOSE>", c.Text) : data.Replace(oldValue,c.Text);
+                string newV = data.Contains("<CHOOSE>") ? new Regex("<CHOOSE>").Replace(data, c.Text, 1) : new Regex(oldValue).Replace(data, c.Text, 1);
                 BackgroundBonus.Text = BackgroundBonus.Text.Replace(data, newV);
                 oldValue = c.Text;
             } else if (c.Items.Count == Engine.SKILLS.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[2];
-                string newV = data.Contains("<CHOOSE>") ? data.Replace("<CHOOSE>", c.Text) : data.Replace(oldValue,c.Text);
+                string newV = data.Contains("<CHOOSE>") ? new Regex("<CHOOSE>").Replace(data, c.Text, 1) : new Regex(oldValue).Replace(data, c.Text, 1);
                 BackgroundBonus.Text = BackgroundBonus.Text.Replace(data, newV);
                 oldValue = c.Text;
             } else if (c.Items.Count == Engine.TOOLS.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[3];
-                string newV = data.Contains("<CHOOSE>") ? data.Replace("<CHOOSE>", c.Text) : data.Replace(oldValue, c.Text);
+                string newV = data.Contains("<CHOOSE>") ? new Regex("<CHOOSE>").Replace(data, c.Text, 1) : new Regex(oldValue).Replace(data, c.Text, 1);
                 BackgroundBonus.Text = BackgroundBonus.Text.Replace(data, newV);
                 oldValue = c.Text;
             }
