@@ -63,8 +63,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Dispose();
         }
 
+ 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e) {
+ 
             e.Graphics.DrawImage(bmp, 0, 0, (int) ( ClientSize.Width * 1.045m ), (int) ( ClientSize.Height * 1.045m ));
         }
     }
 }
+#pragma warning restore IDE1006 // Naming Styles

@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using System.Reflection;
 
 namespace Dungeons_and_Dragons_Player_Maker {
+#pragma warning disable IDE1006 // Naming Styles
+
     public partial class SplashScreen : Form {
         
         [Obsolete]
@@ -11,9 +13,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
             label3.Text = label3.Text + "Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
+ 
         private void timer1_Tick(object sender, EventArgs e) {
+ 
             Close();
         }
 
     }
 }
+#pragma warning restore IDE1006 // Naming Styles

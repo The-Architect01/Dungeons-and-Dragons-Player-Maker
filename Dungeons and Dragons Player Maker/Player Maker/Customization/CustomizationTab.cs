@@ -12,7 +12,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
 
         private bool _ready = false;
 
-        private bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
+        private bool InformationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
 
         [Obsolete]
         public CustomizationTab(PC Player) {
@@ -71,8 +71,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
                     break;
             }
             if ((!Pages.TabPages.OfType<TabPage>().Any(i => ClassOptions.GetType() == i.GetType())) &&
-                (!Pages.TabPages.Contains(stats))
-                ) { Pages.TabPages.Add(ClassOptions); }
+                (!Pages.TabPages.Contains(stats))) 
+            { Pages.TabPages.Add(ClassOptions); }
 
         }
 
@@ -88,3 +88,4 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
 
     }
 }
+#pragma warning restore IDE1006 // Naming Styles

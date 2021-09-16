@@ -28,7 +28,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         public int XP { get; set; }
         public int Level { get; set; }
+ 
         public string creator { get; set; }
+ 
 
         public PC(string Race,string Class,string Background,string[] Personality,int XP,params string[] Inventory) {
             this.Race = Race;
@@ -41,7 +43,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         public PC() {}
 
+ 
         public int getLevel() {
+ 
             if      (XP >= 0  && 300 > XP) { return 1; }
             else if (XP >= 300 && 900 > XP) { return 2; } 
             else if (XP >= 900 && 2700 > XP) { return 3; }
@@ -64,11 +68,17 @@ namespace Dungeons_and_Dragons_Player_Maker {
             else { return 20; }
         }
 
+ 
         public void gainXP(int XP) { if (XP <= 355000) { this.XP += XP; } else { showError(); } }      
+ 
+ 
         public void showError() { System.Windows.Forms.MessageBox.Show("You can't gain anymore XP!"); }
+ 
 
         [Obsolete]
+ 
         public void save() {
+ 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + Name + " - " +Class.Split(":")[0] + ".hro";
             using (FileStream fs = File.Create(path)) {
                 BinaryFormatter bin = new();
@@ -78,9 +88,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         [Obsolete]
+ 
         public static PC openCharacter(string location) {
+ 
             using Stream stream = File.Open(location, FileMode.Open); BinaryFormatter bin = new();
             return (PC)bin.Deserialize(stream);
         }
     }
 }
+#pragma warning restore IDE1006 // Naming Styles
+

@@ -9,7 +9,7 @@ using System.IO;
 namespace Dungeons_and_Dragons_Player_Maker {
     public static class Engine {
 
-        public static readonly Random RNG = new Random();
+        public static readonly Random RNG = new();
 
         public static readonly string[] LANGUAGES = {"Common","Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc","Abyssal","Celestial",
         "Deep Speech","Draconic","Infernal","Primordial","Sylvan","Undercommon"};
@@ -36,21 +36,23 @@ namespace Dungeons_and_Dragons_Player_Maker {
                                                                   "Fighter-Eldritch Knight", "Rogue-Arcane Trickster"};
 
         public static string[] AddChoose(string list) {
-            List<string> value = new List<string>(){ "Select One"};
+            List<string> value = new(){ "Select One"};
             if (list.SequenceEqual("Lang")) { value.AddRange(LANGUAGES); }
             else if (list.SequenceEqual("Skills")) { value.AddRange(SKILLS); }
             return value.ToArray();
         }
 
         public static string[] ClassOptions(string[] list, params string[] AdditionalOptions) {
-            List<string> value = new List<string>() { "Select One" };
+            List<string> value = new() { "Select One" };
             value.AddRange(AdditionalOptions);
             value.AddRange(list);
             return value.ToArray();
         }
 
+        [Obsolete]
         public static string[] CharacterList { get { return LoadCharacters().Keys.ToArray(); } } 
 
+        [Obsolete]
         public static Dictionary<string, PC> Characters { get; set; } = LoadCharacters();
 
         [Obsolete]
@@ -76,9 +78,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Properties.Settings.Default.Save();
         }
 
+        [Obsolete]
         public static void CheckSettings() {
             Characters = LoadCharacters();
         }
      
     }
 }
+#pragma warning restore IDE1006 // Naming Styles

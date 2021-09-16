@@ -71,7 +71,7 @@ You can use this tool to automatically format and print charactersheets as well 
 		<Compile Update="Player Maker\CreateCharacter.cs">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Compile>
-		<Compile Update="Player Maker\Customization\BARD.cs">
+		<Compile Update="Player Maker\Customization\Classes\BARD.cs">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</Compile>
 		<Compile Update="Player Maker\Customization\CustomizationTab.cs">

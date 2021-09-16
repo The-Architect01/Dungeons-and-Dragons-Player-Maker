@@ -20,7 +20,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
 
         private bool _ready = false;
 
-        private bool informationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } else { OnReset.Invoke(this, EventArgs.Empty); } } }
+        private bool InformationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } else { OnReset.Invoke(this, EventArgs.Empty); } } }
         #endregion
 
         private static readonly string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin", "Investigator" }; //Change this line to add new Backgrounds
@@ -218,7 +218,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
                 PC.Skills.AddRange(Tools);
                 PC.Personality = new[] { Personality.Text, Bond.Text, Ideal.Text, Flaw.Text };
                 PC.Inventory.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Items").Split(", "));
-                informationFilled = true;
+                InformationFilled = true;
             }
         }
 
@@ -274,7 +274,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             ID_SelectedValueChanged(sender, e);
         }
         
+ 
         private void updateSelection(ComboBox c, ref string oldValue) { //removes the old value or the choose
+ 
             if (c.Items.Count == Engine.LANGUAGES.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[1];
                 string newV = data.Contains("<CHOOSE>") ? new Regex("<CHOOSE>").Replace(data, c.Text, 1) : new Regex(oldValue).Replace(data, c.Text, 1);
@@ -315,8 +317,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             }
             
             ID_SelectedValueChanged(null, EventArgs.Empty);
-            informationFilled = false;
+            InformationFilled = false;
         }
         #endregion
     }
 }
+#pragma warning restore IDE1006 // Naming Styles

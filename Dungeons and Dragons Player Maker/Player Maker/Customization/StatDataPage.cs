@@ -218,7 +218,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             Size = new Size(62, 25),
             Location = new Point(384, 127)
         };
+ 
         private void updateStat(string stat, string RollValue) {
+ 
             switch (stat) {
                 case "STR":     
                     STRValue.Text = (stats[RollValue] + int.Parse(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[0])).ToString();
@@ -408,7 +410,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             }
             updateStat(cb.Text, "Roll " + cb.Name.Split("_")[0].Split("Value")[1]);
         }
+ 
         private List<string> remainingValues() {
+ 
             List<string> statTypes = new() { "---", "STR", "DEX", "CON", "INT", "WIS", "CHA" };
             foreach(ComboBox c in StatLocations) {
                 if(c.Text == "---") { continue; }
@@ -555,3 +559,4 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
 
     }
 }
+#pragma warning restore IDE1006 // Naming Styles

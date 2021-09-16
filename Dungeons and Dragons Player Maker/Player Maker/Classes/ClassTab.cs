@@ -17,7 +17,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
 
         private bool _ready = false;
 
-        private bool informationFilled {
+        private bool InformationFilled {
             get { return _ready; }
             set {
                 _ready = value; if (value) {
@@ -105,7 +105,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
                 return;
             } else {
                 ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
-                classUpdate(((Label)sender).Text, "Select One");
+                ClassUpdate(((Label)sender).Text, "Select One");
             }
         }
         #endregion
@@ -157,8 +157,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             Text = "Select One"
         };
         private void SubClasses_OnValueChanged(object sender, EventArgs e) {
-            classUpdate(PC.Class, SubClasses.Text);
-            informationFilled = true;
+            ClassUpdate(PC.Class, SubClasses.Text);
+            InformationFilled = true;
         }
 
         private readonly PictureBox ClassPreview = new() {
@@ -169,7 +169,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         };
         #endregion
 
-        private void classUpdate(string classBase, string subclass) { //Repopulates data
+        private void ClassUpdate(string classBase, string subclass) { //Repopulates data
             string Class = string.IsNullOrEmpty(PC.Class) ? classBase : PC.Class.Split(":")[0];
             try {
                 string[] baseClassStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + ":Base").Split("_");
@@ -190,3 +190,4 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         }
     }
 }
+#pragma warning restore IDE1006 // Naming Styles

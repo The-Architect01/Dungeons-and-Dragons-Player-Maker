@@ -115,10 +115,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // printDocument1
             // 
+#pragma warning disable CS0612 // Type or member is obsolete
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // printPreviewDialog1
-            // 
+#pragma warning restore CS0612 // Type or member is obsolete
+                              // 
+                              // printPreviewDialog1
+                              // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);

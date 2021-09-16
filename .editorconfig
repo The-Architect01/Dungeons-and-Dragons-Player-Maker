@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA1041: Provide ObsoleteAttribute message
+dotnet_diagnostic.CA1041.severity = silent

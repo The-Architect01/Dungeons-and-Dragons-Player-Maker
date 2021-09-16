@@ -4,8 +4,11 @@ using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
+#pragma warning disable IDE1006 // Naming Styles
 
 namespace Dungeons_and_Dragons_Player_Maker {
+ 
+
     public partial class PrintSheet : Form {
         private Bitmap bitMap;
 
@@ -81,7 +84,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 }
             }
 
-            populateAC();
+            PopulateAC();
             Prof.Text = Prof.Text.Remove(Prof.Text.Length - 2);
             Equip.Text = Equip.Text.Remove(Equip.Text.Length - 2);
             Scale(.75f);
@@ -96,7 +99,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             foreach(string ability in abilities) {Abilities.Text += ability + "\n";}
         }
         
+ 
         private void populateClass() {
+ 
             string[] abilities = Classes.ResourceManager.GetString(player.Class.Split(":")[0] + ":Base").Split("_");
             foreach(string ability in abilities) {Abilities.Text += ability + "\n";}
             string[] subAbilitites = Classes.ResourceManager.GetString(player.Class).Split("_");
@@ -175,7 +180,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             }
 
         }
+ 
         private void populateBackground() {
+ 
             Abilities.Text += Backgrounds.ResourceManager.GetString(Background.Text).Split(":")[0];
             Personality.Text = player.Personality[0];
             Ideal.Text = player.Personality[1];
@@ -190,7 +197,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Int_Mod.Text = getModifier(Intelligence.Text);
             Cha_Mod.Text = getModifier(Charisma.Text);
         }
+ 
         public static string getModifier(string stat) {
+ 
             int statvalue = int.Parse(stat);
             if (statvalue == 1)  { return "-5";  } 
             if (4 > statvalue)   { return "-4";  }
@@ -210,7 +219,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             if (30 == statvalue) { return "+10"; }
             return "-10";
         }
+ 
         private void setProficiencyBonus() { 
+ 
             if (5 > player.Level) { Proficency.Text = "+2"; return; }
             if (9 > player.Level) { Proficency.Text = "+3"; return; }
             if (13 > player.Level) { Proficency.Text = "+4"; return; }
@@ -252,6 +263,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
         }
 
+        [Obsolete]
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e) {
             e.Graphics.DrawImage(bitMap, 0, 0, (int)(bitMap.Size.Width * 1.12d), (int) (bitMap.Size.Height *1.12d));//(int)(ClientSize.Width * 1.5m), (int) (ClientSize.Height *1.5m));
             SpellSheet spells = new(player); spells.Print();
@@ -272,7 +284,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             printPreviewDialog1.ShowDialog();
         }
 
-        private void populateAC() {
+        private void PopulateAC() {
             if (player.Inventory.Contains("Padded Armor") || player.Inventory.Contains("Leather Armor") || player.Inventory.Contains("Studded Leather Armor")) {
                 AC.Text = (int.Parse(Dex_Mod.Text) + 11).ToString();
             }else if (player.Inventory.Contains("Hide Armor")) {
@@ -293,4 +305,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
     }
+ 
+
 }
+#pragma warning restore IDE1006 // Naming Styles

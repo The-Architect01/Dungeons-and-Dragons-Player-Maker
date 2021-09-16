@@ -13,7 +13,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
         private bool _ready = false;
 
         //bool hasFired = false;
-        private bool informationFilled {
+        private bool InformationFilled {
             get { return _ready; }
             set {
                 _ready = value;
@@ -172,10 +172,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
             if (MusicalInstrument1.Text != "Select One" && MusicalInstrument2.Text != "Select One" && MusicalInstrument3.Text != "Select One" &&
                 Skill1.Text != "Select One" && Skill2.Text != "Select One" && Skill3.Text != "Select One" &&
                 Option1.Text != "Select One" && Option2.Text != "Select One" && Option3.Text != "Select One") {
-                informationFilled = true;
+                InformationFilled = true;
             }
         }
 
 
     }
 }
+#pragma warning restore IDE1006 // Naming Styles

@@ -14,6 +14,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             CenterToScreen();
         }
 
+        [Obsolete]
         private void MainMenu_Load(object sender, EventArgs e) {
             if (Engine.Characters.Count != 0) {
                 PrintOldCharacter.Enabled = true;
@@ -42,6 +43,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Engine.SaveCharacters();
         }
 
+        [Obsolete]
         private void PrintOldCharacter_Click(object sender, EventArgs e) {
            try {
                 PrintSheet ps = new(Engine.Characters[CharactersCreated.Text]);
@@ -74,6 +76,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             } catch (Exception) { }
         }
 
+        [Obsolete]
         private void MainMenu_VisibleChanged(object sender, EventArgs e) {
             if (Engine.Characters.Count != 0) {
                 PrintOldCharacter.Enabled = true;
@@ -85,3 +88,4 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
     }
 }
+#pragma warning restore IDE1006 // Naming Styles
