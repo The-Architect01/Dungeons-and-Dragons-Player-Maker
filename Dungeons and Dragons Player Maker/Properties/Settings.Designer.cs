@@ -46,5 +46,17 @@ namespace Dungeons_and_Dragons_Player_Maker.Properties {
                 this["Name"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.0.0.0")]
+        public string CurrentVersion {
+            get {
+                return ((string)(this["CurrentVersion"]));
+            }
+            set {
+                this["CurrentVersion"] = value;
+            }
+        }
     }
 }

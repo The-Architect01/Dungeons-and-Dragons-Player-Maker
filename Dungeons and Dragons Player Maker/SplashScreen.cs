@@ -10,12 +10,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
         [Obsolete]
         public SplashScreen() {
             InitializeComponent();
-            label3.Text = label3.Text + "Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            label3.Text = label3.Text + "Version: " + Properties.Settings.Default.CurrentVersion;
         }
 
  
         private void timer1_Tick(object sender, EventArgs e) {
- 
             Close();
         }
 

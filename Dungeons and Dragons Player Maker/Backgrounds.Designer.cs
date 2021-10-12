@@ -124,6 +124,69 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A musical instrument, a set of traveler&apos;s clothes, three trinkets, 15 gp..
+        /// </summary>
+        internal static string Felost_Items {
+            get {
+                return ResourceManager.GetString("Felost-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feywild Connection: Because you where raised knowing the many mannerisms of fey customs, friendly Fey creatures are inclined to come to your aid when you are in the Feywild..
+        /// </summary>
+        internal static string Feylost {
+            get {
+                return ResourceManager.GetString("Feylost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;_Skills: Deception, Survival_Tools: &lt;CHOOSE&gt;.
+        /// </summary>
+        internal static string FeyLost_Skills {
+            get {
+                return ResourceManager.GetString("FeyLost-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I would never break my word._I find magic in all its forms to be compelling. The more magical a place, the more I am drawn to it._I do what I can to protect the natural world._A trusted friend is the most important thing in the multiverse to me._I can&apos;t bring myself to harma Fey creature, either because I consider myself one or because I fear the repercussions._The Witchlight Carnival feels like home to me._I&apos;m drawn to the Feywild and long to return there, if only for a short while._I feel indebted to Mist [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Feywild_Bond {
+            get {
+                return ResourceManager.GetString("Feywild-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I easily lose track of time. My poor sense of time means I&apos;m always late._I think the whole multiverse is out to get me._I&apos;m always operating under a tight timeline, and I&apos;m obsessed with keeping everything on schedule._I&apos;m a kleptomaniac who covets shiny, sparkling treasure._I&apos;m forgetful. Sometimes I can&apos;t remember even the simplest things._I never give away anything for free and always expect something in return._I have many vices and tend to ndulge them._I&apos;m always changing my mind...well, almost always [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Feywild_Flaw {
+            get {
+                return ResourceManager.GetString("Feywild-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I never leave a friend behind._No creature should be made to suffer._I prefer to take the less traveled path._Change is good, which is why I live by an ever-changing set of rules._A deal is a deal, and I would never break one._Everything in the multiverse happens in threes. I see the &quot;rule of three&quot; everywhere._I won&apos;t let go of a grudge._I will do whatever it takes to get what I want, regardless of the harm it might cause..
+        /// </summary>
+        internal static string Feywild_Ideal {
+            get {
+                return ResourceManager.GetString("Feywild-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m haunted by fey laughter that only I can hear, though I know it&apos;s just my mind playing tricks on me._Like a nomad, I can&apos;t settle down in one place for very long._Good music makes me week like a baby._Wherever I go, I try to bring a little of the warmth and tranquility of home with me._I have never lost my childlike sense of wonder._When I have a new idea, I get wildly excited about it until I come up with another, better idea._I live by my own set of weird and wonderful rules._I can&apos;t bring myself to tr [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Feywild_Personality {
+            get {
+                return ResourceManager.GetString("Feywild-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Haunted_One {
@@ -273,6 +336,33 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Urchin_Skills {
             get {
                 return ResourceManager.GetString("Urchin-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Carnival Helper: The Witchlight Carnival provides you with free modest lodging and food. In addition you can enjoy the many wonders of the carnival free of charge..
+        /// </summary>
+        internal static string Witchlight_Hand {
+            get {
+                return ResourceManager.GetString("Witchlight Hand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A disguise kit/musical instrument, a deck of cards, a uniform/costume, one trinket, 8 gp..
+        /// </summary>
+        internal static string Witchlight_Hand_Items {
+            get {
+                return ResourceManager.GetString("Witchlight Hand-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;_Skills: Performance, Sleight of Hand_Tools: Disguise Kit, &lt;CHOOSE&gt;.
+        /// </summary>
+        internal static string Witchlight_Hand_Skills {
+            get {
+                return ResourceManager.GetString("Witchlight Hand-Skills", resourceCulture);
             }
         }
     }
