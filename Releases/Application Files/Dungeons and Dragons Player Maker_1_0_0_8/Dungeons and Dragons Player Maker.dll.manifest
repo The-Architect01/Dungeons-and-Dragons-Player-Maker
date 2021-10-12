@@ -51,7 +51,7 @@ You can use this tool to automatically format and print charactersheets as well 
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fh60V2pZa1nKY9rfFxLJptp7/MoFVNU/VqdEfLJoFew=</dsig:DigestValue>
+        <dsig:DigestValue>veyxd0x2aBiaG1Nne2wfpUlXnwh0stJZhGgZJmXolyA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
