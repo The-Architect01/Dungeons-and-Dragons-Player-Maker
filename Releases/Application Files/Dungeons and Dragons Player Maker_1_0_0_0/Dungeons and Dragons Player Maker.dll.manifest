@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Dungeons and Dragons Player Maker.exe" version="1.0.0.0" publicKeyToken="d30d91842727382f" language="en" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="D202.ico" xmlns="urn:schemas-microsoft-com:asm.v1">A simple TTRPG character creation tool.
+You can use this tool to automatically format and print charactersheets as well as open previously made characters or characters made by friends.  </description>
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Launcher" version="5.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Launcher.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Launcher.exe" size="15304">
+      <assemblyIdentity name="Launcher" version="5.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fh60V2pZa1nKY9rfFxLJptp7/MoFVNU/VqdEfLJoFew=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="clrcompression.dll" size="749456">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>y0g9+SjtSXRivJ2DZMv4TJv5wa9VXeFmJ0IRwdyvoys=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="clrjit.dll" size="1273744">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Wa0j1tGqU3Tpu/t6Jv/PBCUncBkForWTmn/NtxXweu8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="coreclr.dll" size="5205904">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lXlm9tMV7ediMRoiI3cKz4wquqqjlUH7n5Vwn2VAhDs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="D20.ico" size="90758">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YUiE0+MlzsIizkfJ07M/IOFuLkpmzit5B/6vbIa2G+U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="D202.ico" size="462991">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wDhfG0LCDN5KacnRzzbnqJp4YNwyEjoKxLkk08e2Cvk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="D3DCompiler_47_cor3.dll" size="4524496">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Id9WlgERVv5k8t/0fI7V6QgXAh+R9wttlwf9WM0bC4E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Dungeons and Dragons Player Maker.exe" size="145842800">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>uc2CASpZaCfgam8UkCPArlqzZb3lIKsVVD0pq3RK7Pw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="mscordaccore.dll" size="1059200">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nYnrLH31dpiFILlAFTk5WoBltKssPkZabH60Ayu3jg0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PenImc_cor3.dll" size="153480">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SGyG1T+88YGf4xP0QVFKL0VR7ypMlkGK2ICXjbhqRVs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PresentationNative_cor3.dll" size="1226632">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>RNr0VCjbuE4BEdLQjYj7JkkHoYANP4B0I2eaBqKWuLU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="vcruntime140_cor3.dll" size="97168">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>A5FT5SsvuHQdTeJHKpQ08Js985nWDKAtlcJ7TNi4fT4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="wpfgfx_cor3.dll" size="1954696">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>PUKNaIaVhVsVZAed7pNWnX70TWOxXq37kpj74VclioQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <fileAssociation extension=".hro" description="A TTRPG Character" progid="TTRPG Character Creator" defaultIcon="D20.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />
+<publisherIdentity name="CN=GRUMPY-LION\nbirc" issuerKeyHash="95145220c0bd91e90918bdbd9f1ca98a7996a410" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>YWiwk7pahfX5AAPJEyRV3J366HOlDorqOx1ipEgke+Y=</DigestValue></Reference></SignedInfo><SignatureValue>bT6NXlmelEt9jxnw8JIUBefsmQYROZ75km/N4F+aqBbXf8nc3Mo16udinB0tgbhPj9ViHqUi4XsUz/ShRsVREOX0TE9ywaqGQGDaK6JHzYqvspph52klWqadFkU/p/VwzRcZvbTXi0q73ey3fpg9naJakwcLS3mqkBBrBLJKyTM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>lUvWGpTneJv8+7fOlKUX3dS1UdAfjOxpqyPZ964dUeWDLru59m0Q/llTX5jef39G4mnmhhb0igyu6em5jrc5Q2fWX7TTcSVsuXgJfUzmfB3a+Z6Kc3PD8dbiFOUZX582UocmYnPGhuboq8MhADQeunBBf+f8nhpWTK8Jgax+/0k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e67b2448a4621d3bea8a0ea573e8fa9ddc552413c90300f9f5855aba93b06861" Description="" Url=""><as:assemblyIdentity name="Dungeons and Dragons Player Maker.exe" version="1.0.0.0" publicKeyToken="d30d91842727382f" language="en" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=GRUMPY-LION\nbirc</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Ceh7r1PH1XGTKXETFu6I3JKzOvAAm+Go7cDVoJULWak=</DigestValue></Reference></SignedInfo><SignatureValue>cgm8ihH2cQaKzMMSBfd+Uv4Yu9YvH04qKr1aQZhA99d5C6AFiOvq1fAsFrSPVQfGtpxtkjLVmCeyD1VBxhba1r1C/0nf27hJN6p8eGOmbXDj4KVOv3IFXSCcdvvFn7C2aKyGojT4F1Jv0LK6yrJaNzNYm/RxnJHSpVld/ewHr9o=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>lUvWGpTneJv8+7fOlKUX3dS1UdAfjOxpqyPZ964dUeWDLru59m0Q/llTX5jef39G4mnmhhb0igyu6em5jrc5Q2fWX7TTcSVsuXgJfUzmfB3a+Z6Kc3PD8dbiFOUZX582UocmYnPGhuboq8MhADQeunBBf+f8nhpWTK8Jgax+/0k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB3TCCAUagAwIBAgIQGvaa0oVJ8LpDm1RBsWr70jANBgkqhkiG9w0BAQsFADAtMSswKQYDVQQDHiIARwBSAFUATQBQAFkALQBMAEkATwBOAFwAbgBiAGkAcgBjMB4XDTIxMDkwNzE3MTYyNloXDTIyMDkwNzIzMTYyNlowLTErMCkGA1UEAx4iAEcAUgBVAE0AUABZAC0ATABJAE8ATgBcAG4AYgBpAHIAYzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAlUvWGpTneJv8+7fOlKUX3dS1UdAfjOxpqyPZ964dUeWDLru59m0Q/llTX5jef39G4mnmhhb0igyu6em5jrc5Q2fWX7TTcSVsuXgJfUzmfB3a+Z6Kc3PD8dbiFOUZX582UocmYnPGhuboq8MhADQeunBBf+f8nhpWTK8Jgax+/0kCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCS75+Q9o9FnNaHWs5FE6xJWEW7lf6Ym6ExXTEjqogmGFC4C20YzncSSNd22f6yj+u4pxfeXxvA6SZvoJHjzxmHvsjdoiWFyk/oMIAr3HJKBIw0lpowfuiYnG+pDwm05FTUf+W39pp/rbpkU7keE5X7WrY3DjQm/grfl9Fk2/otMg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
