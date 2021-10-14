@@ -259,23 +259,23 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             ComboBox c = (ComboBox)sender;
             switch (c.Name) {
                 case "EXOption1":
-                    updateSelection(c, ref selectedValueEXOption1);
+                    UpdateSelection(c, ref selectedValueEXOption1);
                     break;
                 case "EXOption2":
-                    updateSelection(c, ref selectedValueEXOption2);
+                    UpdateSelection(c, ref selectedValueEXOption2);
                     break;
                 case "EXOption3":
-                    updateSelection(c, ref selectedValueEXOption3);
+                    UpdateSelection(c, ref selectedValueEXOption3);
                     break;
                 case "EXOption4":
-                    updateSelection(c, ref selectedValueEXOption4);
+                    UpdateSelection(c, ref selectedValueEXOption4);
                     break;
             }
             ID_SelectedValueChanged(sender, e);
         }
         
  
-        private void updateSelection(ComboBox c, ref string oldValue) { //removes the old value or the choose
+        private void UpdateSelection(ComboBox c, ref string oldValue) { //removes the old value or the choose
  
             if (c.Items.Count == Engine.LANGUAGES.Length) {
                 string data = BackgroundBonus.Text.Split("\n")[1];
