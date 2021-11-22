@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Dragonborn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Dragonborn-5e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Dragonborn:Black" xml:space="preserve">
     <value>+2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Acid, Damage Resistance - Acid</value>
   </data>
@@ -154,9 +150,6 @@
   <data name="Dragonborn:White" xml:space="preserve">
     <value>+2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Cold, Damage Resistance - Cold</value>
   </data>
-  <data name="Dwarf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Dwarf-5e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Dwarf:Hill" xml:space="preserve">
     <value>0_0_+2_+1_0_0_25_Medium_Common, Dwarvish_Battleaxe, handaxe, light hammer, warhammer_Darkvision - 60ft, Dwarven Resilience, Stonecunning, Dwarven Toughness</value>
   </data>
@@ -165,9 +158,6 @@
   </data>
   <data name="Dwarf:Natural" xml:space="preserve">
     <value>0_0_+2_0_0_0_25_Medium_Common, Dwarvish_Battleaxe, handaxe, light hammer, warhammer_Darkvision - 60ft, Dwarven Resilience, Stonecunning</value>
-  </data>
-  <data name="Elf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Dark-Elf-5e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Elf:Drow" xml:space="preserve">
     <value>0_+2_0_0_0_+1_30_Medium_Common, Elvish_Perception, rapiers, shortswords, hand crossbows_Darkvision - 120ft, Fey Ancestry, Trance, Sunlight Sensitivity, Drow Magic</value>
@@ -181,9 +171,6 @@
   <data name="Elf:Wood" xml:space="preserve">
     <value>0_+2_0_+1_0_0_35_Medium_Common, Elvish_Perception, longsword, shortsword, shortbow, longbow_Darkvision - 60ft, Fey Ancestry, Trance, Mask of the Wild</value>
   </data>
-  <data name="Gnome" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Gnome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Gnome:Forest" xml:space="preserve">
     <value>0_+1_0_0_+2_0_25_Small_Common, Gnomish_None_Darkvision - 60ft, Gnome Cunning, Natural Illusionist, Speak with Small Beasts</value>
   </data>
@@ -193,23 +180,14 @@
   <data name="Gnome:Rock" xml:space="preserve">
     <value>0_0_+1_0_+2_0_25_Small_Common, Gnomish_None_Darkvision - 60ft, Gnome Cunning, Artificer's Lore, Tinker</value>
   </data>
-  <data name="Half-Elf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Half-Elf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Half-Elf:Natural" xml:space="preserve">
     <value>0_0_0_0_0_+2_30_Medium_Common, Elvish_None_Darkvision - 60ft, Fey Ancestry, Skill Versatility</value>
   </data>
   <data name="Half-Elf:Variant" xml:space="preserve">
     <value />
   </data>
-  <data name="Half-Orc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Half-orc-5e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Half-Orc:Natural" xml:space="preserve">
     <value>+2_0_+1_0_0_0_30_Medium_Common, Orc_Intimidation_Darkvision - 60ft, Relentless Endurance, Savage Attacks</value>
-  </data>
-  <data name="Halfling" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Halfling-5e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Halfling:Lightfoot" xml:space="preserve">
     <value>0_+2_0_0_0_+1_25_Small_Common, Halfling_None_Lucky, Brave, Halfling Nimbleness, Naturally Stealthy</value>
@@ -220,9 +198,6 @@
   <data name="Halfling:Stout" xml:space="preserve">
     <value>0_+2_+1_0_0_0_25_Small_Common, Halfling_None_Lucky, Brave, Halfling Nimbleness, Stout Resilience</value>
   </data>
-  <data name="Human" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Human-5e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Human:Natural" xml:space="preserve">
     <value>+1_+1_+1_+1_+1_+1_30_Medium_Common_None_None</value>
   </data>
@@ -231,9 +206,6 @@
   </data>
   <data name="Sample" xml:space="preserve">
     <value>STR_DEX_CON_WIS_INT_CHA_SPEED_SIZE_LANGUAGE_PROFICINCY_BONUS</value>
-  </data>
-  <data name="Tiefling" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Tiefling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tiefling:Natural" xml:space="preserve">
     <value>0_0_0_0_+1_+2_30_Medium_Common, Infernal_None_Darkvision - 60ft, Hellish Resistance, Infernal Legacy</value>

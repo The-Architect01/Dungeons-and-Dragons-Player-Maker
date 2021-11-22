@@ -12,7 +12,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         private Label[] RaceName;
         private static readonly string[] Races = { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling" };
         private static readonly Dictionary<string, int> RacesBonus = new() { { "Human:Variant", 2 }, { "Half-Elf:Natural", 2 } };
-        private static readonly List<string> Races_SubRace = new() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf" };
+        private static readonly List<string> Races_SubRace = new() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome"/*, "Half-Elf"*/ };
         private static readonly string[] DWARF_SUBRACE = { "Hill", "Mountain", "Deep" };
         private static readonly string[] ELF_SUBRACE = { "High", "Wood", "Drow" };
         private static readonly string[] HALFLING_SUBRACE = { "Lightfoot", "Stout" };
@@ -107,7 +107,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                 //updateInfo(PC.Race.Split("-")[0]);
                 return;
             } else {
-                RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(((Label)sender).Text);
+                //RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(((Label)sender).Text);
+                RacePreview.Load(ImageLocation.GetImage(((Label)sender).Text));
                 updateInfo(((Label)sender).Text);
             }
         }
@@ -120,7 +121,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                 updateInfo(((Label)sender).Text);
             }
             PC.Race = ((Label)sender).Text;
-            RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(PC.Race.Split(":")[0]);
+            //RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(PC.Race.Split(":")[0]);
+            RacePreview.Load(ImageLocation.GetImage(PC.Race.Split(":")[0]));
             updateInfo(PC.Race);
             if (Races_SubRace.Contains(PC.Race.Split(":")[0])){
                 SubRaces.Enabled = true;
@@ -293,7 +295,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #endregion
 
         private readonly PictureBox RacePreview = new() {
-            Image = Dungeons_and_Dragons_Player_Maker.Races.Human,
+            //Image = Dungeons_and_Dragons_Player_Maker.Races.Human,
+            ImageLocation = ImageLocation.GetImage("HUMAN"), 
             Location = new Point(223, 6),
             Size = new Size(275, 316),
             SizeMode = PictureBoxSizeMode.Zoom,

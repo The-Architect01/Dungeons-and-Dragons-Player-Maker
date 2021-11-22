@@ -61,26 +61,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Artificer {
-            get {
-                object obj = ResourceManager.GetObject("Artificer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Barbarian {
-            get {
-                object obj = ResourceManager.GetObject("Barbarian", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Rage - 1, 9, 15_Unarmored Defense - 1_Reckless Attack, Danger Sense - 2_Extra Attack, Fast Movement - 5_Feral Instinct - 7_Brutal Critical - 9_Indomitable Might - 18_Primal Champion - 20.
         /// </summary>
         internal static string Barbarian_Base {
@@ -126,16 +106,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Bard {
-            get {
-                object obj = ResourceManager.GetObject("Bard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bardic Insperation - 1, 20_Jack of All Trades - 2_Expertise - 3_Font of Inspiration - 5_Countercharm - 6_Magical Secrets - 10.
         /// </summary>
         internal static string Bard_Base {
@@ -177,16 +147,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Bard_Valor {
             get {
                 return ResourceManager.GetString("Bard:Valor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cleric {
-            get {
-                object obj = ResourceManager.GetObject("Cleric", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -281,16 +241,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Druid {
-            get {
-                object obj = ResourceManager.GetObject("Druid", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Druidic - 1_Wild Shape - 2_Timeless Body - 18_Beast Spells - 18_Archdruid - 20.
         /// </summary>
         internal static string Druid_Base {
@@ -336,16 +286,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Fighter {
-            get {
-                object obj = ResourceManager.GetObject("Fighter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Fighting Style, Second Wind - 1_Action Surge - 2_Extra Attack - 5_Indomitable - 9.
         /// </summary>
         internal static string Fighter_Base {
@@ -378,16 +318,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Fighter_Skills {
             get {
                 return ResourceManager.GetString("Fighter:Skills", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Monk {
-            get {
-                object obj = ResourceManager.GetObject("Monk", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -430,69 +360,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Paladin {
-            get {
-                object obj = ResourceManager.GetObject("Paladin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Ranger {
-            get {
-                object obj = ResourceManager.GetObject("Ranger", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rogue {
-            get {
-                object obj = ResourceManager.GetObject("Rogue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Sorcerer {
-            get {
-                object obj = ResourceManager.GetObject("Sorcerer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Spell_Sheet {
             get {
                 object obj = ResourceManager.GetObject("Spell Sheet", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Warlock {
-            get {
-                object obj = ResourceManager.GetObject("Warlock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Wizard {
-            get {
-                object obj = ResourceManager.GetObject("Wizard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

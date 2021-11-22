@@ -61,16 +61,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dragonborn {
-            get {
-                object obj = ResourceManager.GetObject("Dragonborn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to +2_0_0_0_0_+1_30_Medium_Common, Draconic_None_Breath Weapon - Acid, Damage Resistance - Acid.
         /// </summary>
         internal static string Dragonborn_Black {
@@ -170,16 +160,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dwarf {
-            get {
-                object obj = ResourceManager.GetObject("Dwarf", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 0_0_+2_+1_0_0_25_Medium_Common, Dwarvish_Battleaxe, handaxe, light hammer, warhammer_Darkvision - 60ft, Dwarven Resilience, Stonecunning, Dwarven Toughness.
         /// </summary>
         internal static string Dwarf_Hill {
@@ -203,16 +183,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Dwarf_Natural {
             get {
                 return ResourceManager.GetString("Dwarf:Natural", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Elf {
-            get {
-                object obj = ResourceManager.GetObject("Elf", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -253,16 +223,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Gnome {
-            get {
-                object obj = ResourceManager.GetObject("Gnome", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 0_+1_0_0_+2_0_25_Small_Common, Gnomish_None_Darkvision - 60ft, Gnome Cunning, Natural Illusionist, Speak with Small Beasts.
         /// </summary>
         internal static string Gnome_Forest {
@@ -290,16 +250,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Half_Elf {
-            get {
-                object obj = ResourceManager.GetObject("Half-Elf", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 0_0_0_0_0_+2_30_Medium_Common, Elvish_None_Darkvision - 60ft, Fey Ancestry, Skill Versatility.
         /// </summary>
         internal static string Half_Elf_Natural {
@@ -318,31 +268,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Half_Orc {
-            get {
-                object obj = ResourceManager.GetObject("Half-Orc", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to +2_0_+1_0_0_0_30_Medium_Common, Orc_Intimidation_Darkvision - 60ft, Relentless Endurance, Savage Attacks.
         /// </summary>
         internal static string Half_Orc_Natural {
             get {
                 return ResourceManager.GetString("Half-Orc:Natural", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Halfling {
-            get {
-                object obj = ResourceManager.GetObject("Halfling", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -374,16 +304,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Human {
-            get {
-                object obj = ResourceManager.GetObject("Human", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to +1_+1_+1_+1_+1_+1_30_Medium_Common_None_None.
         /// </summary>
         internal static string Human_Natural {
@@ -407,16 +327,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Sample {
             get {
                 return ResourceManager.GetString("Sample", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Tiefling {
-            get {
-                object obj = ResourceManager.GetObject("Tiefling", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

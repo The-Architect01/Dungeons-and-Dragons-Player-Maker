@@ -94,7 +94,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         };
         private void ClassName_Click(object sender, EventArgs e) {
             PC.Class = ((Label)sender).Text;
-            ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(PC.Class);
+            //ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(PC.Class);
+            ClassPreview.Load(ImageLocation.GetImage(PC.Class));
             SubClasses.Items.Clear();
             SubClasses.Items.AddRange((string[])this.GetType().GetField((PC.Class.ToUpper() + "_Subclasses").ToString(),
                 BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));
@@ -104,7 +105,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             if (!string.IsNullOrEmpty(PC.Class)) {
                 return;
             } else {
-                ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
+                //ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
+                ClassPreview.Load(ImageLocation.GetImage(((Label)sender).Text));
                 ClassUpdate(((Label)sender).Text, "Select One");
             }
         }
@@ -162,7 +164,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         }
 
         private readonly PictureBox ClassPreview = new() {
-            Image = Dungeons_and_Dragons_Player_Maker.Classes.Barbarian,
+            //Image = Dungeons_and_Dragons_Player_Maker.Classes.Barbarian,
+            ImageLocation = ImageLocation.GetImage("Barbarian"),
             Size = new Size(275, 316),
             Location = new Point(223, 6),
             SizeMode = PictureBoxSizeMode.Zoom
