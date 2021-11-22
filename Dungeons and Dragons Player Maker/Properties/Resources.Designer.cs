@@ -63,49 +63,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Banner {
-            get {
-                object obj = ResourceManager.GetObject("Banner", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Banner1 {
-            get {
-                object obj = ResourceManager.GetObject("Banner1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Character_Sheet___Alternative___Form_Fillable_page_001 {
             get {
                 object obj = ResourceManager.GetObject("Character Sheet - Alternative - Form Fillable-page-001", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap CS {
-            get {
-                object obj = ResourceManager.GetObject("CS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap D_D_Banne {
-            get {
-                object obj = ResourceManager.GetObject("D&D Banne", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -137,16 +97,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Properties {
             get {
                 object obj = ResourceManager.GetObject("D2021", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DnD_bg_starter01 {
-            get {
-                object obj = ResourceManager.GetObject("DnD_bg-starter01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
