@@ -115,12 +115,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // printDocument1
             // 
-#pragma warning disable CS0612 // Type or member is obsolete
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-#pragma warning restore CS0612 // Type or member is obsolete
-                              // 
-                              // printPreviewDialog1
-                              // 
+            // 
+            // printPreviewDialog1
+            // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
@@ -1086,9 +1084,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // PrintSheet
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.Character_Sheet___Alternative___Form_Fillable_page_001;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(814, 1055);
+            this.ClientSize = new System.Drawing.Size(818, 1055);
             this.Controls.Add(this.PERSUASION_MOD);
             this.Controls.Add(this.PERFORMANCE_MOD);
             this.Controls.Add(this.INTIMIDATION_MOD);

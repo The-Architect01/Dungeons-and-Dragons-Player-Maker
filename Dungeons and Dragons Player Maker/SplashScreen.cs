@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Reflection;
+using Dungeons_and_Dragons_Player_Maker.Player_Maker;
 
 namespace Dungeons_and_Dragons_Player_Maker {
 #pragma warning disable IDE1006 // Naming Styles
@@ -10,6 +10,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         [Obsolete]
         public SplashScreen() {
             InitializeComponent();
+            pictureBox1.Load(ImageLocation.GetImage("SPLASH"));
+            BackgroundImage = pictureBox1.Image;
+            pictureBox1.Visible = false;
             label3.Text = label3.Text + "Version: " + Properties.Settings.Default.CurrentVersion;
         }
 

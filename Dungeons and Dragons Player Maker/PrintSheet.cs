@@ -4,6 +4,7 @@ using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using Dungeons_and_Dragons_Player_Maker.Player_Maker;
 #pragma warning disable IDE1006 // Naming Styles
 
 namespace Dungeons_and_Dragons_Player_Maker {
@@ -30,7 +31,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         [Obsolete]
         public PrintSheet(PC pc) {
             InitializeComponent();
-            
+            //pictureBox1.Load(ImageLocation.GetImage("Sheet"));
+            //BackgroundImage = pictureBox1.Image;
+            //pictureBox1.Visible = false;
             player = pc;
             Skills.AddRange(pc.Skills.ToArray());
             Race.Text = player.Race.Split(":")[0];

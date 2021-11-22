@@ -33,6 +33,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.LoadCharacter = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // NewCharacter
@@ -98,12 +100,20 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.LoadCharacter.UseVisualStyleBackColor = true;
             this.LoadCharacter.Click += new System.EventHandler(this.LoadCharacter_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(125, 62);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.DnD_bg_starter01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 553);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LoadCharacter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UserName);
@@ -119,6 +129,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.VisibleChanged += new System.EventHandler(this.MainMenu_VisibleChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +144,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button LoadCharacter;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

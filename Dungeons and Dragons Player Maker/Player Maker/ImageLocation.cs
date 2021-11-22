@@ -34,6 +34,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
         private static readonly string WARLOCK = "https://www.dndbeyond.com/avatars/thumbnails/6/375/420/618/636272708661726603.png";
         private static readonly string WIZARD = "https://www.dndbeyond.com/avatars/thumbnails/6/357/420/618/636272696881281556.png";
         #endregion
+        private static readonly string SHEET = "https://imgv2-2-f.scribdassets.com/img/document/234991403/original/cc9da91721/1634041659?v5";//"https://content.instructables.com/ORIG/F32/Y0FV/J8F5Q3W5/F32Y0FVJ8F5Q3W5.png";
+        private static readonly string SPLASH = "https://images.ctfassets.net/swt2dsco9mfe/6tsR29Slg89AshLq5dmd2U/14daf5a0f02bf0e248fe8bfe75b0d103/qhxIu1bYe2ci1cwelc.jpg";
 #pragma warning restore IDE0051 // Remove unused private members
 
         static ImageLocation DEFAULT = new();

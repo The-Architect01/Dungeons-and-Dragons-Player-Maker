@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
+using Dungeons_and_Dragons_Player_Maker.Player_Maker;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public partial class MainMenu : Form {
@@ -10,6 +11,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         [Obsolete]
         public MainMenu() {
             InitializeComponent();
+            pictureBox1.Load(ImageLocation.GetImage("SPLASH"));
+            BackgroundImage = pictureBox1.Image;
+            pictureBox1.Visible = false;
             Scale(.85f);
             CenterToScreen();
         }
