@@ -2,6 +2,7 @@
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
     public struct ImageLocation {
+        //All Images are from D&D Beyond
 #pragma warning disable IDE0051 // Remove unused private members
         #region RACES
         private static readonly string DRAGONBORN = "https://www.dndbeyond.com/avatars/thumbnails/6/340/420/618/636272677995471928.png";
