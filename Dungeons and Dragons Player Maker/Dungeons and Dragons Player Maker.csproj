@@ -49,6 +49,10 @@ You can use this tool to automatically format and print charactersheets as well 
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Autoupdater.NET.Official" Version="1.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Compile Update="Backgrounds.Designer.cs">
 			<DesignTime>True</DesignTime>
 			<AutoGen>True</AutoGen>
