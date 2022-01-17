@@ -35,6 +35,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         [Obsolete]
         private void NewCharacter_Click(object sender, EventArgs e) {
+            if (AppSettings.Visible) { AppSettings.Focus(); return; }
             Hide();
             CreateCharacter createCharacter = new();
             createCharacter.ShowDialog();
@@ -49,7 +50,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         private void PrintOldCharacter_Click(object sender, EventArgs e) {
-           try {
+            if (AppSettings.Visible) { AppSettings.Focus(); return; }
+            try {
                 PrintSheet ps = new(Engine.Characters[CharactersCreated.Text]);
                 ps.Show();
            } catch (Exception) {
@@ -59,6 +61,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         private void LoadCharacter_Click(object sender, EventArgs e) {
+            if (AppSettings.Visible) { AppSettings.Focus(); return; }
             openFileDialog1.ShowDialog();
             try {
                 Stream Character = openFileDialog1.OpenFile();
@@ -89,6 +92,17 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 CharactersCreated.Items.AddRange(Engine.CharacterList);
             }
             UserName.Text = Properties.Settings.Default.Name;
+        }
+
+        Form AppSettings = new AppSettings();
+
+        private void Settings_Click(object sender, EventArgs e) {
+            try {
+                AppSettings.Show();
+            } catch (ObjectDisposedException) {
+                AppSettings = new AppSettings();
+                AppSettings.Show();
+            }
         }
     }
 }

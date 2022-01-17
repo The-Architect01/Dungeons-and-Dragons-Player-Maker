@@ -36,7 +36,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 AutoUpdater.Start(DD.Update.Location);
                 Settings.Default.LastUpdated = DateTime.UtcNow;
                 Settings.Default.Save();
-            //    timer1.Start();
+                timer1.Start();
             } else {
                 timer1.Start();
             }

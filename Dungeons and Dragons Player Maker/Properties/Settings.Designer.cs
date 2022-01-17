@@ -69,5 +69,19 @@ namespace Dungeons_and_Dragons_Player_Maker.Properties {
                 this["LastUpdated"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>PHB</string>\r\n</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection SourceBooks {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["SourceBooks"]));
+            }
+            set {
+                this["SourceBooks"] = value;
+            }
+        }
     }
 }

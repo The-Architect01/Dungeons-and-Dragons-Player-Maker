@@ -34,6 +34,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.LoadCharacter = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Settings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +74,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(151, 27);
             this.UserName.TabIndex = 3;
+            this.UserName.Visible = false;
             this.UserName.TextChanged += new System.EventHandler(this.UserName_TextChanged);
             // 
             // label1
@@ -83,6 +85,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label1.Size = new System.Drawing.Size(151, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Creator Name";
+            this.label1.Visible = false;
             // 
             // openFileDialog1
             // 
@@ -108,11 +111,22 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // Settings
+            // 
+            this.Settings.Location = new System.Drawing.Point(12, 246);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(151, 29);
+            this.Settings.TabIndex = 7;
+            this.Settings.Text = "Settings";
+            this.Settings.UseVisualStyleBackColor = true;
+            this.Settings.Click += new System.EventHandler(this.Settings_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 553);
+            this.Controls.Add(this.Settings);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LoadCharacter);
             this.Controls.Add(this.label1);
@@ -145,5 +159,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button LoadCharacter;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Settings;
     }
 }
