@@ -11,5 +11,8 @@
     <Setting Name="CurrentVersion" Type="System.String" Scope="User">
       <Value Profile="(Default)">1.0.0.0</Value>
     </Setting>
+    <Setting Name="LastUpdated" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
