@@ -25,21 +25,20 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void SplashScreen_Load(object sender, EventArgs e) {
-            timer1.Stop();
-            if(DD.Update.Version > new Version(Settings.Default.CurrentVersion) && DD.Update.PublishDate <= Settings.Default.LastUpdated) {
+            /*timer1.Stop();
+            if(DD.Update.Version > new Version(Settings.Default.CurrentVersion) /*&& DD.Update.PublishDate >= Settings.Default.LastUpdated) {
                 AutoUpdater.Mandatory = true;
                 AutoUpdater.ShowSkipButton = false;
                 AutoUpdater.ShowRemindLaterButton = false;
                 AutoUpdater.UpdateFormSize = new System.Drawing.Size(800, 600);
                 AutoUpdater.InstalledVersion = new Version(Settings.Default.CurrentVersion);
-                AutoUpdater.Synchronous = true;
                 AutoUpdater.Start(DD.Update.Location);
                 Settings.Default.LastUpdated = DateTime.UtcNow;
                 Settings.Default.Save();
                 timer1.Start();
             } else {
                 timer1.Start();
-            }
+            }*/
         }
     }
 }
