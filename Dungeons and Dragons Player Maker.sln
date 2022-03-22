@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dungeons and Dragons Player Maker", "Dungeons and Dragons Player Maker\Dungeons and Dragons Player Maker.csproj", "{38092829-E01B-4D60-8BF9-C8BA2A40DFB2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoUpdater", "AutoUpdater\AutoUpdater.csproj", "{0F47D4DB-5F9B-4A97-964E-2715D85C5BF4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{38092829-E01B-4D60-8BF9-C8BA2A40DFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38092829-E01B-4D60-8BF9-C8BA2A40DFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38092829-E01B-4D60-8BF9-C8BA2A40DFB2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F47D4DB-5F9B-4A97-964E-2715D85C5BF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F47D4DB-5F9B-4A97-964E-2715D85C5BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F47D4DB-5F9B-4A97-964E-2715D85C5BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F47D4DB-5F9B-4A97-964E-2715D85C5BF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

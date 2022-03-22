@@ -50,7 +50,12 @@ You can use this tool to automatically format and print charactersheets as well 
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\AutoUpdater\AutoUpdater.csproj" />
+	  <Reference Include="AutoUpdater">
+	    <HintPath>..\AutoUpdater\bin\Release\net5.0\AutoUpdater.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Launcher">
+	    <HintPath>..\AutoUpdater\bin\publish\AutoUpdater\Launcher.exe</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup>
