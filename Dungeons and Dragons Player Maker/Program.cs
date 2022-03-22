@@ -1,11 +1,7 @@
 using System;
 using System.Windows.Forms;
-
-using Dungeons_and_Dragons_Player_Maker.Properties;
-//using AutoUpdaterDotNET;
 using System.IO;
-using System.IO.Compression;
-using DD = Dungeons_and_Dragons_Player_Maker;
+using AutoUpdater;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     internal static class Program {
@@ -14,37 +10,18 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         [STAThread, Obsolete]
         private static void Main() {
-            if (DD.Update.CheckForUpdates()) {
-                MessageBox.Show("The application has detected that an update is available. This application will update when it is closed.");
-                Application.ApplicationExit += delegate {
-
-                };
-            }
-            /*if (DD.Update.Version > new Version(Settings.Default.CurrentVersion) /*&& DD.Update.PublishDate >= Settings.Default.LastUpdated*//*) {
-                AutoUpdater.Mandatory = true;
-                AutoUpdater.ShowSkipButton = false;
-                AutoUpdater.ShowRemindLaterButton = false;
-                AutoUpdater.UpdateFormSize = new System.Drawing.Size(800, 600);
-                AutoUpdater.InstalledVersion = new Version(Settings.Default.CurrentVersion);
-                AutoUpdater.ApplicationExitEvent += ExitEvent;
-                AutoUpdater.Start(DD.Update.Location);
-                while (!moveOn) { }
-                Settings.Default.LastUpdated = DateTime.UtcNow;
-                Settings.Default.CurrentVersion = DD.Update.Version.ToString();
-                Settings.Default.Save();
-            }*/
-            if (Engine.SaveData.LastUpdated == DateTime.MinValue) { Engine.SaveData.LastUpdated = DateTime.UtcNow; Engine.SaveDataToDisk(); }
         //  Application.SetHighDpiMode(HighDpiMode.PerMonitor);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
             Application.Run(new SplashScreen());
+            if (Update.CheckForUpdates(Engine.SaveData.CurrentVersion)) {
+                MessageBox.Show("The application has detected that an update is available. This application will now update.");
+                Application.ApplicationExit += delegate {
+                    Update.DownloadUpdate();
+                };
+            }
+            if (Engine.SaveData.LastUpdated == DateTime.MinValue) { Engine.SaveData.LastUpdated = DateTime.UtcNow; Engine.SaveDataToDisk(); }
             Application.Run(new MainMenu());
-        }
-
-        static bool moveOn = false;
-
-        private static void ExitEvent() {
-            moveOn = true;
         }
     }
 }

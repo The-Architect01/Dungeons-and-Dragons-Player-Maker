@@ -50,6 +50,10 @@ You can use this tool to automatically format and print charactersheets as well 
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\AutoUpdater\AutoUpdater.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Compile Update="Backgrounds.Designer.cs">
 			<DesignTime>True</DesignTime>
 			<AutoGen>True</AutoGen>
