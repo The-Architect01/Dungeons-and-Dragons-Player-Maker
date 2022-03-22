@@ -10,12 +10,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         [STAThread, Obsolete]
         private static void Main() {
-        //  Application.SetHighDpiMode(HighDpiMode.PerMonitor);
+            //  Application.SetHighDpiMode(HighDpiMode.PerMonitor);
+            Engine.CreateShortcut();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
             Application.Run(new SplashScreen());
             if (Update.CheckForUpdates(Engine.SaveData.CurrentVersion)) {
-                MessageBox.Show("The application has detected that an update is available. This application will now update.");
+                MessageBox.Show("The application has detected that an update is available. This application will update when it is closed.");
                 Application.ApplicationExit += delegate {
                     Update.DownloadUpdate();
                 };

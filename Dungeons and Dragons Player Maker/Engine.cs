@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Text.Json;
+using IWshRuntimeLibrary;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public static class Engine {
@@ -49,43 +50,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             value.AddRange(list);
             return value.ToArray();
         }
-
-        /*[Obsolete]
-        public static string[] CharacterList { get { return LoadCharacters().Keys.ToArray(); } } 
-
-        //[Obsolete]
-        public static Dictionary<string, PC> Characters { get; set; } = LoadCharacters();
-
-        //[Obsolete]
-        public static Dictionary<string, PC> LoadCharacters() {
-            try {
-                return JsonSerializer.Deserialize<Dictionary<string, PC>>(File.ReadAllText(SaveLocation),new JsonSerializerOptions() {WriteIndented = true });
-            //    using MemoryStream ms = new(Convert.FromBase64String(Properties.Settings.Default.Characters)); BinaryFormatter bf = new();
-            //    return (Dictionary<string, PC>)bf.Deserialize(ms);
-            } catch (Exception) {
-                return new Dictionary<string, PC>();
-            }
-        }
-
-        //[Obsolete]
-        public static void SaveCharacters() {
-            try {
-                Properties.Settings.Default.Characters = JsonSerializer.Serialize<Dictionary<string, PC>>(Characters);
-                //              using MemoryStream ms = new(); BinaryFormatter bf = new();
-  //              bf.Serialize(ms, Characters);
-  //              ms.Position = 0;
-  //              byte[] buffer = new byte[(int)ms.Length];
-  //              ms.Read(buffer, 0, buffer.Length);
-  //              Properties.Settings.Default.Characters = Convert.ToBase64String(buffer);
-            } catch (Exception) { }
-            Properties.Settings.Default.Save();
-        }
-        
-        //[Obsolete]
-        public static void CheckSettings() {
-            Characters = LoadCharacters();
-        }
-        */
+ 
         public static SaveData SaveData { get; } = LoadSaveFromDisk();
 
         static SaveData LoadSaveFromDisk() {
@@ -101,11 +66,22 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         public static void SaveDataToDisk() {
             try {
-                File.WriteAllText(SaveLocation, JsonSerializer.Serialize(SaveData, new JsonSerializerOptions() { WriteIndented = true }));
+                System.IO.File.WriteAllText(SaveLocation, JsonSerializer.Serialize(SaveData, new JsonSerializerOptions() { WriteIndented = true }));
             } catch {
                 Directory.CreateDirectory(SaveLocation.Remove(SaveLocation.Length - 6));
                 SaveDataToDisk();
             }
+        }
+
+        public static void CreateShortcut() {
+            object ShortcutDesktop = (object)"Desktop";
+            WshShell shell = new();
+            string shortcutaddress = shell.SpecialFolders.Item(ref ShortcutDesktop) + @"\Dungeons and Dragons Player Maker.lnk";
+            if (System.IO.File.Exists(shortcutaddress)) {return; }
+            IWshShortcut NewShortcut = shell.CreateShortcut(shortcutaddress);
+            NewShortcut.Description = "Dungeons and Dragons Player Maker";
+            NewShortcut.TargetPath = SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\Player Maker\Dungeons and Dragons Player Maker.exe";
+            NewShortcut.Save();
         }
 
     }
