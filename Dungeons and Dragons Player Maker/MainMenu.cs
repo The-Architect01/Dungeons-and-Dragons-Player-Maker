@@ -1,8 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization;
+//using System.Runtime.Serialization.Formatters.Binary;
+using System.Text.Json;
+//using System.Runtime.Serialization;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker;
 
 namespace Dungeons_and_Dragons_Player_Maker {
@@ -20,18 +21,18 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         private void MainMenu_Load(object sender, EventArgs e) {
-            if (Engine.Characters.Count != 0) {
+            if (Engine.SaveData.Characters.Count != 0) {
                 PrintOldCharacter.Enabled = true;
                 CharactersCreated.Enabled = true;
                 CharactersCreated.Items.Clear();
-                CharactersCreated.Items.AddRange(Engine.CharacterList);
+                CharactersCreated.Items.AddRange(Engine.SaveData.CharacterList);
             }
-            UserName.Text = Properties.Settings.Default.Name;
+            UserName.Text = Engine.SaveData.Name;
         }
 
         private void UserName_TextChanged(object sender, EventArgs e) {
-            Properties.Settings.Default.Name = UserName.Text;
-            Properties.Settings.Default.Save();
+            Engine.SaveData.Name = UserName.Text;
+            Engine.SaveDataToDisk();
         }
         [Obsolete]
         private void NewCharacter_Click(object sender, EventArgs e) {
@@ -39,20 +40,22 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Hide();
             CreateCharacter createCharacter = new();
             createCharacter.ShowDialog();
-            Engine.CheckSettings();
+            Engine.SaveDataToDisk();
+            //Engine.CheckSettings();
             Show();
         }
 
-        [Obsolete]
+        //[Obsolete]
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e) {
-            Engine.SaveCharacters();
+            Engine.SaveDataToDisk();
+            //Engine.SaveCharacters();
         }
 
         [Obsolete]
         private void PrintOldCharacter_Click(object sender, EventArgs e) {
             if (AppSettings.Visible) { AppSettings.Focus(); return; }
             try {
-                PrintSheet ps = new(Engine.Characters[CharactersCreated.Text]);
+                PrintSheet ps = new(Engine.SaveData.Characters[CharactersCreated.Text]);
                 ps.Show();
            } catch (Exception) {
                 MessageBox.Show("Something is wrong with this character. It cannot be opened.","Character Wizard Error");
@@ -67,9 +70,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 Stream Character = openFileDialog1.OpenFile();
                 PC loadedPC = null;
                 try {
-                    BinaryFormatter formatter = new();
-                    loadedPC = (PC) formatter.Deserialize(Character);
-                } catch (SerializationException) {
+                    //    BinaryFormatter formatter = new();
+                    //    loadedPC = (PC) formatter.Deserialize(Character);
+                    loadedPC = JsonSerializer.Deserialize<PC>(new StreamReader(Character).ReadToEnd());
+                } catch (Exception) {
 
                 } finally { Character.Close(); }
                 try {
@@ -85,13 +89,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         private void MainMenu_VisibleChanged(object sender, EventArgs e) {
-            if (Engine.Characters.Count != 0) {
+            if (Engine.SaveData.Characters.Count != 0) {
                 PrintOldCharacter.Enabled = true;
                 CharactersCreated.Enabled = true;
                 CharactersCreated.Items.Clear();
-                CharactersCreated.Items.AddRange(Engine.CharacterList);
+                CharactersCreated.Items.AddRange(Engine.SaveData.CharacterList);
             }
-            UserName.Text = Properties.Settings.Default.Name;
+            UserName.Text = Engine.SaveData.Name;
         }
 
         Form AppSettings = new AppSettings();

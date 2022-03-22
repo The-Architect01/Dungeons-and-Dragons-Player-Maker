@@ -2,7 +2,9 @@ using System;
 using System.Windows.Forms;
 
 using Dungeons_and_Dragons_Player_Maker.Properties;
-using AutoUpdaterDotNET;
+//using AutoUpdaterDotNET;
+using System.IO;
+using System.IO.Compression;
 using DD = Dungeons_and_Dragons_Player_Maker;
 
 namespace Dungeons_and_Dragons_Player_Maker {
@@ -12,7 +14,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         [STAThread, Obsolete]
         private static void Main() {
-            if (DD.Update.Version > new Version(Settings.Default.CurrentVersion) /*&& DD.Update.PublishDate >= Settings.Default.LastUpdated*/) {
+            if (DD.Update.CheckForUpdates()) {
+                MessageBox.Show("The application has detected that an update is available. This application will update when it is closed.");
+                Application.ApplicationExit += delegate {
+
+                };
+            }
+            /*if (DD.Update.Version > new Version(Settings.Default.CurrentVersion) /*&& DD.Update.PublishDate >= Settings.Default.LastUpdated*//*) {
                 AutoUpdater.Mandatory = true;
                 AutoUpdater.ShowSkipButton = false;
                 AutoUpdater.ShowRemindLaterButton = false;
@@ -24,8 +32,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 Settings.Default.LastUpdated = DateTime.UtcNow;
                 Settings.Default.CurrentVersion = DD.Update.Version.ToString();
                 Settings.Default.Save();
-            }
-            if (Settings.Default.LastUpdated == DateTime.MinValue) { Settings.Default.LastUpdated = DateTime.UtcNow; Settings.Default.Save(); }
+            }*/
+            if (Engine.SaveData.LastUpdated == DateTime.MinValue) { Engine.SaveData.LastUpdated = DateTime.UtcNow; Engine.SaveDataToDisk(); }
         //  Application.SetHighDpiMode(HighDpiMode.PerMonitor);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);

@@ -59,9 +59,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             int[] stats = { int.Parse(STRValue.Text.Split("+")[0]), int.Parse(DEXValue.Text.Split("+")[0]), int.Parse(CONValue.Text.Split("+")[0]),
                 int.Parse(INTValue.Text.Split("+")[0]), int.Parse(WISValue.Text.Split("+")[0]), int.Parse(CHAValue.Text.Split("+")[0]) };
             PC.Stats = stats;
-            try {Engine.Characters.Add(PC.Name, PC);} catch (Exception) {}
-            Engine.SaveCharacters();
-            Properties.Settings.Default.Save();
+            try {Engine.SaveData.Characters.Add(PC.Name, PC);} catch (Exception) {}
+            Engine.SaveDataToDisk();
+            //Properties.Settings.Default.Save();
             Form print = new PrintSheet(PC);
             print.Show();
 
@@ -79,9 +79,10 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             PC.Alignment = AlignmentCombBox.Text;
             int[] stats = { int.Parse(STRValue.Text), int.Parse(DEXValue.Text), int.Parse(CONValue.Text), int.Parse(INTValue.Text), int.Parse(WISValue.Text), int.Parse(CHAValue.Text) };
             PC.Stats = stats;
-            try {Engine.Characters.Add(PC.Name, PC);} catch (Exception) { }
-            Engine.SaveCharacters();
-            Properties.Settings.Default.Save();
+            try {Engine.SaveData.Characters.Add(PC.Name, PC);} catch (Exception) { }
+            Engine.SaveDataToDisk();
+            //Engine.SaveCharacters();
+            //Properties.Settings.Default.Save();
             FindForm().Close();
         }
 
@@ -97,9 +98,10 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             PC.Alignment = AlignmentCombBox.Text;
             int[] stats = { int.Parse(STRValue.Text), int.Parse(DEXValue.Text), int.Parse(CONValue.Text), int.Parse(INTValue.Text), int.Parse(WISValue.Text), int.Parse(CHAValue.Text) };
             PC.Stats = stats;
-            try { Engine.Characters.Add(PC.Name, PC); } catch (Exception) { }
-            Engine.SaveCharacters();
-            Properties.Settings.Default.Save();
+            try { Engine.SaveData.Characters.Add(PC.Name, PC); } catch (Exception) { }
+            Engine.SaveDataToDisk();
+            //Engine.SaveCharacters();
+            //Properties.Settings.Default.Save();
             PC.save();
             MessageBox.Show("Your character has been saved.","Character Wizard");
         }

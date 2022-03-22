@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Net;
 
 namespace Dungeons_and_Dragons_Player_Maker {
-    public class Update {
+    public static class Update {
 
         public static string API { get; } = "https://api.github.com/repos/The-Architect01/Dungeons-and-Dragons-Player-Maker/releases";
         //public static string UpdateLocation { get; } = "";
@@ -39,7 +39,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             }
         }
 
-
+        public static bool CheckForUpdates() {
+            
+            return true;
+        } 
 
     }
 }

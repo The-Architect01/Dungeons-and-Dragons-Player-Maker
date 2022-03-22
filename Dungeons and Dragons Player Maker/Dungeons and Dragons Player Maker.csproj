@@ -18,9 +18,10 @@ You can use this tool to automatically format and print charactersheets as well 
 		<RepositoryUrl>https://github.com/The-Architect01/Dungeons-and-Dragons-Player-Maker</RepositoryUrl>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<!-- <Win32Resource />-->
+		<PublishTrimmed>true</PublishTrimmed>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-		<AssemblyVersion>1.0.1.0907</AssemblyVersion>
-		<FileVersion>1.0.1.0906</FileVersion>
+		<AssemblyVersion>1.0.1.4</AssemblyVersion>
+		<FileVersion>1.0.1.4</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup />
@@ -46,10 +47,6 @@ You can use this tool to automatically format and print charactersheets as well 
 		<Content Include="D202.ico">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Autoupdater.NET.Official" Version="1.7.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -101,11 +98,6 @@ You can use this tool to automatically format and print charactersheets as well 
 			<AutoGen>True</AutoGen>
 			<DependentUpon>Resources.resx</DependentUpon>
 		</Compile>
-		<Compile Update="Properties\Settings.Designer.cs">
-			<DesignTimeSharedInput>True</DesignTimeSharedInput>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Settings.settings</DependentUpon>
-		</Compile>
 		<Compile Update="Races.Designer.cs">
 			<DesignTime>True</DesignTime>
 			<AutoGen>True</AutoGen>
@@ -146,20 +138,6 @@ You can use this tool to automatically format and print charactersheets as well 
 			<LastGenOutput>Weapons.Designer.cs</LastGenOutput>
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="Properties\Settings.settings">
-			<Generator>SettingsSingleFileGenerator</Generator>
-			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
-		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="Properties\Settings.settings">
-			<Generator>SettingsSingleFileGenerator</Generator>
-			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
-		</None>
 	</ItemGroup>
 
 </Project>

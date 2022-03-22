@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
+//using System.Reflection;
 using System.Windows.Forms;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
@@ -97,8 +97,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             //ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(PC.Class);
             ClassPreview.Load(ImageLocation.GetImage(PC.Class));
             SubClasses.Items.Clear();
-            SubClasses.Items.AddRange((string[])this.GetType().GetField((PC.Class.ToUpper() + "_Subclasses").ToString(),
-                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));
+            SubClasses.Items.AddRange(/*(string[])this.GetType().GetField((PC.Class.ToUpper() + "_Subclasses").ToString(),
+                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));*/GetSubClass(PC.Class));
             SubClasses.SelectedIndex = 0;
         }
         private void ClassName_Enter(object sender, EventArgs e) {
@@ -171,6 +171,25 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             SizeMode = PictureBoxSizeMode.Zoom
         };
         #endregion
+
+        private string[] GetSubClass(string Base) {
+            return (Base.ToUpper()+"_Subclasses") switch {
+                "BARD_Subclasses" => BARD_Subclasses,
+                "BARBARIAN_Subclasses" =>BARBARIAN_Subclasses,
+                "CLERIC_Subclasses" =>CLERIC_Subclasses,
+                "DRUID_Subclasses"=>DRUID_Subclasses,
+                "FIGHTER_Subclasses"=>FIGHTER_Subclasses,
+                "MONK_Subclasses"=>MONK_Subclasses,
+                "PALADIN_Subclasses"=>PALADIN_Subclasses,
+                "RANGER_Subclasses"=>RANGER_Subclasses,
+                "ROGUE_Subclasses"=>ROGUE_Subclasses,
+                "SORCERER_Subclasses"=>SORCERER_Subclasses,
+                "WARLOCK_Subclasses"=>WARLOCK_Subclasses,
+                "WIZARD_Subclasses"=>WIZARD_Subclasses,
+                "ARTIFICER_Subclasses"=>ARTIFICER_Subclasses,
+                _=>null,
+            };
+        }
 
         private void ClassUpdate(string classBase, string subclass) { //Repopulates data
             string Class = string.IsNullOrEmpty(PC.Class) ? classBase : PC.Class.Split(":")[0];

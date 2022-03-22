@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Text.Json;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public static class Engine {
 
         public static readonly Random RNG = new();
+        static string SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\file0";
 
         public static readonly string[] LANGUAGES = {"Common","Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc","Abyssal","Celestial",
         "Deep Speech","Draconic","Infernal","Primordial","Sylvan","Undercommon"};
@@ -49,39 +50,72 @@ namespace Dungeons_and_Dragons_Player_Maker {
             return value.ToArray();
         }
 
-        [Obsolete]
+        /*[Obsolete]
         public static string[] CharacterList { get { return LoadCharacters().Keys.ToArray(); } } 
 
-        [Obsolete]
+        //[Obsolete]
         public static Dictionary<string, PC> Characters { get; set; } = LoadCharacters();
 
-        [Obsolete]
+        //[Obsolete]
         public static Dictionary<string, PC> LoadCharacters() {
             try {
-                using MemoryStream ms = new(Convert.FromBase64String(Properties.Settings.Default.Characters)); BinaryFormatter bf = new();
-                return (Dictionary<string, PC>)bf.Deserialize(ms);
+                return JsonSerializer.Deserialize<Dictionary<string, PC>>(File.ReadAllText(SaveLocation),new JsonSerializerOptions() {WriteIndented = true });
+            //    using MemoryStream ms = new(Convert.FromBase64String(Properties.Settings.Default.Characters)); BinaryFormatter bf = new();
+            //    return (Dictionary<string, PC>)bf.Deserialize(ms);
             } catch (Exception) {
                 return new Dictionary<string, PC>();
             }
         }
 
-        [Obsolete]
+        //[Obsolete]
         public static void SaveCharacters() {
             try {
-                using MemoryStream ms = new(); BinaryFormatter bf = new();
-                bf.Serialize(ms, Characters);
-                ms.Position = 0;
-                byte[] buffer = new byte[(int)ms.Length];
-                ms.Read(buffer, 0, buffer.Length);
-                Properties.Settings.Default.Characters = Convert.ToBase64String(buffer);
+                Properties.Settings.Default.Characters = JsonSerializer.Serialize<Dictionary<string, PC>>(Characters);
+                //              using MemoryStream ms = new(); BinaryFormatter bf = new();
+  //              bf.Serialize(ms, Characters);
+  //              ms.Position = 0;
+  //              byte[] buffer = new byte[(int)ms.Length];
+  //              ms.Read(buffer, 0, buffer.Length);
+  //              Properties.Settings.Default.Characters = Convert.ToBase64String(buffer);
             } catch (Exception) { }
             Properties.Settings.Default.Save();
         }
-
-        [Obsolete]
+        
+        //[Obsolete]
         public static void CheckSettings() {
             Characters = LoadCharacters();
         }
-     
+        */
+        public static SaveData SaveData { get; } = LoadSaveFromDisk();
+
+        static SaveData LoadSaveFromDisk() {
+            try {
+                using (StreamReader reader = new(SaveLocation)) {
+                    string Filecontents = reader.ReadToEnd();
+                    return JsonSerializer.Deserialize<SaveData>(Filecontents, new JsonSerializerOptions() { WriteIndented = true });
+                }
+            } catch (FileNotFoundException) {
+                return new SaveData();
+            }
+        }
+
+        public static void SaveDataToDisk() {
+            try {
+                File.WriteAllText(SaveLocation, JsonSerializer.Serialize(SaveData, new JsonSerializerOptions() { WriteIndented = true }));
+            } catch {
+                Directory.CreateDirectory(SaveLocation.Remove(SaveLocation.Length - 6));
+                SaveDataToDisk();
+            }
+        }
+
     }
+}
+public class SaveData {
+    public string Name { get; set; }
+    public string CurrentVersion { get; set; } = "1.0.0.0";
+    public Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC> Characters { get; set; } = new Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC>();
+    public DateTime LastUpdated { get; set; }
+    public Dictionary<string, bool> SourceBooks { get; set; } = new Dictionary<string, bool>();
+
+    public string[] CharacterList { get { return Characters.Keys.ToArray<string>(); } }
 }

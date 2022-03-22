@@ -16,32 +16,33 @@ namespace Dungeons_and_Dragons_Player_Maker {
             InitializeComponent();
         }
 
+
         private void AppSettings_FormClosing(object sender, FormClosingEventArgs e) {
-           // if (string.IsNullOrEmpty(textBox1.Text)) { MessageBox.Show("You need to fill out all fields!"); return; }
+            if (string.IsNullOrEmpty(textBox1.Text)) { MessageBox.Show("You need to fill out all fields!"); e.Cancel = true; return; }
             var response = MessageBox.Show("Do you want to save your changes?", Text, MessageBoxButtons.YesNoCancel);
             if(response == DialogResult.Yes) {
-                Settings.Default.SourceBooks.Clear();
-                foreach(CheckBox cb in Controls.OfType<CheckBox>()) {
-                    if (cb.Checked) { Settings.Default.SourceBooks.Add(cb.Name); }
-                }
-                Settings.Default.Name = textBox1.Text;
+                Save_Click(this,null);
             } 
             if (response == DialogResult.Cancel){e.Cancel = true;}
         }
 
         private void Save_Click(object sender, EventArgs e) {
-            Settings.Default.SourceBooks.Clear();
+            Engine.SaveData.SourceBooks.Clear();
             foreach (CheckBox cb in Controls.OfType<CheckBox>()) {
-                if (cb.Checked) { Settings.Default.SourceBooks.Add(cb.Name); }
+                Engine.SaveData.SourceBooks.Add(cb.Name,cb.Checked);
             }
-            Settings.Default.Name = textBox1.Text;
+            Engine.SaveData.Name = textBox1.Text;
         }
 
         private void Revert_Click(object sender, EventArgs e) {
-            textBox1.Text = Settings.Default.Name;
+            textBox1.Text = Engine.SaveData.Name;
             foreach(CheckBox cb in Controls.OfType<CheckBox>()) {
-                cb.Checked = Settings.Default.SourceBooks.Contains(cb.Name);
+                cb.Checked = Engine.SaveData.SourceBooks[cb.Name];
             }
+        }
+
+        private void AppSettings_Load(object sender, EventArgs e) {
+            Revert_Click(this,null);
         }
     }
 }

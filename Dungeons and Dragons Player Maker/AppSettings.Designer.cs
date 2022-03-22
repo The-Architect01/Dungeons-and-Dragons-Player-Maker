@@ -25,12 +25,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
         /// </summary>
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PHB = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Revert = new System.Windows.Forms.Button();
-            this.PHB = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +44,27 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Source Books";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(6, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(238, 264);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "More Coming Soon!";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PHB
+            // 
+            this.PHB.Checked = true;
+            this.PHB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.PHB.Enabled = false;
+            this.PHB.Location = new System.Drawing.Point(6, 26);
+            this.PHB.Name = "PHB";
+            this.PHB.Size = new System.Drawing.Size(238, 30);
+            this.PHB.TabIndex = 5;
+            this.PHB.Text = "Player\'s Handbook";
+            this.PHB.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -80,27 +101,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Revert.UseVisualStyleBackColor = true;
             this.Revert.Click += new System.EventHandler(this.Revert_Click);
             // 
-            // PHB
-            // 
-            this.PHB.Checked = true;
-            this.PHB.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.PHB.Enabled = false;
-            this.PHB.Location = new System.Drawing.Point(6, 26);
-            this.PHB.Name = "PHB";
-            this.PHB.Size = new System.Drawing.Size(238, 30);
-            this.PHB.TabIndex = 5;
-            this.PHB.Text = "Player\'s Handbook";
-            this.PHB.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(6, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(238, 264);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "More Coming Soon!";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // AppSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -117,6 +117,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppSettings_FormClosing);
+            this.Load += new System.EventHandler(this.AppSettings_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

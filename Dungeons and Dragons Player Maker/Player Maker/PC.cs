@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using Microsoft.VisualBasic.Devices;
+//using Microsoft.VisualBasic.Devices;
+using System.Text.Json;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     [Serializable]
@@ -74,25 +75,25 @@ namespace Dungeons_and_Dragons_Player_Maker {
  
         public void showError() { System.Windows.Forms.MessageBox.Show("You can't gain anymore XP!"); }
  
-
-        [Obsolete]
  
         public void save() {
  
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + Name + " - " +Class.Split(":")[0] + ".hro";
-            using (FileStream fs = File.Create(path)) {
-                BinaryFormatter bin = new();
-                bin.Serialize(fs, this);
-            }
+            /*using (FileStream fs = File.Create(path)) {
+                //               BinaryFormatter bin = new();
+                
+                //bin.Serialize(fs, this);
+            }*/
+            File.WriteAllText(path, JsonSerializer.Serialize<PC>(this, new JsonSerializerOptions() { WriteIndented = true }));
+
             MessageBox.Show("The data was saved to your desktop.");
         }
-
-        [Obsolete]
  
         public static PC openCharacter(string location) {
- 
-            using Stream stream = File.Open(location, FileMode.Open); BinaryFormatter bin = new();
-            return (PC)bin.Deserialize(stream);
+            //    return null;
+            //    using Stream stream = File.Open(location, FileMode.Open); BinaryFormatter bin = new();
+            return JsonSerializer.Deserialize<PC>(location, new JsonSerializerOptions() { WriteIndented = true }) ;
+            //          return (PC)bin.Deserialize(stream);
         }
     }
 }

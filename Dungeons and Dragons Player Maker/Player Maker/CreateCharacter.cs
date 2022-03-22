@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
+//using System.Reflection;
 using System.Windows.Forms;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Races;
@@ -24,7 +24,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         private void CreateCharacter_Load(object sender, EventArgs e) {
-            Player.creator = Properties.Settings.Default.Name;
+            Player.creator = Engine.SaveData.Name;
             RT = new RaceTab(Player);
             CT = new ClassTab(Player);
             BT = new BackgroundTab(Player);
