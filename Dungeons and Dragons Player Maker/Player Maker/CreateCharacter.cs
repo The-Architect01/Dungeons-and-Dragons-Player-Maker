@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Races;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes;
+using Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization.Classes;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker;
 
 namespace Dungeons_and_Dragons_Player_Maker {
@@ -32,6 +33,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             tabControl1.TabPages.Add(RT);
             RT.OnReady += RaceDataFilled;
             CT.OnReady += ClassDataFilled;
+            CT.OnReset += ClassDataReset;
             BT.OnReady += BackgroundDataFilled;
             BT.OnReset += BackgroundDataReset;
             Scale(.75f);
@@ -43,6 +45,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         private void ClassDataFilled(object sender, EventArgs e) {
             if (!tabControl1.TabPages.Contains(BT)) { tabControl1.TabPages.Add(BT); }
+        }
+        private void ClassDataReset(object sender, EventArgs e) {
+            foreach(TabPage TB in FT.Tabs) {
+                if(TB.Text == "Class Customization Options") { FT.Tabs.Remove(TB); }
+            }
         }
         private void BackgroundDataFilled(object sender, EventArgs e) {
             if (!tabControl1.TabPages.Contains(FT)) { tabControl1.TabPages.Add(FT); }

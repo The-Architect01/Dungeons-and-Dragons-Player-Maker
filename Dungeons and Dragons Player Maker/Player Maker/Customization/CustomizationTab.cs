@@ -15,6 +15,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
 
         private bool InformationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } } }
 
+        public TabControl.TabPageCollection Tabs { get { return Pages.TabPages; } }
+
         [Obsolete]
         public CustomizationTab(PC Player) {
             PC = Player;

@@ -2,18 +2,13 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization.Classes;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
 {
-    public partial class BARD : TabPage {
-        private readonly PC PC;
-
-        public event EventHandler OnReady;
-
-        private bool _ready = false;
-
-        //bool hasFired = false;
-        private bool InformationFilled {
+    public partial class BARD : BaseClassCustom {
+        
+        protected override bool InformationFilled {
             get { return _ready; }
             set {
                 _ready = value;
@@ -30,18 +25,14 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
                     if (!PC.Inventory.Contains(Option1.Text)) { PC.Inventory.Add(Option1.Text); }
                     if (!PC.Inventory.Contains(Option2.Text)) { PC.Inventory.Add(Option2.Text); }
                     if (!PC.Inventory.Contains(Option3.Text)) { PC.Inventory.Add(Option3.Text); }
-                    
-                    OnReady.Invoke(this, EventArgs.Empty);
+
+                    FireOnReady();
                 }
             }
         }
 
         [Obsolete]
-        public BARD(PC Player) {
-            PC = Player;
-            Text = "Class Customization Options";
-            BackColor = Color.White;
-            InitializeComponent();
+        public BARD(PC Player) : base(Player) {
             Controls.AddRange(new Control[] { Tools, Skills, Equipment, MusicalInstrument1, MusicalInstrument2, MusicalInstrument3, Skill1, Skill2, Skill3, Option1, Option2, Option3 });
             foreach(ComboBox c in Controls.OfType<ComboBox>()) { c.TextChanged += ComboBox_TextChanged; }
             Scale(.75f);
