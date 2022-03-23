@@ -17,7 +17,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void AppSettings_FormClosing(object sender, FormClosingEventArgs e) {
-            if (string.IsNullOrEmpty(textBox1.Text)) { MessageBox.Show("You need to fill out all fields!"); e.Cancel = true; return; }
             var response = MessageBox.Show("Do you want to save your changes?", Text, MessageBoxButtons.YesNoCancel);
             if(response == DialogResult.Yes) {
                 Save_Click(this,null);
@@ -43,5 +42,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private void AppSettings_Load(object sender, EventArgs e) {
             Revert_Click(this,null);
         }
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-//using System.Reflection;
 using System.Windows.Forms;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
@@ -14,6 +14,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         private readonly Control[] ControlsOnForm;
 
         public event EventHandler OnReady;
+        public event EventHandler OnReset;
 
         private bool _ready = false;
 
@@ -23,30 +24,30 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
                 _ready = value; if (value) {
                     PC.Class = PC.Class.Split(":")[0] + ":" + SubClasses.Text;
                     OnReady.Invoke(this, EventArgs.Empty);
-                }
+                } else { OnReset.Invoke(this, EventArgs.Empty); }
             }
         }
         #endregion
         #region Variables -- Change to add new Class and/or subclass
-        private static readonly string[] Classes = { "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" };
-        private static readonly string[] BARD_Subclasses = { "Lore", "Valor" };
-        private static readonly string[] BARBARIAN_Subclasses = { "Berserker", "Totem Warrior" };
-        private static readonly string[] CLERIC_Subclasses = { "Knowledge", "Life", "Light", "Nature", "Tempest", "Trickery", "War" };
-        private static readonly string[] DRUID_Subclasses = { "Circle of the Land" /*- Artic", "Circle of Land - Coast", "Circle of Land - Desert", "Circle of Land - Forest",
-        "Circle of Land - Grassland", "Circle of Land - Mountain","Circle of Land - Swamp","Circle of Land - Underdark"*/,"Circle of the Moon"};
-        private static readonly string[] FIGHTER_Subclasses = { "Champion", "Battle Master", "Eldritch Knight" };
-        private static readonly string[] MONK_Subclasses = { "Way of the Open Hand", "Way of the Shadow", "Way of the Four Elements" };
-        private static readonly string[] PALADIN_Subclasses = { "Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance" };
-        private static readonly string[] RANGER_Subclasses = { "Hunter", "Beast Master" };
-        private static readonly string[] ROGUE_Subclasses = { "Thief", "Assassin", "Arcane Trickster" };
-        private static readonly string[] SORCERER_Subclasses = { "Draconic Bloodline", "Wild Magic" };
-        private static readonly string[] WARLOCK_Subclasses = { "The Archfey", "The Fiend", "The Great Old One" };
-        private static readonly string[] WIZARD_Subclasses = { "Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmuation" };
-        private static readonly string[] ARTIFICER_Subclasses = { };
+        private static readonly List<string> Classes = new();
+        private static readonly List<string> BARD_Subclasses = new();
+        private static readonly List<string> BARBARIAN_Subclasses = new();
+        private static readonly List<string> CLERIC_Subclasses = new();
+        private static readonly List<string> DRUID_Subclasses = new();
+        private static readonly List<string> FIGHTER_Subclasses = new();
+        private static readonly List<string> MONK_Subclasses = new();
+        private static readonly List<string> PALADIN_Subclasses = new();
+        private static readonly List<string> RANGER_Subclasses = new();
+        private static readonly List<string> ROGUE_Subclasses = new();
+        private static readonly List<string> SORCERER_Subclasses = new();
+        private static readonly List<string> WARLOCK_Subclasses = new();
+        private static readonly List<string> WIZARD_Subclasses = new();
+        private static readonly List<string> ARTIFICER_Subclasses = new();
         #endregion
         [Obsolete]
         public ClassTab(PC Player) { //Initalize
             PC = Player;
+            InitializeList();
             InitializeComponent();
             ControlsOnForm = new Control[] { C1, C2, C3,C4,C5,C6, UP, DOWN, SubClasses, ClassPreview, ClassInfo, SubClassInfo };
             ClassName = new Label[] { C1, C2, C3, C4, C5, C6 };
@@ -58,6 +59,56 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             UP.Click += UP_Click; DOWN.Click += DOWN_Click;
             SubClasses.SelectedValueChanged += SubClasses_OnValueChanged;
             Scale(.75f);
+        }
+
+        void InitializeList() {
+            foreach (string book in Engine.SaveData.SourceBooks.Keys) {
+                if (Engine.SaveData.SourceBooks[book]) {
+                    foreach (string Class in SourceBooks.Sourcebook(book)["Classes"]) {
+                        string BaseClass = Class.Split(":")[0];
+                        string Subclass = Class.Split(":")[1];
+                        if (!Classes.Contains(BaseClass)) { Classes.Add(BaseClass); }
+                        switch (BaseClass.ToUpper()) {
+                            case "BARD":
+                                BARD_Subclasses.Add(Subclass);
+                                break;
+                            case "BARBARIAN":
+                                BARBARIAN_Subclasses.Add(Subclass);
+                                break;
+                            case "CLERIC":
+                                CLERIC_Subclasses.Add(Subclass);
+                                break;
+                            case "DRUID":
+                                DRUID_Subclasses.Add(Subclass);
+                                break;
+                            case "FIGHTER":
+                                FIGHTER_Subclasses.Add(Subclass);
+                                break;
+                            case "MONK":
+                                MONK_Subclasses.Add(Subclass);
+                                break;
+                            case "PALADIN":
+                                PALADIN_Subclasses.Add(Subclass);
+                                break;
+                            case "RANGER":
+                                RANGER_Subclasses.Add(Subclass);
+                                break;
+                            case "ROGUE":
+                                ROGUE_Subclasses.Add(Subclass);
+                                break;
+                            case "SORCERER":
+                                SORCERER_Subclasses.Add(Subclass);
+                                break;
+                            case "WARLOCK":
+                                WARLOCK_Subclasses.Add(Subclass);
+                                break;
+                            case "WIZARD":
+                                WIZARD_Subclasses.Add(Subclass);
+                                break;
+                        }
+                    }
+                }
+            }
         }
 
         #region Controls
@@ -94,18 +145,17 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         };
         private void ClassName_Click(object sender, EventArgs e) {
             PC.Class = ((Label)sender).Text;
-            //ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(PC.Class);
             ClassPreview.Load(ImageLocation.GetImage(PC.Class));
+            if (PC.Class == "Monk") { ClassInfo.Font = new Font("Segoe UI", 6.75f); } else { ClassInfo.Font = new Font("Segoe UI", 9f); }
             SubClasses.Items.Clear();
-            SubClasses.Items.AddRange(/*(string[])this.GetType().GetField((PC.Class.ToUpper() + "_Subclasses").ToString(),
-                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(this));*/GetSubClass(PC.Class));
+            SubClasses.Items.AddRange(GetSubClass(PC.Class));
             SubClasses.SelectedIndex = 0;
+            InformationFilled = false;
         }
         private void ClassName_Enter(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(PC.Class)) {
                 return;
             } else {
-                //ClassPreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetObject(((Label)sender).Text);
                 ClassPreview.Load(ImageLocation.GetImage(((Label)sender).Text));
                 ClassUpdate(((Label)sender).Text, "Select One");
             }
@@ -127,30 +177,31 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
 
         private void UP_Click(object sender, EventArgs e) {
             pos--;
-            if (pos < 0) { pos = Classes.Length - 1; }
+            if (pos < 0) { pos = Classes.Count - 1; }
             UpdateVisibleClasses();
         }
         private void DOWN_Click(object sender, EventArgs e) {
             pos++;
-            if (pos > Classes.Length - 1) { pos = 0; }
+            if (pos > Classes.Count - 1) { pos = 0; }
             UpdateVisibleClasses();
         }
         private void UpdateVisibleClasses() {
             int j = pos;
             foreach (Label c in ClassName) {
                 c.Text = Classes[j];
-                if (j > Classes.Length - 2) { j = 0; } else { j++; }
+                if (j > Classes.Count - 2) { j = 0; } else { j++; }
             }
         }
         #endregion
         private readonly Label ClassInfo = new() {
             Location = new Point(6, 325),
-            Size = new Size(264, 224),
+            Size = new Size(265, 225),
             TextAlign = ContentAlignment.MiddleLeft
         };
         private readonly Label SubClassInfo = new() {
             Location = new Point(270, 325),
-            Size = new Size(230, 224),
+            Size = new Size(230, 225),
+            Font = new Font("Segoe UI", 7.75f),
             TextAlign = ContentAlignment.MiddleLeft
         };
         private readonly ComboBox SubClasses = new() {
@@ -174,19 +225,19 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
 
         private string[] GetSubClass(string Base) {
             return (Base.ToUpper()+"_Subclasses") switch {
-                "BARD_Subclasses" => BARD_Subclasses,
-                "BARBARIAN_Subclasses" =>BARBARIAN_Subclasses,
-                "CLERIC_Subclasses" =>CLERIC_Subclasses,
-                "DRUID_Subclasses"=>DRUID_Subclasses,
-                "FIGHTER_Subclasses"=>FIGHTER_Subclasses,
-                "MONK_Subclasses"=>MONK_Subclasses,
-                "PALADIN_Subclasses"=>PALADIN_Subclasses,
-                "RANGER_Subclasses"=>RANGER_Subclasses,
-                "ROGUE_Subclasses"=>ROGUE_Subclasses,
-                "SORCERER_Subclasses"=>SORCERER_Subclasses,
-                "WARLOCK_Subclasses"=>WARLOCK_Subclasses,
-                "WIZARD_Subclasses"=>WIZARD_Subclasses,
-                "ARTIFICER_Subclasses"=>ARTIFICER_Subclasses,
+                "BARD_Subclasses" => BARD_Subclasses.ToArray(),
+                "BARBARIAN_Subclasses" =>BARBARIAN_Subclasses.ToArray(),
+                "CLERIC_Subclasses" =>CLERIC_Subclasses.ToArray(),
+                "DRUID_Subclasses"=>DRUID_Subclasses.ToArray(),
+                "FIGHTER_Subclasses"=>FIGHTER_Subclasses.ToArray(),
+                "MONK_Subclasses"=>MONK_Subclasses.ToArray(),
+                "PALADIN_Subclasses"=>PALADIN_Subclasses.ToArray(),
+                "RANGER_Subclasses"=>RANGER_Subclasses.ToArray(),
+                "ROGUE_Subclasses"=>ROGUE_Subclasses.ToArray(),
+                "SORCERER_Subclasses"=>SORCERER_Subclasses.ToArray(),
+                "WARLOCK_Subclasses"=>WARLOCK_Subclasses.ToArray(),
+                "WIZARD_Subclasses"=>WIZARD_Subclasses.ToArray(),
+                "ARTIFICER_Subclasses"=>ARTIFICER_Subclasses.ToArray(),
                 _=>null,
             };
         }

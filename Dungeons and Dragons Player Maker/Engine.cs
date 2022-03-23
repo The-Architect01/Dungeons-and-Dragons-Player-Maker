@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Text.Json;
 using IWshRuntimeLibrary;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public static class Engine {
@@ -15,6 +16,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         public static readonly string[] LANGUAGES = {"Common","Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc","Abyssal","Celestial",
         "Deep Speech","Draconic","Infernal","Primordial","Sylvan","Undercommon"};
+        
         public static readonly string[] SKILLS = { "Athletics","Acrobatics","Sleight of Hand","Stealth","Arcana","History","Investigation","Nature","Religion",
         "Animal Handling","Insight","Medicine","Perception", "Survival","Deception","Intimidation","Performance","Persuasion"};
         public static readonly string[] TOOLS = { "Alchemist’s supplies", "Brewer’s supplies","Calligrapher's Supplies", "Carpenter’s tools",
@@ -34,8 +36,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
                                                          "Morningstar","Pike","Rapier","Scimitar","Shortsword","Trident","War pick","Warhammer","Whip", };
         public static readonly string[] RANGEDWEAPONS = { "Light Crossbow", "Dart", "Shortbow", "Sling", "Blowgun", "Heavy Crossbow", "Hand Crossbow", "Longbow", "Net" };
 
+        public static readonly string[] ARMORS = { "Light", "Medium", "Heavy", "Shields" };
+
         public static readonly List<string> SpellCasters = new(){ "Wizard","Bard","Cleric","Druid","Sorcerer","Paladin","Ranger","Warlock",
-                                                                  "Fighter-Eldritch Knight", "Rogue-Arcane Trickster"};
+                                                                  "Fighter:Eldritch Knight", "Rogue:Arcane Trickster"};
 
         public static string[] AddChoose(string list) {
             List<string> value = new(){ "Select One"};
@@ -59,7 +63,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
                     string Filecontents = reader.ReadToEnd();
                     return JsonSerializer.Deserialize<SaveData>(Filecontents, new JsonSerializerOptions() { WriteIndented = true });
                 }
-            } catch (FileNotFoundException) {
+            } catch (Exception e)  when (e is DirectoryNotFoundException || e is FileNotFoundException) {
                 return new SaveData();
             }
         }
@@ -86,12 +90,43 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
     }
 }
+
+public static class SourceBooks {
+    #region Sourcebook Data
+    #region PHB
+    private static readonly List<string> PHB_Races = new() { "Dwarf:Hill", "Dwarf:Mountain", "Elf:High", "Elf:Wood", "Elf:Drow", "Halfling:Lightfoot",
+        "Halfling:Stout", "Human:Natural", "Human:Variant", "Dragonborn:Black", "Dragonborn:Blue", "Dragonborn:Brass", "Dragonborn:Bronze", "Dragonborn:Copper",
+        "Dragonborn:Gold", "Dragonborn:Green", "Dragonborn:Red", "Dragonborn:Red", "Dragonborn:Silver", "Dragonborn:White", "Gnome:Forest","Gnome:Rock",
+        "Half-Elf:Natural", "Half-Orc:Natural", "Tiefling:Natural"
+    };
+    private static readonly List<string> PHB_Classes = new() {"Barbarian:Berserker","Barbarian:Totem Warrior", "Bard:Lore", "Bard:Valor", "Cleric:Knowledge", "Cleric:Life", 
+        "Cleric:Light", "Cleric:Nature", "Cleric:Tempest", "Cleric:Trickery", "Cleric:War", "Druid:Circle of the Land", "Druid:Circle of the Moon", "Fighter:Champion",
+        "Fighter:Battle Master", "Fighter:Eldritch Knight", "Monk:Way of the Open Hand", "Monk:Way of Shadow", "Monk:Way of the Four Elements", "Paladin:Oath of Devotion",
+        "Paladin:Oath of the Ancients", "Paladin:Oath of Vengeance", "Ranger:Hunter", "Ranger:Beast Master", "Rogue:Thief","Rogue:Assassin", "Rogue:Arcane Trickster",
+        "Sorcerer:Draconic Bloodline", "Sorcerer:Wild Magic", "Warlock:The Archfey", "Warlock:The Fiend", "Warlock:The Great Old One", "Wizard:Abjuration",
+        "Wizard:Conjuration", "Wizard:Divination", "Wizard:Enchantment", "Wizard:Evocation", "Wizard:Illusion", "Wizard:Necromancy", "Wizard:Transmutation"
+    };
+    private static readonly List<string> PHB_Backgrounds = new() {"Acolyte", "Charlatan", "Criminal/Spy", "Entertainer", "Folk Hero", "Guild Artisan/Guild Merchant",
+        "Hermit", "Noble/Knight", "Outlander", "Sage", "Sailor/Pirate", "Soldier", "Urchin"
+    };
+    #endregion
+    #endregion
+    #region Sourcebook Access
+    private static readonly Dictionary<string, List<string>> PHB = new(){ { "Races", PHB_Races }, { "Classes", PHB_Classes }, { "Backgrounds", PHB_Backgrounds } };
+    #endregion
+    public static Dictionary<string, List<string>> Sourcebook(string sourcebook) {
+        return (Dictionary<string, List<string>>)
+            typeof(SourceBooks).GetField(sourcebook.ToUpper(),
+            BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).
+            GetValue(typeof(SourceBooks));
+    }
+}
+
 public class SaveData {
     public string Name { get; set; }
     public string CurrentVersion { get; set; } = "1.0.0.0";
     public Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC> Characters { get; set; } = new Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC>();
     public DateTime LastUpdated { get; set; }
-    public Dictionary<string, bool> SourceBooks { get; set; } = new Dictionary<string, bool>();
-
+    public Dictionary<string, bool> SourceBooks { get; set; } = new Dictionary<string, bool>() { { "PHB", true } };
     public string[] CharacterList { get { return Characters.Keys.ToArray<string>(); } }
 }

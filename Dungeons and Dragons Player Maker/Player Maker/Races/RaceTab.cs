@@ -6,20 +6,23 @@ using System.Windows.Forms;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
     public partial class RaceTab : TabPage {
-        private readonly PC PC;
 
         #region Variables
+        private readonly PC PC;
+
         private Label[] RaceName;
-        private static readonly string[] Races = { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling" };
-        private static readonly Dictionary<string, int> RacesBonus = new() { { "Human:Variant", 2 }, { "Half-Elf:Natural", 2 } };
-        private static readonly List<string> Races_SubRace = new() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome"/*, "Half-Elf"*/ };
-        private static readonly string[] DWARF_SUBRACE = { "Hill", "Mountain", "Deep" };
-        private static readonly string[] ELF_SUBRACE = { "High", "Wood", "Drow" };
-        private static readonly string[] HALFLING_SUBRACE = { "Lightfoot", "Stout" };
-        private static readonly string[] HUMAN_SUBRACE = { "Natural", "Variant" };
-        private static readonly string[] DRAGONBORN_SUBRACE = { "Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White" };
-        private static readonly string[] GNOME_SUBRACE = { "Forest", "Rock" };
+        private static readonly List<string> Races = new();
+        private static readonly List<string> DWARF_SUBRACE=new();
+        private static readonly List<string> ELF_SUBRACE=new();
+        private static readonly List<string> HALFLING_SUBRACE=new();
+        private static readonly List<string> HUMAN_SUBRACE=new();
+        private static readonly List<string> DRAGONBORN_SUBRACE=new();
+        private static readonly List<string> GNOME_SUBRACE = new();
         //private static readonly string[] HALF_ELF_SUBRACE = { "Natural", "Variant" };
+
+        private static readonly Dictionary<string, int> RacesBonus = new() { { "Human:Variant", 2 }, { "Half-Elf:Natural", 2 } };
+        private static readonly List<string> Races_SubRace = new() { "Dwarf", "Elf", "Halfling", "Human", "Dragonborn", "Gnome" };
+
         private static readonly List<string> AdditionalRaceLang = new() { "Human", "Half-Elf" };
         private static readonly List<string> AdditionalRaceSkill1 = new() { "Half-Elf" };
         private static readonly List<string> AdditionalRaceSkill2 = new() { "Half-Elf" };
@@ -27,11 +30,14 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         private Control[] controlsInForm;
         #endregion
 
+        #region Events
         public event EventHandler OnReady;
 
         private bool _ready = false;
 
-        private bool InformationFilled { get { return _ready; } set { _ready = value; if (value) {
+        private bool InformationFilled { get { return _ready; } 
+            set { _ready = value;
+                if (value) {
                     PC.Race = PC.Race.Split(":")[0] + ":" + SubRaces.Text;
                     if (Prof1 != "" && Prof2 != "") {
                         PC.Skills.AddRange(new[] { Prof1.Split(" ")[0], Prof2.Split(" ")[0] });
@@ -45,15 +51,53 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                     PC.Languages.AddRange(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[8].Split(", "));
                     PC.Languages.Add(Languages);
                     
-                    OnReady.Invoke(this, EventArgs.Empty); } } }
+                    OnReady.Invoke(this, EventArgs.Empty); 
+                }
+            }
+        }
+#endregion
 
         public RaceTab(PC character) {
             PC = character;
+            InitializeList();
             InitializeArrays();
             InitializeComponent();
             Text = "Races";
             BackColor = Color.White;
             Controls.AddRange(controlsInForm);
+
+        }
+
+        private void InitializeList() {
+            foreach(string book in Engine.SaveData.SourceBooks.Keys) {
+                if (Engine.SaveData.SourceBooks[book]) {
+                    foreach (string Race in SourceBooks.Sourcebook(book)["Races"]) {
+                        string BaseRace = Race.Split(":")[0];
+                        string Subrace = Race.Split(":")[1];
+                        if (!Races.Contains(BaseRace)) { Races.Add(BaseRace); }
+                        switch (BaseRace.ToUpper()) {
+                            case "DWARF":
+                                DWARF_SUBRACE.Add(Subrace);
+                                break;
+                            case "ELF":
+                                ELF_SUBRACE.Add(Subrace);
+                                break;
+                            case "HALFLING":
+                                HALFLING_SUBRACE.Add(Subrace);
+                                break;
+                            case "HUMAN":
+                                HUMAN_SUBRACE.Add(Subrace);
+                                break;
+                            case "DRAGONBORN":
+                                DRAGONBORN_SUBRACE.Add(Subrace);
+                                break;
+                            case "GNOME":
+                                GNOME_SUBRACE.Add(Subrace);
+                                break;
+                        }
+                    }
+                }
+            }
         }
 
         private void InitializeArrays() {
@@ -129,22 +173,22 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                 object[] items = null;
                 switch (PC.Race.Split(":")[0]) {
                     case "Dwarf":
-                        items = DWARF_SUBRACE;
+                        items = DWARF_SUBRACE.ToArray();
                         break;
                     case "Elf":
-                        items = ELF_SUBRACE;
+                        items = ELF_SUBRACE.ToArray();
                         break;
                     case "Halfling":
-                        items = HALFLING_SUBRACE;
+                        items = HALFLING_SUBRACE.ToArray();
                         break;
                     case "Human":
-                        items = HUMAN_SUBRACE;
+                        items = HUMAN_SUBRACE.ToArray();
                         break;
                     case "Dragonborn":
-                        items = DRAGONBORN_SUBRACE;
+                        items = DRAGONBORN_SUBRACE.ToArray();
                         break;
                     case "Gnome":
-                        items = GNOME_SUBRACE;
+                        items = GNOME_SUBRACE.ToArray();
                         break;
                    // case "Half-Elf":
                     //    items = HALF_ELF_SUBRACE;
@@ -193,19 +237,19 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #region Events
         private void UP_OnClick(object sender, EventArgs e) {
             pos--;
-            if (pos < 0) { pos = Races.Length - 1; }
+            if (pos < 0) { pos = Races.Count - 1; }
             UpdateVisibleRaces();
         }
         private void DOWN_OnClick(object sender, EventArgs e) {
             pos++;
-            if (pos > Races.Length - 1) { pos = 0; }
+            if (pos > Races.Count - 1) { pos = 0; }
             UpdateVisibleRaces();
         }
         private void UpdateVisibleRaces() {
             int j = pos;
             foreach (Label r in RaceName) {
                 r.Text = Races[j];
-                if (j > Races.Length - 2) { j = 0; } else { j++; }
+                if (j > Races.Count - 2) { j = 0; } else { j++; }
             }
         }
         #endregion
@@ -304,9 +348,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         };
         #endregion
 
- 
         private void updateInfo(string RaceName) {
- 
             try {
                 string[] info = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(RaceName + ":" + SubRaces.Text).Split("_");
                 string final = "";

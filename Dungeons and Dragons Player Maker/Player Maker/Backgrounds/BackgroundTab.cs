@@ -23,13 +23,14 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private bool InformationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } else { OnReset.Invoke(this, EventArgs.Empty); } } }
         #endregion
 
-        private static readonly string[] Backgrounds = { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin"}; //Change this line to add new Backgrounds
+        private static readonly List<string> Backgrounds = new();// { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin"}; //Change this line to add new Backgrounds
         private static readonly List<string> HORROR_BACKGROUNDS = new(){ "Investigator", "Haunted One" };
 
         [Obsolete]
         public BackgroundTab(PC Player) { //Initializer, do not change
             Text = "Backgrounds";
             BackColor = Color.White;
+            InitializeList();
             BackgroundsVisible = new Label[] { B1, B2, B3, B4, B5, B6 };
             EXOptions = new ComboBox[] { EXOption1, EXOption2, EXOption3, EXOption4 };
             controlsOnControl = new Control[] { B1, B2, B3, B4, B5, B6, UP, DOWN, label1, BackgroundBonus, BackgroundData,
@@ -47,6 +48,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             Controls.AddRange(controlsOnControl);
             Scale(.75f);
         }
+        void InitializeList() {
+            foreach (string book in Engine.SaveData.SourceBooks.Keys) {
+                if (Engine.SaveData.SourceBooks[book]) {
+                    Backgrounds.AddRange(SourceBooks.Sourcebook(book)["Backgrounds"]);
+                }
+            }
+        }
 
         #region Controls - Do not Change
         private readonly Label label1 = new() {
@@ -63,27 +71,27 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         };
         private readonly Label B2 = new() {
             Size = new Size(211, 25),
-            Text = "Criminal/Spy",
+            Text = "Charlatan",
             Location = new Point(6, 83),
         };
         private readonly Label B3 = new() {
             Size = new Size(211, 25),
-            Text = "Folk Hero",
+            Text = "Criminal/Spy",
             Location = new Point(6, 120),
         };
         private readonly Label B4 = new() {
             Size = new Size(211, 25),
-            Text = "Haunted One",
+            Text = "Entertainer",
             Location = new Point(6, 157),
         };
         private readonly Label B5 = new() { 
             Size = new Size(211, 25),
-            Text = "Noble",
+            Text = "Folk Hero",
             Location = new Point(6, 194),
         };
         private readonly Label B6 = new() {
             Size = new Size(211, 25),
-            Text = "Sage",
+            Text = "Guild Artisan/Guild Merchant",
             Location = new Point(6, 231),
         };
 
@@ -165,19 +173,19 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
 
         private void UP_Click(object sender, EventArgs e) {
             pos--;
-            if (pos < 0) { pos = Backgrounds.Length - 1; }
+            if (pos < 0) { pos = Backgrounds.Count - 1; }
             UpdateVisibleBackgrounds();
         }
         private void DOWN_Click(object sender, EventArgs e) {
             pos++;
-            if (pos > Backgrounds.Length - 1) { pos = 0; }
+            if (pos > Backgrounds.Count - 1) { pos = 0; }
             UpdateVisibleBackgrounds();
         }
         private void UpdateVisibleBackgrounds() {
             int j = pos;
             foreach (Label c in BackgroundsVisible) {
                 c.Text = Backgrounds[j];
-                if (j > Backgrounds.Length - 2) { j = 0; } else { j++; }
+                if (j > Backgrounds.Count - 2) { j = 0; } else { j++; }
             }
         }
 
