@@ -183,9 +183,6 @@
   <data name="Half-Elf:Natural" xml:space="preserve">
     <value>0_0_0_0_0_+2_30_Medium_Common, Elvish_None_Darkvision - 60ft, Fey Ancestry, Skill Versatility</value>
   </data>
-  <data name="Half-Elf:Variant" xml:space="preserve">
-    <value />
-  </data>
   <data name="Half-Orc:Natural" xml:space="preserve">
     <value>+2_0_+1_0_0_0_30_Medium_Common, Orc_Intimidation_Darkvision - 60ft, Relentless Endurance, Savage Attacks</value>
   </data>

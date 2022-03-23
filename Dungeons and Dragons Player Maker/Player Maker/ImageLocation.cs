@@ -1,4 +1,4 @@
-﻿//using System.Reflection;
+﻿using System.Reflection;
 
 namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
     public struct ImageLocation {
@@ -38,12 +38,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
         private static readonly string SPLASH = "https://images.ctfassets.net/swt2dsco9mfe/6tsR29Slg89AshLq5dmd2U/14daf5a0f02bf0e248fe8bfe75b0d103/qhxIu1bYe2ci1cwelc.jpg";
 #pragma warning restore IDE0051 // Remove unused private members
 
-       // static ImageLocation DEFAULT = new();
-
         public static string GetImage(string request) {
-            //    return (string) DEFAULT.GetType().GetField(request.ToUpper().Replace(" ","_").Replace("-","_").ToString(),
-            //BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(DEFAULT);
-            return SPLASH;
+            return (string) typeof(ImageLocation).GetField(request.ToUpper().Replace(" ","_").Replace("-","_").ToString(),
+                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).GetValue(typeof(ImageLocation));
         }
     }
 }

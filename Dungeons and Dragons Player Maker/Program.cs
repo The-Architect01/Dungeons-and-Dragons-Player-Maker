@@ -14,15 +14,19 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Engine.CreateShortcut();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
-            Application.Run(new SplashScreen());
-            if (Update.CheckForUpdates(Engine.SaveData.CurrentVersion)) {
-                MessageBox.Show("The application has detected that an update is available. This application will update when it is closed.");
-                Application.ApplicationExit += delegate {
-                    Update.DownloadUpdate();
-                };
-            }
+            /*Application.Run(new SplashScreen());
+            try {
+                Engine.SaveDataToDisk();
+                if (Update.CheckForUpdates(Engine.SaveData.CurrentVersion)) {
+                    MessageBox.Show("The application has detected that an update is available. This application will update when it is closed.");
+                    Application.ApplicationExit += delegate {
+                        Update.DownloadUpdate();
+                    };
+                }
+            } catch (IndexOutOfRangeException) {}
             if (Engine.SaveData.LastUpdated == DateTime.MinValue) { Engine.SaveData.LastUpdated = DateTime.UtcNow; Engine.SaveDataToDisk(); }
-            Application.Run(new MainMenu());
+            Application.Run(new MainMenu());*/
+            Application.Run(new Homebrew.HomebrewEngine());
         }
     }
 }

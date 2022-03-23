@@ -259,15 +259,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string Half_Elf_Variant {
-            get {
-                return ResourceManager.GetString("Half-Elf:Variant", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to +2_0_+1_0_0_0_30_Medium_Common, Orc_Intimidation_Darkvision - 60ft, Relentless Endurance, Savage Attacks.
         /// </summary>
         internal static string Half_Orc_Natural {
