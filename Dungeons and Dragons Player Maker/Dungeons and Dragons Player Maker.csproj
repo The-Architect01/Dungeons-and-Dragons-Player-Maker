@@ -7,9 +7,9 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ApplicationIcon>D202.ico</ApplicationIcon>
 		<StartupObject>Dungeons_and_Dragons_Player_Maker.Program</StartupObject>
-		<Authors>Neal Birchfield</Authors>
-		<Company>Grumpy Lion Games</Company>
-		<Copyright>© 2021 Grumpy Lion Games - Some Rights Reserved</Copyright>
+		<Authors>The Architect01</Authors>
+		<Company>Star Interactive</Company>
+		<Copyright>© 2021 Star Interactive - Some Rights Reserved</Copyright>
 		<Description>A simple TTRPG character creation tool.
 You can use this tool to automatically format and print charactersheets as well as open previously made characters or characters made by friends.		</Description>
 		<Version>1.0.1.0907</Version>
