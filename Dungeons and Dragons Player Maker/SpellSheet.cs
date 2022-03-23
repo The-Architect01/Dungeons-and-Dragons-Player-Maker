@@ -12,23 +12,34 @@ namespace Dungeons_and_Dragons_Player_Maker {
             InitializeComponent();
             PC = Player;
             ClassName.Text = PC.Class;
-            switch (PC.Class.Split("-")[0]) {
-                case "Bard":  case "Sorcerer": case "Warlock": case "Paladin":
+            switch (PC.Class.Split(":")[0]) {
+                case "Bard":
+                case "Sorcerer":
+                case "Warlock":
+                case "Paladin":
                     SpellCastAbility.Text = "CHA";
-                    AtkBonus.Text = "+ " + GetProficiency() + PrintSheet.getModifier(PC.Stats[5].ToString());
-                    SaveDC.Text = ( 8 + GetProficiency() + int.Parse(PrintSheet.getModifier(PC.Stats[5].ToString())) ).ToString();
+                    int Cha = int.Parse(PrintSheet.getModifier(PC.Stats[5].ToString()));
+                    AtkBonus.Text = $"+ {GetProficiency() + Cha}";
+                    SaveDC.Text = $"{8 + GetProficiency() + Cha}";
                     break;
-                case "Cleric": case "Druid":  case "Ranger":
+                case "Cleric":
+                case "Druid":
+                case "Ranger":
                     SpellCastAbility.Text = "WIS";
-                    AtkBonus.Text = "+ " + GetProficiency() + PrintSheet.getModifier(PC.Stats[4].ToString());
-                    SaveDC.Text = ( 8 + GetProficiency() + int.Parse(PrintSheet.getModifier(PC.Stats[4].ToString())) ).ToString();
+                    int Wis = int.Parse(PrintSheet.getModifier(PC.Stats[4].ToString()));
+                    AtkBonus.Text = $"+ {GetProficiency() + Wis}";
+                    SaveDC.Text = $"{8 + GetProficiency() + Wis}";
                     break;
-                case "Fighter": case "Rogue": case "Wizard":
+                case "Fighter":
+                case "Rogue":
+                case "Wizard":
                     SpellCastAbility.Text = "INT";
-                    AtkBonus.Text = "+ " + GetProficiency() + PrintSheet.getModifier(PC.Stats[3].ToString());
-                    SaveDC.Text = ( 8 + GetProficiency() + int.Parse(PrintSheet.getModifier(PC.Stats[3].ToString())) ).ToString();
+                    int Int = int.Parse(PrintSheet.getModifier(PC.Stats[3].ToString()));
+                    AtkBonus.Text = $"+ {GetProficiency() + Int}";
+                    SaveDC.Text = $"{8 + GetProficiency() + Int}";
                     break;
             }
+
             Scale(.75f);
             CenterToScreen();
         }
@@ -40,33 +51,33 @@ namespace Dungeons_and_Dragons_Player_Maker {
             if (17 > PC.Level) { return 5; }
             return 0;
         }
+
         Bitmap bmp;
         public void Print() {
-            Show();
-            if(Engine.SpellCasters.Contains(PC.Class.Split("-")[0]) || Engine.SpellCasters.Contains(PC.Class)) {
-                Panel panel = new();
-                Graphics grp = panel.CreateGraphics();
-                Size formsize = this.ClientSize;
-                bmp = new(formsize.Width, formsize.Height, grp);
-                grp = Graphics.FromImage(bmp);
-                Point panelLocation = PointToScreen(panel.Location);
-                grp.CopyFromScreen(panelLocation.X, panelLocation.Y, 0, 0, formsize);
+            Panel panel = new();
+            Graphics grp = panel.CreateGraphics();
+            Size formSize = new((int)(this.ClientSize.Width * 1.25d), (int)(this.ClientSize.Height * 1.25d));
+            bmp = new Bitmap((int)(formSize.Width * 1.5d), (int)(formSize.Height * 1.5d), grp);
+            grp = Graphics.FromImage(bmp);
+            Point panelLocation = PointToScreen(panel.Location);
+            grp.CopyFromScreen((int)(panelLocation.X * 1.25d), (int)(panelLocation.Y * 1.25d), 0, 0, formSize);
 
-                printPreviewDialog1.Document = printDocument1;
-                printPreviewDialog1.PrintPreviewControl.Zoom = 1;
-                printPreviewDialog1.UseAntiAlias = true;
-                printDocument1.Print();
-            } else {
-                Dispose();
-                return;
-            }
-            Dispose();
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.UseAntiAlias = true;
+            printPreviewDialog1.ShowDialog();
         }
 
- 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e) {
- 
-            e.Graphics.DrawImage(bmp, 0, 0, (int) ( ClientSize.Width * 1.045m ), (int) ( ClientSize.Height * 1.045m ));
+            e.Graphics.DrawImage(bmp, 0, 0, (int)(bmp.Size.Width * 1.12d), (int)(bmp.Size.Height * 1.12d));
+        }
+
+        private void SpellSheet_Load(object sender, EventArgs e) {
+            MessageBox.Show("Click Anywhere to print.");
+        }
+
+        private void SpellSheet_Click(object sender, EventArgs e) {
+            Print();
         }
     }
 }

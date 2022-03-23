@@ -105,6 +105,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Controls.Add(this.SpellCastAbility);
             this.Name = "SpellSheet";
             this.Text = "SpellSheet";
+            this.Load += new System.EventHandler(this.SpellSheet_Load);
+            this.Click += new System.EventHandler(this.SpellSheet_Click);
             this.ResumeLayout(false);
 
         }

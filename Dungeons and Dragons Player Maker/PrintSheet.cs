@@ -266,12 +266,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
         }
 
-        [Obsolete]
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e) {
             e.Graphics.DrawImage(bitMap, 0, 0, (int)(bitMap.Size.Width * 1.12d), (int) (bitMap.Size.Height *1.12d));//(int)(ClientSize.Width * 1.5m), (int) (ClientSize.Height *1.5m));
-            SpellSheet spells = new(player); spells.Print();
         }
-
+        
+        [Obsolete]
         private void Form1_Click(object sender, EventArgs e) {
             Panel panel = new();
             Graphics grp = panel.CreateGraphics();
@@ -285,6 +284,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
             printPreviewDialog1.UseAntiAlias = true;
             printPreviewDialog1.ShowDialog();
+
+            if (Engine.SpellCasters.Contains(player.Class.Split(":")[0]) || Engine.SpellCasters.Contains(player.Class)) {
+                SpellSheet sp = new(player);
+                sp.Show();
+            }
         }
 
         private void PopulateAC() {
