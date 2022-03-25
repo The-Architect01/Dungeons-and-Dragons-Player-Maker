@@ -7,12 +7,13 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Dungeons_and_Dragons_Player_Maker;
+using Dungeons_and_Dragons_Player_Maker.Homebrew;
 
 namespace Dungeons_and_Dragons_Player_Maker {
     public static class Engine {
 
         public static readonly Random RNG = new();
-        static string SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\file0";
 
         public static readonly string[] LANGUAGES = {"Common","Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc","Abyssal","Celestial",
         "Deep Speech","Draconic","Infernal","Primordial","Sylvan","Undercommon"};
@@ -55,78 +56,178 @@ namespace Dungeons_and_Dragons_Player_Maker {
             return value.ToArray();
         }
  
-        public static SaveData SaveData { get; } = LoadSaveFromDisk();
-
-        static SaveData LoadSaveFromDisk() {
-            try {
-                using (StreamReader reader = new(SaveLocation)) {
-                    string Filecontents = reader.ReadToEnd();
-                    return JsonSerializer.Deserialize<SaveData>(Filecontents, new JsonSerializerOptions() { WriteIndented = true });
-                }
-            } catch (Exception e)  when (e is DirectoryNotFoundException || e is FileNotFoundException) {
-                return new SaveData();
-            }
-        }
-
-        public static void SaveDataToDisk() {
-            try {
-                System.IO.File.WriteAllText(SaveLocation, JsonSerializer.Serialize(SaveData, new JsonSerializerOptions() { WriteIndented = true }));
-            } catch {
-                Directory.CreateDirectory(SaveLocation.Remove(SaveLocation.Length - 6));
-                SaveDataToDisk();
-            }
-        }
-
-        public static void CreateShortcut() {
-            object ShortcutDesktop = (object)"Desktop";
-            WshShell shell = new();
-            string shortcutaddress = shell.SpecialFolders.Item(ref ShortcutDesktop) + @"\Dungeons and Dragons Player Maker.lnk";
-            if (System.IO.File.Exists(shortcutaddress)) {return; }
-            IWshShortcut NewShortcut = shell.CreateShortcut(shortcutaddress);
-            NewShortcut.Description = "Dungeons and Dragons Player Maker";
-            NewShortcut.TargetPath = SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\Player Maker\Dungeons and Dragons Player Maker.exe";
-            NewShortcut.Save();
-        }
+        public static SaveData SaveData { get; } = IO.LoadSaveFromDisk();
+        public static Homebrew.Homebrew Homebrew { get; } = IO.LoadHomebrew();
 
     }
 }
 
-public static class SourceBooks {
-    #region Sourcebook Data
-    #region PHB
-    private static readonly List<string> PHB_Races = new() { "Dwarf:Hill", "Dwarf:Mountain", "Elf:High", "Elf:Wood", "Elf:Drow", "Halfling:Lightfoot",
-        "Halfling:Stout", "Human:Natural", "Human:Variant", "Dragonborn:Black", "Dragonborn:Blue", "Dragonborn:Brass", "Dragonborn:Bronze", "Dragonborn:Copper",
-        "Dragonborn:Gold", "Dragonborn:Green", "Dragonborn:Red", "Dragonborn:Red", "Dragonborn:Silver", "Dragonborn:White", "Gnome:Forest","Gnome:Rock",
-        "Half-Elf:Natural", "Half-Orc:Natural", "Tiefling:Natural"
-    };
-    private static readonly List<string> PHB_Classes = new() {"Barbarian:Berserker","Barbarian:Totem Warrior", "Bard:Lore", "Bard:Valor", "Cleric:Knowledge", "Cleric:Life", 
-        "Cleric:Light", "Cleric:Nature", "Cleric:Tempest", "Cleric:Trickery", "Cleric:War", "Druid:Circle of the Land", "Druid:Circle of the Moon", "Fighter:Champion",
-        "Fighter:Battle Master", "Fighter:Eldritch Knight", "Monk:Way of the Open Hand", "Monk:Way of Shadow", "Monk:Way of the Four Elements", "Paladin:Oath of Devotion",
-        "Paladin:Oath of the Ancients", "Paladin:Oath of Vengeance", "Ranger:Hunter", "Ranger:Beast Master", "Rogue:Thief","Rogue:Assassin", "Rogue:Arcane Trickster",
-        "Sorcerer:Draconic Bloodline", "Sorcerer:Wild Magic", "Warlock:The Archfey", "Warlock:The Fiend", "Warlock:The Great Old One", "Wizard:Abjuration",
-        "Wizard:Conjuration", "Wizard:Divination", "Wizard:Enchantment", "Wizard:Evocation", "Wizard:Illusion", "Wizard:Necromancy", "Wizard:Transmutation"
-    };
-    private static readonly List<string> PHB_Backgrounds = new() {"Acolyte", "Charlatan", "Criminal/Spy", "Entertainer", "Folk Hero", "Guild Artisan/Guild Merchant",
-        "Hermit", "Noble/Knight", "Outlander", "Sage", "Sailor/Pirate", "Soldier", "Urchin"
-    };
-    #endregion
-    #endregion
-    #region Sourcebook Access
-    private static readonly Dictionary<string, List<string>> PHB = new(){ { "Races", PHB_Races }, { "Classes", PHB_Classes }, { "Backgrounds", PHB_Backgrounds } };
-    #endregion
-    public static Dictionary<string, List<string>> Sourcebook(string sourcebook) {
-        return (Dictionary<string, List<string>>)
-            typeof(SourceBooks).GetField(sourcebook.ToUpper(),
-            BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).
-            GetValue(typeof(SourceBooks));
+public static class IO {
+
+    static string SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\file0";
+    static string HomebrewPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\file1";
+
+    public static SaveData LoadSaveFromDisk() {
+        try {
+            using (StreamReader reader = new(SaveLocation)) {
+                string Filecontents = reader.ReadToEnd();
+                return JsonSerializer.Deserialize<SaveData>(Filecontents, new JsonSerializerOptions() { WriteIndented = true });
+            }
+        } catch (Exception e) when (e is DirectoryNotFoundException || e is FileNotFoundException) {
+            return new SaveData();
+        }
+    }
+
+    public static Homebrew LoadHomebrew() {
+        try {
+            using (StreamReader reader = new(HomebrewPath)) {
+                string contents = reader.ReadToEnd();
+                return JsonSerializer.Deserialize<Homebrew>(contents, new JsonSerializerOptions() { WriteIndented = true });
+            }
+        } catch (Exception e) when (e is DirectoryNotFoundException || e is FileNotFoundException) {
+            return new Homebrew();
+        }
+    }
+
+    public static void SaveDataToDisk() {
+        try {
+            System.IO.File.WriteAllText(SaveLocation, JsonSerializer.Serialize<SaveData>(Engine.SaveData, new JsonSerializerOptions() { WriteIndented = true }));
+            System.IO.File.WriteAllText(HomebrewPath, JsonSerializer.Serialize<Homebrew>(Engine.Homebrew, new JsonSerializerOptions() { WriteIndented = true }));
+        } catch {
+            Directory.CreateDirectory(SaveLocation.Remove(SaveLocation.Length - 6));
+            SaveDataToDisk();
+        }
+    }
+
+    public static void CreateShortcut() {
+        object ShortcutDesktop = (object)"Desktop";
+        WshShell shell = new();
+        string shortcutaddress = shell.SpecialFolders.Item(ref ShortcutDesktop) + @"\Dungeons and Dragons Player Maker.lnk";
+        if (System.IO.File.Exists(shortcutaddress)) { return; }
+        IWshShortcut NewShortcut = shell.CreateShortcut(shortcutaddress);
+        NewShortcut.Description = "Dungeons and Dragons Player Maker";
+        NewShortcut.TargetPath = SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\Player Maker\Dungeons and Dragons Player Maker.exe";
+        NewShortcut.Save();
     }
 }
 
 public class SaveData {
     public string Name { get; set; }
     public string CurrentVersion { get; set; } = "1.0.0.0";
-    public Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC> Characters { get; set; } = new Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC>();
     public DateTime LastUpdated { get; set; }
     public Dictionary<string, bool> SourceBooks { get; set; } = new Dictionary<string, bool>() { { "PHB", true } };
     public string[] CharacterList { get { return Characters.Keys.ToArray<string>(); } }
+    public Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC> Characters { get; set; } = new Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC>();
+}
+public static class SourceBooks {
+    #region Sourcebook Data
+    #region PHB
+    private static readonly List<string> PHB_Races = new() {
+        "Dwarf:Hill",
+        "Dwarf:Mountain",
+        "Elf:High",
+        "Elf:Wood",
+        "Elf:Drow",
+        "Halfling:Lightfoot",
+        "Halfling:Stout",
+        "Human:Natural",
+        "Human:Variant",
+        "Dragonborn:Black",
+        "Dragonborn:Blue",
+        "Dragonborn:Brass",
+        "Dragonborn:Bronze",
+        "Dragonborn:Copper",
+        "Dragonborn:Gold",
+        "Dragonborn:Green",
+        "Dragonborn:Red",
+        "Dragonborn:Red",
+        "Dragonborn:Silver",
+        "Dragonborn:White",
+        "Gnome:Forest",
+        "Gnome:Rock",
+        "Half-Elf:Natural",
+        "Half-Orc:Natural",
+        "Tiefling:Natural"
+    };
+    private static readonly List<string> PHB_Classes = new() {
+        "Barbarian:Berserker",
+        "Barbarian:Totem Warrior",
+        "Bard:Lore",
+        "Bard:Valor",
+        "Cleric:Knowledge",
+        "Cleric:Life",
+        "Cleric:Light",
+        "Cleric:Nature",
+        "Cleric:Tempest",
+        "Cleric:Trickery",
+        "Cleric:War",
+        "Druid:Circle of the Land",
+        "Druid:Circle of the Moon",
+        "Fighter:Champion",
+        "Fighter:Battle Master",
+        "Fighter:Eldritch Knight",
+        "Monk:Way of the Open Hand",
+        "Monk:Way of Shadow",
+        "Monk:Way of the Four Elements",
+        "Paladin:Oath of Devotion",
+        "Paladin:Oath of the Ancients",
+        "Paladin:Oath of Vengeance",
+        "Ranger:Hunter",
+        "Ranger:Beast Master",
+        "Rogue:Thief",
+        "Rogue:Assassin",
+        "Rogue:Arcane Trickster",
+        "Sorcerer:Draconic Bloodline",
+        "Sorcerer:Wild Magic",
+        "Warlock:The Archfey",
+        "Warlock:The Fiend",
+        "Warlock:The Great Old One",
+        "Wizard:Abjuration",
+        "Wizard:Conjuration",
+        "Wizard:Divination",
+        "Wizard:Enchantment",
+        "Wizard:Evocation",
+        "Wizard:Illusion",
+        "Wizard:Necromancy",
+        "Wizard:Transmutation"
+    };
+    private static readonly List<string> PHB_Backgrounds = new() {
+        "Acolyte",
+        "Charlatan",
+        "Criminal/Spy",
+        "Entertainer",
+        "Folk Hero",
+        "Guild Artisan/Guild Merchant",
+        "Hermit",
+        "Noble/Knight",
+        "Outlander",
+        "Sage",
+        "Sailor/Pirate",
+        "Soldier",
+        "Urchin"
+    };
+    #endregion
+    #endregion
+    #region Sourcebook Access
+    private static readonly Dictionary<string, List<string>> PHB = new() { { "Races", PHB_Races }, { "Classes", PHB_Classes }, { "Backgrounds", PHB_Backgrounds } };
+    private static readonly Dictionary<string, List<string>> HBW = new() { 
+        { "Races", Engine.Homebrew.HomebrewRaces.Keys.ToList() }, 
+        { "Classes", Engine.Homebrew.HomebrewClasses.Keys.ToList() }, 
+        { "Backgrounds", Engine.Homebrew.HomebrewBackgrounds.Keys.ToList() } 
+    };
+    #endregion
+    public static Dictionary<string, List<string>> Sourcebook(string sourcebook) {
+        if (sourcebook != "HBW") {
+            return (Dictionary<string, List<string>>)
+                typeof(SourceBooks).GetField(sourcebook.ToUpper(),
+                BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static).
+                GetValue(typeof(SourceBooks));
+        } else {
+            return new Dictionary<string, List<string>>() {
+                { "Races", Engine.Homebrew.HomebrewRaces.Keys.ToList() },
+                { "Classes",Engine.Homebrew.HomebrewClasses.Keys.ToList() },
+                { "Backgrounds", Engine.Homebrew.HomebrewBackgrounds.Keys.ToList() }
+            };
+        }
+    }
 }

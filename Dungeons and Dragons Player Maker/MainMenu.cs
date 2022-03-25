@@ -32,7 +32,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         private void UserName_TextChanged(object sender, EventArgs e) {
             Engine.SaveData.Name = UserName.Text;
-            Engine.SaveDataToDisk();
+            IO.SaveDataToDisk();
         }
         [Obsolete]
         private void NewCharacter_Click(object sender, EventArgs e) {
@@ -40,14 +40,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Hide();
             CreateCharacter createCharacter = new();
             createCharacter.ShowDialog();
-            Engine.SaveDataToDisk();
+            IO.SaveDataToDisk();
             //Engine.CheckSettings();
             Show();
         }
 
         //[Obsolete]
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e) {
-            Engine.SaveDataToDisk();
+            IO.SaveDataToDisk();
             //Engine.SaveCharacters();
         }
 
@@ -102,6 +102,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         private void Settings_Click(object sender, EventArgs e) {
             try {
+                AppSettings.FormClosed += delegate { Focus(); };
                 AppSettings.Show();
             } catch (ObjectDisposedException) {
                 AppSettings = new AppSettings();

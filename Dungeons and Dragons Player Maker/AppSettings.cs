@@ -26,22 +26,39 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         private void Save_Click(object sender, EventArgs e) {
             Engine.SaveData.SourceBooks.Clear();
-            foreach (CheckBox cb in Controls.OfType<CheckBox>()) {
+            foreach (CheckBox cb in groupBox1.Controls.OfType<CheckBox>()) {
                 Engine.SaveData.SourceBooks.Add(cb.Name,cb.Checked);
             }
             Engine.SaveData.Name = textBox1.Text;
+            IO.SaveDataToDisk();
         }
 
         private void Revert_Click(object sender, EventArgs e) {
             textBox1.Text = Engine.SaveData.Name;
-            foreach(CheckBox cb in Controls.OfType<CheckBox>()) {
+            foreach(CheckBox cb in groupBox1.Controls.OfType<CheckBox>()) {
                 cb.Checked = Engine.SaveData.SourceBooks[cb.Name];
             }
         }
 
         private void AppSettings_Load(object sender, EventArgs e) {
-            Revert_Click(this,null);
+            try {
+                Revert_Click(this, null);
+            } catch (KeyNotFoundException) {
+                foreach (CheckBox cb in groupBox1.Controls.OfType<CheckBox>()) {
+                    try {
+                        Engine.SaveData.SourceBooks.Add(cb.Name, false);
+                    } catch {}
+
+                }
+
+                Revert_Click(this, null);
+            }
         }
 
+        private void button1_Click(object sender, EventArgs e) {
+            Homebrew.HomebrewEngine HBE = new();
+            HBE.FormClosed += delegate { Focus(); };
+            HBE.Show();
+        }
     }
 }

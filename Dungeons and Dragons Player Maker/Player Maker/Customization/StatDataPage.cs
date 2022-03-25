@@ -60,7 +60,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
                 int.Parse(INTValue.Text.Split("+")[0]), int.Parse(WISValue.Text.Split("+")[0]), int.Parse(CHAValue.Text.Split("+")[0]) };
             PC.Stats = stats;
             try {Engine.SaveData.Characters.Add(PC.Name, PC);} catch (Exception) {}
-            Engine.SaveDataToDisk();
+            IO.SaveDataToDisk();
             //Properties.Settings.Default.Save();
             Form print = new PrintSheet(PC);
             print.Show();
@@ -80,7 +80,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             int[] stats = { int.Parse(STRValue.Text), int.Parse(DEXValue.Text), int.Parse(CONValue.Text), int.Parse(INTValue.Text), int.Parse(WISValue.Text), int.Parse(CHAValue.Text) };
             PC.Stats = stats;
             try {Engine.SaveData.Characters.Add(PC.Name, PC);} catch (Exception) { }
-            Engine.SaveDataToDisk();
+            IO.SaveDataToDisk();
             //Engine.SaveCharacters();
             //Properties.Settings.Default.Save();
             FindForm().Close();
@@ -99,7 +99,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             int[] stats = { int.Parse(STRValue.Text), int.Parse(DEXValue.Text), int.Parse(CONValue.Text), int.Parse(INTValue.Text), int.Parse(WISValue.Text), int.Parse(CHAValue.Text) };
             PC.Stats = stats;
             try { Engine.SaveData.Characters.Add(PC.Name, PC); } catch (Exception) { }
-            Engine.SaveDataToDisk();
+            IO.SaveDataToDisk();
             //Engine.SaveCharacters();
             //Properties.Settings.Default.Save();
             PC.save();
@@ -222,25 +222,27 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
         };
  
         private void updateStat(string stat, string RollValue) {
- 
+            string[] Stats = null;
+            try { Stats = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_"); } catch { Engine.Homebrew.HomebrewRaces[PC.Race].StatBonus.Split("_"); }
+
             switch (stat) {
                 case "STR":     
-                    STRValue.Text = (stats[RollValue] + int.Parse(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[0])).ToString();
+                    STRValue.Text = (stats[RollValue] + int.Parse(Stats[0])).ToString();
                     break;
                 case "DEX":
-                    DEXValue.Text = (stats[RollValue] + int.Parse(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[1])).ToString();
+                    DEXValue.Text = (stats[RollValue] + int.Parse(Stats[1])).ToString();
                     break;
                 case "CON":
-                    CONValue.Text = (stats[RollValue] + int.Parse(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[2])).ToString();
+                    CONValue.Text = (stats[RollValue] + int.Parse(Stats[2])).ToString();
                     break;
                 case "INT":
-                    INTValue.Text = (stats[RollValue] + int.Parse(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[3])).ToString();
+                    INTValue.Text = (stats[RollValue] + int.Parse(Stats[3])).ToString();
                     break;
                 case "WIS":
-                    WISValue.Text = (stats[RollValue] + int.Parse(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[4])).ToString();
+                    WISValue.Text = (stats[RollValue] + int.Parse(Stats[4])).ToString();
                     break;
                 case "CHA":
-                    CHAValue.Text = (stats[RollValue] + int.Parse(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[5])).ToString();
+                    CHAValue.Text = (stats[RollValue] + int.Parse(Stats[5])).ToString();
                     break;
             }
             if (STRValue.Text != "---" && DEXValue.Text != "---" && CONValue.Text != "---" &&

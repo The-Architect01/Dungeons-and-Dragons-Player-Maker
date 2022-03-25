@@ -11,22 +11,24 @@ namespace Dungeons_and_Dragons_Player_Maker {
         [STAThread, Obsolete]
         private static void Main() {
             //  Application.SetHighDpiMode(HighDpiMode.PerMonitor);
-            Engine.CreateShortcut();
+            IO.CreateShortcut();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
-            /*Application.Run(new SplashScreen());
+            Application.Run(new SplashScreen());
             try {
-                Engine.SaveDataToDisk();
+                //IO.SaveDataToDisk();
                 if (Update.CheckForUpdates(Engine.SaveData.CurrentVersion)) {
                     MessageBox.Show("The application has detected that an update is available. This application will update when it is closed.");
+                    Engine.SaveData.CurrentVersion = Update.Version.ToString();
                     Application.ApplicationExit += delegate {
                         Update.DownloadUpdate();
                     };
                 }
             } catch (IndexOutOfRangeException) {}
-            if (Engine.SaveData.LastUpdated == DateTime.MinValue) { Engine.SaveData.LastUpdated = DateTime.UtcNow; Engine.SaveDataToDisk(); }
-            Application.Run(new MainMenu());*/
-            Application.Run(new Homebrew.HomebrewEngine());
+            if (Engine.SaveData.LastUpdated == DateTime.MinValue) { Engine.SaveData.LastUpdated = DateTime.UtcNow; IO.SaveDataToDisk(); }
+            Application.Run(new MainMenu());
+            //IO.SaveDataToDisk();
+            //Application.Run(new Homebrew.HomebrewEngine());
         }
     }
 }

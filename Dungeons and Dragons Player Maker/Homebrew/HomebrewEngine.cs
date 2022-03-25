@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,6 +24,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             CenterToScreen();
             #region Races
             Size.SelectedItem = "Medium";
+            foreach(RadioButton rb in Stat2.Controls.OfType<RadioButton>()) { rb.CheckedChanged += UpdateStat2; };
+            foreach(RadioButton rb in Stat1.Controls.OfType<RadioButton>()) { rb.CheckedChanged += UpdateStat1; };
             #endregion
         }
 
@@ -38,7 +42,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             Weapons.Items.Clear();
             Weapons.Items.AddRange(Engine.SIMPLE_WEAPONS);
             Weapons.Items.AddRange(Engine.MARTIAL_WEAPONS);
-
         }
 
         private void Speed_TextChanged(object sender, EventArgs e) {
@@ -48,17 +51,86 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
                     Speed.Text = "30";
                 }
             }
+            if(Speed.Text.Length == 0) {
+                MessageBox.Show("Please enter a valid speed!");
+                Speed.Text = "30";
+            }
         }
 
-        private void test() { }
+        void UpdateStat2(object sender, EventArgs e) {
+            RadioButton selected = (RadioButton)sender;
+            RadioButton op = (RadioButton)Stat1.Controls.Find(selected.Name.Substring(0, 3) + "1", true)[0];
+            stat2bonus = selected.Name;
+            if (selected.Checked) { op.Enabled = false;op.Checked = false; } else { op.Enabled = true; }
+        }
+        void UpdateStat1(object sender, EventArgs e) {
+            RadioButton selected = (RadioButton)sender;
+            RadioButton op = (RadioButton)Stat2.Controls.Find(selected.Name.Substring(0, 3) + "2", true)[0];
+            stat1bonus = selected.Name;
+            if (selected.Checked) { op.Enabled = false; op.Checked = false; } else { op.Enabled = true; }
+        }
+
+        string stat1bonus = string.Empty;
+        string stat2bonus = string.Empty;
+
+        private void button1_Click(object sender, EventArgs e) {
+            try {
+                if (string.IsNullOrWhiteSpace(RaceName.Text)) { throw new Exception("No Name Entered."); }
+                if (string.IsNullOrWhiteSpace(Subrace.Text)) { Subrace.Text = "Natural"; }
+                string Name = $"{RaceName.Text}:{Subrace.Text}";
+                if (string.IsNullOrEmpty(stat2bonus) || string.IsNullOrEmpty(stat1bonus)) { throw new Exception("No Stat Bonuses."); }
+                string Stats =
+                    $"{(STR2.Checked ? "+2" : STR1.Checked ? "+1" : "0")}_" +
+                    $"{(DEX2.Checked ? "+2" : DEX1.Checked ? "+1" : "0")}_" +
+                    $"{(CON2.Checked ? "+2" : CON1.Checked ? "+1" : "0")}_" +
+                    $"{(WIS2.Checked ? "+2" : WIS1.Checked ? "+1" : "0")}_" +
+                    $"{(INT2.Checked ? "+2" : INT1.Checked ? "+1" : "0")}_" +
+                    $"{(CHA2.Checked ? "+2" : CHA1.Checked ? "+1" : "0")}";
+
+                if (Lang.SelectedItems.Count == 0) { throw new Exception("No Languages Selected"); }
+                string Langs = "";
+                foreach(string Language in Lang.SelectedItems) {
+                    Langs += Language + ", ";
+                }
+                Langs = Langs.Remove(Langs.Length - 2);
+
+                string Profs = "";
+                foreach(string Skill in Skills.SelectedItems) { Profs += Skill + ", "; }
+                foreach(string Tool in Tools.SelectedItems) { Profs += Tool + ", "; }
+                foreach(string Weapon in Weapons.SelectedItems) { Profs += Weapon + ", "; }
+                foreach(string Armor in Armor.SelectedItems) { Profs += Armor + ", "; }
+                try { Profs = Profs.Remove(Profs.Length - 2); } catch { Profs = "None"; }
+
+                string Bonus = "";
+                foreach(string bonus in Traits.Lines) {
+                    if (bonus.EndsWith(", ")) {
+                        Bonus += bonus;
+                    }else if (bonus.EndsWith(",")) {
+                        Bonus += bonus + " ";
+                    } else {
+                        Bonus += bonus + ", ";
+                    }
+                }
+                try { Bonus = Bonus.Remove(Bonus.Length - 2); } catch { Bonus = "None"; }
+
+                new HomebrewRace(Name, Stats, Speed.Text, Size.Text, Langs, Profs, Bonus).Save();
+                IO.SaveDataToDisk();
+                MessageBox.Show($"{Name} has been saved!","Homebrew Wizard");
+                button2_Click(null, EventArgs.Empty);
+            } catch(Exception ex) {
+                MessageBox.Show($"There was an error saving your player race.\n{ex.Message}","Homebrew Wizard");
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e) {
             Traits.Text = "";
-            RaceName.Text = "Human";
-            Subrace.Text = "Natural";
+            RaceName.Text = "";
+            Subrace.Text = "";
             PopulateRaceArrays();
             Speed.Text = "30";
             Size.SelectedItem = "Medium";
+            foreach(RadioButton rb in Stat1.Controls.OfType<RadioButton>()) { rb.Checked = false; rb.Enabled = true; }
+            foreach(RadioButton rb in Stat2.Controls.OfType<RadioButton>()) { rb.Checked = false; rb.Enabled = true; }
         }
         #endregion
     }
@@ -66,52 +138,44 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
     #region Homebrew
 
     [Serializable]
-    public class HomebrewRace {
-        static string HomebrewRaceData { get; } = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\Homebrew\Races";
-
+    public struct HomebrewRace {
         //STR_DEX_CON_WIS_INT_CHA_SPEED_SIZE_LANGUAGE_PROFICINCY_BONUS
 
-        string Name;
-        string StatBonus;
-        string Speed;
-        string Size;
-        string Languages;
-        string Proficincy;
-        string Bonus;
+        public string Name { get; }
+        public string StatBonus { get; }
+        public string Speed { get;}
+        public string Size { get; }
+        public string Languages { get; }
+        public string Proficincy { get; }
+        public string Bonus { get; }
 
-        public static void AddHomebrewRace(HomebrewRace race) {
-            ResXResourceReader reader = new(@".\Races.resx");
-            ResXResourceWriter writer = new(@".\Races.resx");
-            //writer.AddResource("")
+        public override string ToString() {
+            return $"{StatBonus}_{Speed}_{Size}_{Languages}_{Proficincy}_{Bonus}";
         }
 
-    }
-    [Serializable]
-    public class HomebrewClass {
-        static string HomebrewClassData { get; } = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\Homebrew\Classes";
-
-    }
-    [Serializable]
-    public class HomebrewBackground {
-        static string HomebrewBackgroundData { get; } = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\Homebrew\Backgrounds";
-       
-    }
-
-    [Serializable]
-    public static class Homebrew {
-
-        public static List<HomebrewRace> HomebrewRaces { get; } = new();
-        public static List<HomebrewClass> HomebrewClases { get; } = new();
-        public static List<HomebrewBackground> HomebrewBackgrounds { get; } = new();
-
-        static Homebrew() {
-
+        public HomebrewRace(string name, string stat, string speed, string size, string language, string prof, string bon) {
+            Name = name; StatBonus = stat; Speed = speed; Size = size; Languages = language; Proficincy = prof; Bonus = bon;
         }
 
-        public static void SaveToDisk() {
+        public void Save() { Engine.Homebrew.HomebrewRaces.Add(Name, this); IO.SaveDataToDisk(); }
+    }
+    [Serializable]
+    public struct HomebrewClass {
+        public string Name { get; }
 
-        }
+        public void Save() { Engine.Homebrew.HomebrewClasses.Add(Name, this); }
+    }
+    [Serializable]
+    public struct HomebrewBackground {
+        public string Name { get; }
+        public void Save() { Engine.Homebrew.HomebrewBackgrounds.Add(Name, this); }
+    } 
 
+    [Serializable]
+    public class Homebrew {
+        public Dictionary<string, HomebrewRace> HomebrewRaces { get; set; } = new();
+        public Dictionary<string, HomebrewClass> HomebrewClasses { get; set; } = new();
+        public Dictionary<string, HomebrewBackground> HomebrewBackgrounds { get; set; } = new();
     }
     #endregion
 }

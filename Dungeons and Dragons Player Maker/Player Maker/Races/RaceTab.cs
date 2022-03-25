@@ -46,9 +46,17 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                     }else if (Prof1 != "") {
                         PC.Skills.Add(Prof1.Split(" ")[0]);
                     }
-                    PC.Skills.AddRange(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[9].Split(", "));
+                    try {
+                        PC.Skills.AddRange(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[9].Split(", "));
+                    } catch {
+                        PC.Skills.AddRange(Engine.Homebrew.HomebrewRaces[PC.Race].Proficincy.Split("_"));
+                    }
                     PC.Skills.Remove("None");
-                    PC.Languages.AddRange(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[8].Split(", "));
+                    try {
+                        PC.Languages.AddRange(Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[8].Split(", "));
+                    } catch {
+                        PC.Languages.AddRange(Engine.Homebrew.HomebrewRaces[PC.Race].Languages.Split("_"));
+                    }
                     PC.Languages.Add(Languages);
                     
                     OnReady.Invoke(this, EventArgs.Empty); 
@@ -65,7 +73,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
             Text = "Races";
             BackColor = Color.White;
             Controls.AddRange(controlsInForm);
-
         }
 
         private void InitializeList() {
@@ -147,12 +154,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #region Events
         private void RaceName_MouseEnter(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(PC.Race)) {
-                //RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(PC.Race.Split("-")[0]);
-                //updateInfo(PC.Race.Split("-")[0]);
                 return;
             } else {
-                //RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(((Label)sender).Text);
-                RacePreview.Load(ImageLocation.GetImage(((Label)sender).Text));
+                try { RacePreview.Load(ImageLocation.GetImage(((Label)sender).Text)); } catch { RacePreview.Image = Properties.Resources.Custom; }
                 updateInfo(((Label)sender).Text);
             }
         }
@@ -165,9 +169,10 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
                 updateInfo(((Label)sender).Text);
             }
             PC.Race = ((Label)sender).Text;
-            //RacePreview.Image = (Image)Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetObject(PC.Race.Split(":")[0]);
-            RacePreview.Load(ImageLocation.GetImage(PC.Race.Split(":")[0]));
+
+            try { RacePreview.Load(ImageLocation.GetImage(PC.Race.Split(":")[0])); } catch { RacePreview.Image = Properties.Resources.Custom; }
             updateInfo(PC.Race);
+
             if (Races_SubRace.Contains(PC.Race.Split(":")[0])){
                 SubRaces.Enabled = true;
                 object[] items = null;
@@ -339,7 +344,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         #endregion
 
         private readonly PictureBox RacePreview = new() {
-            //Image = Dungeons_and_Dragons_Player_Maker.Races.Human,
+            Image = Properties.Resources.Custom,
             ImageLocation = ImageLocation.GetImage("HUMAN"), 
             Location = new Point(223, 6),
             Size = new Size(275, 316),
@@ -350,7 +355,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
 
         private void updateInfo(string RaceName) {
             try {
-                string[] info = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(RaceName + ":" + SubRaces.Text).Split("_");
+                string[] info;
+                if (Engine.Homebrew.HomebrewRaces.ContainsKey(RaceName + ":" + SubRaces.Text)) {
+                    info = Engine.Homebrew.HomebrewRaces[RaceName + ":" + SubRaces.Text].ToString().Split("_");
+                } else {
+                    info = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(RaceName + ":" + SubRaces.Text).Split("_");
+                }
                 string final = "";
                 final = final + "STR: " + info[0] + " DEX: " + info[1] + " CON: " + info[2] + " WIS: " + info[3] + " INT: " + info[4] + " CHA: " + info[5] + "\n";
                 final = final + "Speed: " + info[6] + "\n";

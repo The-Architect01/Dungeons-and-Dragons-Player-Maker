@@ -48,7 +48,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Stat1 = new System.Windows.Forms.GroupBox();
             this.STR1 = new System.Windows.Forms.RadioButton();
             this.DEX1 = new System.Windows.Forms.RadioButton();
             this.CON1 = new System.Windows.Forms.RadioButton();
@@ -56,7 +56,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.INT1 = new System.Windows.Forms.RadioButton();
             this.CHA1 = new System.Windows.Forms.RadioButton();
             this.RaceName = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Stat2 = new System.Windows.Forms.GroupBox();
             this.STR2 = new System.Windows.Forms.RadioButton();
             this.DEX2 = new System.Windows.Forms.RadioButton();
             this.CON2 = new System.Windows.Forms.RadioButton();
@@ -70,8 +70,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.RCs.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.Stat1.SuspendLayout();
+            this.Stat2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,9 +99,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.RCs.Controls.Add(this.label2);
             this.RCs.Controls.Add(this.groupBox4);
             this.RCs.Controls.Add(this.groupBox2);
-            this.RCs.Controls.Add(this.groupBox3);
+            this.RCs.Controls.Add(this.Stat1);
             this.RCs.Controls.Add(this.RaceName);
-            this.RCs.Controls.Add(this.groupBox1);
+            this.RCs.Controls.Add(this.Stat2);
             this.RCs.Controls.Add(this.label1);
             this.RCs.Location = new System.Drawing.Point(4, 29);
             this.RCs.Name = "RCs";
@@ -137,6 +137,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.button1.TabIndex = 35;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -165,7 +166,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // Speed
             // 
             this.Speed.Location = new System.Drawing.Point(10, 475);
-            this.Speed.MaxLength = 3;
+            this.Speed.MaxLength = 2;
             this.Speed.Name = "Speed";
             this.Speed.Size = new System.Drawing.Size(96, 27);
             this.Speed.TabIndex = 31;
@@ -194,7 +195,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.Subrace.Name = "Subrace";
             this.Subrace.Size = new System.Drawing.Size(148, 27);
             this.Subrace.TabIndex = 25;
-            this.Subrace.Text = "Natural";
             // 
             // label2
             // 
@@ -318,20 +318,20 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.label8.TabIndex = 9;
             this.label8.Text = "Tools";
             // 
-            // groupBox3
+            // Stat1
             // 
-            this.groupBox3.Controls.Add(this.STR1);
-            this.groupBox3.Controls.Add(this.DEX1);
-            this.groupBox3.Controls.Add(this.CON1);
-            this.groupBox3.Controls.Add(this.WIS1);
-            this.groupBox3.Controls.Add(this.INT1);
-            this.groupBox3.Controls.Add(this.CHA1);
-            this.groupBox3.Location = new System.Drawing.Point(10, 178);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(250, 125);
-            this.groupBox3.TabIndex = 22;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Racial Trait (+1)";
+            this.Stat1.Controls.Add(this.STR1);
+            this.Stat1.Controls.Add(this.DEX1);
+            this.Stat1.Controls.Add(this.CON1);
+            this.Stat1.Controls.Add(this.WIS1);
+            this.Stat1.Controls.Add(this.INT1);
+            this.Stat1.Controls.Add(this.CHA1);
+            this.Stat1.Location = new System.Drawing.Point(10, 178);
+            this.Stat1.Name = "Stat1";
+            this.Stat1.Size = new System.Drawing.Size(250, 125);
+            this.Stat1.TabIndex = 22;
+            this.Stat1.TabStop = false;
+            this.Stat1.Text = "Racial Trait (+1)";
             // 
             // STR1
             // 
@@ -399,22 +399,21 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.RaceName.Name = "RaceName";
             this.RaceName.Size = new System.Drawing.Size(148, 27);
             this.RaceName.TabIndex = 15;
-            this.RaceName.Text = "Human";
             // 
-            // groupBox1
+            // Stat2
             // 
-            this.groupBox1.Controls.Add(this.STR2);
-            this.groupBox1.Controls.Add(this.DEX2);
-            this.groupBox1.Controls.Add(this.CON2);
-            this.groupBox1.Controls.Add(this.WIS2);
-            this.groupBox1.Controls.Add(this.INT2);
-            this.groupBox1.Controls.Add(this.CHA2);
-            this.groupBox1.Location = new System.Drawing.Point(10, 46);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 125);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Racial Trait (+2)";
+            this.Stat2.Controls.Add(this.STR2);
+            this.Stat2.Controls.Add(this.DEX2);
+            this.Stat2.Controls.Add(this.CON2);
+            this.Stat2.Controls.Add(this.WIS2);
+            this.Stat2.Controls.Add(this.INT2);
+            this.Stat2.Controls.Add(this.CHA2);
+            this.Stat2.Location = new System.Drawing.Point(10, 46);
+            this.Stat2.Name = "Stat2";
+            this.Stat2.Size = new System.Drawing.Size(250, 125);
+            this.Stat2.TabIndex = 14;
+            this.Stat2.TabStop = false;
+            this.Stat2.Text = "Racial Trait (+2)";
             // 
             // STR2
             // 
@@ -521,8 +520,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.RCs.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.Stat1.ResumeLayout(false);
+            this.Stat2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -532,7 +531,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage RCs;
         private System.Windows.Forms.TextBox RaceName;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox Stat2;
         private System.Windows.Forms.RadioButton STR2;
         private System.Windows.Forms.RadioButton DEX2;
         private System.Windows.Forms.RadioButton CON2;
@@ -546,7 +545,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TabPage CLs;
         private System.Windows.Forms.TabPage BGs;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox Stat1;
         private System.Windows.Forms.RadioButton STR1;
         private System.Windows.Forms.RadioButton DEX1;
         private System.Windows.Forms.RadioButton CON1;
