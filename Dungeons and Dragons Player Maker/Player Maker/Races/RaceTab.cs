@@ -67,6 +67,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
 
         public RaceTab(PC character) {
             PC = character;
+            Races.Clear();
             InitializeList();
             InitializeArrays();
             InitializeComponent();
