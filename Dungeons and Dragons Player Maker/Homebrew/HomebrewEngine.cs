@@ -75,11 +75,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
 
         private void button1_Click(object sender, EventArgs e) {
             try {
+                HomebrewRace Race = new();
                 if (string.IsNullOrWhiteSpace(RaceName.Text)) { throw new Exception("No Name Entered."); }
                 if (string.IsNullOrWhiteSpace(Subrace.Text)) { Subrace.Text = "Natural"; }
-                string Name = $"{RaceName.Text}:{Subrace.Text}";
+                Race.Name = $"{RaceName.Text}:{Subrace.Text}";
                 if (string.IsNullOrEmpty(stat2bonus) || string.IsNullOrEmpty(stat1bonus)) { throw new Exception("No Stat Bonuses."); }
-                string Stats =
+                Race.StatBonus =
                     $"{(STR2.Checked ? "+2" : STR1.Checked ? "+1" : "0")}_" +
                     $"{(DEX2.Checked ? "+2" : DEX1.Checked ? "+1" : "0")}_" +
                     $"{(CON2.Checked ? "+2" : CON1.Checked ? "+1" : "0")}_" +
@@ -92,14 +93,14 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
                 foreach(string Language in Lang.SelectedItems) {
                     Langs += Language + ", ";
                 }
-                Langs = Langs.Remove(Langs.Length - 2);
+                Race.Languages = Langs.Remove(Langs.Length - 2);
 
                 string Profs = "";
                 foreach(string Skill in Skills.SelectedItems) { Profs += Skill + ", "; }
                 foreach(string Tool in Tools.SelectedItems) { Profs += Tool + ", "; }
                 foreach(string Weapon in Weapons.SelectedItems) { Profs += Weapon + ", "; }
                 foreach(string Armor in Armor.SelectedItems) { Profs += Armor + ", "; }
-                try { Profs = Profs.Remove(Profs.Length - 2); } catch { Profs = "None"; }
+                try { Race.Proficincy = Profs.Remove(Profs.Length - 2); } catch { Race.Proficincy = "None"; }
 
                 string Bonus = "";
                 foreach(string bonus in Traits.Lines) {
@@ -111,10 +112,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
                         Bonus += bonus + ", ";
                     }
                 }
-                try { Bonus = Bonus.Remove(Bonus.Length - 2); } catch { Bonus = "None"; }
+                try { Race.Bonus = Bonus.Remove(Bonus.Length - 2); } catch { Race.Bonus = "None"; }
 
-                new HomebrewRace(Name, Stats, Speed.Text, Size.Text, Langs, Profs, Bonus).Save();
-                IO.SaveDataToDisk();
+                Race.Save();
                 MessageBox.Show($"{Name} has been saved!","Homebrew Wizard");
                 button2_Click(null, EventArgs.Empty);
             } catch(Exception ex) {
@@ -138,35 +138,31 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
     #region Homebrew
 
     [Serializable]
-    public struct HomebrewRace {
+    public class HomebrewRace {
         //STR_DEX_CON_WIS_INT_CHA_SPEED_SIZE_LANGUAGE_PROFICINCY_BONUS
 
-        public string Name { get; }
-        public string StatBonus { get; }
-        public string Speed { get;}
-        public string Size { get; }
-        public string Languages { get; }
-        public string Proficincy { get; }
-        public string Bonus { get; }
+        public string Name { get; set; }
+        public string StatBonus { get; set; }
+        public string Speed { get; set; }
+        public string Size { get; set; }
+        public string Languages { get; set; }
+        public string Proficincy { get; set; }
+        public string Bonus { get; set; }
 
         public override string ToString() {
             return $"{StatBonus}_{Speed}_{Size}_{Languages}_{Proficincy}_{Bonus}";
         }
 
-        public HomebrewRace(string name, string stat, string speed, string size, string language, string prof, string bon) {
-            Name = name; StatBonus = stat; Speed = speed; Size = size; Languages = language; Proficincy = prof; Bonus = bon;
-        }
-
         public void Save() { Engine.Homebrew.HomebrewRaces.Add(Name, this); IO.SaveDataToDisk(); }
     }
     [Serializable]
-    public struct HomebrewClass {
+    public class HomebrewClass {
         public string Name { get; }
 
         public void Save() { Engine.Homebrew.HomebrewClasses.Add(Name, this); }
     }
     [Serializable]
-    public struct HomebrewBackground {
+    public class HomebrewBackground {
         public string Name { get; }
         public void Save() { Engine.Homebrew.HomebrewBackgrounds.Add(Name, this); }
     } 
