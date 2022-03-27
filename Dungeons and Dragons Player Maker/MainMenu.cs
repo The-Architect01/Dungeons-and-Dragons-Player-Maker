@@ -1,9 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-//using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.Json;
-//using System.Runtime.Serialization;
 using Dungeons_and_Dragons_Player_Maker.Player_Maker;
 
 namespace Dungeons_and_Dragons_Player_Maker {
@@ -19,7 +17,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             CenterToScreen();
         }
 
-        [Obsolete]
         private void MainMenu_Load(object sender, EventArgs e) {
             if (Engine.SaveData.Characters.Count != 0) {
                 PrintOldCharacter.Enabled = true;
@@ -34,6 +31,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Engine.SaveData.Name = UserName.Text;
             IO.SaveDataToDisk();
         }
+
         [Obsolete]
         private void NewCharacter_Click(object sender, EventArgs e) {
             if (AppSettings.Visible) { AppSettings.Focus(); return; }
@@ -41,14 +39,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             CreateCharacter createCharacter = new();
             createCharacter.ShowDialog();
             IO.SaveDataToDisk();
-            //Engine.CheckSettings();
             Show();
         }
 
-        //[Obsolete]
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e) {
             IO.SaveDataToDisk();
-            //Engine.SaveCharacters();
         }
 
         [Obsolete]
@@ -70,12 +65,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 Stream Character = openFileDialog1.OpenFile();
                 PC loadedPC = null;
                 try {
-                    //    BinaryFormatter formatter = new();
-                    //    loadedPC = (PC) formatter.Deserialize(Character);
                     loadedPC = JsonSerializer.Deserialize<PC>(new StreamReader(Character).ReadToEnd());
-                } catch (Exception) {
-
-                } finally { Character.Close(); }
+                } catch (Exception) {} finally { Character.Close(); }
                 try {
                     PrintSheet ps = new(loadedPC);
                     ps.Show();
@@ -87,7 +78,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
             } catch (Exception) { }
         }
 
-        [Obsolete]
         private void MainMenu_VisibleChanged(object sender, EventArgs e) {
             if (Engine.SaveData.Characters.Count != 0) {
                 PrintOldCharacter.Enabled = true;
