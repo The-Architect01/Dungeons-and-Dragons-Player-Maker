@@ -33,7 +33,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Revert = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Hbws = new System.Windows.Forms.Button();
+            this.hbwe = new System.Windows.Forms.Button();
+            this.hbwi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +90,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(331, 161);
+            this.Save.Location = new System.Drawing.Point(331, 97);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(94, 29);
             this.Save.TabIndex = 2;
@@ -106,7 +108,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             // Revert
             // 
-            this.Revert.Location = new System.Drawing.Point(331, 196);
+            this.Revert.Location = new System.Drawing.Point(331, 132);
             this.Revert.Name = "Revert";
             this.Revert.Size = new System.Drawing.Size(94, 29);
             this.Revert.TabIndex = 4;
@@ -114,15 +116,35 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Revert.UseVisualStyleBackColor = true;
             this.Revert.Click += new System.EventHandler(this.Revert_Click);
             // 
-            // button1
+            // Hbws
             // 
-            this.button1.Location = new System.Drawing.Point(331, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 64);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Create Homebrew";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Hbws.Location = new System.Drawing.Point(331, 167);
+            this.Hbws.Name = "Hbws";
+            this.Hbws.Size = new System.Drawing.Size(94, 64);
+            this.Hbws.TabIndex = 5;
+            this.Hbws.Text = "Create Homebrew";
+            this.Hbws.UseVisualStyleBackColor = true;
+            this.Hbws.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // hbwe
+            // 
+            this.hbwe.Location = new System.Drawing.Point(383, 262);
+            this.hbwe.Name = "hbwe";
+            this.hbwe.Size = new System.Drawing.Size(94, 60);
+            this.hbwe.TabIndex = 6;
+            this.hbwe.Text = "Export Homebrew";
+            this.hbwe.UseVisualStyleBackColor = true;
+            this.hbwe.Click += new System.EventHandler(this.hbwe_Click);
+            // 
+            // hbwi
+            // 
+            this.hbwi.Location = new System.Drawing.Point(283, 262);
+            this.hbwi.Name = "hbwi";
+            this.hbwi.Size = new System.Drawing.Size(94, 60);
+            this.hbwi.TabIndex = 7;
+            this.hbwi.Text = "Import Homebrew";
+            this.hbwi.UseVisualStyleBackColor = true;
+            this.hbwi.Click += new System.EventHandler(this.hbwi_Click);
             // 
             // AppSettings
             // 
@@ -130,7 +152,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(500, 350);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.hbwi);
+            this.Controls.Add(this.hbwe);
+            this.Controls.Add(this.Hbws);
             this.Controls.Add(this.Revert);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Save);
@@ -158,7 +182,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.Button Revert;
         private System.Windows.Forms.CheckBox PHB;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Hbws;
         private System.Windows.Forms.CheckBox HBW;
+        private System.Windows.Forms.Button hbwe;
+        private System.Windows.Forms.Button hbwi;
     }
 }

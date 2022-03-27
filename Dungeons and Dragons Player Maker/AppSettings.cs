@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Homebrew.HomebrewEngine HBE = new();
             HBE.FormClosed += delegate { Focus(); };
             HBE.Show();
+        }
+
+        private void hbwe_Click(object sender, EventArgs e) {
+            string dest = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Custom.brew";
+            File.Copy(IO.HomebrewPath, dest, true);
+        }
+
+        private void hbwi_Click(object sender, EventArgs e) {
+
         }
     }
 }
