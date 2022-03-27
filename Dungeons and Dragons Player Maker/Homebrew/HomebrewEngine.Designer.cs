@@ -66,37 +66,56 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.label1 = new System.Windows.Forms.Label();
             this.CLs = new System.Windows.Forms.TabPage();
             this.BGs = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.BGFeature = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BGSkill2 = new System.Windows.Forms.ComboBox();
+            this.BGSkill1 = new System.Windows.Forms.ComboBox();
+            this.BGBonus2 = new System.Windows.Forms.ComboBox();
+            this.BGBonus1 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.F6 = new System.Windows.Forms.TextBox();
+            this.F2 = new System.Windows.Forms.TextBox();
+            this.F5 = new System.Windows.Forms.TextBox();
+            this.F1 = new System.Windows.Forms.TextBox();
+            this.F4 = new System.Windows.Forms.TextBox();
+            this.F3 = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.B6 = new System.Windows.Forms.TextBox();
+            this.B1 = new System.Windows.Forms.TextBox();
+            this.B5 = new System.Windows.Forms.TextBox();
+            this.B2 = new System.Windows.Forms.TextBox();
+            this.B4 = new System.Windows.Forms.TextBox();
+            this.B3 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.I6 = new System.Windows.Forms.TextBox();
+            this.I5 = new System.Windows.Forms.TextBox();
+            this.I4 = new System.Windows.Forms.TextBox();
+            this.I3 = new System.Windows.Forms.TextBox();
+            this.I2 = new System.Windows.Forms.TextBox();
+            this.I1 = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.P8 = new System.Windows.Forms.TextBox();
+            this.P6 = new System.Windows.Forms.TextBox();
+            this.P4 = new System.Windows.Forms.TextBox();
+            this.P2 = new System.Windows.Forms.TextBox();
+            this.P7 = new System.Windows.Forms.TextBox();
+            this.P5 = new System.Windows.Forms.TextBox();
+            this.P3 = new System.Windows.Forms.TextBox();
+            this.P1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.RCs.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -106,6 +125,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.BGs.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -548,274 +570,518 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.BGs.Text = "Backgrounds";
             this.BGs.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // tabControl2
             // 
-            this.label6.Location = new System.Drawing.Point(16, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 25);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Background Name:  ";
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Location = new System.Drawing.Point(16, 50);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(540, 570);
+            this.tabControl2.TabIndex = 9;
             // 
-            // button3
+            // tabPage1
             // 
-            this.button3.Location = new System.Drawing.Point(350, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Reset";
-            this.button3.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.groupBox10);
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(532, 537);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Features";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.BGFeature);
+            this.groupBox10.Location = new System.Drawing.Point(12, 290);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(513, 230);
+            this.groupBox10.TabIndex = 2;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Feature";
+            // 
+            // BGFeature
+            // 
+            this.BGFeature.Location = new System.Drawing.Point(13, 26);
+            this.BGFeature.Multiline = true;
+            this.BGFeature.Name = "BGFeature";
+            this.BGFeature.Size = new System.Drawing.Size(488, 190);
+            this.BGFeature.TabIndex = 0;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.listBox3);
+            this.groupBox5.Location = new System.Drawing.Point(275, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(250, 278);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Items";
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 20;
+            this.listBox3.Items.AddRange(new object[] {
+            "Alchemist’s Supplies",
+            "Brewer’s Supplies",
+            "Calligrapher’s Supplies",
+            "Carpenter’s Tools",
+            "Cartographer’s Tools",
+            "Cobbler’s Tools",
+            "Cooks\'Tools",
+            "Glassblower’s Tools",
+            "Jeweler’s Tools",
+            "Leatherworker’s Tools",
+            "Mason’s Tools",
+            "Painter’s Supplies",
+            "Potter’s Tools",
+            "Smith’s Tools",
+            "Tinker’s Tools",
+            "Weaver’s Tools",
+            "Woodcarver’s Tools",
+            "Dice Set",
+            "Dragonchess Set",
+            "Playing Card Set",
+            "Three-Dragon Ante Set",
+            "Thieves\' Tools",
+            "Zulkoon",
+            "Yarting",
+            "Wargong",
+            "Viol",
+            "Tocken",
+            "Thelarr",
+            "Tantan",
+            "Songhorn",
+            "Shawm",
+            "Longhorn",
+            "Hand Drum",
+            "Glaur",
+            "Birdpipes",
+            "Bagpipes",
+            "Drum",
+            "Dulcimer",
+            "Flute",
+            "Lute",
+            "Lyre",
+            "Horn",
+            "Pan Flute"});
+            this.listBox3.Location = new System.Drawing.Point(13, 31);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listBox3.Size = new System.Drawing.Size(225, 244);
+            this.listBox3.TabIndex = 2;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.BGSkill2);
+            this.groupBox3.Controls.Add(this.BGSkill1);
+            this.groupBox3.Controls.Add(this.BGBonus2);
+            this.groupBox3.Controls.Add(this.BGBonus1);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Location = new System.Drawing.Point(12, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(250, 278);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Languages/Proficiencies";
+            // 
+            // BGSkill2
+            // 
+            this.BGSkill2.FormattingEnabled = true;
+            this.BGSkill2.Items.AddRange(new object[] {
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival"});
+            this.BGSkill2.Location = new System.Drawing.Point(13, 113);
+            this.BGSkill2.Name = "BGSkill2";
+            this.BGSkill2.Size = new System.Drawing.Size(222, 28);
+            this.BGSkill2.TabIndex = 7;
+            // 
+            // BGSkill1
+            // 
+            this.BGSkill1.FormattingEnabled = true;
+            this.BGSkill1.Items.AddRange(new object[] {
+            "Acrobatics",
+            "Animal Handling",
+            "Arcana",
+            "Athletics",
+            "Deception",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Performance",
+            "Persuasion",
+            "Religion",
+            "Sleight of Hand",
+            "Stealth",
+            "Survival"});
+            this.BGSkill1.Location = new System.Drawing.Point(13, 54);
+            this.BGSkill1.Name = "BGSkill1";
+            this.BGSkill1.Size = new System.Drawing.Size(222, 28);
+            this.BGSkill1.TabIndex = 5;
+            // 
+            // BGBonus2
+            // 
+            this.BGBonus2.FormattingEnabled = true;
+            this.BGBonus2.Location = new System.Drawing.Point(13, 231);
+            this.BGBonus2.Name = "BGBonus2";
+            this.BGBonus2.Size = new System.Drawing.Size(222, 28);
+            this.BGBonus2.TabIndex = 1;
+            // 
+            // BGBonus1
+            // 
+            this.BGBonus1.FormattingEnabled = true;
+            this.BGBonus1.Location = new System.Drawing.Point(13, 172);
+            this.BGBonus1.Name = "BGBonus1";
+            this.BGBonus1.Size = new System.Drawing.Size(222, 28);
+            this.BGBonus1.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(13, 85);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(222, 25);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Skill 2";
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(13, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(222, 25);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Skill 1";
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(13, 203);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(222, 25);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Language/Profiency 2";
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(13, 144);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(222, 25);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Language/Proficency 1";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox6);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            this.tabPage2.Controls.Add(this.groupBox8);
+            this.tabPage2.Controls.Add(this.groupBox9);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(532, 537);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Personality";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.F6);
+            this.groupBox6.Controls.Add(this.F2);
+            this.groupBox6.Controls.Add(this.F5);
+            this.groupBox6.Controls.Add(this.F1);
+            this.groupBox6.Controls.Add(this.F4);
+            this.groupBox6.Controls.Add(this.F3);
+            this.groupBox6.Location = new System.Drawing.Point(275, 265);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(250, 255);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Flaw";
+            // 
+            // F6
+            // 
+            this.F6.Location = new System.Drawing.Point(12, 213);
+            this.F6.Name = "F6";
+            this.F6.Size = new System.Drawing.Size(225, 27);
+            this.F6.TabIndex = 33;
+            // 
+            // F2
+            // 
+            this.F2.Location = new System.Drawing.Point(12, 69);
+            this.F2.Name = "F2";
+            this.F2.Size = new System.Drawing.Size(225, 27);
+            this.F2.TabIndex = 29;
+            // 
+            // F5
+            // 
+            this.F5.Location = new System.Drawing.Point(12, 177);
+            this.F5.Name = "F5";
+            this.F5.Size = new System.Drawing.Size(225, 27);
+            this.F5.TabIndex = 32;
+            // 
+            // F1
+            // 
+            this.F1.Location = new System.Drawing.Point(12, 33);
+            this.F1.Name = "F1";
+            this.F1.Size = new System.Drawing.Size(225, 27);
+            this.F1.TabIndex = 28;
+            // 
+            // F4
+            // 
+            this.F4.Location = new System.Drawing.Point(12, 141);
+            this.F4.Name = "F4";
+            this.F4.Size = new System.Drawing.Size(225, 27);
+            this.F4.TabIndex = 31;
+            // 
+            // F3
+            // 
+            this.F3.Location = new System.Drawing.Point(12, 105);
+            this.F3.Name = "F3";
+            this.F3.Size = new System.Drawing.Size(225, 27);
+            this.F3.TabIndex = 30;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.B6);
+            this.groupBox7.Controls.Add(this.B1);
+            this.groupBox7.Controls.Add(this.B5);
+            this.groupBox7.Controls.Add(this.B2);
+            this.groupBox7.Controls.Add(this.B4);
+            this.groupBox7.Controls.Add(this.B3);
+            this.groupBox7.Location = new System.Drawing.Point(12, 265);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(250, 255);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Bond";
+            // 
+            // B6
+            // 
+            this.B6.Location = new System.Drawing.Point(13, 213);
+            this.B6.Name = "B6";
+            this.B6.Size = new System.Drawing.Size(225, 27);
+            this.B6.TabIndex = 27;
+            // 
+            // B1
+            // 
+            this.B1.Location = new System.Drawing.Point(13, 33);
+            this.B1.Name = "B1";
+            this.B1.Size = new System.Drawing.Size(225, 27);
+            this.B1.TabIndex = 22;
+            // 
+            // B5
+            // 
+            this.B5.Location = new System.Drawing.Point(13, 177);
+            this.B5.Name = "B5";
+            this.B5.Size = new System.Drawing.Size(225, 27);
+            this.B5.TabIndex = 26;
+            // 
+            // B2
+            // 
+            this.B2.Location = new System.Drawing.Point(13, 69);
+            this.B2.Name = "B2";
+            this.B2.Size = new System.Drawing.Size(225, 27);
+            this.B2.TabIndex = 23;
+            // 
+            // B4
+            // 
+            this.B4.Location = new System.Drawing.Point(13, 141);
+            this.B4.Name = "B4";
+            this.B4.Size = new System.Drawing.Size(225, 27);
+            this.B4.TabIndex = 25;
+            // 
+            // B3
+            // 
+            this.B3.Location = new System.Drawing.Point(13, 105);
+            this.B3.Name = "B3";
+            this.B3.Size = new System.Drawing.Size(225, 27);
+            this.B3.TabIndex = 24;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.I6);
+            this.groupBox8.Controls.Add(this.I5);
+            this.groupBox8.Controls.Add(this.I4);
+            this.groupBox8.Controls.Add(this.I3);
+            this.groupBox8.Controls.Add(this.I2);
+            this.groupBox8.Controls.Add(this.I1);
+            this.groupBox8.Location = new System.Drawing.Point(275, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(250, 255);
+            this.groupBox8.TabIndex = 5;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Ideal";
+            // 
+            // I6
+            // 
+            this.I6.Location = new System.Drawing.Point(12, 206);
+            this.I6.Name = "I6";
+            this.I6.Size = new System.Drawing.Size(225, 27);
+            this.I6.TabIndex = 21;
+            // 
+            // I5
+            // 
+            this.I5.Location = new System.Drawing.Point(12, 170);
+            this.I5.Name = "I5";
+            this.I5.Size = new System.Drawing.Size(225, 27);
+            this.I5.TabIndex = 20;
+            // 
+            // I4
+            // 
+            this.I4.Location = new System.Drawing.Point(12, 134);
+            this.I4.Name = "I4";
+            this.I4.Size = new System.Drawing.Size(225, 27);
+            this.I4.TabIndex = 19;
+            // 
+            // I3
+            // 
+            this.I3.Location = new System.Drawing.Point(12, 98);
+            this.I3.Name = "I3";
+            this.I3.Size = new System.Drawing.Size(225, 27);
+            this.I3.TabIndex = 18;
+            // 
+            // I2
+            // 
+            this.I2.Location = new System.Drawing.Point(12, 62);
+            this.I2.Name = "I2";
+            this.I2.Size = new System.Drawing.Size(225, 27);
+            this.I2.TabIndex = 17;
+            // 
+            // I1
+            // 
+            this.I1.Location = new System.Drawing.Point(12, 26);
+            this.I1.Name = "I1";
+            this.I1.Size = new System.Drawing.Size(225, 27);
+            this.I1.TabIndex = 16;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.P8);
+            this.groupBox9.Controls.Add(this.P6);
+            this.groupBox9.Controls.Add(this.P4);
+            this.groupBox9.Controls.Add(this.P2);
+            this.groupBox9.Controls.Add(this.P7);
+            this.groupBox9.Controls.Add(this.P5);
+            this.groupBox9.Controls.Add(this.P3);
+            this.groupBox9.Controls.Add(this.P1);
+            this.groupBox9.Location = new System.Drawing.Point(12, 6);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(250, 255);
+            this.groupBox9.TabIndex = 3;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Personality";
+            // 
+            // P8
+            // 
+            this.P8.Location = new System.Drawing.Point(132, 206);
+            this.P8.Name = "P8";
+            this.P8.Size = new System.Drawing.Size(112, 27);
+            this.P8.TabIndex = 25;
+            // 
+            // P6
+            // 
+            this.P6.Location = new System.Drawing.Point(132, 146);
+            this.P6.Name = "P6";
+            this.P6.Size = new System.Drawing.Size(112, 27);
+            this.P6.TabIndex = 24;
+            // 
+            // P4
+            // 
+            this.P4.Location = new System.Drawing.Point(132, 86);
+            this.P4.Name = "P4";
+            this.P4.Size = new System.Drawing.Size(112, 27);
+            this.P4.TabIndex = 23;
+            // 
+            // P2
+            // 
+            this.P2.Location = new System.Drawing.Point(132, 26);
+            this.P2.Name = "P2";
+            this.P2.Size = new System.Drawing.Size(112, 27);
+            this.P2.TabIndex = 22;
+            // 
+            // P7
+            // 
+            this.P7.Location = new System.Drawing.Point(13, 206);
+            this.P7.Name = "P7";
+            this.P7.Size = new System.Drawing.Size(112, 27);
+            this.P7.TabIndex = 21;
+            // 
+            // P5
+            // 
+            this.P5.Location = new System.Drawing.Point(13, 146);
+            this.P5.Name = "P5";
+            this.P5.Size = new System.Drawing.Size(112, 27);
+            this.P5.TabIndex = 19;
+            // 
+            // P3
+            // 
+            this.P3.Location = new System.Drawing.Point(13, 86);
+            this.P3.Name = "P3";
+            this.P3.Size = new System.Drawing.Size(112, 27);
+            this.P3.TabIndex = 17;
+            // 
+            // P1
+            // 
+            this.P1.Location = new System.Drawing.Point(13, 26);
+            this.P1.Name = "P1";
+            this.P1.Size = new System.Drawing.Size(112, 27);
+            this.P1.TabIndex = 15;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(158, 13);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(178, 27);
+            this.textBox1.TabIndex = 0;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(457, 21);
+            this.button4.Location = new System.Drawing.Point(457, 13);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 29);
             this.button4.TabIndex = 8;
             this.button4.Text = "Save";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button3
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 27);
-            this.textBox1.TabIndex = 0;
+            this.button3.Location = new System.Drawing.Point(350, 13);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 29);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Reset";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // label6
             // 
-            this.tabControl2.Controls.Add(this.tabPage1);
-            this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Location = new System.Drawing.Point(16, 56);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(539, 564);
-            this.tabControl2.TabIndex = 9;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(531, 531);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox9);
-            this.tabPage2.Controls.Add(this.groupBox8);
-            this.tabPage2.Controls.Add(this.groupBox7);
-            this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(531, 531);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(30, 29);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 125);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(30, 186);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(250, 125);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Location = new System.Drawing.Point(30, 342);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(250, 125);
-            this.groupBox5.TabIndex = 1;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(299, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 2;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.textBox5);
-            this.groupBox6.Controls.Add(this.textBox4);
-            this.groupBox6.Controls.Add(this.textBox3);
-            this.groupBox6.Location = new System.Drawing.Point(20, 6);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(226, 269);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "groupBox6";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(6, 26);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 0;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(6, 59);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 1;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(6, 92);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 2;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(6, 125);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 27);
-            this.textBox6.TabIndex = 3;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.textBox7);
-            this.groupBox7.Controls.Add(this.textBox8);
-            this.groupBox7.Controls.Add(this.textBox9);
-            this.groupBox7.Controls.Add(this.textBox10);
-            this.groupBox7.Location = new System.Drawing.Point(20, 281);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(226, 234);
-            this.groupBox7.TabIndex = 4;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "groupBox7";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(6, 125);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(125, 27);
-            this.textBox7.TabIndex = 3;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(6, 92);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 27);
-            this.textBox8.TabIndex = 2;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(6, 59);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(125, 27);
-            this.textBox9.TabIndex = 1;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(6, 26);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 27);
-            this.textBox10.TabIndex = 0;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.textBox11);
-            this.groupBox8.Controls.Add(this.textBox12);
-            this.groupBox8.Controls.Add(this.textBox13);
-            this.groupBox8.Controls.Add(this.textBox14);
-            this.groupBox8.Location = new System.Drawing.Point(282, 281);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(226, 234);
-            this.groupBox8.TabIndex = 5;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "groupBox8";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(6, 125);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 27);
-            this.textBox11.TabIndex = 3;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(6, 92);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(125, 27);
-            this.textBox12.TabIndex = 2;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(6, 59);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(125, 27);
-            this.textBox13.TabIndex = 1;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(6, 26);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(125, 27);
-            this.textBox14.TabIndex = 0;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.textBox15);
-            this.groupBox9.Controls.Add(this.textBox16);
-            this.groupBox9.Controls.Add(this.textBox17);
-            this.groupBox9.Controls.Add(this.textBox18);
-            this.groupBox9.Location = new System.Drawing.Point(282, 6);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(226, 234);
-            this.groupBox9.TabIndex = 5;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "groupBox9";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(6, 125);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(125, 27);
-            this.textBox15.TabIndex = 3;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(6, 92);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(125, 27);
-            this.textBox16.TabIndex = 2;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(6, 59);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(125, 27);
-            this.textBox17.TabIndex = 1;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(6, 26);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(125, 27);
-            this.textBox18.TabIndex = 0;
+            this.label6.Location = new System.Drawing.Point(15, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(178, 25);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Background Name:  ";
             // 
             // HomebrewEngine
             // 
@@ -839,7 +1105,10 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.BGs.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -902,30 +1171,49 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox F6;
+        private System.Windows.Forms.TextBox F2;
+        private System.Windows.Forms.TextBox F5;
+        private System.Windows.Forms.TextBox F1;
+        private System.Windows.Forms.TextBox F4;
+        private System.Windows.Forms.TextBox F3;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox B6;
+        private System.Windows.Forms.TextBox B1;
+        private System.Windows.Forms.TextBox B5;
+        private System.Windows.Forms.TextBox B2;
+        private System.Windows.Forms.TextBox B4;
+        private System.Windows.Forms.TextBox B3;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox I6;
+        private System.Windows.Forms.TextBox I5;
+        private System.Windows.Forms.TextBox I4;
+        private System.Windows.Forms.TextBox I3;
+        private System.Windows.Forms.TextBox I2;
+        private System.Windows.Forms.TextBox I1;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox P7;
+        private System.Windows.Forms.TextBox P5;
+        private System.Windows.Forms.TextBox P3;
+        private System.Windows.Forms.TextBox P1;
+        private System.Windows.Forms.TextBox P8;
+        private System.Windows.Forms.TextBox P6;
+        private System.Windows.Forms.TextBox P4;
+        private System.Windows.Forms.TextBox P2;
+        private System.Windows.Forms.TextBox BGFeature;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ComboBox BGSkill2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox BGSkill1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox BGBonus2;
+        private System.Windows.Forms.ComboBox BGBonus1;
     }
 }

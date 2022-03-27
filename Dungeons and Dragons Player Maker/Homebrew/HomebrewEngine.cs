@@ -27,6 +27,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             foreach(RadioButton rb in Stat2.Controls.OfType<RadioButton>()) { rb.CheckedChanged += UpdateStat2; };
             foreach(RadioButton rb in Stat1.Controls.OfType<RadioButton>()) { rb.CheckedChanged += UpdateStat1; };
             #endregion
+            #region Backgrounds
+            PopulateBGArray();
+            #endregion
         }
 
         #region Races
@@ -133,6 +136,14 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             foreach(RadioButton rb in Stat2.Controls.OfType<RadioButton>()) { rb.Checked = false; rb.Enabled = true; }
         }
         #endregion
+        #region Backgrounds
+        void PopulateBGArray() {
+            BGBonus1.Items.Clear();
+            BGBonus2.Items.Clear();
+            BGBonus1.Items.AddRange(Engine.TOOLS.Union(Engine.LANGUAGES).ToArray());
+            BGBonus2.Items.AddRange(Engine.TOOLS.Union(Engine.LANGUAGES).ToArray());
+        }
+        #endregion
     }
 
     #region Homebrew
@@ -183,6 +194,18 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
         public Dictionary<string, HomebrewRace> HomebrewRaces { get; set; } = new();
         public Dictionary<string, HomebrewClass> HomebrewClasses { get; set; } = new();
         public Dictionary<string, HomebrewBackground> HomebrewBackgrounds { get; set; } = new();
+
+        public static Dictionary<V,K> Merge<V,K> (params Dictionary<V,K>[] Dictionaries) {
+            Dictionary<V, K> Base = new();
+            foreach(Dictionary<V,K> Dict in Dictionaries) {
+                foreach(KeyValuePair<V,K> Value in Dict) {
+                    if (!Base.ContainsKey(Value.Key)) {
+                        Base.Add(Value.Key, Value.Value);
+                    }
+                }
+            }
+            return Base;
+        }
     }
     #endregion
 }
