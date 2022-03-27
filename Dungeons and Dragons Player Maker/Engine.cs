@@ -64,8 +64,8 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
 public static class IO {
 
-    static string SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\file0";
-    static string HomebrewPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\file1";
+    public static string SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\file0";
+    public static string HomebrewPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\file1";
 
     public static SaveData LoadSaveFromDisk() {
         try {

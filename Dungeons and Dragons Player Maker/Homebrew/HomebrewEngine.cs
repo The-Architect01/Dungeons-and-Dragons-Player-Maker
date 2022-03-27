@@ -157,13 +157,24 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
     }
     [Serializable]
     public class HomebrewClass {
-        public string Name { get; }
+        public string Name { get; set;}
+
 
         public void Save() { Engine.Homebrew.HomebrewClasses.Add(Name, this); }
     }
     [Serializable]
     public class HomebrewBackground {
-        public string Name { get; }
+        public string Name { get; set; }
+        public string Proficiency { get; set; }
+        public string Languages { get; set; }
+        public string Items { get; set; }
+        public string Feature { get; set; }
+        
+        public string[] Personality { get; set; }
+        public string[] Ideals { get; set; }
+        public string[] Bonds { get; set; }
+        public string[] Flaws { get; set; }
+        
         public void Save() { Engine.Homebrew.HomebrewBackgrounds.Add(Name, this); }
     } 
 

@@ -95,9 +95,14 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
 
         private void populateRace() {
-            Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
+            try { Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6]; } 
+            catch { Speed.Text = Engine.Homebrew.HomebrewRaces[player.Race].Speed; }
             List<string> abilities = new();
-            abilities.AddRange(Races.ResourceManager.GetString(player.Race).Split("_")[10].Split(", "));
+            try {
+                abilities.AddRange(Races.ResourceManager.GetString(player.Race).Split("_")[10].Split(", "));
+            } catch {
+                abilities.AddRange(Engine.Homebrew.HomebrewRaces[player.Race].Bonus.Split(", "));
+            }
             abilities.Remove("None");
             foreach(string ability in abilities) {Abilities.Text += ability + "\n";}
         }
@@ -263,7 +268,11 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Passive_Wis.Text = (10 + int.Parse(Wis_Mod.Text)).ToString();
             Passive_Wis.Text = Perception.Visible ? (int.Parse(Passive_Wis.Text) + int.Parse(Proficency.Text)).ToString() : Passive_Wis.Text;
             Initiative.Text = Dex_Mod.Text;
-            Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
+            try {
+                Speed.Text = Races.ResourceManager.GetString(player.Race).Split("_")[6];
+            } catch {
+                Speed.Text = Engine.Homebrew.HomebrewRaces[player.Race].Speed;
+            }
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e) {

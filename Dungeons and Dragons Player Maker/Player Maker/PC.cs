@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-//using Microsoft.VisualBasic.Devices;
 using System.Text.Json;
 
 namespace Dungeons_and_Dragons_Player_Maker {
@@ -18,20 +16,18 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public string Race { get; set; } = "";
         public string Class { get; set; }
         public string Background { get; set; }
+        public string Alignment { get; set; }
+        public int XP { get; set; }
+        public int Level { get; set; }
+        public string creator { get; set; }
+        public int[] Stats { get; set; }
 
-        public List<string> Inventory { get; set; } = new List<string>();
-        public List<string> Weapons { get; set; } = new List<string>();
         public string[] Personality { get; set; }
         public List<string> Languages { get; set; } = new List<string>();
         public List<string> Skills { get; set; } = new List<string>();
-        public string Alignment { get; set; }
-        public int[] Stats { get; set; }
+        public List<string> Inventory { get; set; } = new List<string>();
+        public List<string> Weapons { get; set; } = new List<string>();
 
-        public int XP { get; set; }
-        public int Level { get; set; }
- 
-        public string creator { get; set; }
- 
 
         public PC(string Race,string Class,string Background,string[] Personality,int XP,params string[] Inventory) {
             this.Race = Race;
@@ -69,31 +65,20 @@ namespace Dungeons_and_Dragons_Player_Maker {
             else { return 20; }
         }
 
- 
         public void gainXP(int XP) { if (XP <= 355000) { this.XP += XP; } else { showError(); } }      
- 
- 
+  
         public void showError() { System.Windows.Forms.MessageBox.Show("You can't gain anymore XP!"); }
- 
  
         public void save() {
  
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + Name + " - " +Class.Split(":")[0] + ".hro";
-            /*using (FileStream fs = File.Create(path)) {
-                //               BinaryFormatter bin = new();
-                
-                //bin.Serialize(fs, this);
-            }*/
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + Name + " - " + Class.Split(":")[0] + ".hro";
             File.WriteAllText(path, JsonSerializer.Serialize<PC>(this, new JsonSerializerOptions() { WriteIndented = true }));
 
             MessageBox.Show("The data was saved to your desktop.");
         }
  
         public static PC openCharacter(string location) {
-            //    return null;
-            //    using Stream stream = File.Open(location, FileMode.Open); BinaryFormatter bin = new();
             return JsonSerializer.Deserialize<PC>(location, new JsonSerializerOptions() { WriteIndented = true }) ;
-            //          return (PC)bin.Deserialize(stream);
         }
     }
 }

@@ -61,7 +61,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             PC.Stats = stats;
             try {Engine.SaveData.Characters.Add(PC.Name, PC);} catch (Exception) {}
             IO.SaveDataToDisk();
-            //Properties.Settings.Default.Save();
             Form print = new PrintSheet(PC);
             print.Show();
 
@@ -81,8 +80,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             PC.Stats = stats;
             try {Engine.SaveData.Characters.Add(PC.Name, PC);} catch (Exception) { }
             IO.SaveDataToDisk();
-            //Engine.SaveCharacters();
-            //Properties.Settings.Default.Save();
             FindForm().Close();
         }
 
@@ -100,8 +97,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
             PC.Stats = stats;
             try { Engine.SaveData.Characters.Add(PC.Name, PC); } catch (Exception) { }
             IO.SaveDataToDisk();
-            //Engine.SaveCharacters();
-            //Properties.Settings.Default.Save();
             PC.save();
             MessageBox.Show("Your character has been saved.","Character Wizard");
         }
@@ -223,7 +218,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
  
         private void updateStat(string stat, string RollValue) {
             string[] Stats = null;
-            try { Stats = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_"); } catch { Engine.Homebrew.HomebrewRaces[PC.Race].StatBonus.Split("_"); }
+            try { Stats = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_"); } catch { Stats = Engine.Homebrew.HomebrewRaces[PC.Race].StatBonus.Split("_"); }
 
             switch (stat) {
                 case "STR":     
