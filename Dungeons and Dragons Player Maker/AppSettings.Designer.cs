@@ -36,6 +36,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.Hbws = new System.Windows.Forms.Button();
             this.hbwe = new System.Windows.Forms.Button();
             this.hbwi = new System.Windows.Forms.Button();
+            this.FileInput = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,6 +147,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.hbwi.UseVisualStyleBackColor = true;
             this.hbwi.Click += new System.EventHandler(this.hbwi_Click);
             // 
+            // FileInput
+            // 
+            this.FileInput.Filter = "\"Homebrew Files\"|*.brew";
+            // 
             // AppSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -186,5 +191,6 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private System.Windows.Forms.CheckBox HBW;
         private System.Windows.Forms.Button hbwe;
         private System.Windows.Forms.Button hbwi;
+        private System.Windows.Forms.OpenFileDialog FileInput;
     }
 }
