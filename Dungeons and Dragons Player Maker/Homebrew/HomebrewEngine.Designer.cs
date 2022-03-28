@@ -112,9 +112,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.P5 = new System.Windows.Forms.TextBox();
             this.P3 = new System.Windows.Forms.TextBox();
             this.P1 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BGName = new System.Windows.Forms.TextBox();
+            this.BGSave = new System.Windows.Forms.Button();
+            this.BGReset = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.RCs.SuspendLayout();
@@ -558,9 +558,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // BGs
             // 
             this.BGs.Controls.Add(this.tabControl2);
-            this.BGs.Controls.Add(this.textBox1);
-            this.BGs.Controls.Add(this.button4);
-            this.BGs.Controls.Add(this.button3);
+            this.BGs.Controls.Add(this.BGName);
+            this.BGs.Controls.Add(this.BGSave);
+            this.BGs.Controls.Add(this.BGReset);
             this.BGs.Controls.Add(this.label6);
             this.BGs.Location = new System.Drawing.Point(4, 29);
             this.BGs.Name = "BGs";
@@ -1050,30 +1050,32 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.P1.Size = new System.Drawing.Size(112, 27);
             this.P1.TabIndex = 15;
             // 
-            // textBox1
+            // BGName
             // 
-            this.textBox1.Location = new System.Drawing.Point(158, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 27);
-            this.textBox1.TabIndex = 0;
+            this.BGName.Location = new System.Drawing.Point(158, 13);
+            this.BGName.Name = "BGName";
+            this.BGName.Size = new System.Drawing.Size(178, 27);
+            this.BGName.TabIndex = 0;
             // 
-            // button4
+            // BGSave
             // 
-            this.button4.Location = new System.Drawing.Point(457, 13);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 29);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Save";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BGSave.Location = new System.Drawing.Point(457, 13);
+            this.BGSave.Name = "BGSave";
+            this.BGSave.Size = new System.Drawing.Size(94, 29);
+            this.BGSave.TabIndex = 8;
+            this.BGSave.Text = "Save";
+            this.BGSave.UseVisualStyleBackColor = true;
+            this.BGSave.Click += new System.EventHandler(this.BGSave_Click);
             // 
-            // button3
+            // BGReset
             // 
-            this.button3.Location = new System.Drawing.Point(350, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Reset";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BGReset.Location = new System.Drawing.Point(350, 13);
+            this.BGReset.Name = "BGReset";
+            this.BGReset.Size = new System.Drawing.Size(94, 29);
+            this.BGReset.TabIndex = 7;
+            this.BGReset.Text = "Reset";
+            this.BGReset.UseVisualStyleBackColor = true;
+            this.BGReset.Click += new System.EventHandler(this.BGReset_Click);
             // 
             // label6
             // 
@@ -1165,9 +1167,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Traits;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox BGName;
+        private System.Windows.Forms.Button BGSave;
+        private System.Windows.Forms.Button BGReset;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;

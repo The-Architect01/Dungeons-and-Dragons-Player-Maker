@@ -23,7 +23,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private bool InformationFilled { get { return _ready; } set { _ready = value; if (value) { OnReady.Invoke(this, EventArgs.Empty); } else { OnReset.Invoke(this, EventArgs.Empty); } } }
         #endregion
 
-        private static readonly List<string> Backgrounds = new();// { "Acolyte", "Criminal/Spy", "Folk Hero", "Haunted One", "Noble", "Sage", "Soldier", "Urchin"}; //Change this line to add new Backgrounds
+        private static readonly List<string> Backgrounds = new();
         private static readonly List<string> HORROR_BACKGROUNDS = new(){ "Investigator", "Haunted One" };
 
         [Obsolete]

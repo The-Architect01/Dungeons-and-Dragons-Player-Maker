@@ -66,6 +66,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         private void hbwe_Click(object sender, EventArgs e) {
             string dest = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Custom.brew";
             File.Copy(IO.HomebrewPath, dest, true);
+            MessageBox.Show("Homebrew has successfully been exported to your desktop.", "Homebrew Wizard");
         }
 
         private void hbwi_Click(object sender, EventArgs e) {

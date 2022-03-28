@@ -142,8 +142,63 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             BGBonus2.Items.Clear();
             BGBonus1.Items.AddRange(Engine.TOOLS.Union(Engine.LANGUAGES).ToArray());
             BGBonus2.Items.AddRange(Engine.TOOLS.Union(Engine.LANGUAGES).ToArray());
+            Personalities = new[] { P1, P2, P3, P4, P5, P6, P7, P8 };
+            Bonds = new[] { B1, B2, B3, B4, B5, B6 };
+            Ideals = new[] { I1, I2, I3, I4, I5, I6 };
+            Flaws = new[] { F1, F2, F3, F4, F5, F6 };
+        }
+
+        private void BGSave_Click(object sender, EventArgs e) {
+            try {
+                if (string.IsNullOrWhiteSpace(BGName.Text)) { throw new Exception("No background name"); }
+                if (BGBonus1.SelectedIndex == -1 || BGBonus2.SelectedIndex == -1
+                    || BGSkill1.SelectedIndex == -1 || BGSkill2.SelectedIndex == -1) { throw new Exception("No skills assigned"); }
+                foreach (TextBox tb in Personalities) { if (string.IsNullOrWhiteSpace(tb.Text)) { throw new Exception("Not all personality traits assigned"); } }
+                foreach (TextBox tb in Bonds) { if (string.IsNullOrWhiteSpace(tb.Text)) { throw new Exception("Not all personality traits assigned"); } }
+                foreach (TextBox tb in Ideals) { if (string.IsNullOrWhiteSpace(tb.Text)) { throw new Exception("Not all personality traits assigned"); } }
+                foreach (TextBox tb in Flaws) { if (string.IsNullOrWhiteSpace(tb.Text)) { throw new Exception("Not all personality traits assigned"); } }
+                HomebrewBackground bg = new();
+                bg.Name = BGName.Text;
+                bg.Proficiency = $"{BGSkill1.SelectedItem}_{BGSkill2.SelectedItem}" +
+                    $"{(Engine.TOOLS.Contains(BGBonus1.SelectedItem) ? ($"_{BGBonus1.SelectedItem}") : string.Empty)}" +
+                    $"{(Engine.TOOLS.Contains(BGBonus2.SelectedItem) ? ($"_{BGBonus2.SelectedItem}") : string.Empty)}";
+                
+                bg.Languages = "";
+                bg.Languages = $"{(Engine.LANGUAGES.Contains(BGBonus1.SelectedItem) ? BGBonus1.SelectedItem: string.Empty)}";
+                bg.Languages = $"{((Engine.LANGUAGES.Contains(BGBonus2.SelectedItem) ? (bg.Languages == "" ? BGBonus2.SelectedItem : bg.Languages + "_" + BGBonus2.SelectedItem) : string.Empty))}";
+                
+                bg.Personality = new[] { Personalities[0].Text, Personalities[1].Text, Personalities[2].Text, Personalities[3].Text,
+                    Personalities[4].Text, Personalities[5].Text, Personalities[6].Text, Personalities[7].Text};
+                bg.Bonds = new[] { Bonds[0].Text, Bonds[1].Text, Bonds[2].Text, Bonds[3].Text, Bonds[4].Text, Bonds[5].Text };
+                bg.Ideals = new[] { Ideals[0].Text, Ideals[1].Text, Ideals[2].Text, Ideals[3].Text, Ideals[4].Text, Ideals[5].Text };
+                bg.Flaws = new[] { Flaws[0].Text, Flaws[1].Text, Flaws[2].Text, Flaws[3].Text, Flaws[4].Text, Flaws[5].Text };
+                
+                bg.Save();
+                MessageBox.Show($"{bg.Name} has been saved!", "Homebrew Wizard");
+            } catch (Exception ex) {
+                MessageBox.Show($"There was an error saving your background.\n{ex.Message}", "Homebrew Wizard");
+            }
+        }
+
+        TextBox[] Personalities;
+        TextBox[] Bonds;
+        TextBox[] Ideals;
+        TextBox[] Flaws;
+
+        private void BGReset_Click(object sender, EventArgs e) {
+            BGBonus1.SelectedIndex = -1;
+            BGBonus2.SelectedIndex = -1;
+            BGFeature.Text = "";
+            BGSkill1.SelectedIndex = -1;
+            BGSkill2.SelectedIndex = -1;
+            foreach (TextBox tb in Personalities) { tb.Text = ""; }
+            foreach (TextBox tb in Bonds) { tb.Text = ""; }
+            foreach (TextBox tb in Ideals) { tb.Text = ""; }
+            foreach (TextBox tb in Flaws) { tb.Text = ""; }
+            BGName.Text = "";
         }
         #endregion
+
     }
 
     #region Homebrew
