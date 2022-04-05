@@ -65,7 +65,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             // 
             this.label2.Location = new System.Drawing.Point(6, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(238, 186);
+            this.label2.Size = new System.Drawing.Size(238, 173);
             this.label2.TabIndex = 5;
             this.label2.Text = "More Coming Soon!";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

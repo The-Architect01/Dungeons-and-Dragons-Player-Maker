@@ -113,9 +113,9 @@ public static class IO {
 
 public class SaveData {
     public string Name { get; set; }
-    public string CurrentVersion { get; set; } = "1.0.0.0";
+    public string CurrentVersion { get; set; } = "0.0.0.0";
     public DateTime LastUpdated { get; set; }
-    public Dictionary<string, bool> SourceBooks { get; set; } = new Dictionary<string, bool>() { { "PHB", true } };
+    public Dictionary<string, bool> SourceBooks { get; set; } = new Dictionary<string, bool>() { { "PHB", true },{ "HBW", false } };
     public string[] CharacterList { get { return Characters.Keys.ToArray<string>(); } }
     public Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC> Characters { get; set; } = new Dictionary<string, Dungeons_and_Dragons_Player_Maker.PC>();
 }

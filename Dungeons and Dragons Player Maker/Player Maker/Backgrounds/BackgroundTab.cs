@@ -98,10 +98,19 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private void Background_Hover(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(PC.Background)) { return; }
             try {
-                string[] Skills = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(((Label)sender).Text + "-Skills").Split("_");
+                string[] Skills;
+                if (Engine.Homebrew.HomebrewBackgrounds.ContainsKey(((Label)sender).Text)) {
+                    Skills = Engine.Homebrew.HomebrewBackgrounds[((Label)sender).Text].Skills.Split("_");
+                }else {
+                    Skills = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(((Label)sender).Text + "-Skills").Split("_");
+                }
                 BackgroundBonus.Text = "Background Bonus:\n";
                 foreach (string s in Skills) { BackgroundBonus.Text += s + "\n"; }
-                BackgroundData.Text = "Background Skill:\n" + Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(((Label)sender).Text);
+                if (Engine.Homebrew.HomebrewBackgrounds.ContainsKey(((Label)sender).Text)) {
+                    BackgroundData.Text = "Background Skill:\n" + Engine.Homebrew.HomebrewBackgrounds[((Label)sender).Text].Feature;
+                } else {
+                    BackgroundData.Text = "Background Skill:\n" + Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(((Label)sender).Text);
+                }
             } catch (NullReferenceException) {
                 BackgroundBonus.Text = "Background Bonus:\nNo Data Currently Available";
                 BackgroundData.Text  = "Background Skill:\nNo Data Currently Available";
@@ -111,10 +120,24 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
             Reset();
             PC.Background = ((Label)sender).Text;
             try {
-                string[] Skills = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Skills").Split("_");
+                string[] Skills;
+                if (Engine.Homebrew.HomebrewBackgrounds.ContainsKey(PC.Background)) {
+                    List<string> temp = new();
+                    temp.AddRange(Engine.Homebrew.HomebrewBackgrounds[PC.Background].Languages.Split("_"));
+                    temp.AddRange(Engine.Homebrew.HomebrewBackgrounds[PC.Background].Skills.Split("_"));
+                    temp.AddRange(Engine.Homebrew.HomebrewBackgrounds[PC.Background].Tools.Split("_"));
+
+                    Skills = temp.ToArray();
+                } else {
+                    Skills = Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Skills").Split("_"); 
+                }
                 BackgroundBonus.Text = "Background Bonus:\n";
                 foreach (string s in Skills) { BackgroundBonus.Text += s + "\n"; }
-                BackgroundData.Text = "Background Skill:\n" + Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background);
+                if (Engine.Homebrew.HomebrewBackgrounds.ContainsKey(PC.Background)) {
+                    BackgroundData.Text = "Background Skill:\n" + Engine.Homebrew.HomebrewBackgrounds[PC.Background].Feature;
+                } else {
+                    BackgroundData.Text = "Background Skill:\n" + Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background);
+                }
                 PopulateBackgroundPersonality();
                 foreach (string data in BackgroundBonus.Text.Split("\n")) {
                     for (int i = 0; i < Regex.Matches(data, "<CHOOSE>").Count; i++) {
@@ -134,17 +157,24 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
                 BackgroundBonus.Text = "Background Bonus:\nNo Data Currently Available";
             }
         }
-        private void PopulateBackgroundPersonality(){
-            if (HORROR_BACKGROUNDS.Contains(PC.Background)) {
-                Personality.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Personality.Split("_"));
-                Ideal.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Ideal.Split("_"));
-                Bond.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Bond.Split("_"));
-                Flaw.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Flaw.Split("_"));
-            } else {
-                Personality.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Personality").Split("_"));
-                Ideal.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Ideal").Split("_"));
-                Bond.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Bond").Split("_"));
-                Flaw.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Flaw").Split("_")); 
+        private void PopulateBackgroundPersonality() {
+            if (Engine.Homebrew.HomebrewBackgrounds.ContainsKey(PC.Background)) {
+                Personality.Items.AddRange(Engine.Homebrew.HomebrewBackgrounds[PC.Background].Personality);
+                Ideal.Items.AddRange(Engine.Homebrew.HomebrewBackgrounds[PC.Background].Ideals);
+                Bond.Items.AddRange(Engine.Homebrew.HomebrewBackgrounds[PC.Background].Bonds);
+                Flaw.Items.AddRange(Engine.Homebrew.HomebrewBackgrounds[PC.Background].Flaws);
+            } else { 
+                if (HORROR_BACKGROUNDS.Contains(PC.Background)) {
+                    Personality.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Personality.Split("_"));
+                    Ideal.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Ideal.Split("_"));
+                    Bond.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Bond.Split("_"));
+                    Flaw.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.Horror_Flaw.Split("_"));
+                } else {
+                    Personality.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Personality").Split("_"));
+                    Ideal.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Ideal").Split("_"));
+                    Bond.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Bond").Split("_"));
+                    Flaw.Items.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Flaw").Split("_"));
+                }
             }
         }
         #endregion
@@ -217,15 +247,24 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         private void ID_SelectedValueChanged(object sender, EventArgs e) {  //Checks if the user has filled out all necessary data.
             if (!Personality.Text.SequenceEqual("Select One") && !Ideal.Text.SequenceEqual("Select One") &&
                 !Bond.Text.SequenceEqual("Select One") && !Flaw.Text.SequenceEqual("Select One") && !BackgroundBonus.Text.Contains("<CHOOSE>")) {
+                
                 string[] Languages = BackgroundBonus.Text.Split("\n")[1].Split("Languages: ")[1].Split(", ");
                 PC.Languages.AddRange(Languages);
                 PC.Languages.Remove("None");
+                
                 string[] Skills = BackgroundBonus.Text.Split("\n")[2].Split("Skills: ")[1].Split(", ");
                 PC.Skills.AddRange(Skills);
+                
                 string[] Tools = BackgroundBonus.Text.Split("\n")[3].Split("Tools: ")[1].Split(", ");
                 PC.Skills.AddRange(Tools);
+                
                 PC.Personality = new[] { Personality.Text, Bond.Text, Ideal.Text, Flaw.Text };
-                PC.Inventory.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Items").Split(", "));
+                
+                if (Engine.Homebrew.HomebrewBackgrounds.ContainsKey(PC.Background)) {
+                    PC.Inventory.AddRange(Engine.Homebrew.HomebrewBackgrounds[PC.Background].Items.Split(", "));
+                } else {
+                    PC.Inventory.AddRange(Dungeons_and_Dragons_Player_Maker.Backgrounds.ResourceManager.GetString(PC.Background + "-Items").Split(", ")); 
+                }
                 InformationFilled = true;
             }
         }
