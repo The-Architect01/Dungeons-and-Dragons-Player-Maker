@@ -112,8 +112,13 @@ namespace Dungeons_and_Dragons_Player_Maker {
  
             string[] abilities = Classes.ResourceManager.GetString(player.Class.Split(":")[0] + ":Base").Split("_");
             foreach(string ability in abilities) {Abilities.Text += ability + "\n";}
-            string[] subAbilitites = Classes.ResourceManager.GetString(player.Class).Split("_");
-            foreach(string ability in subAbilitites) {Abilities.Text += ability + "\n";}
+            string[] subAbilities = null;
+            if (Engine.Homebrew.HomebrewClasses.ContainsKey(player.Class)) {
+                subAbilities = Engine.Homebrew.HomebrewClasses[player.Class].Abilites.Split("_");
+            } else {
+                subAbilities = Classes.ResourceManager.GetString(player.Class).Split("_");
+            }
+            foreach(string ability in subAbilities) {Abilities.Text += ability + "\n";}
             switch (player.Class.Split(":")[0]) {
                 case "Artificer":
                     HitDie.Text = "d8";
@@ -190,8 +195,12 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
  
         private void populateBackground() {
- 
-            Abilities.Text += Backgrounds.ResourceManager.GetString(Background.Text).Split(":")[0];
+
+            if (Engine.Homebrew.HomebrewBackgrounds.ContainsKey(Background.Text)) {
+                Abilities.Text += Engine.Homebrew.HomebrewBackgrounds[Background.Text].Feature;
+            } else {
+                Abilities.Text += Backgrounds.ResourceManager.GetString(Background.Text).Split(":")[0];
+            }
             Personality.Text = player.Personality[0];
             Ideal.Text = player.Personality[1];
             Bond.Text = player.Personality[2];
