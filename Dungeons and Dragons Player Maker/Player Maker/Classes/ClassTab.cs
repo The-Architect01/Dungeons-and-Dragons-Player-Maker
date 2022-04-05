@@ -215,8 +215,8 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         }
 
         private readonly PictureBox ClassPreview = new() {
-            //Image = Dungeons_and_Dragons_Player_Maker.Classes.Barbarian,
-            ImageLocation = ImageLocation.GetImage("Barbarian"),
+            Image = Properties.Resources.Custom,
+            //ImageLocation = ImageLocation.GetImage("Barbarian"),
             Size = new Size(275, 316),
             Location = new Point(223, 6),
             SizeMode = PictureBoxSizeMode.Zoom
@@ -253,7 +253,14 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
             } catch (Exception) { ClassInfo.Text = "No Data Found"; }
             try {
                 if (subclass.SequenceEqual("Select One")) { SubClassInfo.Text = "No Data Found"; } else {
-                    string[] subStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + ":" + subclass).Split("_");
+                    string[] subStats = null;
+                    if (Engine.Homebrew.HomebrewClasses.ContainsKey(Class + ":" + subclass)) {
+                        subStats = Engine.Homebrew.HomebrewClasses[Class + ":" + subclass].Abilites.Split("_");
+                        ClassPreview.Image = Properties.Resources.Custom;
+                    } else {
+                        subStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(Class + ":" + subclass).Split("_");
+                        ClassPreview.Load(ImageLocation.GetImage(Class));
+                    }
                     SubClassInfo.Text = "Subclass Skill - Level:\n";
                     foreach (string item in subStats) {
                         SubClassInfo.Text = SubClassInfo.Text + item + "\n";

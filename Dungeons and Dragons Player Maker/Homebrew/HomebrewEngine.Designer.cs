@@ -65,13 +65,39 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.CHA2 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.CLs = new System.Windows.Forms.TabPage();
+            this.Cla_Abil = new System.Windows.Forms.GroupBox();
+            this.Label_5 = new System.Windows.Forms.Label();
+            this.Label_1 = new System.Windows.Forms.Label();
+            this.Label_4 = new System.Windows.Forms.Label();
+            this.Label_2 = new System.Windows.Forms.Label();
+            this.Label_3 = new System.Windows.Forms.Label();
+            this.Feature_5 = new System.Windows.Forms.TextBox();
+            this.Feature_4 = new System.Windows.Forms.TextBox();
+            this.Feature_3 = new System.Windows.Forms.TextBox();
+            this.Feature_2 = new System.Windows.Forms.TextBox();
+            this.Feature_1 = new System.Windows.Forms.TextBox();
+            this.Label_I = new System.Windows.Forms.Label();
+            this.Cla_Revert = new System.Windows.Forms.Button();
+            this.Cla_Save = new System.Windows.Forms.Button();
+            this.SubclassName = new System.Windows.Forms.TextBox();
+            this.BaseClass = new System.Windows.Forms.ComboBox();
+            this.Label_Name = new System.Windows.Forms.Label();
+            this.Label_BaseCl = new System.Windows.Forms.Label();
+            this.Magic_Subcla = new System.Windows.Forms.GroupBox();
+            this.IsSpellCaster = new System.Windows.Forms.CheckBox();
+            this.Label_Cast = new System.Windows.Forms.Label();
+            this.Label_Spells = new System.Windows.Forms.Label();
+            this.CastAbility = new System.Windows.Forms.ComboBox();
+            this.Cl_Data = new System.Windows.Forms.GroupBox();
+            this.Preview = new System.Windows.Forms.PictureBox();
+            this.Class_Data = new System.Windows.Forms.Label();
             this.BGs = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.BGFeature = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.BGItems = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BGSkill2 = new System.Windows.Forms.ComboBox();
             this.BGSkill1 = new System.Windows.Forms.ComboBox();
@@ -122,6 +148,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.groupBox2.SuspendLayout();
             this.Stat1.SuspendLayout();
             this.Stat2.SuspendLayout();
+            this.CLs.SuspendLayout();
+            this.Cla_Abil.SuspendLayout();
+            this.Magic_Subcla.SuspendLayout();
+            this.Cl_Data.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Preview)).BeginInit();
             this.BGs.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -547,13 +578,279 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // 
             // CLs
             // 
+            this.CLs.Controls.Add(this.Cla_Abil);
+            this.CLs.Controls.Add(this.Cla_Revert);
+            this.CLs.Controls.Add(this.Cla_Save);
+            this.CLs.Controls.Add(this.SubclassName);
+            this.CLs.Controls.Add(this.BaseClass);
+            this.CLs.Controls.Add(this.Label_Name);
+            this.CLs.Controls.Add(this.Label_BaseCl);
+            this.CLs.Controls.Add(this.Magic_Subcla);
+            this.CLs.Controls.Add(this.Cl_Data);
             this.CLs.Location = new System.Drawing.Point(4, 29);
             this.CLs.Name = "CLs";
             this.CLs.Padding = new System.Windows.Forms.Padding(3);
             this.CLs.Size = new System.Drawing.Size(577, 626);
             this.CLs.TabIndex = 1;
-            this.CLs.Text = "Classes";
+            this.CLs.Text = "Subclasses";
             this.CLs.UseVisualStyleBackColor = true;
+            // 
+            // Cla_Abil
+            // 
+            this.Cla_Abil.Controls.Add(this.Label_5);
+            this.Cla_Abil.Controls.Add(this.Label_1);
+            this.Cla_Abil.Controls.Add(this.Label_4);
+            this.Cla_Abil.Controls.Add(this.Label_2);
+            this.Cla_Abil.Controls.Add(this.Label_3);
+            this.Cla_Abil.Controls.Add(this.Feature_5);
+            this.Cla_Abil.Controls.Add(this.Feature_4);
+            this.Cla_Abil.Controls.Add(this.Feature_3);
+            this.Cla_Abil.Controls.Add(this.Feature_2);
+            this.Cla_Abil.Controls.Add(this.Feature_1);
+            this.Cla_Abil.Controls.Add(this.Label_I);
+            this.Cla_Abil.Location = new System.Drawing.Point(15, 218);
+            this.Cla_Abil.Name = "Cla_Abil";
+            this.Cla_Abil.Size = new System.Drawing.Size(252, 391);
+            this.Cla_Abil.TabIndex = 15;
+            this.Cla_Abil.TabStop = false;
+            this.Cla_Abil.Text = "Abilities";
+            // 
+            // Label_5
+            // 
+            this.Label_5.Location = new System.Drawing.Point(6, 351);
+            this.Label_5.Name = "Label_5";
+            this.Label_5.Size = new System.Drawing.Size(66, 20);
+            this.Label_5.TabIndex = 10;
+            // 
+            // Label_1
+            // 
+            this.Label_1.Location = new System.Drawing.Point(9, 179);
+            this.Label_1.Name = "Label_1";
+            this.Label_1.Size = new System.Drawing.Size(66, 20);
+            this.Label_1.TabIndex = 9;
+            // 
+            // Label_4
+            // 
+            this.Label_4.Location = new System.Drawing.Point(6, 308);
+            this.Label_4.Name = "Label_4";
+            this.Label_4.Size = new System.Drawing.Size(66, 20);
+            this.Label_4.TabIndex = 8;
+            // 
+            // Label_2
+            // 
+            this.Label_2.Location = new System.Drawing.Point(6, 222);
+            this.Label_2.Name = "Label_2";
+            this.Label_2.Size = new System.Drawing.Size(66, 20);
+            this.Label_2.TabIndex = 7;
+            // 
+            // Label_3
+            // 
+            this.Label_3.Location = new System.Drawing.Point(6, 265);
+            this.Label_3.Name = "Label_3";
+            this.Label_3.Size = new System.Drawing.Size(66, 20);
+            this.Label_3.TabIndex = 6;
+            // 
+            // Feature_5
+            // 
+            this.Feature_5.Enabled = false;
+            this.Feature_5.Location = new System.Drawing.Point(78, 348);
+            this.Feature_5.Name = "Feature_5";
+            this.Feature_5.Size = new System.Drawing.Size(167, 27);
+            this.Feature_5.TabIndex = 4;
+            // 
+            // Feature_4
+            // 
+            this.Feature_4.Enabled = false;
+            this.Feature_4.Location = new System.Drawing.Point(78, 305);
+            this.Feature_4.Name = "Feature_4";
+            this.Feature_4.Size = new System.Drawing.Size(167, 27);
+            this.Feature_4.TabIndex = 3;
+            // 
+            // Feature_3
+            // 
+            this.Feature_3.Enabled = false;
+            this.Feature_3.Location = new System.Drawing.Point(78, 262);
+            this.Feature_3.Name = "Feature_3";
+            this.Feature_3.Size = new System.Drawing.Size(167, 27);
+            this.Feature_3.TabIndex = 2;
+            // 
+            // Feature_2
+            // 
+            this.Feature_2.Enabled = false;
+            this.Feature_2.Location = new System.Drawing.Point(78, 219);
+            this.Feature_2.Name = "Feature_2";
+            this.Feature_2.Size = new System.Drawing.Size(167, 27);
+            this.Feature_2.TabIndex = 1;
+            // 
+            // Feature_1
+            // 
+            this.Feature_1.Enabled = false;
+            this.Feature_1.Location = new System.Drawing.Point(78, 176);
+            this.Feature_1.Name = "Feature_1";
+            this.Feature_1.Size = new System.Drawing.Size(167, 27);
+            this.Feature_1.TabIndex = 0;
+            // 
+            // Label_I
+            // 
+            this.Label_I.Location = new System.Drawing.Point(9, 23);
+            this.Label_I.Name = "Label_I";
+            this.Label_I.Size = new System.Drawing.Size(237, 152);
+            this.Label_I.TabIndex = 11;
+            this.Label_I.Text = "Instructions:\r\nA player unlocks certain abilities at certain levels dictated by t" +
+    "heir class and subclass. Input an ability that will unlock with the given level " +
+    "below.";
+            // 
+            // Cla_Revert
+            // 
+            this.Cla_Revert.Location = new System.Drawing.Point(292, 564);
+            this.Cla_Revert.Name = "Cla_Revert";
+            this.Cla_Revert.Size = new System.Drawing.Size(267, 29);
+            this.Cla_Revert.TabIndex = 14;
+            this.Cla_Revert.Text = "Revert";
+            this.Cla_Revert.UseVisualStyleBackColor = true;
+            this.Cla_Revert.Click += new System.EventHandler(this.Cla_Revert_Click);
+            // 
+            // Cla_Save
+            // 
+            this.Cla_Save.Location = new System.Drawing.Point(292, 516);
+            this.Cla_Save.Name = "Cla_Save";
+            this.Cla_Save.Size = new System.Drawing.Size(267, 29);
+            this.Cla_Save.TabIndex = 13;
+            this.Cla_Save.Text = "Save";
+            this.Cla_Save.UseVisualStyleBackColor = true;
+            this.Cla_Save.Click += new System.EventHandler(this.Cla_Save_Click);
+            // 
+            // SubclassName
+            // 
+            this.SubclassName.Location = new System.Drawing.Point(135, 58);
+            this.SubclassName.Name = "SubclassName";
+            this.SubclassName.Size = new System.Drawing.Size(125, 27);
+            this.SubclassName.TabIndex = 7;
+            // 
+            // BaseClass
+            // 
+            this.BaseClass.FormattingEnabled = true;
+            this.BaseClass.Items.AddRange(new object[] {
+            "Barbarian",
+            "Bard",
+            "Cleric",
+            "Druid",
+            "Fighter",
+            "Monk",
+            "Paladin",
+            "Ranger",
+            "Rogue",
+            "Sorcerer",
+            "Warlock",
+            "Wizard"});
+            this.BaseClass.Location = new System.Drawing.Point(135, 18);
+            this.BaseClass.Name = "BaseClass";
+            this.BaseClass.Size = new System.Drawing.Size(125, 28);
+            this.BaseClass.TabIndex = 0;
+            this.BaseClass.SelectedIndexChanged += new System.EventHandler(this.BaseClass_SelectedIndexChanged);
+            // 
+            // Label_Name
+            // 
+            this.Label_Name.Location = new System.Drawing.Point(15, 61);
+            this.Label_Name.Name = "Label_Name";
+            this.Label_Name.Size = new System.Drawing.Size(148, 28);
+            this.Label_Name.TabIndex = 6;
+            this.Label_Name.Text = "Subclass Name:";
+            // 
+            // Label_BaseCl
+            // 
+            this.Label_BaseCl.Location = new System.Drawing.Point(15, 18);
+            this.Label_BaseCl.Name = "Label_BaseCl";
+            this.Label_BaseCl.Size = new System.Drawing.Size(101, 28);
+            this.Label_BaseCl.TabIndex = 4;
+            this.Label_BaseCl.Text = "Base Class: ";
+            // 
+            // Magic_Subcla
+            // 
+            this.Magic_Subcla.Controls.Add(this.IsSpellCaster);
+            this.Magic_Subcla.Controls.Add(this.Label_Cast);
+            this.Magic_Subcla.Controls.Add(this.Label_Spells);
+            this.Magic_Subcla.Controls.Add(this.CastAbility);
+            this.Magic_Subcla.Location = new System.Drawing.Point(15, 103);
+            this.Magic_Subcla.Name = "Magic_Subcla";
+            this.Magic_Subcla.Size = new System.Drawing.Size(252, 109);
+            this.Magic_Subcla.TabIndex = 2;
+            this.Magic_Subcla.TabStop = false;
+            this.Magic_Subcla.Text = "Magic";
+            // 
+            // IsSpellCaster
+            // 
+            this.IsSpellCaster.Appearance = System.Windows.Forms.Appearance.Button;
+            this.IsSpellCaster.Location = new System.Drawing.Point(120, 26);
+            this.IsSpellCaster.Name = "IsSpellCaster";
+            this.IsSpellCaster.Size = new System.Drawing.Size(110, 30);
+            this.IsSpellCaster.TabIndex = 8;
+            this.IsSpellCaster.Text = "No";
+            this.IsSpellCaster.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IsSpellCaster.UseVisualStyleBackColor = true;
+            this.IsSpellCaster.CheckedChanged += new System.EventHandler(this.IsSpellCaster_CheckedChanged);
+            // 
+            // Label_Cast
+            // 
+            this.Label_Cast.Location = new System.Drawing.Point(9, 71);
+            this.Label_Cast.Name = "Label_Cast";
+            this.Label_Cast.Size = new System.Drawing.Size(101, 28);
+            this.Label_Cast.TabIndex = 3;
+            this.Label_Cast.Text = "Cast Ability";
+            // 
+            // Label_Spells
+            // 
+            this.Label_Spells.Location = new System.Drawing.Point(9, 26);
+            this.Label_Spells.Name = "Label_Spells";
+            this.Label_Spells.Size = new System.Drawing.Size(101, 30);
+            this.Label_Spells.TabIndex = 3;
+            this.Label_Spells.Text = "Spell Caster";
+            this.Label_Spells.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CastAbility
+            // 
+            this.CastAbility.Enabled = false;
+            this.CastAbility.FormattingEnabled = true;
+            this.CastAbility.Items.AddRange(new object[] {
+            "WIS",
+            "INT",
+            "CHA"});
+            this.CastAbility.Location = new System.Drawing.Point(120, 68);
+            this.CastAbility.Name = "CastAbility";
+            this.CastAbility.Size = new System.Drawing.Size(110, 28);
+            this.CastAbility.TabIndex = 1;
+            // 
+            // Cl_Data
+            // 
+            this.Cl_Data.Controls.Add(this.Preview);
+            this.Cl_Data.Controls.Add(this.Class_Data);
+            this.Cl_Data.Location = new System.Drawing.Point(305, 10);
+            this.Cl_Data.Name = "Cl_Data";
+            this.Cl_Data.Size = new System.Drawing.Size(250, 487);
+            this.Cl_Data.TabIndex = 17;
+            this.Cl_Data.TabStop = false;
+            this.Cl_Data.Text = "Class Data";
+            // 
+            // Preview
+            // 
+            this.Preview.Image = global::Dungeons_and_Dragons_Player_Maker.Properties.Resources.Custom;
+            this.Preview.Location = new System.Drawing.Point(6, 26);
+            this.Preview.Name = "Preview";
+            this.Preview.Size = new System.Drawing.Size(238, 215);
+            this.Preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Preview.TabIndex = 18;
+            this.Preview.TabStop = false;
+            // 
+            // Class_Data
+            // 
+            this.Class_Data.AutoSize = true;
+            this.Class_Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Class_Data.Location = new System.Drawing.Point(6, 249);
+            this.Class_Data.MaximumSize = new System.Drawing.Size(238, 225);
+            this.Class_Data.Name = "Class_Data";
+            this.Class_Data.Size = new System.Drawing.Size(127, 20);
+            this.Class_Data.TabIndex = 16;
+            this.Class_Data.Text = "No Class Selected";
             // 
             // BGs
             // 
@@ -613,7 +910,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.listBox3);
+            this.groupBox5.Controls.Add(this.BGItems);
             this.groupBox5.Location = new System.Drawing.Point(275, 6);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(250, 278);
@@ -621,11 +918,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Items";
             // 
-            // listBox3
+            // BGItems
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Items.AddRange(new object[] {
+            this.BGItems.FormattingEnabled = true;
+            this.BGItems.ItemHeight = 20;
+            this.BGItems.Items.AddRange(new object[] {
             "Alchemist’s Supplies",
             "Brewer’s Supplies",
             "Calligrapher’s Supplies",
@@ -669,11 +966,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             "Lyre",
             "Horn",
             "Pan Flute"});
-            this.listBox3.Location = new System.Drawing.Point(13, 31);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox3.Size = new System.Drawing.Size(225, 244);
-            this.listBox3.TabIndex = 2;
+            this.BGItems.Location = new System.Drawing.Point(13, 31);
+            this.BGItems.Name = "BGItems";
+            this.BGItems.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.BGItems.Size = new System.Drawing.Size(225, 244);
+            this.BGItems.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -1059,7 +1356,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // 
             // BGSave
             // 
-            this.BGSave.Location = new System.Drawing.Point(457, 13);
+            this.BGSave.Location = new System.Drawing.Point(351, 13);
             this.BGSave.Name = "BGSave";
             this.BGSave.Size = new System.Drawing.Size(94, 29);
             this.BGSave.TabIndex = 8;
@@ -1069,7 +1366,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // 
             // BGReset
             // 
-            this.BGReset.Location = new System.Drawing.Point(350, 13);
+            this.BGReset.Location = new System.Drawing.Point(458, 13);
             this.BGReset.Name = "BGReset";
             this.BGReset.Size = new System.Drawing.Size(94, 29);
             this.BGReset.TabIndex = 7;
@@ -1103,6 +1400,14 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.groupBox2.ResumeLayout(false);
             this.Stat1.ResumeLayout(false);
             this.Stat2.ResumeLayout(false);
+            this.CLs.ResumeLayout(false);
+            this.CLs.PerformLayout();
+            this.Cla_Abil.ResumeLayout(false);
+            this.Cla_Abil.PerformLayout();
+            this.Magic_Subcla.ResumeLayout(false);
+            this.Cl_Data.ResumeLayout(false);
+            this.Cl_Data.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Preview)).EndInit();
             this.BGs.ResumeLayout(false);
             this.BGs.PerformLayout();
             this.tabControl2.ResumeLayout(false);
@@ -1217,5 +1522,32 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox BGBonus2;
         private System.Windows.Forms.ComboBox BGBonus1;
+        private System.Windows.Forms.ListBox BGItems;
+        private System.Windows.Forms.TextBox SubclassName;
+        private System.Windows.Forms.ComboBox BaseClass;
+        private System.Windows.Forms.Label Label_Name;
+        private System.Windows.Forms.Label Label_BaseCl;
+        private System.Windows.Forms.GroupBox Magic_Subcla;
+        private System.Windows.Forms.Label Label_Cast;
+        private System.Windows.Forms.Label Label_Spells;
+        private System.Windows.Forms.ComboBox CastAbility;
+        private System.Windows.Forms.CheckBox IsSpellCaster;
+        private System.Windows.Forms.GroupBox Cla_Abil;
+        private System.Windows.Forms.Button Cla_Revert;
+        private System.Windows.Forms.Button Cla_Save;
+        private System.Windows.Forms.GroupBox Cl_Data;
+        private System.Windows.Forms.PictureBox Preview;
+        private System.Windows.Forms.Label Class_Data;
+        private System.Windows.Forms.Label Label_5;
+        private System.Windows.Forms.Label Label_1;
+        private System.Windows.Forms.Label Label_4;
+        private System.Windows.Forms.Label Label_2;
+        private System.Windows.Forms.Label Label_3;
+        private System.Windows.Forms.TextBox Feature_5;
+        private System.Windows.Forms.TextBox Feature_4;
+        private System.Windows.Forms.TextBox Feature_3;
+        private System.Windows.Forms.TextBox Feature_2;
+        private System.Windows.Forms.TextBox Feature_1;
+        private System.Windows.Forms.Label Label_I;
     }
 }

@@ -16,6 +16,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
         public HomebrewEngine() {
             InitializeComponent();
             PopulateRaceArrays();
+            PopulateClassArrays();
         }
 
         [Obsolete]
@@ -159,22 +160,31 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
                 foreach (TextBox tb in Flaws) { if (string.IsNullOrWhiteSpace(tb.Text)) { throw new Exception("Not all personality traits assigned"); } }
                 HomebrewBackground bg = new();
                 bg.Name = BGName.Text;
-                bg.Proficiency = $"{BGSkill1.SelectedItem}_{BGSkill2.SelectedItem}" +
-                    $"{(Engine.TOOLS.Contains(BGBonus1.SelectedItem) ? ($"_{BGBonus1.SelectedItem}") : string.Empty)}" +
-                    $"{(Engine.TOOLS.Contains(BGBonus2.SelectedItem) ? ($"_{BGBonus2.SelectedItem}") : string.Empty)}";
                 
-                bg.Languages = "";
-                bg.Languages = $"{(Engine.LANGUAGES.Contains(BGBonus1.SelectedItem) ? BGBonus1.SelectedItem: string.Empty)}";
-                bg.Languages = $"{((Engine.LANGUAGES.Contains(BGBonus2.SelectedItem) ? (bg.Languages == "" ? BGBonus2.SelectedItem : bg.Languages + "_" + BGBonus2.SelectedItem) : string.Empty))}";
+                bg.Skills = $"Skills: {BGSkill1.SelectedItem}, {BGSkill2.SelectedItem}";
+                
+                bg.Tools = "Tools: ";
+                bg.Tools = $"{(Engine.TOOLS.Contains(BGBonus1.SelectedItem) ? BGBonus1.SelectedItem : bg.Tools)}";
+                bg.Tools = $"{((Engine.TOOLS.Contains(BGBonus2.SelectedItem) ? (bg.Tools == "Tools: " ? BGBonus2.SelectedItem : bg.Tools + "_" + BGBonus2.SelectedItem) : string.Empty))}";
+
+                bg.Languages = "Languages: ";
+                bg.Languages = $"{(Engine.LANGUAGES.Contains(BGBonus1.SelectedItem) ? BGBonus1.SelectedItem: bg.Languages)}";
+                bg.Languages = $"{((Engine.LANGUAGES.Contains(BGBonus2.SelectedItem) ? (bg.Languages == "Languages: " ? BGBonus2.SelectedItem : bg.Languages + "_" + BGBonus2.SelectedItem) : string.Empty))}";
                 
                 bg.Personality = new[] { Personalities[0].Text, Personalities[1].Text, Personalities[2].Text, Personalities[3].Text,
                     Personalities[4].Text, Personalities[5].Text, Personalities[6].Text, Personalities[7].Text};
                 bg.Bonds = new[] { Bonds[0].Text, Bonds[1].Text, Bonds[2].Text, Bonds[3].Text, Bonds[4].Text, Bonds[5].Text };
                 bg.Ideals = new[] { Ideals[0].Text, Ideals[1].Text, Ideals[2].Text, Ideals[3].Text, Ideals[4].Text, Ideals[5].Text };
                 bg.Flaws = new[] { Flaws[0].Text, Flaws[1].Text, Flaws[2].Text, Flaws[3].Text, Flaws[4].Text, Flaws[5].Text };
+
+                bg.Feature = BGFeature.Text;
                 
+                foreach(string item in BGItems.SelectedItems) { bg.Items += item + ", "; }
+                bg.Items = bg.Items.Remove(bg.Items.Length - 2);
+
                 bg.Save();
                 MessageBox.Show($"{bg.Name} has been saved!", "Homebrew Wizard");
+                IO.SaveDataToDisk();
             } catch (Exception ex) {
                 MessageBox.Show($"There was an error saving your background.\n{ex.Message}", "Homebrew Wizard");
             }
@@ -198,9 +208,206 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             BGName.Text = "";
         }
         #endregion
+        #region Classes
+        private void PopulateClassArrays() {
+            return; //Remove when ERW/TCE/CR have been implemented
+            if (Engine.SaveData.SourceBooks["ERW"] || Engine.SaveData.SourceBooks["TCE"]) {
+                BaseClass.Items.Insert(0, "Artificer");
+            }
+            if (Engine.SaveData.SourceBooks["CR"]) {
+                BaseClass.Items.Insert(BaseClass.Items.IndexOf("Bard")+1,"Blood Hunter");
+            }
+        }
 
+        private void IsSpellCaster_CheckedChanged(object sender, EventArgs e) {
+            IsSpellCaster.Text = IsSpellCaster.Checked ? "Yes" : "No";
+            CastAbility.Enabled = IsSpellCaster.Checked;
+        }
+
+        private void BaseClass_SelectedIndexChanged(object sender, EventArgs e) {
+            Feature_1.Enabled = Feature_2.Enabled = Feature_3.Enabled = Feature_4.Enabled = Feature_5.Enabled = false;
+
+            if(((ComboBox)sender).SelectedIndex == -1) { return; }
+            string RequestedClass = ((ComboBox)sender).SelectedItem.ToString();
+
+            Preview.Load(Player_Maker.ImageLocation.GetImage(RequestedClass));
+            try {
+                string[] baseClassStats = Dungeons_and_Dragons_Player_Maker.Classes.ResourceManager.GetString(RequestedClass + ":Base").Split("_");
+                Class_Data.Text = "Class Skill - Level:\n";
+                foreach (string item in baseClassStats) {
+                    Class_Data.Text = Class_Data.Text + item + "\n";
+                }
+            } catch { Class_Data.Text = "No Data Found"; }
+
+            if (RequestedClass == "Monk") { Class_Data.Font = new Font("Segoe UI", 7f); } else { Class_Data.Font = new Font("Segoe UI", 9f); }
+
+            switch (RequestedClass) {
+                case "Artificer":
+                case "Barbarian":
+                case "Cleric":
+                case "Monk":
+                case "Paladin":
+                case "Ranger":
+                case "Rogue":
+                case "Sorcerer":
+                case "Warlock":
+                case "Wizard":
+                    Feature_1.Enabled = Feature_2.Enabled = Feature_3.Enabled = Feature_4.Enabled = true;
+                    break;
+                case "Bard":
+                    Feature_1.Enabled = Feature_2.Enabled = Feature_3.Enabled = true;
+                    break;
+                case "Druid":
+                case "Fighter":
+                    Feature_1.Enabled = Feature_2.Enabled = Feature_3.Enabled = Feature_4.Enabled = Feature_5.Enabled = true;
+                    break;
+            }
+            switch (RequestedClass) {
+                case "Artificer":
+                    Label_1.Text = "Lv. 3";
+                    Label_2.Text = "Lv. 5";
+                    Label_3.Text = "Lv. 9";
+                    Label_4.Text = "Lv. 15";
+                    Label_5.Text = "";
+                    break;
+                case "Barbarian":
+                    Label_1.Text = "Lv. 3";
+                    Label_2.Text = "Lv. 6";
+                    Label_3.Text = "Lv. 10";
+                    Label_4.Text = "Lv. 14";
+                    Label_5.Text = "";
+                    break;
+                case "Monk":
+                    Label_1.Text = "Lv. 3";
+                    Label_2.Text = "Lv. 6";
+                    Label_3.Text = "Lv. 11";
+                    Label_4.Text = "Lv. 17";
+                    Label_5.Text = "";
+                    break;
+                case "Paladin":
+                    Label_1.Text = "Lv. 3";
+                    Label_2.Text = "Lv. 7";
+                    Label_3.Text = "Lv. 15";
+                    Label_4.Text = "Lv. 20";
+                    Label_5.Text = "";
+                    break;
+                case "Ranger":
+                    Label_1.Text = "Lv. 3";
+                    Label_2.Text = "Lv. 7";
+                    Label_3.Text = "Lv. 11";
+                    Label_4.Text = "Lv. 15";
+                    Label_5.Text = "";
+                    break;
+                case "Rogue":
+                    Label_1.Text = "Lv. 3";
+                    Label_2.Text = "Lv. 9";
+                    Label_3.Text = "Lv. 13";
+                    Label_4.Text = "Lv. 17";
+                    Label_5.Text = "";
+                    break;
+                case "Sorcerer":
+                    Label_1.Text = "Lv. 1";
+                    Label_2.Text = "Lv. 6";
+                    Label_3.Text = "Lv. 14";
+                    Label_4.Text = "Lv. 18";
+                    Label_5.Text = "";
+                    break;
+                case "Warlock":
+                    Label_1.Text = "Lv. 1";
+                    Label_2.Text = "Lv. 6";
+                    Label_3.Text = "Lv. 10";
+                    Label_4.Text = "Lv. 14";
+                    Label_5.Text = "";
+                    break;
+                case "Wizard":
+                    Label_1.Text = "Lv. 2";
+                    Label_2.Text = "Lv. 6";
+                    Label_3.Text = "Lv. 10";
+                    Label_4.Text = "Lv. 14";
+                    Label_5.Text = "";
+                    break;
+                case "Bard":
+                    Label_1.Text = "Lv. 3";
+                    Label_2.Text = "Lv. 6";
+                    Label_3.Text = "Lv. 14";
+                    Label_4.Text = "";
+                    Label_5.Text = "";
+                    break;
+                case "Cleric":
+                    Label_1.Text = "Lv. 1";
+                    Label_2.Text = "Lv. 6";
+                    Label_3.Text = "Lv. 8";
+                    Label_4.Text = "Lv. 17";
+                    Label_5.Text = "";
+                    break;
+                case "Druid":
+                    Label_1.Text = "Lv. 2";
+                    Label_2.Text = "Lv. 3";
+                    Label_3.Text = "Lv. 6";
+                    Label_4.Text = "Lv. 10";
+                    Label_5.Text = "Lv. 14";
+                    break;
+                case "Fighter":
+                    Label_1.Text = "Lv. 3";
+                    Label_2.Text = "Lv. 7";
+                    Label_3.Text = "Lv. 10";
+                    Label_4.Text = "Lv. 15";
+                    Label_5.Text = "Lv. 18";
+                    break;
+            }
+        }
+
+        private void Cla_Revert_Click(object sender, EventArgs e) {
+            BaseClass.SelectedIndex = -1;
+            SubclassName.Text = "";
+            IsSpellCaster.Checked = false;
+            CastAbility.SelectedIndex = -1;
+            Class_Data.Text = "No Class Selected";
+            Feature_1.Enabled = Feature_2.Enabled = Feature_3.Enabled = Feature_4.Enabled = Feature_5.Enabled = false;
+            Feature_1.Text = Feature_2.Text = Feature_3.Text = Feature_4.Text = Feature_5.Text = "";
+            Label_1.Text = Label_2.Text = Label_3.Text = Label_4.Text = Label_5.Text = "";
+            Preview.Image = Properties.Resources.Custom;
+        }
+
+        private List<TextBox> GetBoxes() {
+            List<TextBox> value = new();
+            if (Feature_1.Enabled) { value.Add(Feature_1); }
+            if (Feature_2.Enabled) { value.Add(Feature_2); }
+            if (Feature_3.Enabled) { value.Add(Feature_3); }
+            if (Feature_4.Enabled) { value.Add(Feature_4); }
+            if (Feature_5.Enabled) { value.Add(Feature_5); }
+            return value;
+        }
+
+        private void Cla_Save_Click(object sender, EventArgs e) {
+            List<TextBox> EnabledFeatures = GetBoxes();
+            try {
+                if (BaseClass.SelectedIndex == -1) { throw new Exception("No Base Class Selected."); }
+                if (string.IsNullOrEmpty(SubclassName.Text)) { throw new Exception("No Subclass Name."); }
+                if (IsSpellCaster.Checked && CastAbility.SelectedIndex == -1) { throw new Exception("No Cast Ability Assigned."); }
+                foreach (TextBox tb in EnabledFeatures) { if (string.IsNullOrEmpty(tb.Text)) { throw new Exception("Not All Features Assigned."); } }
+                HomebrewClass Class = new HomebrewClass();
+                
+                Class.Name = $"{BaseClass.SelectedItem}:{SubclassName.Text}";
+                Class.IsSpellcaster = IsSpellCaster.Checked;
+                Class.CastingAbility = CastAbility.SelectedItem == null ? null : CastAbility.SelectedItem.ToString();
+
+                Class.Abilites = $"{Feature_1.Text} - {Label_1.Text.Split("Lv. ")[1]}_" +
+                                 $"{Feature_2.Text} - {Label_2.Text.Split("Lv. ")[1]}_" +
+                                 $"{Feature_3.Text} - {(!string.IsNullOrEmpty(Label_3.Text) ? Label_3.Text.Split("Lv. ")[1] : "")}_" +
+                                 $"{Feature_4.Text} - {(!string.IsNullOrEmpty(Label_4.Text) ? Label_4.Text.Split("Lv. ")[1] : "")}_" +
+                                 $"{Feature_5.Text} - {(!string.IsNullOrEmpty(Label_5.Text) ? Label_5.Text.Split("Lv. ")[1] : "")}";
+                while(Class.Abilites.EndsWith(" ") || Class.Abilites.EndsWith("-") || Class.Abilites.EndsWith("_")) { Class.Abilites = Class.Abilites.Substring(0, Class.Abilites.Length - 1); }
+                Class.Save();
+                IO.SaveDataToDisk();
+                MessageBox.Show($"{SubclassName.Text} saved successfully.","Homebrew Wizard");
+
+            }catch(Exception ex) {
+                MessageBox.Show($"There was an error saving your class.\n{ex.Message}", "Homebrew Wizard");
+            }
+        }
+        #endregion
     }
-
     #region Homebrew
 
     [Serializable]
@@ -224,16 +431,22 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
     [Serializable]
     public class HomebrewClass {
         public string Name { get; set;}
-
+        public bool IsSpellcaster { get; set; }
+        public string CastingAbility { get; set; }
+        public string Abilites { get; set; }
 
         public void Save() { Engine.Homebrew.HomebrewClasses.Add(Name, this); }
     }
     [Serializable]
     public class HomebrewBackground {
+        
         public string Name { get; set; }
-        public string Proficiency { get; set; }
+
         public string Languages { get; set; }
+        public string Skills { get; set; }
+        public string Tools { get; set; }
         public string Items { get; set; }
+        
         public string Feature { get; set; }
         
         public string[] Personality { get; set; }
