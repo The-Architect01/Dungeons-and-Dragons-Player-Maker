@@ -165,11 +165,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
                 
                 bg.Tools = "Tools: ";
                 bg.Tools = $"{(Engine.TOOLS.Contains(BGBonus1.SelectedItem) ? BGBonus1.SelectedItem : bg.Tools)}";
-                bg.Tools = $"{((Engine.TOOLS.Contains(BGBonus2.SelectedItem) ? (bg.Tools == "Tools: " ? BGBonus2.SelectedItem : bg.Tools + "_" + BGBonus2.SelectedItem) : string.Empty))}";
+                bg.Tools = $"{((Engine.TOOLS.Contains(BGBonus2.SelectedItem) ? (bg.Tools == "Tools: " ? BGBonus2.SelectedItem : bg.Tools + "_" + BGBonus2.SelectedItem) : bg.Tools + "None"))}";
 
                 bg.Languages = "Languages: ";
                 bg.Languages = $"{(Engine.LANGUAGES.Contains(BGBonus1.SelectedItem) ? BGBonus1.SelectedItem: bg.Languages)}";
-                bg.Languages = $"{((Engine.LANGUAGES.Contains(BGBonus2.SelectedItem) ? (bg.Languages == "Languages: " ? BGBonus2.SelectedItem : bg.Languages + "_" + BGBonus2.SelectedItem) : string.Empty))}";
+                bg.Languages = $"{((Engine.LANGUAGES.Contains(BGBonus2.SelectedItem) ? (bg.Languages == "Languages: " ? BGBonus2.SelectedItem : bg.Languages + "_" + BGBonus2.SelectedItem) : bg.Languages + "None"))}";
                 
                 bg.Personality = new[] { Personalities[0].Text, Personalities[1].Text, Personalities[2].Text, Personalities[3].Text,
                     Personalities[4].Text, Personalities[5].Text, Personalities[6].Text, Personalities[7].Text};
