@@ -195,14 +195,20 @@
   <data name="Fighter:Base" xml:space="preserve">
     <value>Fighting Style, Second Wind - 1_Action Surge - 2_Extra Attack - 5_Indomitable - 9</value>
   </data>
+  <data name="Fighter:Battle Master" xml:space="preserve">
+    <value>Combat Superiority, Student of War - 3_Know your Enemy, Combat Superiority - 7_Improved Combat Superiority, Combat Superiority - 10_Relentless, Combat Superiority - 15</value>
+  </data>
   <data name="Fighter:Champion" xml:space="preserve">
     <value>Improved Critical - 3_Remarkable Athlete - 7_Additional Fighting Style - 10_Superior Critical - 15_Survivor - 18</value>
+  </data>
+  <data name="Fighter:Eldritch Knight" xml:space="preserve">
+    <value>Spellcasting, Weapon Bond - 3_War Magic - 7_Eldritch Strike - 10_Arcane Charge - 15_Improved War Magic - 18</value>
   </data>
   <data name="Fighter:Items" xml:space="preserve">
     <value />
   </data>
   <data name="Fighter:Skills" xml:space="preserve">
-    <value>Light Armor_Medium Armor_Heavy Armor_Shields_Simple Weapoons_Martial Weapons</value>
+    <value>Light Armor_Medium Armor_Heavy Armor_Shields_Simple Weapons_Martial Weapons</value>
   </data>
   <data name="Monk:Base" xml:space="preserve">
     <value>Unarmored Defense, Martial Arts - 1_Ki, Unarmored Movement - 2_Deflect Missiles - 3_Slow Fall - 4_Extra Attack, Stunning Strike - 5_Ki-Empowered Strikes - 6_Evasion, Stillness of Mind - 7_Purity of Body - 10_Tongue of the Sun and Moon - 13_Diamond Soul - 14_Timeless Body - 15_Empty Body - 18_Perfect Self - 20</value>
@@ -213,11 +219,134 @@
   <data name="Monk:Skills" xml:space="preserve">
     <value>Simple Weapons_Shortsword</value>
   </data>
+  <data name="Monk:Way of Shadow" xml:space="preserve">
+    <value>Shadow Arts - 3_Shadow Step - 6_Cloak of Shadows - 11_Opportunist - 17</value>
+  </data>
+  <data name="Monk:Way of the Four Elements" xml:space="preserve">
+    <value>Disciple of the Elements - 3, 6, 11, 17</value>
+  </data>
   <data name="Monk:Way of the Open Hand" xml:space="preserve">
     <value>Open Hand Technique - 3_Wholeness of Body - 6_Tranquility - 11_Quivering Palm - 17</value>
+  </data>
+  <data name="Paladin:Base" xml:space="preserve">
+    <value>Divine Sense, Lay on Hands - 1_Fighting Style, Divine Smite - 2_Divine Health - 3_Extra Attack - 5_Aura of Protection - 6_Aura of Courage - 10_Improved Divine Smite - 11_Cleansing Touch - 14</value>
+  </data>
+  <data name="Paladin:Items" xml:space="preserve">
+    <value>Chain mail, holy symbol</value>
+  </data>
+  <data name="Paladin:Oath of Devotion" xml:space="preserve">
+    <value>Channel Divinity - 3_Aura of Devotion - 7_Purity of Spirit - 15_Holy Nimbus - 20</value>
+  </data>
+  <data name="Paladin:Oath of the Ancients" xml:space="preserve">
+    <value>Channel Divinity - 3_Aura of Warding - 7_Undying Sentinel - 15_Elder Champion - 20</value>
+  </data>
+  <data name="Paladin:Oath of Vengeance" xml:space="preserve">
+    <value>Channel Divinity - 3_Relentless Avenger - 7_Soul of Vengeance - 15_Avenging Angel - 20</value>
+  </data>
+  <data name="Paladin:Skills" xml:space="preserve">
+    <value>Light Armor_Medium Armor_Heavy Armor_Shields_Simple Weapons_Martial Weapons</value>
+  </data>
+  <data name="Ranger:Base" xml:space="preserve">
+    <value>Favored Enemy, Natural Explorer - 1_Fighting Style - 2_Primeval Awareness - 3_Extra Attack - 5_Natural Explorer - 6_Land's Stride - 8_Hide in Plain Sight, Natural Explorer - 10_Vanish - 14_Feral Senses - 18_Foe Slayer - 20</value>
+  </data>
+  <data name="Ranger:Beast Master" xml:space="preserve">
+    <value>Ranger's Companion - 3_Exceptional Training - 7_Bestial Fury - 11_Share Spells - 15</value>
+  </data>
+  <data name="Ranger:Hunter" xml:space="preserve">
+    <value>Hunter's Prey - 3_Defensive Tactics - 7_Multiattack - 11_Superior Hunter's Defense - 15</value>
+  </data>
+  <data name="Ranger:Items" xml:space="preserve">
+    <value>Longbow, 20 Arrows</value>
+  </data>
+  <data name="Ranger:Skills" xml:space="preserve">
+    <value>Light Armor_Medium Armor_Shields_Simple Weapons_Martial Weapons</value>
+  </data>
+  <data name="Rogue:Arcane Trickster" xml:space="preserve">
+    <value>Spellcasting, Mage Hand Legerdemain - 3_Magical Ambush - 9_Versatile Trickster - 13_Spell Thief - 17</value>
+  </data>
+  <data name="Rogue:Assassin" xml:space="preserve">
+    <value>Bonus Proficiencies, Assassinate - 3_Inflitration Expertise - 9_Imposter - 13_Death Strike - 17</value>
+  </data>
+  <data name="Rogue:Base" xml:space="preserve">
+    <value>Expertise, Sneak Attack, Thieves' Cant - 1_Cunning Action - 2_Uncanny Dodge - 5_Evasion - 7_Reliable Talent - 11_Blindsense - 14_Slippery Mind - 15_Elusive - 18_Stroke of Luck - 20</value>
+  </data>
+  <data name="Rogue:Items" xml:space="preserve">
+    <value>Leather armor, 2 daggers, thieves' tools</value>
+  </data>
+  <data name="Rogue:Skills" xml:space="preserve">
+    <value>Light Armor_Simple Weapons_Hand crossbows_Longswords_Rapiers_Shortswords_Thieves' Tools</value>
+  </data>
+  <data name="Rogue:Thief" xml:space="preserve">
+    <value>Fast Hands, Second-Story Work - 3_Supreme Sneak - 9_Use Magic Device - 13_Thief's Reflexes - 17</value>
+  </data>
+  <data name="Sorcerer:Base" xml:space="preserve">
+    <value>Font of Magic - 2_Metamagic - 3_Sorcerous Restoration - 20</value>
+  </data>
+  <data name="Sorcerer:Draconic Bloodline" xml:space="preserve">
+    <value>Dragon Ancestor, Draconic Resilience - 1_Elemental Affinity - 6_Dragon Wings - 14_Draconic Presence - 18</value>
+  </data>
+  <data name="Sorcerer:Items" xml:space="preserve">
+    <value>2 Daggers</value>
+  </data>
+  <data name="Sorcerer:Skills" xml:space="preserve">
+    <value>Daggers_Darts_Slings_Quarterstaffs_Light crossbows</value>
+  </data>
+  <data name="Sorcerer:Wild Magic" xml:space="preserve">
+    <value>Wild Magic Surge, Tides of Chaos - 1_Bend Luck - 6_Controlled Chaos - 14_Spell Bombardment - 18</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Spell Sheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\0001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Warlock:Base" xml:space="preserve">
+    <value>Eldritch Invocations - 2_Pact Boon - 3_Mystic Arcanum - 6, 13, 15, 17_Eldritch Master - 20</value>
+  </data>
+  <data name="Warlock:Items" xml:space="preserve">
+    <value>Leather armor, two daggers</value>
+  </data>
+  <data name="Warlock:Skills" xml:space="preserve">
+    <value>Light armor_Simple Weapons</value>
+  </data>
+  <data name="Warlock:The Archfey" xml:space="preserve">
+    <value>Fey Presence - 1_Misty Escape - 6_Beguiling Defenses - 10_Dark Delirium - 14</value>
+  </data>
+  <data name="Warlock:The Fiend" xml:space="preserve">
+    <value>Dark One's Blessing - 1_Dark One's Own Luck - 6_Fiendish Resilience - 10_Hurl Through Hell - 14</value>
+  </data>
+  <data name="Warlock:The Great Old One" xml:space="preserve">
+    <value>Awakened Mind - 1_Entropic Ward - 6_Thought Shield - 10_Create Thrall - 14</value>
+  </data>
+  <data name="Wizard:Abjuration" xml:space="preserve">
+    <value>Abjuration Savant, Arcane Ward - 2_Projected Ward - 6_Improved Abjuration - 10_Spell Resistance - 14</value>
+  </data>
+  <data name="Wizard:Base" xml:space="preserve">
+    <value>Arcane Recovery - 1_Spell Mastery - 18_Signature Spells - 20</value>
+  </data>
+  <data name="Wizard:Conjuration" xml:space="preserve">
+    <value>Conjuration Savant, Minor Conjuration - 2_Denign Transposition - 6_Focused Conjuration - 10_Durable Summons - 14</value>
+  </data>
+  <data name="Wizard:Divination" xml:space="preserve">
+    <value>Divination Savant, Portent - 2_Expert Divination - 6_The Third Eye - 10_Greater Portent - 14</value>
+  </data>
+  <data name="Wizard:Enchantment" xml:space="preserve">
+    <value>Enchantment Savant, Hypnotic Gaze - 2_Instinctive Charm - 6_Split Enchantment - 10_Alter Memories - 14</value>
+  </data>
+  <data name="Wizard:Evocation" xml:space="preserve">
+    <value>Evocation Savant, Sculpt Spells - 2_Potent Cantrip - 6_Empowered Evocation - 10_Overchannel - 14</value>
+  </data>
+  <data name="Wizard:Illusion" xml:space="preserve">
+    <value>Illusion Savant, Improved Minor Illusion - 2_Malleable Illusions - 6_Illusory Self - 10_Illusory Reality - 14</value>
+  </data>
+  <data name="Wizard:Items" xml:space="preserve">
+    <value>Spellbook</value>
+  </data>
+  <data name="Wizard:Necromancy" xml:space="preserve">
+    <value>Necromancy Savant, Grim Harvest - 2_Undead Thralls - 6_Inured to Undeath - 10_Command Undead - 14</value>
+  </data>
+  <data name="Wizard:Skills" xml:space="preserve">
+    <value>Daggers_Darts_Slings_Quarterstaffs_Light crossbows</value>
+  </data>
+  <data name="Wizard:Transmutation" xml:space="preserve">
+    <value>Transmutation Savant, Minor Alchemy - 2_Transmuter's Stone - 6_Shapechanger - 10_Master Transmuter - 14</value>
   </data>
 </root>

@@ -617,7 +617,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // 
             // Label_5
             // 
-            this.Label_5.Location = new System.Drawing.Point(6, 351);
+            this.Label_5.Location = new System.Drawing.Point(9, 351);
             this.Label_5.Name = "Label_5";
             this.Label_5.Size = new System.Drawing.Size(66, 20);
             this.Label_5.TabIndex = 10;
@@ -631,21 +631,21 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // 
             // Label_4
             // 
-            this.Label_4.Location = new System.Drawing.Point(6, 308);
+            this.Label_4.Location = new System.Drawing.Point(9, 308);
             this.Label_4.Name = "Label_4";
             this.Label_4.Size = new System.Drawing.Size(66, 20);
             this.Label_4.TabIndex = 8;
             // 
             // Label_2
             // 
-            this.Label_2.Location = new System.Drawing.Point(6, 222);
+            this.Label_2.Location = new System.Drawing.Point(9, 222);
             this.Label_2.Name = "Label_2";
             this.Label_2.Size = new System.Drawing.Size(66, 20);
             this.Label_2.TabIndex = 7;
             // 
             // Label_3
             // 
-            this.Label_3.Location = new System.Drawing.Point(6, 265);
+            this.Label_3.Location = new System.Drawing.Point(9, 265);
             this.Label_3.Name = "Label_3";
             this.Label_3.Size = new System.Drawing.Size(66, 20);
             this.Label_3.TabIndex = 6;
@@ -843,12 +843,11 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             // 
             // Class_Data
             // 
-            this.Class_Data.AutoSize = true;
-            this.Class_Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Class_Data.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Class_Data.Location = new System.Drawing.Point(6, 249);
-            this.Class_Data.MaximumSize = new System.Drawing.Size(238, 225);
+            this.Class_Data.MaximumSize = new System.Drawing.Size(230, 230);
             this.Class_Data.Name = "Class_Data";
-            this.Class_Data.Size = new System.Drawing.Size(127, 20);
+            this.Class_Data.Size = new System.Drawing.Size(230, 230);
             this.Class_Data.TabIndex = 16;
             this.Class_Data.Text = "No Class Selected";
             // 
@@ -1406,7 +1405,6 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
             this.Cla_Abil.PerformLayout();
             this.Magic_Subcla.ResumeLayout(false);
             this.Cl_Data.ResumeLayout(false);
-            this.Cl_Data.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Preview)).EndInit();
             this.BGs.ResumeLayout(false);
             this.BGs.PerformLayout();

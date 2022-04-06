@@ -239,7 +239,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Homebrew {
                 }
             } catch { Class_Data.Text = "No Data Found"; }
 
-            if (RequestedClass == "Monk") { Class_Data.Font = new Font("Segoe UI", 7f); } else { Class_Data.Font = new Font("Segoe UI", 9f); }
+            if (RequestedClass == "Monk" || RequestedClass == "Ranger") { Class_Data.Font = new Font("Segoe UI", 7f); } else { Class_Data.Font = new Font("Segoe UI", 8f); }
 
             switch (RequestedClass) {
                 case "Artificer":

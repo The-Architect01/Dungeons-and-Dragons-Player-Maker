@@ -19,7 +19,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public string Alignment { get; set; }
         public int XP { get; set; }
         public int Level { get; set; }
-        public string creator { get; set; }
+        public string Creator { get; set; }
         public int[] Stats { get; set; }
 
         public string[] Personality { get; set; }

@@ -53,7 +53,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             Character_Name.Text = player.Name;
             Background.Text = player.Background;
             Class.Text = player.Class;
-            Player_Name.Text = player.creator;
+            Player_Name.Text = player.Creator;
             XP.Text = player.XP.ToString();
             Alignment.Text = player.Alignment;
             

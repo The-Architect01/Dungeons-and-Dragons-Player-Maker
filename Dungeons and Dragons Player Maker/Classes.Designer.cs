@@ -295,11 +295,29 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Combat Superiority, Student of War - 3_Know your Enemy, Combat Superiority - 7_Improved Combat Superiority, Combat Superiority - 10_Relentless, Combat Superiority - 15.
+        /// </summary>
+        internal static string Fighter_Battle_Master {
+            get {
+                return ResourceManager.GetString("Fighter:Battle Master", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Improved Critical - 3_Remarkable Athlete - 7_Additional Fighting Style - 10_Superior Critical - 15_Survivor - 18.
         /// </summary>
         internal static string Fighter_Champion {
             get {
                 return ResourceManager.GetString("Fighter:Champion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spellcasting, Weapon Bond - 3_War Magic - 7_Eldritch Strike - 10_Arcane Charge - 15_Improved War Magic - 18.
+        /// </summary>
+        internal static string Fighter_Eldritch_Knight {
+            get {
+                return ResourceManager.GetString("Fighter:Eldritch Knight", resourceCulture);
             }
         }
         
@@ -313,7 +331,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light Armor_Medium Armor_Heavy Armor_Shields_Simple Weapoons_Martial Weapons.
+        ///   Looks up a localized string similar to Light Armor_Medium Armor_Heavy Armor_Shields_Simple Weapons_Martial Weapons.
         /// </summary>
         internal static string Fighter_Skills {
             get {
@@ -349,11 +367,227 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shadow Arts - 3_Shadow Step - 6_Cloak of Shadows - 11_Opportunist - 17.
+        /// </summary>
+        internal static string Monk_Way_of_Shadow {
+            get {
+                return ResourceManager.GetString("Monk:Way of Shadow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disciple of the Elements - 3, 6, 11, 17.
+        /// </summary>
+        internal static string Monk_Way_of_the_Four_Elements {
+            get {
+                return ResourceManager.GetString("Monk:Way of the Four Elements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open Hand Technique - 3_Wholeness of Body - 6_Tranquility - 11_Quivering Palm - 17.
         /// </summary>
         internal static string Monk_Way_of_the_Open_Hand {
             get {
                 return ResourceManager.GetString("Monk:Way of the Open Hand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Divine Sense, Lay on Hands - 1_Fighting Style, Divine Smite - 2_Divine Health - 3_Extra Attack - 5_Aura of Protection - 6_Aura of Courage - 10_Improved Divine Smite - 11_Cleansing Touch - 14.
+        /// </summary>
+        internal static string Paladin_Base {
+            get {
+                return ResourceManager.GetString("Paladin:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chain mail, holy symbol.
+        /// </summary>
+        internal static string Paladin_Items {
+            get {
+                return ResourceManager.GetString("Paladin:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Channel Divinity - 3_Aura of Devotion - 7_Purity of Spirit - 15_Holy Nimbus - 20.
+        /// </summary>
+        internal static string Paladin_Oath_of_Devotion {
+            get {
+                return ResourceManager.GetString("Paladin:Oath of Devotion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Channel Divinity - 3_Aura of Warding - 7_Undying Sentinel - 15_Elder Champion - 20.
+        /// </summary>
+        internal static string Paladin_Oath_of_the_Ancients {
+            get {
+                return ResourceManager.GetString("Paladin:Oath of the Ancients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Channel Divinity - 3_Relentless Avenger - 7_Soul of Vengeance - 15_Avenging Angel - 20.
+        /// </summary>
+        internal static string Paladin_Oath_of_Vengeance {
+            get {
+                return ResourceManager.GetString("Paladin:Oath of Vengeance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Armor_Medium Armor_Heavy Armor_Shields_Simple Weapons_Martial Weapons.
+        /// </summary>
+        internal static string Paladin_Skills {
+            get {
+                return ResourceManager.GetString("Paladin:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Favored Enemy, Natural Explorer - 1_Fighting Style - 2_Primeval Awareness - 3_Extra Attack - 5_Natural Explorer - 6_Land&apos;s Stride - 8_Hide in Plain Sight, Natural Explorer - 10_Vanish - 14_Feral Senses - 18_Foe Slayer - 20.
+        /// </summary>
+        internal static string Ranger_Base {
+            get {
+                return ResourceManager.GetString("Ranger:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ranger&apos;s Companion - 3_Exceptional Training - 7_Bestial Fury - 11_Share Spells - 15.
+        /// </summary>
+        internal static string Ranger_Beast_Master {
+            get {
+                return ResourceManager.GetString("Ranger:Beast Master", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hunter&apos;s Prey - 3_Defensive Tactics - 7_Multiattack - 11_Superior Hunter&apos;s Defense - 15.
+        /// </summary>
+        internal static string Ranger_Hunter {
+            get {
+                return ResourceManager.GetString("Ranger:Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longbow, 20 Arrows.
+        /// </summary>
+        internal static string Ranger_Items {
+            get {
+                return ResourceManager.GetString("Ranger:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Armor_Medium Armor_Shields_Simple Weapons_Martial Weapons.
+        /// </summary>
+        internal static string Ranger_Skills {
+            get {
+                return ResourceManager.GetString("Ranger:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spellcasting, Mage Hand Legerdemain - 3_Magical Ambush - 9_Versatile Trickster - 13_Spell Thief - 17.
+        /// </summary>
+        internal static string Rogue_Arcane_Trickster {
+            get {
+                return ResourceManager.GetString("Rogue:Arcane Trickster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonus Proficiencies, Assassinate - 3_Inflitration Expertise - 9_Imposter - 13_Death Strike - 17.
+        /// </summary>
+        internal static string Rogue_Assassin {
+            get {
+                return ResourceManager.GetString("Rogue:Assassin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expertise, Sneak Attack, Thieves&apos; Cant - 1_Cunning Action - 2_Uncanny Dodge - 5_Evasion - 7_Reliable Talent - 11_Blindsense - 14_Slippery Mind - 15_Elusive - 18_Stroke of Luck - 20.
+        /// </summary>
+        internal static string Rogue_Base {
+            get {
+                return ResourceManager.GetString("Rogue:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leather armor, 2 daggers, thieves&apos; tools.
+        /// </summary>
+        internal static string Rogue_Items {
+            get {
+                return ResourceManager.GetString("Rogue:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Armor_Simple Weapons_Hand crossbows_Longswords_Rapiers_Shortswords_Thieves&apos; Tools.
+        /// </summary>
+        internal static string Rogue_Skills {
+            get {
+                return ResourceManager.GetString("Rogue:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fast Hands, Second-Story Work - 3_Supreme Sneak - 9_Use Magic Device - 13_Thief&apos;s Reflexes - 17.
+        /// </summary>
+        internal static string Rogue_Thief {
+            get {
+                return ResourceManager.GetString("Rogue:Thief", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font of Magic - 2_Metamagic - 3_Sorcerous Restoration - 20.
+        /// </summary>
+        internal static string Sorcerer_Base {
+            get {
+                return ResourceManager.GetString("Sorcerer:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dragon Ancestor, Draconic Resilience - 1_Elemental Affinity - 6_Dragon Wings - 14_Draconic Presence - 18.
+        /// </summary>
+        internal static string Sorcerer_Draconic_Bloodline {
+            get {
+                return ResourceManager.GetString("Sorcerer:Draconic Bloodline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2 Daggers.
+        /// </summary>
+        internal static string Sorcerer_Items {
+            get {
+                return ResourceManager.GetString("Sorcerer:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daggers_Darts_Slings_Quarterstaffs_Light crossbows.
+        /// </summary>
+        internal static string Sorcerer_Skills {
+            get {
+                return ResourceManager.GetString("Sorcerer:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wild Magic Surge, Tides of Chaos - 1_Bend Luck - 6_Controlled Chaos - 14_Spell Bombardment - 18.
+        /// </summary>
+        internal static string Sorcerer_Wild_Magic {
+            get {
+                return ResourceManager.GetString("Sorcerer:Wild Magic", resourceCulture);
             }
         }
         
@@ -364,6 +598,159 @@ namespace Dungeons_and_Dragons_Player_Maker {
             get {
                 object obj = ResourceManager.GetObject("Spell Sheet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eldritch Invocations - 2_Pact Boon - 3_Mystic Arcanum - 6, 13, 15, 17_Eldritch Master - 20.
+        /// </summary>
+        internal static string Warlock_Base {
+            get {
+                return ResourceManager.GetString("Warlock:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leather armor, two daggers.
+        /// </summary>
+        internal static string Warlock_Items {
+            get {
+                return ResourceManager.GetString("Warlock:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light armor_Simple Weapons.
+        /// </summary>
+        internal static string Warlock_Skills {
+            get {
+                return ResourceManager.GetString("Warlock:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fey Presence - 1_Misty Escape - 6_Beguiling Defenses - 10_Dark Delirium - 14.
+        /// </summary>
+        internal static string Warlock_The_Archfey {
+            get {
+                return ResourceManager.GetString("Warlock:The Archfey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark One&apos;s Blessing - 1_Dark One&apos;s Own Luck - 6_Fiendish Resilience - 10_Hurl Through Hell - 14.
+        /// </summary>
+        internal static string Warlock_The_Fiend {
+            get {
+                return ResourceManager.GetString("Warlock:The Fiend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Awakened Mind - 1_Entropic Ward - 6_Thought Shield - 10_Create Thrall - 14.
+        /// </summary>
+        internal static string Warlock_The_Great_Old_One {
+            get {
+                return ResourceManager.GetString("Warlock:The Great Old One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abjuration Savant, Arcane Ward - 2_Projected Ward - 6_Improved Abjuration - 10_Spell Resistance - 14.
+        /// </summary>
+        internal static string Wizard_Abjuration {
+            get {
+                return ResourceManager.GetString("Wizard:Abjuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arcane Recovery - 1_Spell Mastery - 18_Signature Spells - 20.
+        /// </summary>
+        internal static string Wizard_Base {
+            get {
+                return ResourceManager.GetString("Wizard:Base", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conjuration Savant, Minor Conjuration - 2_Denign Transposition - 6_Focused Conjuration - 10_Durable Summons - 14.
+        /// </summary>
+        internal static string Wizard_Conjuration {
+            get {
+                return ResourceManager.GetString("Wizard:Conjuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Divination Savant, Portent - 2_Expert Divination - 6_The Third Eye - 10_Greater Portent - 14.
+        /// </summary>
+        internal static string Wizard_Divination {
+            get {
+                return ResourceManager.GetString("Wizard:Divination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enchantment Savant, Hypnotic Gaze - 2_Instinctive Charm - 6_Split Enchantment - 10_Alter Memories - 14.
+        /// </summary>
+        internal static string Wizard_Enchantment {
+            get {
+                return ResourceManager.GetString("Wizard:Enchantment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evocation Savant, Sculpt Spells - 2_Potent Cantrip - 6_Empowered Evocation - 10_Overchannel - 14.
+        /// </summary>
+        internal static string Wizard_Evocation {
+            get {
+                return ResourceManager.GetString("Wizard:Evocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Illusion Savant, Improved Minor Illusion - 2_Malleable Illusions - 6_Illusory Self - 10_Illusory Reality - 14.
+        /// </summary>
+        internal static string Wizard_Illusion {
+            get {
+                return ResourceManager.GetString("Wizard:Illusion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spellbook.
+        /// </summary>
+        internal static string Wizard_Items {
+            get {
+                return ResourceManager.GetString("Wizard:Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Necromancy Savant, Grim Harvest - 2_Undead Thralls - 6_Inured to Undeath - 10_Command Undead - 14.
+        /// </summary>
+        internal static string Wizard_Necromancy {
+            get {
+                return ResourceManager.GetString("Wizard:Necromancy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daggers_Darts_Slings_Quarterstaffs_Light crossbows.
+        /// </summary>
+        internal static string Wizard_Skills {
+            get {
+                return ResourceManager.GetString("Wizard:Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transmutation Savant, Minor Alchemy - 2_Transmuter&apos;s Stone - 6_Shapechanger - 10_Master Transmuter - 14.
+        /// </summary>
+        internal static string Wizard_Transmutation {
+            get {
+                return ResourceManager.GetString("Wizard:Transmutation", resourceCulture);
             }
         }
     }

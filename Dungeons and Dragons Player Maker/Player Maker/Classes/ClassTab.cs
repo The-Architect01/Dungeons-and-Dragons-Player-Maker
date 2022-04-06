@@ -146,7 +146,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Classes {
         private void ClassName_Click(object sender, EventArgs e) {
             PC.Class = ((Label)sender).Text;
             ClassPreview.Load(ImageLocation.GetImage(PC.Class));
-            if (PC.Class == "Monk") { ClassInfo.Font = new Font("Segoe UI", 6.75f); } else { ClassInfo.Font = new Font("Segoe UI", 9f); }
+            if (PC.Class == "Monk") { ClassInfo.Font = new Font("Segoe UI", 6.75f); } else { ClassInfo.Font = new Font("Segoe UI", 8f); }
             SubClasses.Items.Clear();
             SubClasses.Items.AddRange(GetSubClass(PC.Class));
             SubClasses.SelectedIndex = 0;

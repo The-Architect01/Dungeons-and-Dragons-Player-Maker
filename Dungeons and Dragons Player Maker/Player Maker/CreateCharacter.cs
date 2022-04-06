@@ -25,7 +25,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
 
         [Obsolete]
         private void CreateCharacter_Load(object sender, EventArgs e) {
-            Player.creator = Engine.SaveData.Name;
+            Player.Creator = Engine.SaveData.Name;
             RT = new RaceTab(Player);
             CT = new ClassTab(Player);
             BT = new BackgroundTab(Player);
