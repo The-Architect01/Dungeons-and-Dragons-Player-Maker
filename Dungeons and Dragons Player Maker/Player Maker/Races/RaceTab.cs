@@ -298,7 +298,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Races {
         }
         private void RaceLang_SelectedValueChanged(object sender, EventArgs e) {
             if (string.IsNullOrEmpty(PC.Race)) { return; }
-            string defaultLang = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[8];
+            string defaultLang;
+            if (Engine.Homebrew.HomebrewRaces.ContainsKey(PC.Race)) {
+                defaultLang = Engine.Homebrew.HomebrewRaces[PC.Race].Languages;
+            } else {
+                defaultLang = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_")[8];
+            }
             string[] data = Info.Text.Split("\n");
             if (PC.Race == "Human" && SubRaces.Text == "Variant") {
                 string[] languages = data[2].Split(defaultLang);

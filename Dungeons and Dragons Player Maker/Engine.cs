@@ -197,12 +197,14 @@ public static class SourceBooks {
         "Criminal/Spy",
         "Entertainer",
         "Folk Hero",
-        "Guild Artisan/Guild Merchant",
+        "Guild Artisan",
         "Hermit",
-        "Noble/Knight",
+        "Knight",
+        "Noble",
         "Outlander",
+        "Pirate",
         "Sage",
-        "Sailor/Pirate",
+        "Sailor",
         "Soldier",
         "Urchin"
     };

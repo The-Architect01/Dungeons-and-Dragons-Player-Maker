@@ -61,6 +61,132 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shelter of the Faithful: You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith. Those who share your religion will support you (but only you) at a modest lifestyle..
+        /// </summary>
+        internal static string Acolyte {
+            get {
+                return ResourceManager.GetString("Acolyte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I would die to recover an ancient relic of my faith that was lost long ago._I will someday get revenge on the corrupt temple hierarchy who branded me a heretic._I owe my life to the priest who took me in when my parents died._Everything I do is for the common people._I will do anything to protect the temple where I served._I seek to preserve a sacred text that my enemies consider heretical and seek to destroy..
+        /// </summary>
+        internal static string Acolyte_Bond {
+            get {
+                return ResourceManager.GetString("Acolyte-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I judge others harshly, and myself even more severely._I put too much trust in those who wield power within my temple&apos;s hierarchy._My piety sometimes leads me to blindly trust those that profess faith in my god._I am inflexible in my thinking._I am suspicious of strangers and expect the worst of them._Once I pick a goal, I become obsessed with it to the detriment of everything else in my life..
+        /// </summary>
+        internal static string Acolyte_Flaw {
+            get {
+                return ResourceManager.GetString("Acolyte-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The ancient traditions of worship and sacrifice must be preserved and upheld._I always try to help those in need, no matter what the personal cost._We must help bring about the changes the gods are constantly working in the world._I hope to one day rise to the top of my faith&apos;s religious hierarchy._I trust that my deity will guide my actions. I have faith that if I work hard, things will go well._I seek to prove myself worthy of my god&apos;s favor by matching my actions against their teachings..
+        /// </summary>
+        internal static string Acolyte_Ideal {
+            get {
+                return ResourceManager.GetString("Acolyte-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A holy symbol, a prayer book/wheel, 5 sticks of incense, vestments, a set of common clothes, 15 gp.
+        /// </summary>
+        internal static string Acolyte_Items {
+            get {
+                return ResourceManager.GetString("Acolyte-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I idolize a particular hero of my faith, and constantly refer to that person&apos;s deeds and example._I can find common ground between the fiercest enemies, empathizing with them and always working toward peace._I see omens in every event and action. The gods try to speak to us, we just need to listen._Nothing can shake my optimistic attitude._I quote (or misquote) sacred texts and proverbs in almost every situation._I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other god [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Acolyte_Personality {
+            get {
+                return ResourceManager.GetString("Acolyte-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;, &lt;CHOOSE&gt;_Skills: Insight, Religion_Tools: None.
+        /// </summary>
+        internal static string Acolyte_Skills {
+            get {
+                return ResourceManager.GetString("Acolyte-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to False Identity: You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy..
+        /// </summary>
+        internal static string Charlatan {
+            get {
+                return ResourceManager.GetString("Charlatan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I fleeced the wrong person and must work to ensure that this individual never crosses paths with me or those I care about._I owe everything to my mentor – a horrible person who&apos;s probably rotting in jail somewhere._Somewhere out there, I have a child who doesn&apos;t know me. I&apos;m making the world better for them._I come from a noble family, and one day I&apos;ll reclaim my lands and title from those who stole them from me._A powerful person killed someone I love. Some day soon, I&apos;ll have my revenge._I swindled and ru [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Charlatan_Bond {
+            get {
+                return ResourceManager.GetString("Charlatan-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I can&apos;t resist a pretty face._I&apos;m always in debt. I spend my ill-gotten gains on decadent luxuries faster than I bring them in._I&apos;m convinced that no one could ever fool me the way I fool others._I&apos;m too greedy for my own good. I can&apos;t resist taking a risk if there&apos;s money involved._I can&apos;t resist swindling people who are more powerful than me._I hate to admit it and will hate myself for it, but I&apos;ll run and preserve my own hide if the going gets tough..
+        /// </summary>
+        internal static string Charlatan_Flaw {
+            get {
+                return ResourceManager.GetString("Charlatan-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am a free spirit – no one tells me what to do._I never target people who can&apos;t afford to lose a few coins._I distribute the money I acquire to the people who really need it._I never run the same con twice._Material goods come and go. Bonds of friendship last forever._I&apos;m determined to make something of myself..
+        /// </summary>
+        internal static string Charlatan_Ideal {
+            get {
+                return ResourceManager.GetString("Charlatan-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A set of fine clothes, a disguise kit, tools of your con, 15 gp.
+        /// </summary>
+        internal static string Charlatan_Items {
+            get {
+                return ResourceManager.GetString("Charlatan-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I fall in and out of love easily, and am always pursuing someone._I have a joke for every occasion, especially occasions where humor is inappropriate._Flattery is my preferred trick for getting what I want._I&apos;m a born gambler who can&apos;t resist taking a risk for a potential payoff._I lie about almost everything, even when there&apos;s no good reason to._Sarcasm and insults are my weapons of choice._I keep multiple holy symbols on me and invoke whatever deity might come in useful at any given moment._I pocket anyth [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Charlatan_Personality {
+            get {
+                return ResourceManager.GetString("Charlatan-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: None_Skills: Deception, Sleight of Hand_Tools: Disguise kit, forgery kit.
+        /// </summary>
+        internal static string Charlatan_Skills {
+            get {
+                return ResourceManager.GetString("Charlatan-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Criminal Contact: You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you..
         /// </summary>
         internal static string Criminal_Spy {
@@ -124,11 +250,65 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A musical instrument, a set of traveler&apos;s clothes, three trinkets, 15 gp..
+        ///   Looks up a localized string similar to By Popular Demand: You can always find a place to perform. At such places, you receive free lodging and food of a modest or comfortable standard, with the condition that you perform each night. People tend to like you in town..
         /// </summary>
-        internal static string Felost_Items {
+        internal static string Entertainer {
             get {
-                return ResourceManager.GetString("Felost-Items", resourceCulture);
+                return ResourceManager.GetString("Entertainer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My instrument is my most treasured possession, and it reminds me of someone I love._Someone stole my precious instrument, and someday I&apos;ll get it back._I want to be famous, whatever it takes._I idolize a hero of the old tales and measure my deeds against that person&apos;s._I will do anything to prove myself superior to my hated rival._I would do anything for the other members of my old troupe..
+        /// </summary>
+        internal static string Entertainer_Bond {
+            get {
+                return ResourceManager.GetString("Entertainer-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;ll do anything to win fame and renown._I&apos;m a sucker for a pretty face._A scandal prevents me from ever going home again. That kind of trouble seems to follow me around._I once satirized a noble who still wants my head. It was a mistake that I will likely repeat._I have trouble keeping my true feelings hidden. My sharp tongue lands me in trouble._Despite my best efforts, I am unreliable to my friends..
+        /// </summary>
+        internal static string Entertainer_Flaw {
+            get {
+                return ResourceManager.GetString("Entertainer-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When I perform, I make the world better than it was._The stories, legends, and songs of the past must never be forgotten, for they teach us who we are._The world is in need of new ideas and bold action._I&apos;m only in it for the money and fame._I like seeing the smiles on people&apos;s faces when I perform. That&apos;s all that matters._Art should reflect the soul; it should come from within and reveal who we really are..
+        /// </summary>
+        internal static string Entertainer_Ideal {
+            get {
+                return ResourceManager.GetString("Entertainer-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A musical instrument, the favor of an admirer, a costume, 15 gp.
+        /// </summary>
+        internal static string Entertainer_Items {
+            get {
+                return ResourceManager.GetString("Entertainer-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I know a story relevant to almost every situation._Whenever I come to a new place, I collect local rumors and spread gossip._I&apos;m a hopeless romantic, always searching for that &quot;special someone.&quot;_Nobody stays angry at me or around me for long, since I can defuse any amount of tension._I love a good insult, even one directed at me._I get bitter if I&apos;m not the center of attention._I&apos;ll settle for nothing less than perfection._I change my mood or my mind as quickly as I change key in a song..
+        /// </summary>
+        internal static string Entertainer_Personality {
+            get {
+                return ResourceManager.GetString("Entertainer-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: None_Skills: Acrobatics, Performance_Tools: Disguise kit, &lt;CHOOSE&gt;.
+        /// </summary>
+        internal static string Entertainer_Skills {
+            get {
+                return ResourceManager.GetString("Entertainer-Skills", resourceCulture);
             }
         }
         
@@ -138,6 +318,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Feylost {
             get {
                 return ResourceManager.GetString("Feylost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A musical instrument, a set of traveler&apos;s clothes, three trinkets, 15 gp..
+        /// </summary>
+        internal static string Feylost_Items {
+            get {
+                return ResourceManager.GetString("Feylost-Items", resourceCulture);
             }
         }
         
@@ -187,6 +376,132 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rustic Hospitalitiy: You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they will not risk their lives for you..
+        /// </summary>
+        internal static string Folk_Hero {
+            get {
+                return ResourceManager.GetString("Folk Hero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I have a family, but I have no idea where they are. One day, I hope to see them again._I worked the land, I love the land, and I will protect the land._A proud noble once gave me a horrible beating, and I will take my revenge on any bully I encounter._My tools are symbols of my past life, and I carry them so that I will never forget my roots._I protect those who cannot protect themselves._I wish my childhood sweetheart had come with me to pursue my destiny..
+        /// </summary>
+        internal static string Folk_Hero_Bond {
+            get {
+                return ResourceManager.GetString("Folk Hero-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The tyrant who rules my land will stop at nothing to see me killed._I&apos;m convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure._The people who knew me when I was young know my shameful secret, so I can never go home again._I have a weakness for the vices of the city, especially hard drink._Secretly, I believe that things would be better if I were a tyrant lording over the land._I have trouble trusting in my allies..
+        /// </summary>
+        internal static string Folk_Hero_Flaw {
+            get {
+                return ResourceManager.GetString("Folk Hero-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People deserve to be treated with dignity and respect._No one should get preferential treatment before the law, and no one is above the law._Tyrants must not be allowed to oppress the people._If I become strong, I can take what I want – what I deserve._There&apos;s no good in pretending to be something I&apos;m not._Nothing and no one can steer me away from my higher calling..
+        /// </summary>
+        internal static string Folk_Hero_Ideal {
+            get {
+                return ResourceManager.GetString("Folk Hero-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A set of artisan&apos;s tools, a shovel, an iron pot, a set of common clothes, 10 gp..
+        /// </summary>
+        internal static string Folk_Hero_Items {
+            get {
+                return ResourceManager.GetString("Folk Hero-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I judge people by their actions, not their words._If someone is in trouble, I&apos;m always ready to lend help._When I set my mind to something, I follow through no matter what gets in my way._I have a strong sense of fair play and always try to find the most equitable solution to arguments._I&apos;m confident in my own abilities and do what I can to instill confidence in others._Thinking is for other people. I prefer action._Thinking is for other people. I prefer action._I get bored easily. When am I going to get on [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Folk_Hero_Personality {
+            get {
+                return ResourceManager.GetString("Folk Hero-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: None_Skills: Animal Handling, Survival_Tools: &lt;CHOOSE&gt;, Land Vehicles.
+        /// </summary>
+        internal static string Folk_Hero_Skills {
+            get {
+                return ResourceManager.GetString("Folk Hero-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guild Membership: Your fellow guild members will provide you with lodging and food if necessary, and pay for your funeral if needed. If you are accused of a crime, your guild will support you if a good case can be made for your innocence or the crime is justifiable. You can also gain access to powerful political figures through the guild, if you are a member in good standing. Such connections might require the donation of money or magic items to the guild&apos;s coffers. You must pay dues of 5 gp per month to th [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Guild_Artisan {
+            get {
+                return ResourceManager.GetString("Guild Artisan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The workshop where I learned my trade is the most important place in the world to me._I created a great work for someone, and then found them unworthy to receive it. I&apos;m still looking for someone worthy._I owe my guild a great debt for forging me into the person I am today._I pursue wealth to secure someone&apos;s love._One day I will return to my guild and prove that I am the greatest artisan of them all._I will get revenge on the evil forces that destroyed my place of business and ruined my livelihood..
+        /// </summary>
+        internal static string Guild_Artisan_Bond {
+            get {
+                return ResourceManager.GetString("Guild Artisan-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;ll do anything to get my hands on something rare or priceless._I&apos;m quick to assume that someone is trying to cheat me._No one must ever learn that I once stole money from guild coffers._I&apos;m never satisfied with what I have – I always want more._I would kill to acquire a noble title._I&apos;m horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I&apos;m surrounded by rivals..
+        /// </summary>
+        internal static string Guild_Artisan_Flaw {
+            get {
+                return ResourceManager.GetString("Guild Artisan-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It is the duty of all civilized people to strengthen the bonds of community and the security of civilization._My talents were given to me so that I could use them to benefit the world._Everyone should be free to pursue his or her own livelihood._I&apos;m only in it for the money._I&apos;m committed to the people I care about, not to ideals._I work hard to be the best there is at my craft..
+        /// </summary>
+        internal static string Guild_Artisan_Ideal {
+            get {
+                return ResourceManager.GetString("Guild Artisan-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A set of artisan&apos;s tools, a letter of introduction from your guild, a set of traveler&apos;s clothes, 15 gp..
+        /// </summary>
+        internal static string Guild_Artisan_Items {
+            get {
+                return ResourceManager.GetString("Guild Artisan-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I believe that anything worth doing is worth doing right. I can&apos;t help it – I&apos;m a perfectionist._I&apos;m a snob who looks down on those who can&apos;t appreciate fine art._I always want to know how things work and what makes people tick._I&apos;m full of witty aphorisms and have a proverb for every occasion._I&apos;m rude to people who lack my commitment to hard work and fair play._I like to talk at length about my profession._I don&apos;t part with my money easily and will haggle tirelessly to get the best deal possible._I&apos;m well [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Guild_Artisan_Personality {
+            get {
+                return ResourceManager.GetString("Guild Artisan-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;_Skills: Insight, Persuasion_Tools: &lt;CHOOSE&gt;.
+        /// </summary>
+        internal static string Guild_Artisan_Skills {
+            get {
+                return ResourceManager.GetString("Guild Artisan-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Haunted_One {
@@ -210,6 +525,69 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Haunted_One_Skills {
             get {
                 return ResourceManager.GetString("Haunted One-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discovery: The quiet seclusion of your extended hermitage gave you access to a unique and powerful discovery. The exact nature of this revelation depends on the nature of your seclusion. Work with your DM to determine the details of your discovery and its impact on the campaign..
+        /// </summary>
+        internal static string Hermit {
+            get {
+                return ResourceManager.GetString("Hermit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nothing is more important than the other members of my hermitage, order, or association._I entered seclusion to hide from the ones who might still be hunting me. I must someday confront them._I&apos;m still seeking the enlightenment I pursued in my seclusion, and it still eludes me._I entered seclusion because I loved someone I could not have._Should my discovery come to light, it could bring ruin to the world. _My isolation gave me great insight into a great evil that only I can destroy..
+        /// </summary>
+        internal static string Hermit_Bond {
+            get {
+                return ResourceManager.GetString("Hermit-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now that I&apos;ve returned to the world, I enjoy its delights a little too much._I harbor dark, bloodthirsty thoughts that my isolation and meditation failed to quell._I am dogmatic in my thoughts and philosophy._I let my need to win arguments overshadow friendships and harmony._I like keeping secrets and won&apos;t share them with anyone._I&apos;d risk too much to uncover a lost bit of knowledge..
+        /// </summary>
+        internal static string Hermit_Flaw {
+            get {
+                return ResourceManager.GetString("Hermit-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My gifts are meant to be shared with all, not used for my own benefit._Emotions must not cloud our sense of what is right and true, or our logical thinking._Inquiry and curiosity are the pillars of progress._Solitude and contemplation are paths toward mystical or magical power._Meddling in the affairs of others only causes trouble._If you know yourself, there&apos;s nothing left to know..
+        /// </summary>
+        internal static string Hermit_Ideal {
+            get {
+                return ResourceManager.GetString("Hermit-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A scroll case stuffed full of notes, a winter blanket, a set of common clothes, an herbalism kit, 5 gp.
+        /// </summary>
+        internal static string Hermit_Items {
+            get {
+                return ResourceManager.GetString("Hermit-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;ve been isolated for so long that I rarely speak, preferring gestures and the occasional grunt._I am utterly serene, even in the face of disaster._The leader of my community had something wise to say on every topic and I am eager to share that wisdom._I feel tremendous empathy for all who suffer._I&apos;m oblivious to etiquette and social expectations._I connect everything that happens to me to a grand cosmic plan._I often get lost in my own thoughts and contemplation, becoming oblivious to my surroundings._I  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Hermit_Personality {
+            get {
+                return ResourceManager.GetString("Hermit-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;_Skills: Medicine, Religion_Tools: Herbalism kit.
+        /// </summary>
+        internal static string Hermit_Skills {
+            get {
+                return ResourceManager.GetString("Hermit-Skills", resourceCulture);
             }
         }
         
@@ -273,6 +651,447 @@ namespace Dungeons_and_Dragons_Player_Maker {
         internal static string Investigator_Skills {
             get {
                 return ResourceManager.GetString("Investigator-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retainers: You have the service of three retainers loyal to your family. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas (such as dungeons), and will leave if they are frequently endangered or abused..
+        /// </summary>
+        internal static string Knight {
+            get {
+                return ResourceManager.GetString("Knight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I will face any challenge to win the approval of my family,_My house&apos;s alliance with another noble family must be sustained at all costs._Nothing is more important than the other members of my family._I am in love with the heir of a family that my family despises._My loyalty to my sovereign is unwavering._The common folk must see me as a hero of the people..
+        /// </summary>
+        internal static string Knight_Bond {
+            get {
+                return ResourceManager.GetString("Knight-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I secretly believe that everyone is beneath me._I hide a truly scandalous secret that could ruin my family forever._I too often hear veiled insults and threats in every word addressed to me, and I&apos;m quick to anger._I have an insatiable desire for carnal pleasures._In fact, the world does revolve around me._By my words and actions, I often bring shame to my family..
+        /// </summary>
+        internal static string Knight_Flaw {
+            get {
+                return ResourceManager.GetString("Knight-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Respect is due to me because of my position, but all people regardless of station deserve to be treated with dignity._It is my duty to respect the authority of those above me, just as those below me must respect mine._I must prove that I can handle myself without the coddling of my family._If I can attain more power, no one will tell me what to do._Blood runs thicker than water._It is my duty to protect and care for the people beneath me..
+        /// </summary>
+        internal static string Knight_Ideal {
+            get {
+                return ResourceManager.GetString("Knight-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A set of fine clothes, a signet ring, a scroll of pedigree, 25 gp.
+        /// </summary>
+        internal static string Knight_Items {
+            get {
+                return ResourceManager.GetString("Knight-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world._The common folk love me for my kindness and generosity._No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses._I take great pains to always look my best and follow the latest fashions._I don&apos;t like to get my hands dirty, and I won&apos;t be caught dead in unsuitable accommodations._Despite my noble birth, I do not place myself above other folk. We all have the same b [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Knight_Personality {
+            get {
+                return ResourceManager.GetString("Knight-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;_Skills: History, Persuasion_Tools: &lt;CHOOSE&gt;.
+        /// </summary>
+        internal static string Knight_Skills {
+            get {
+                return ResourceManager.GetString("Knight-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position of Privilege: You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to..
+        /// </summary>
+        internal static string Noble {
+            get {
+                return ResourceManager.GetString("Noble", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I will face any challenge to win the approval of my family,_My house&apos;s alliance with another noble family must be sustained at all costs._Nothing is more important than the other members of my family._I am in love with the heir of a family that my family despises._My loyalty to my sovereign is unwavering._The common folk must see me as a hero of the people..
+        /// </summary>
+        internal static string Noble_Bond {
+            get {
+                return ResourceManager.GetString("Noble-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I secretly believe that everyone is beneath me._I hide a truly scandalous secret that could ruin my family forever._I too often hear veiled insults and threats in every word addressed to me, and I&apos;m quick to anger._I have an insatiable desire for carnal pleasures._In fact, the world does revolve around me._By my words and actions, I often bring shame to my family..
+        /// </summary>
+        internal static string Noble_Flaw {
+            get {
+                return ResourceManager.GetString("Noble-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Respect is due to me because of my position, but all people regardless of station deserve to be treated with dignity._It is my duty to respect the authority of those above me, just as those below me must respect mine._I must prove that I can handle myself without the coddling of my family._If I can attain more power, no one will tell me what to do._Blood runs thicker than water._It is my duty to protect and care for the people beneath me..
+        /// </summary>
+        internal static string Noble_Ideal {
+            get {
+                return ResourceManager.GetString("Noble-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A set of fine clothes, a signet ring, a scroll of pedigree, 25 gp.
+        /// </summary>
+        internal static string Noble_Items {
+            get {
+                return ResourceManager.GetString("Noble-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world._The common folk love me for my kindness and generosity._No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses._I take great pains to always look my best and follow the latest fashions._I don&apos;t like to get my hands dirty, and I won&apos;t be caught dead in unsuitable accommodations._Despite my noble birth, I do not place myself above other folk. We all have the same b [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Noble_Personality {
+            get {
+                return ResourceManager.GetString("Noble-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;_Skills: History, Persuasion_Tools: &lt;CHOOSE&gt;.
+        /// </summary>
+        internal static string Noble_Skills {
+            get {
+                return ResourceManager.GetString("Noble-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wanderer: You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth..
+        /// </summary>
+        internal static string Outlander {
+            get {
+                return ResourceManager.GetString("Outlander", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My family, clan, or tribe is the most important thing in my life, even when they are far from me._An injury to the unspoiled wilderness of my home is an injury to me._I will bring terrible wrath down on the evildoers who destroyed my homeland._I am the last of my tribe, and it is up to me to ensure their names enter legend._I suffer awful visions of a coming disaster and will do anything to prevent it._It is my duty to provide children to sustain my tribe..
+        /// </summary>
+        internal static string Outlander_Bond {
+            get {
+                return ResourceManager.GetString("Outlander-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am too enamored of ale, wine, and other intoxicants._There&apos;s no room for caution in a life lived to the fullest._I remember every insult I&apos;ve received and nurse a silent resentment toward anyone who&apos;s ever wronged me._I am slow to trust members of other races, tribes, and societies._Violence is my answer to almost any challenge._Don&apos;t expect me to save those who can&apos;t save themselves. It is nature&apos;s way that the strong thrive and the weak perish..
+        /// </summary>
+        internal static string Outlander_Flaw {
+            get {
+                return ResourceManager.GetString("Outlander-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Life is like the seasons, in constant change, and we must change with it._It is each person&apos;s responsibility to make the most happiness for the whole tribe._If I dishonor myself, I dishonor my whole clan._The strongest are meant to rule._The natural world is more important than all the constructs of civilization._I must earn glory in battle, for myself and my clan..
+        /// </summary>
+        internal static string Outlander_Ideal {
+            get {
+                return ResourceManager.GetString("Outlander-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A staff, a hunting trap, a trophy from an animal you killed, a set of traveler&apos;s clothes, 10 gp..
+        /// </summary>
+        internal static string Outlander_Items {
+            get {
+                return ResourceManager.GetString("Outlander-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m driven by a wanderlust that led me away from home._I watch over my friends as if they were a litter of newborn pups._I once ran twenty-five miles without stopping to warn my clan of an approaching orc horde. I&apos;d do it again if I had to._I have a lesson for every situation, drawn from observing nature._I place no stock in wealthy or well-mannered folk. Money and manners won&apos;t save you from a hungry owlbear._I&apos;m always picking things up, absently fiddling with them, and sometimes accidentally breaking the [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Outlander_Personality {
+            get {
+                return ResourceManager.GetString("Outlander-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;_Skills: Athletics, Survival_Tools: &lt;CHOOSE&gt;.
+        /// </summary>
+        internal static string Outlander_Skills {
+            get {
+                return ResourceManager.GetString("Outlander-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bad Reputation: When you are in a civilized settlement, you can get away with minor criminal offenses, such as refusing to pay for food at a tavern or breaking down doors at a local shop, since most people will not report your activity to the authorities..
+        /// </summary>
+        internal static string Pirate {
+            get {
+                return ResourceManager.GetString("Pirate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m loyal to my captain first, everything else second._The ship is most important – crewmates and captains come and go._I&apos;ll always remember my first ship._In a harbor town, I have a paramour whose eyes nearly stole me from the sea._I was cheated out of my fair share of the profits, and I want to get my due._Ruthless pirates murdered my captain and crewmates, plundered our ship, and left me to die. Vengeance will be mine..
+        /// </summary>
+        internal static string Pirate_Bond {
+            get {
+                return ResourceManager.GetString("Pirate-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I follow orders, even if I think they&apos;re wrong._I&apos;ll say anything to avoid having to do extra work._Once someone questions my courage, I never back down no matter how dangerous the situation._Once I start drinking, it&apos;s hard for me to stop._I can&apos;t help but pocket loose coins and other trinkets I come across._My pride will probably lead to my destruction..
+        /// </summary>
+        internal static string Pirate_Flaw {
+            get {
+                return ResourceManager.GetString("Pirate-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The thing that keeps a ship together is mutual respect between captain and crew._We all do the work, so we all share in the rewards._The sea is freedom-the freedom to go anywhere and do anything._I&apos;m a predator, and the other ships on the sea are my prey._I&apos;m committed to my crewmates, not to ideals._Someday I&apos;ll own my own ship and chart my own destiny..
+        /// </summary>
+        internal static string Pirate_Ideal {
+            get {
+                return ResourceManager.GetString("Pirate-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A belaying pin, 50 feet of silk rope, a lucky charm, a set of common clothes, 10 gp..
+        /// </summary>
+        internal static string Pirate_Items {
+            get {
+                return ResourceManager.GetString("Pirate-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My friends know they can rely on me, no matter what._I work hard so that I can play hard when the work is done._I enjoy sailing into new ports and making new friends over a flagon of ale._I stretch the truth for the sake of a good story._To me, a tavern brawl is a nice way to get to know a new city._I never pass up a friendly wager._My language is as foul as an otyugh nest._I like a job well done, especially if I can convince someone else to do it..
+        /// </summary>
+        internal static string Pirate_Personality {
+            get {
+                return ResourceManager.GetString("Pirate-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: None_Skills: Athletics, Perception_Tools: Navigator&apos;s tools, Water vehicles.
+        /// </summary>
+        internal static string Pirate_Skills {
+            get {
+                return ResourceManager.GetString("Pirate-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Researcher: When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found..
+        /// </summary>
+        internal static string Sage {
+            get {
+                return ResourceManager.GetString("Sage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It is my duty to protect my students._I have an ancient text that holds terrible secrets that must not fall into the wrong hands._I work to preserve a library, university, scriptorium, or monastery._My life&apos;s work is a series of tomes related to a specific field of lore._I&apos;ve been searching my whole life for the answer to a certain question._I sold my soul for knowledge. I hope to do great deeds and win it back..
+        /// </summary>
+        internal static string Sage_Bond {
+            get {
+                return ResourceManager.GetString("Sage-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am easily distracted by the promise of information._Most people scream and run when they see a demon. I stop and take notes on its anatomy._Unlocking an ancient mystery is worth the price of a civilization._I overlook obvious solutions in favor of complicated ones._I speak without really thinking through my words, invariably insulting others._I can&apos;t keep a secret to save my life, or anyone else&apos;s..
+        /// </summary>
+        internal static string Sage_Flaw {
+            get {
+                return ResourceManager.GetString("Sage-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The path to power and self-improvement is through knowledge._What is beautiful points us beyond itself toward what is true._Emotions must not cloud our logical thinking._Nothing should fetter the infinite possibility inherent in all existence._Knowledge is the path to power and domination._The goal of a life of study is the betterment of oneself..
+        /// </summary>
+        internal static string Sage_Ideal {
+            get {
+                return ResourceManager.GetString("Sage-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A bottle of ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer, a set of common clothes, 10 gp..
+        /// </summary>
+        internal static string Sage_Items {
+            get {
+                return ResourceManager.GetString("Sage-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I use polysyllabic words that convey the impression of great erudition._I&apos;ve read every book in the world&apos;s greatest libraries – or I like to boast that I have._I&apos;m used to helping out those who aren&apos;t as smart as I am, and I patiently explain anything and everything to others._There&apos;s nothing I like more than a good mystery._I&apos;m willing to listen to every side of an argument before I make my own judgment._I… speak… slowly… when talking… to idiots,… which… almost… everyone… is… compared… to me._I am horribl [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Sage_Personality {
+            get {
+                return ResourceManager.GetString("Sage-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: &lt;CHOOSE&gt;, &lt;CHOOSE&gt;_Skills: Arcana, History_Tools: None.
+        /// </summary>
+        internal static string Sage_Skills {
+            get {
+                return ResourceManager.GetString("Sage-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ship&apos;s Passage: When you need to, you can secure free passage on a sailing ship for yourself and your adventuring companions. Because you&apos;re calling in a favor, you can&apos;t be certain of a schedule or route that will meet your every need. Your DM will determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected to assist the crew during the voyage..
+        /// </summary>
+        internal static string Sailor {
+            get {
+                return ResourceManager.GetString("Sailor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m loyal to my captain first, everything else second._The ship is most important – crewmates and captains come and go._I&apos;ll always remember my first ship._In a harbor town, I have a paramour whose eyes nearly stole me from the sea._I was cheated out of my fair share of the profits, and I want to get my due._Ruthless pirates murdered my captain and crewmates, plundered our ship, and left me to die. Vengeance will be mine..
+        /// </summary>
+        internal static string Sailor_Bond {
+            get {
+                return ResourceManager.GetString("Sailor-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I follow orders, even if I think they&apos;re wrong._I&apos;ll say anything to avoid having to do extra work._Once someone questions my courage, I never back down no matter how dangerous the situation._Once I start drinking, it&apos;s hard for me to stop._I can&apos;t help but pocket loose coins and other trinkets I come across._My pride will probably lead to my destruction..
+        /// </summary>
+        internal static string Sailor_Flaw {
+            get {
+                return ResourceManager.GetString("Sailor-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The thing that keeps a ship together is mutual respect between captain and crew._We all do the work, so we all share in the rewards._The sea is freedom-the freedom to go anywhere and do anything._I&apos;m a predator, and the other ships on the sea are my prey._I&apos;m committed to my crewmates, not to ideals._Someday I&apos;ll own my own ship and chart my own destiny..
+        /// </summary>
+        internal static string Sailor_Ideal {
+            get {
+                return ResourceManager.GetString("Sailor-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A belaying pin, 50 feet of silk rope, a lucky charm, a set of common clothes, 10 gp..
+        /// </summary>
+        internal static string Sailor_Items {
+            get {
+                return ResourceManager.GetString("Sailor-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My friends know they can rely on me, no matter what._I work hard so that I can play hard when the work is done._I enjoy sailing into new ports and making new friends over a flagon of ale._I stretch the truth for the sake of a good story._To me, a tavern brawl is a nice way to get to know a new city._I never pass up a friendly wager._My language is as foul as an otyugh nest._I like a job well done, especially if I can convince someone else to do it..
+        /// </summary>
+        internal static string Sailor_Personality {
+            get {
+                return ResourceManager.GetString("Sailor-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: None_Skills: Athletics, Perception_Tools: Navigator&apos;s tools, Water vehicles.
+        /// </summary>
+        internal static string Sailor_Skills {
+            get {
+                return ResourceManager.GetString("Sailor-Skills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Military Rank: Soldiers loyal to your former military organization still recognize your authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses where your rank is recognized..
+        /// </summary>
+        internal static string Soldier {
+            get {
+                return ResourceManager.GetString("Soldier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I would still lay down my life for the people I served with._Someone saved my life on the battlefield. To this day, I will never leave a friend behind._My honor is my life._I&apos;ll never forget the crushing defeat my company suffered or the enemies who dealt it._Those who fight beside me are those worth dying for._I fight for those who cannot fight for themselves..
+        /// </summary>
+        internal static string Soldier_Bond {
+            get {
+                return ResourceManager.GetString("Soldier-Bond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The monstrous enemy we faced in battle still leaves me quivering with fear._I have little respect for anyone who is not a proven warrior._I made a terrible mistake in battle that cost many lives – and I would do anything to keep that mistake secret._My hatred of my enemies is blind and unreasoning._I obey the law, even if the law causes misery._I&apos;d rather eat my armor than admit when I&apos;m wrong..
+        /// </summary>
+        internal static string Soldier_Flaw {
+            get {
+                return ResourceManager.GetString("Soldier-Flaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our lot is to lay down our lives in defense of others._I do what I must and obey just authority._When people follow orders blindly, they embrace a kind of tyranny._In life as in war, the stronger force wins._Ideals aren&apos;t worth killing over or going to war for._My city, nation, or people are all that matter..
+        /// </summary>
+        internal static string Soldier_Ideal {
+            get {
+                return ResourceManager.GetString("Soldier-Ideal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An insignia of rank, a trophy taken from a fallen enemy, a set of bone dice, a set of common clothes, 10 gp..
+        /// </summary>
+        internal static string Soldier_Items {
+            get {
+                return ResourceManager.GetString("Soldier-Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m always polite and respectful._I&apos;m haunted by memories of war. I can&apos;t get the images of violence out of my mind._I&apos;ve lost too many friends, and I&apos;m slow to make new ones._I&apos;m full of inspiring and cautionary tales from my military experience relevant to almost every combat situation._I can stare down a hell hound without flinching._I enjoy being strong and like breaking things._I have a crude sense of humor._I face problems head-on. A simple, direct solution is the best path to success..
+        /// </summary>
+        internal static string Soldier_Personality {
+            get {
+                return ResourceManager.GetString("Soldier-Personality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages: None_Skills: Athletics, Intimidation_Tools: &lt;CHOOSE&gt;, Land Vehicles.
+        /// </summary>
+        internal static string Soldier_Skills {
+            get {
+                return ResourceManager.GetString("Soldier-Skills", resourceCulture);
             }
         }
         

@@ -218,7 +218,9 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization {
  
         private void updateStat(string stat, string RollValue) {
             string[] Stats = null;
-            try { Stats = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_"); } catch { Stats = Engine.Homebrew.HomebrewRaces[PC.Race].StatBonus.Split("_"); }
+            try {
+                Stats = Dungeons_and_Dragons_Player_Maker.Races.ResourceManager.GetString(PC.Race).Split("_"); } 
+            catch { Stats = Engine.Homebrew.HomebrewRaces[PC.Race].StatBonus.Split("_"); }
 
             switch (stat) {
                 case "STR":     

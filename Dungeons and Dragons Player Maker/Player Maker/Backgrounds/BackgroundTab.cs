@@ -91,7 +91,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Backgrounds {
         };
         private readonly Label B6 = new() {
             Size = new Size(211, 25),
-            Text = "Guild Artisan/Guild Merchant",
+            Text = "Guild Artisan",
             Location = new Point(6, 231),
         };
 
