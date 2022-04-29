@@ -35,7 +35,21 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
         private static readonly string WIZARD = "https://www.dndbeyond.com/avatars/thumbnails/6/357/420/618/636272696881281556.png";
         #endregion
         private static readonly string SHEET = "https://imgv2-2-f.scribdassets.com/img/document/234991403/original/cc9da91721/1634041659?v5";//"https://content.instructables.com/ORIG/F32/Y0FV/J8F5Q3W5/F32Y0FVJ8F5Q3W5.png";
-        private static readonly string SPLASH = "https://images.ctfassets.net/swt2dsco9mfe/6tsR29Slg89AshLq5dmd2U/14daf5a0f02bf0e248fe8bfe75b0d103/qhxIu1bYe2ci1cwelc.jpg";
+        private static readonly string SPLASH =
+            (System.DateTime.Now.Month == 10 ?
+            //Spooky Season
+            "https://images.ctfassets.net/swt2dsco9mfe/3a0LIPmT0YfHDP7xhcUaYS/b1c6ad2606983c4b9374ce4e1602eb46/dnd_vpw_othermedia.jpg" :
+            //PHB
+            //"https://images.ctfassets.net/swt2dsco9mfe/5j4I9MGSt44T67nDoQuEk7/0a1bd4e9b0814e1bb6df92cf793e53a1/rJGxllAtvbBhYnO.hero.jpg"
+            //BETA Test
+            //"https://media.dnd.wizards.com/images/video/starterset_th.jpg"
+            //Unearth Arcana/BETA
+            "https://images.ctfassets.net/swt2dsco9mfe/1hbWSrCP99lgc8xpGHKfUh/26cce9379bc6f9feeff4466b414d22f4/312912_1023x550.jpg"
+            //Fizban
+            //"https://images.ctfassets.net/swt2dsco9mfe/6tsR29Slg89AshLq5dmd2U/14daf5a0f02bf0e248fe8bfe75b0d103/qhxIu1bYe2ci1cwelc.jpg"
+            //???
+            //"https://images.ctfassets.net/swt2dsco9mfe/3Nbjd1gA4LbFYePeoeRryb/9b6079312cf03e4f939dada20ecb577a/stay-play-home1920x1342.jpg"
+            );
 #pragma warning restore IDE0051 // Remove unused private members
 
         public static string GetImage(string request) {

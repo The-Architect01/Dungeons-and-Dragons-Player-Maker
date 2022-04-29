@@ -59,6 +59,10 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public static SaveData SaveData { get; } = IO.LoadSaveFromDisk();
         public static Homebrew.Homebrew Homebrew { get; } = IO.LoadHomebrew();
 
+        public static string[] AddChoose(this string[] List) {
+            return List = new string[] { "Select One" }.Union(List).ToArray();
+        }
+
     }
 }
 

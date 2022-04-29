@@ -255,7 +255,9 @@ namespace Dungeons_and_Dragons_Player_Maker {
                 string mod = skill.Name == "Athletics" ? STR_Mod.Text : DEX_SKILLS.Contains(skill.Name) ? Dex_Mod.Text :
                              WIS_SKILLS.Contains(skill.Name) ? Wis_Mod.Text : INT_SKILLS.Contains(skill.Name) ? Int_Mod.Text :
                              CHA_SKILLS.Contains(skill.Name) ? Cha_Mod.Text : "0";
-                if (skill.Visible) { s.Text = ( int.Parse(mod) + int.Parse(Proficency.Text) ).ToString(); } else { s.Text = mod; }
+                if (skill.Visible) { 
+                    s.Text = (int.Parse(mod) + (player.Expertise.Contains(skill.Name) ? (int.Parse(Proficency.Text)*2) : int.Parse(Proficency.Text))).ToString(); 
+                } else { s.Text = mod; }
                 if (!s.Text.Contains("-") && !s.Text.Contains("+")) { s.Text = "+" + s.Text; }
             }
 
