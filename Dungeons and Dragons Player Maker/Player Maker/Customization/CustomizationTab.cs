@@ -87,7 +87,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker {
             }
             if ((!Pages.TabPages.OfType<TabPage>().Any(i => ClassOptions.GetType() == i.GetType())) &&
                 (!Pages.TabPages.Contains(stats))) 
-            { Pages.TabPages.Add(ClassOptions); }
+            { Pages.TabPages.Insert(0,ClassOptions); Pages.TabPages.Remove(stats); }
 
         }
 
