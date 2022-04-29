@@ -8,12 +8,12 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
 {
     public partial class BARD : BaseClassCustom {
         
-        protected override bool InformationFilled {
+    /*    protected override bool InformationFilled {
             get { return _ready; }
             set {
                 _ready = value;
-                if (value /*&& !hasFired)*/) {
-                    //hasFired = true;
+                if (value) {
+
                     if (!PC.Skills.Contains(MusicalInstrument1.Text)) { PC.Skills.Add(MusicalInstrument1.Text); }
                     if (!PC.Skills.Contains(MusicalInstrument2.Text)) { PC.Skills.Add(MusicalInstrument2.Text); }
                     if (!PC.Skills.Contains(MusicalInstrument3.Text)) { PC.Skills.Add(MusicalInstrument3.Text); }
@@ -29,6 +29,21 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization
                     FireOnReady();
                 }
             }
+        }
+    */
+        protected override void FireOnReady() {
+            if (!PC.Skills.Contains(MusicalInstrument1.Text)) { PC.Skills.Add(MusicalInstrument1.Text); }
+            if (!PC.Skills.Contains(MusicalInstrument2.Text)) { PC.Skills.Add(MusicalInstrument2.Text); }
+            if (!PC.Skills.Contains(MusicalInstrument3.Text)) { PC.Skills.Add(MusicalInstrument3.Text); }
+
+            if (!PC.Skills.Contains(Skill1.Text.Split(" ")[0])) { PC.Skills.Add(Skill1.Text.Split(" ")[0]); }
+            if (!PC.Skills.Contains(Skill2.Text.Split(" ")[0])) { PC.Skills.Add(Skill2.Text.Split(" ")[0]); }
+            if (!PC.Skills.Contains(Skill3.Text.Split(" ")[0])) { PC.Skills.Add(Skill3.Text.Split(" ")[0]); }
+
+            if (!PC.Inventory.Contains(Option1.Text)) { PC.Inventory.Add(Option1.Text); }
+            if (!PC.Inventory.Contains(Option2.Text)) { PC.Inventory.Add(Option2.Text); }
+            if (!PC.Inventory.Contains(Option3.Text)) { PC.Inventory.Add(Option3.Text); }
+
         }
 
         [Obsolete]
