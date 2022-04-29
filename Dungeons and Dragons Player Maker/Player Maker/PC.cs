@@ -25,6 +25,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
         public string[] Personality { get; set; }
         public List<string> Languages { get; set; } = new List<string>();
         public List<string> Skills { get; set; } = new List<string>();
+        public List<string> Expertise { get; set; } = new List<string>();
         public List<string> Inventory { get; set; } = new List<string>();
         public List<string> Weapons { get; set; } = new List<string>();
 
