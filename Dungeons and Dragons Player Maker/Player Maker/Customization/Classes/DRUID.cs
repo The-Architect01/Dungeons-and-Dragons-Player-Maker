@@ -27,13 +27,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization.Classes {
         ComboBox Skill1 = new() {
             DataSource = new[] { "Select One", "Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Relgion", "Survival" },
             Location = new(10, 178),
-            Size = new(120, 60),
+            Size = new(151, 28),
             Text = "Select One"
         };
         ComboBox Skill2 = new() {
             DataSource = new[] { "Select One", "Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Relgion", "Survival" },
             Location = new(167, 178),
-            Size = new(120, 60),
+            Size = new(151, 28),
             Text = "Select One"
         };
 
@@ -45,13 +45,13 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization.Classes {
         ComboBox Equip1 = new() { 
             DataSource = new[] { "Select One", "Wooden Shield" }.Union(Engine.SIMPLE_WEAPONS).ToList(),
             Location = new(10, 252),
-            Size = new(120, 60),
+            Size = new(151, 28),
             Text = "Wooden Shield"
         };
         ComboBox Equip2 = new() {
             DataSource = new[] { "Select One", "Scimitar" }.Union(Engine.MELEEWEAPONS.Intersect(Engine.SIMPLE_WEAPONS)).ToList(),
             Location = new(167, 252),
-            Size = new(120, 60),
+            Size = new(151, 28),
             Text = "Scimitar"
         };
         #endregion

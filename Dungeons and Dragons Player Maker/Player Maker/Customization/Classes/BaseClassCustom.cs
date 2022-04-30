@@ -47,7 +47,7 @@ namespace Dungeons_and_Dragons_Player_Maker.Player_Maker.Customization.Classes {
             Text = "Class Customization Options";
             BackColor = Color.White;
             InitializeComponent();
-            Controls.AddRange(new Control[] { });
+            //Controls.AddRange(new Control[] { });
             foreach (ComboBox c in Controls.OfType<ComboBox>()) { c.TextChanged += null; }
             Scale(.75f);
         }
