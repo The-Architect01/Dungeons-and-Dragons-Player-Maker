@@ -111,6 +111,7 @@ public static class IO {
         IWshShortcut NewShortcut = shell.CreateShortcut(shortcutaddress);
         NewShortcut.Description = "Dungeons and Dragons Player Maker";
         NewShortcut.TargetPath = SaveLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\Player Maker\Dungeons and Dragons Player Maker.exe";
+        NewShortcut.IconLocation = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Star Interactive\Player Maker\D202.ico";
         NewShortcut.Save();
     }
 }
