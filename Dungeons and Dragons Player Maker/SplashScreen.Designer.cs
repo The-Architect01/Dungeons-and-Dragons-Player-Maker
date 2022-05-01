@@ -55,7 +55,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(585, 56);
             this.label3.TabIndex = 2;
-            this.label3.Text = "© 2021 Grumpy Lion Games, Some Rights Reserved\r\n";
+            this.label3.Text = "© 2022 Grumpy Lion Games, Some Rights Reserved\r\n";
             // 
             // timer1
             // 
