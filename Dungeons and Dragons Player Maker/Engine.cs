@@ -214,9 +214,19 @@ public static class SourceBooks {
         "Urchin"
     };
     #endregion
+    #region CRC
+    private static readonly List<string> CRC_Races = new() { "Orc" };
+    private static readonly List<string> CRC_Classes = new() { "Blood Hunter:Order of the Ghostslayer",
+        "Blood Hunter:Order of the Lycan",
+        "Blood Hunter:Order of the Mutant",
+        "Blood Hunter:Order of the Profane Soul",
+    };
+    private static readonly List<string> CRC_Backgrounds = new() { "Grinner", "Volstrucker Agent" };
+    #endregion
     #endregion
     #region Sourcebook Access
     private static readonly Dictionary<string, List<string>> PHB = new() { { "Races", PHB_Races }, { "Classes", PHB_Classes }, { "Backgrounds", PHB_Backgrounds } };
+    private static readonly Dictionary<string, List<string>> CRC = new() { { "Races",CRC_Races },{ "Classes", CRC_Classes },{ "Backgrounds", CRC_Backgrounds } };
     private static readonly Dictionary<string, List<string>> HBW = new() { 
         { "Races", Engine.Homebrew.HomebrewRaces.Keys.ToList() }, 
         { "Classes", Engine.Homebrew.HomebrewClasses.Keys.ToList() }, 

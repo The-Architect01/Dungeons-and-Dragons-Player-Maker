@@ -201,6 +201,9 @@
   <data name="Human:Variant" xml:space="preserve">
     <value>0_0_0_0_0_0_30_Medium_Common_None_+1 to 2 stats, Choose a Feat</value>
   </data>
+  <data name="Orc:Natural" xml:space="preserve">
+    <value>+2_0_+1_0_0_30_Medium_Common, Orc_None_Aggressive, Powerful Build, Primal Intuition</value>
+  </data>
   <data name="Sample" xml:space="preserve">
     <value>STR_DEX_CON_WIS_INT_CHA_SPEED_SIZE_LANGUAGE_PROFICINCY_BONUS</value>
   </data>

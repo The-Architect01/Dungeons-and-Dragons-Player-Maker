@@ -313,6 +313,15 @@ namespace Dungeons_and_Dragons_Player_Maker {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to +2_0_+1_0_0_30_Medium_Common, Orc_None_Aggressive, Powerful Build, Primal Intuition.
+        /// </summary>
+        internal static string Orc_Natural {
+            get {
+                return ResourceManager.GetString("Orc:Natural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to STR_DEX_CON_WIS_INT_CHA_SPEED_SIZE_LANGUAGE_PROFICINCY_BONUS.
         /// </summary>
         internal static string Sample {
