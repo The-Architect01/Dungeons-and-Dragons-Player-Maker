@@ -21,7 +21,7 @@ namespace Dungeons_and_Dragons_Player_Maker {
                     MessageBox.Show("The application has detected that an update is available. This application will update when it is closed.");
                     Engine.SaveData.CurrentVersion = Update.Version.ToString();
                     Application.ApplicationExit += delegate { Update.DownloadUpdate(); };
-                }
+                } 
             } catch (IndexOutOfRangeException) {}
             if (Engine.SaveData.LastUpdated == DateTime.MinValue) { Engine.SaveData.LastUpdated = DateTime.UtcNow; IO.SaveDataToDisk(); }
             Application.Run(new MainMenu());
